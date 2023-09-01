@@ -21,6 +21,10 @@
 
 </script>
 
+<svelte:head>
+    <title>Tipex Editor | Friend Of Svelte</title>
+</svelte:head>
+
 <div class="max-w-3xl w-full">
     <h1>Tipex Editor</h1>
     <p>
@@ -69,6 +73,24 @@
         The editor instance is stored in a store. You can use it to access the editor instance
         from anywhere in your app.
     </p>
+
+    <h2 class="mt-4">About Friend Of Svelte</h2>
+    <div class="flex flex-col md:flex-row gap-2 md:gap-3 mb-2">
+        <img src="https://avatars.githubusercontent.com/u/143795012?s=200&v=4" alt="Friend Of Svelte Logo"
+             class="w-12 h-12 rounded"/>
+        <div class="flex flex-col justify-center">
+            <p>
+                <a href="https://github.com/friendofsvelte" target="_blank" rel="noopener noreferrer">Friend Of
+                    Svelte</a> is a
+                community driven project to help Svelte developers to find and develop awesome Svelte resources.
+            </p>
+        </div>
+    </div>
+
+    <p>
+        If you like this project, you can be one of the friend by contributing to the project. Memberships are open
+        for great people like you!
+    </p>
 </div>
 
 <style lang="postcss">
@@ -95,6 +117,7 @@
         @apply text-neutral-700 dark:text-neutral-200;
         @apply px-4 py-2;
         @apply mt-3 ml-2;
+        @apply overflow-x-auto;
     }
 
     code {

@@ -1,0 +1,34 @@
+
+.tipex-controller {
+    @apply flex flex-col md:flex-row gap-2 sticky bottom-0 z-10 py-2 px-3;
+    @apply rounded-b-md backdrop-filter backdrop-blur-sm;
+    @apply bg-neutral-300 dark:bg-gray-800/80;
+}
+
+.tipex-controller .click-effect {
+    @apply active:scale-95 duration-75;
+    @apply dark:hover:bg-gray-700/80 hover:bg-neutral-200/80;
+}
+
+.tipex-controller .edit-button {
+    @apply bg-neutral-400 text-neutral-700;
+    @apply dark:bg-gray-800 dark:text-gray-200;
+    @apply border dark:border-gray-700 border-neutral-400;
+    @apply dark:hover:bg-gray-700 hover:bg-neutral-200/70;
+    @apply rounded-md flex justify-center items-center;
+    @apply px-2 py-1;
+    @apply transition-colors duration-100;
+    @apply cursor-pointer;
+    @apply h-9 w-9;
+}
+
+.tipex-controller .edit-button.active {
+    @apply dark:bg-gray-700 bg-neutral-200;
+}
+
+.tipex-controller .action-button {
+    @apply flex items-center justify-center gap-2;
+    @apply outline-1 outline dark:outline-gray-700 outline-neutral-400;
+    @apply dark:text-gray-200 text-neutral-700;
+    @apply rounded-md px-2 py-1;
+}

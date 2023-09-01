@@ -1,0 +1,1 @@
+<pre class="mt-3 mb-2"><code><span class="text-blue-400">import</span> {'{tipexEditor}'} <span class="text-blue-400">from</span> <span class="text-yellow-600">'@friendofsvelte/tipex'</span>;</code></pre>

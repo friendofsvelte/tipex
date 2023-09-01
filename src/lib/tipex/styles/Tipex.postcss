@@ -1,0 +1,18 @@
+
+.tipex-editor {
+    @apply flex flex-col;
+    @apply gap-4;
+    @apply dark:bg-neutral-900 bg-neutral-50;
+    @apply rounded-md;
+    @apply pt-2 py-0 mb-6 mt-7;
+    @apply duration-200;
+}
+
+.tipex-editor .tipex-content-section {
+    @apply px-0.5 py-0.5;
+    @apply h-full;
+}
+
+.tipex-editor.isEditorFocused.focusOnEdit {
+    @apply outline-none ring-4 ring-blue-500 border-transparent;
+}

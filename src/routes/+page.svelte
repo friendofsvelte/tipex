@@ -15,7 +15,7 @@
     <a target="_blank" rel="noopener noreferrer" href="http://bishwas.net/">Bishwas</a> in 2023.
     You can edit this content and see the changes in the editor.
     </p>
-    <p>Do you have any questions? Feel free to ask in the <a href="https://github.com/Bishwas-py/tipex"
+    <p>Do you have any questions? Feel free to ask in the <a href="https://github.com/friendofsvelte/tipex"
     target="_blank" rel="noopener noreferrer">Github repository</a>.</p>
     `;
 

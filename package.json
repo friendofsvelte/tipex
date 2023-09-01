@@ -11,7 +11,7 @@
 	"bugs": {
 		"url": "https://github.com/friendofsvelte/tipex/issues"
 	},
-	"homepage": "https://github.com/friendofsvelte/tipex#readme",
+	"homepage": "https://tipex.pages.dev/",
 	"version": "0.0.1-meta.2",
 	"scripts": {
 		"dev": "vite dev",

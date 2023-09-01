@@ -41,7 +41,8 @@
 
     <h2 class="mt-8">Installation</h2>
     <p>
-        Install the package from npm.
+        Install the package from <a href="https://www.npmjs.com/package/@friendofsvelte/tipex"
+                                     target="_blank" rel="noopener noreferrer">NPM</a>.
     </p>
     <InstallTipex/>
 

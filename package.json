@@ -12,7 +12,7 @@
 		"url": "https://github.com/friendofsvelte/tipex/issues"
 	},
 	"homepage": "https://tipex.pages.dev/",
-	"version": "0.0.1-meta.2",
+	"version": "0.0.1-meta-tweak.1",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",

@@ -41,6 +41,8 @@ Import the component and use it in your component.
 > The import for`@friendofsvelte/tipex/styles/ProseMirror.css`is used to style content written in the editor. You can
 > use your own style or use the default one.
 
+Check out the [live playground](https://tipex.pages.dev/) to see it in action.
+
 Props
 -----
 

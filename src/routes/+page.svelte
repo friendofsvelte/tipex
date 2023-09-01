@@ -1,15 +1,14 @@
 <script lang="ts">
     import Tipex from "$lib/tipex/Tipex.svelte";
-    import '$lib/tipex/styles/Controls.postcss';
-    import '$lib/tipex/styles/EditLink.postcss';
-    import '$lib/tipex/styles/ProseMirror.postcss';
-    import "$lib/tipex/styles/Tipex.postcss";
+    import '$lib/tipex/styles/Controls.css';
+    import '$lib/tipex/styles/EditLink.css';
+    import '$lib/tipex/styles/ProseMirror.css';
+    import "$lib/tipex/styles/Tipex.css";
 
-    import UseTipex from "$lib/components/codes/UseTipex.svelte";
-    import InstallTipex from "$lib/components/codes/InstallTipex.svelte";
-    import PropsTable from "$lib/components/PropsTable.svelte";
-    import {tipexEditor} from "$lib/tipex/editorStore.js";
-    import AccessEditor from "$lib/components/codes/AccessEditor.svelte";
+    import UseTipex from "$item/codes/UseTipex.svelte";
+    import InstallTipex from "$item/codes/InstallTipex.svelte";
+    import PropsTable from "$item/PropsTable.svelte";
+    import AccessEditor from "$item/codes/AccessEditor.svelte";
 
     let htmlContent = `
     <p>This <strong>content</strong> is written by

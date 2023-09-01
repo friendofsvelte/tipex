@@ -1,5 +1,6 @@
 <script>
     import '../app.postcss';
+    import '../root.postcss';
 </script>
 
 <div class="home-wrapper">

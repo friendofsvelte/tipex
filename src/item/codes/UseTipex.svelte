@@ -1,7 +1,8 @@
 <pre class="mt-3"><code><span class="text-yellow-500">&lt;script&gt;</span>
-<span class="text-blue-400">import</span> Tipex <span class="text-blue-400">from</span> <span
+<span class="text-blue-400">import</span> {'{Tipex}'} <span class="text-blue-400">from</span> <span
                class="text-green-400">&quot;<span
         class="text-amber-400">@friendofsvelte/tipex</span>&quot;</span>;
+<span class="text-blue-400">import</span> <span class="text-green-400">"@friendofsvelte/tipex/styles/app.css"</span>;
 <span class="text-blue-400">import</span> <span class="text-green-400">"@friendofsvelte/tipex/styles/Tipex.css"</span>;
 <span class="text-blue-400">import</span> <span class="text-green-400">"@friendofsvelte/tipex/styles/ProseMirror.css"</span>;
 <span class="text-blue-400">import</span> <span class="text-green-400">"@friendofsvelte/tipex/styles/Controls.css"</span>;

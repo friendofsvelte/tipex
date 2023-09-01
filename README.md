@@ -36,6 +36,8 @@ Import the component and use it in your component.
        class="h-[70vh] border border-neutral-200 dark:border-neutral-700 w-full"/>
 ```
 
+![image](https://github.com/friendofsvelte/tipex/assets/42182303/6cc598f8-9cc2-46f9-92e6-39df24653aa5)
+
 > The import for`@friendofsvelte/tipex/styles/ProseMirror.css`is used to style content written in the editor. You can
 > use your own style or use the default one.
 

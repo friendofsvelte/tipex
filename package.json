@@ -1,5 +1,6 @@
 {
 	"name": "@friendofsvelte/tipex",
+	"version": "0.0.1-meta-tweak.2",
 	"keywords": [
 		"svelte",
 		"text editor",
@@ -12,7 +13,10 @@
 		"url": "https://github.com/friendofsvelte/tipex/issues"
 	},
 	"homepage": "https://tipex.pages.dev/",
-	"version": "0.0.1-meta-tweak.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/friendofsvelte/tipex.git"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",

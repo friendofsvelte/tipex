@@ -1,6 +1,6 @@
 {
 	"name": "@friendofsvelte/tipex",
-	"version": "0.0.1-meta-fixed.1",
+	"version": "0.0.1-meta-stable.1",
 	"keywords": [
 		"svelte",
 		"text editor",
@@ -24,7 +24,7 @@
 		"package": "svelte-kit sync && svelte-package && publint",
 		"prepareTipexCss": "postcss --dir ./dist/tipex/styles --config ./postcss.config.js ./dist/tipex/styles/*.css && postcss src/app.postcss -o dist/tipex/styles/app.css",
 		"packageTipex": "npm run package && npm run prepareTipexCss",
-		"prepublishOnly": "npm run package",
+		"prepublishOnly": "npm run packageTipex",
 		"test": "npm run test:integration && npm run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

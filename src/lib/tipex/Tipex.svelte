@@ -1,15 +1,20 @@
 <script lang="ts">
     import {onMount, onDestroy} from 'svelte';
-    import {Editor} from '@tiptap/core';
+    import "iconify-icon";
+    import {type AnyExtension, Editor} from '@tiptap/core';
     import StarterKit from '@tiptap/starter-kit';
     import {FloatingMenu} from "@tiptap/extension-floating-menu";
+    import {Image} from "@tiptap/extension-image";
     import {Link} from "@tiptap/extension-link";
     import {tipexEditor} from "$lib/tipex/editorStore";
     import Controls from "$lib/tipex/Controls.svelte";
     import AcceptLink from "$lib/tipex/link/AcceptLink.svelte";
     import {Placeholder} from "@tiptap/extension-placeholder";
+    import {CodeBlockLowlight} from "@tiptap/extension-code-block-lowlight";
+    import {lowlight} from "lowlight";
 
     let tipexEditorElement: HTMLDivElement;
+    let appendExtension: Array<AnyExtension> = [];
 
     onMount(() => {
         $tipexEditor = new Editor({
@@ -22,10 +27,18 @@
                         rel: 'noopener noreferrer',
                     },
                 }),
+                Image.configure({
+                    allowBase64: true,
+                }),
                 Placeholder.configure({
                     showOnlyWhenEditable: false,
                 }),
                 StarterKit.configure(),
+                CodeBlockLowlight.configure({
+                    lowlight,
+                    languageClassPrefix: 'language-',
+                    defaultLanguage: 'plaintext'
+                }),
                 FloatingMenu.configure({
                     pluginKey: 'floatingMenuLinkEdit',
                     element: editLinkElement,
@@ -41,6 +54,7 @@
                         }
                     },
                 }),
+                ...appendExtension
             ],
             content: htmlContent as string,
             onTransaction() {

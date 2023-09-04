@@ -1,18 +1,5 @@
 <script lang="ts">
-    import {
-        faBold,
-        faCode,
-        faCopy,
-        faItalic,
-        faParagraph, faSave,
-        faSpinner,
-        faLink
-    } from "@fortawesome/free-solid-svg-icons";
-    import Fa from "svelte-fa";
-    import {tipexEditor, isLoading} from "$lib/tipex/editorStore";
-    import ApplyLink from "$lib/tipex/link/ApplyLink.svelte";
-
-    export let openLinkEditMode = false;
+    import {tipexEditor, utilityButtonsComponent} from "$lib/tipex/editorStore";
 </script>
 
 
@@ -41,7 +28,7 @@
                         class="edit-button edit-btn-hp"
                         class:active={$tipexEditor?.isActive('paragraph')}
                 >
-                    <Fa icon={faParagraph}/>
+                    <iconify-icon icon="fa6-solid:paragraph"/>
                 </button>
 
                 <button
@@ -49,7 +36,7 @@
                         class="edit-button edit-btn-bold"
                         class:active={$tipexEditor?.isActive('bold')}
                 >
-                    <Fa icon={faBold}/>
+                    <iconify-icon icon="fa6-solid:bold"/>
                 </button>
 
                 <button
@@ -57,7 +44,7 @@
                         class="edit-button edit-btn-italic"
                         class:active={$tipexEditor?.isActive('italic')}
                 >
-                    <Fa icon={faItalic}/>
+                    <iconify-icon icon="fa6-solid:italic"/>
                 </button>
 
                 <button
@@ -65,42 +52,15 @@
                         class="edit-button edit-btn-code"
                         class:active={$tipexEditor?.isActive('code')}
                 >
-                    <Fa icon={faCode}/>
+                    <iconify-icon icon="fa6-solid:code"/>
                 </button>
 
             </div>
             <div class="flex gap-2">
-                <button
-                        on:click={() => openLinkEditMode=!openLinkEditMode}
-                        class="action-button w-12 click-effect"
-                        class:active={openLinkEditMode}
-                >
-                    <Fa icon={faLink}/>
-                </button>
-
-                {#if !openLinkEditMode}
-                    <!-- Copy HTML -->
-                    <button
-                            type="button"
-                            class="action-button w-12 click-effect"
-                            on:click={() => {
-                                    navigator.clipboard.writeText($tipexEditor?.getHTML() || '');
-                                    $tipexEditor?.chain().focus().run();
-                            }}>
-                        <Fa icon="{faCopy}"/>
-                    </button>
-
-                    <!-- Submit Button -->
-                    <button
-                            type="submit"
-                            class="action-button w-12 click-effect"
-                    >
-                        <Fa icon={$isLoading ? faSpinner : faSave} spin={$isLoading}/>
-                    </button>
+                {#if $utilityButtonsComponent !== undefined}
+                    <svelte:component this={$utilityButtonsComponent}/>
                 {/if}
-
             </div>
         </div>
-        <ApplyLink bind:openLinkEditMode/>
     </div>
 {/if}

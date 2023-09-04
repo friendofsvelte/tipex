@@ -1,6 +1,6 @@
 {
 	"name": "@friendofsvelte/tipex",
-	"version": "0.0.1-meta-stable.1",
+	"version": "0.0.1-meta.3",
 	"keywords": [
 		"svelte",
 		"text editor",
@@ -81,11 +81,16 @@
 		"@fortawesome/free-solid-svg-icons": "^6.4.2",
 		"@sveltejs/adapter-cloudflare": "^2.3.3",
 		"@tiptap/core": "^2.1.7",
+		"@tiptap/extension-code-block": "^2.1.7",
+		"@tiptap/extension-code-block-lowlight": "^2.1.7",
 		"@tiptap/extension-floating-menu": "^2.0.4",
+		"@tiptap/extension-image": "^2.1.7",
 		"@tiptap/extension-link": "^2.0.2",
 		"@tiptap/extension-placeholder": "^2.1.7",
 		"@tiptap/pm": "^2.1.7",
 		"@tiptap/starter-kit": "^2.1.7",
+		"iconify-icon": "^1.0.8",
+		"lowlight": "^2.9.0",
 		"svelte-fa": "^3.0.4"
 	}
 }

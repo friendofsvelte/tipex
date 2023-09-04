@@ -1,9 +1,7 @@
 <script>
     import {tipexEditor} from "$lib/tipex/editorStore";
-    import {faTimes} from "@fortawesome/free-solid-svg-icons";
-    import Fa from "svelte-fa";
 
-    export let openLinkEditMode = false;
+    export let enableLinkEdit = false;
     let linkInput = null;
 
     function applyLinkAndSave() {
@@ -14,15 +12,15 @@
             || linkInput.value.startsWith('/');
         if (linkInput.value && isValidURL) {
             $tipexEditor?.commands.setLink({ href: linkInput.value });
-            openLinkEditMode = false;
+            enableLinkEdit = false;
         }
     }
 </script>
 
-{#if openLinkEditMode}
+{#if enableLinkEdit}
     <div class="backdrop-filter backdrop-blur-sm rounded-md ml-auto w-full">
         <div class="flex gap-2 h-full w-full">
-            <div class="w-full bg-gray-700 text-gray-200 rounded-md py-0 flex items-center divide-x divide-gray-500/30">
+            <div class="link-edit-input-wrap">
                 <input
                         type="text"
                         class="bg-transparent focus:outline-0 pl-2 pr-1 w-full"
@@ -32,12 +30,12 @@
                 />
                 <button
                         type="button"
-                        class="px-2 h-full"
+                        class="px-2 h-full flex items-center"
                         on:click={() => {
-								openLinkEditMode = false;
+								enableLinkEdit = false;
 							}}
                 >
-                    <Fa icon="{faTimes}" size="xs"/>
+                    <iconify-icon icon="fa6-solid:xmark"></iconify-icon>
                 </button>
             </div>
 

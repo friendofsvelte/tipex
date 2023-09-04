@@ -16,3 +16,9 @@
     @apply h-6 w-6;
 
 }
+
+.link-edit-input-wrap {
+    @apply w-full rounded-md py-0;
+    @apply flex items-center divide-x dark:divide-gray-500/30 divide-gray-300;
+    @apply bg-gray-200 dark:bg-gray-700 text-gray-950 dark:text-gray-200;
+}

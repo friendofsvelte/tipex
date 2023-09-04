@@ -7,7 +7,8 @@
 <span class="text-blue-400">import</span> <span class="text-green-400">"@friendofsvelte/tipex/styles/ProseMirror.css"</span>;
 <span class="text-blue-400">import</span> <span class="text-green-400">"@friendofsvelte/tipex/styles/Controls.css"</span>;
 <span class="text-blue-400">import</span> <span class="text-green-400">"@friendofsvelte/tipex/styles/EditLink.css"</span>;
-<span class="text-blue-400">import</span> <span class="text-green-400">"@friendofsvelte/tipex/styles/Tipex.css"</span>;
+<span class="text-blue-400">import</span> <span class="text-green-400">"@friendofsvelte/tipex/styles/CodeBlock.css"</span>; <span
+        class="text-gray-400">// for code block syntax highlighting</span>
 
 <span class="text-blue-400">let</span> htmlContent = <span class="text-green-400">`
 &lt;p&gt;This &lt;a target="_blank" rel="noopener noreferrer" href=""&gt;content&lt;/a&gt; is written by

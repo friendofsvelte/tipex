@@ -1,7 +1,7 @@
 
 .tipex-editor {
     @apply flex flex-col;
-    @apply gap-4;
+    @apply gap-0;
     @apply dark:bg-neutral-900 bg-neutral-50;
     @apply rounded-md;
     @apply pt-2 py-0 mb-6 mt-7;
@@ -11,6 +11,8 @@
 .tipex-editor .tipex-content-section {
     @apply px-0.5 py-0.5;
     @apply h-full;
+
+    @apply overflow-y-auto;
 }
 
 .tipex-editor.isEditorFocused.focusOnEdit {

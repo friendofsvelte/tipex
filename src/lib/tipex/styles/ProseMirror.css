@@ -6,7 +6,8 @@
 }
 
 .tipex-content-section .ProseMirror pre {
-    @apply bg-gray-800 text-blue-300;
+    @apply bg-gray-200 text-blue-800 text-sm;
+    @apply dark:bg-gray-800 dark:text-blue-300;
     @apply p-2;
     @apply overflow-x-hidden;
     @apply mb-3;
@@ -14,7 +15,7 @@
 
 .tipex-content-section .ProseMirror code {
     @apply bg-gray-200 text-blue-800;
-    @apply dark:bg-gray-800 dark:text-blue-800;
+    @apply dark:bg-gray-800 dark:text-blue-300;
     @apply p-1 rounded;
 }
 
@@ -31,6 +32,11 @@
 .tipex-content-section .ProseMirror h3 {
     @apply text-lg font-semibold;
     @apply my-1;
+}
+
+
+.tipex-content-section .ProseMirror img[src] {
+    @apply mb-2;
 }
 
 .tipex-content-section .ProseMirror h4,

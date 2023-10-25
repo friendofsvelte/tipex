@@ -14,8 +14,17 @@
     import {utilityButtonsComponent} from "$lib/tipex/editorStore";
     import InsertUtilities from "$item/codes/utility-buttons/InsertUtilities.svelte";
     import AppendUtilities from "$item/codes/utility-buttons/AppendUtilities.svelte";
+    import {beforeUpdate} from "svelte";
 
-    utilityButtonsComponent.set(Utility);
+    beforeUpdate(()=>{
+        if ($utilityButtonsComponent) {
+            new Utility({
+                target: $utilityButtonsComponent,
+                props: {
+                }
+            })
+        }
+    })
 
     let htmlContent = `
     <p>This <strong>content</strong> is written by

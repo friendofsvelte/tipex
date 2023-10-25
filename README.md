@@ -75,7 +75,13 @@ import UtilityButtons from "path-to/UtilityButtons.svelte";
 import {utilityButtonsComponent} from "@friendofsvelte/tipex";
 
 // Set the Utility component in utilityButtonsComponent
-utilityButtonsComponent.set(Utility);
+if ($utilityButtonsComponent) {
+    new Utility({
+        target: $utilityButtonsComponent,
+        props: {
+        }
+    })
+}
 ```
 
 ### Append new buttons between

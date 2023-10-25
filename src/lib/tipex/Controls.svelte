@@ -56,10 +56,7 @@
                 </button>
 
             </div>
-            <div class="flex gap-2">
-                {#if $utilityButtonsComponent !== undefined}
-                    <svelte:component this={$utilityButtonsComponent}/>
-                {/if}
+            <div class="flex gap-2" bind:this={$utilityButtonsComponent}>
             </div>
         </div>
     </div>

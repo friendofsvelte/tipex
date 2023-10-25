@@ -6,34 +6,13 @@
     import "$lib/tipex/styles/Tipex.css";
     import "$lib/tipex/styles/CodeBlock.css";
 
-    import UseTipex from "$item/codes/UseTipex.svelte";
-    import InstallTipex from "$item/codes/InstallTipex.svelte";
+    import UseTipex from "$item/codex/UseTipex.svelte";
     import PropsTable from "$item/PropsTable.svelte";
-    import AccessEditor from "$item/codes/AccessEditor.svelte";
+    import AccessEditor from "$item/codex/AccessEditor.svelte";
     import Utility from "$lib/tipex/Utility.svelte";
-    import {utilityButtonsComponent} from "$lib/tipex/editorStore";
-    import InsertUtilities from "$item/codes/utility-buttons/InsertUtilities.svelte";
-    import AppendUtilities from "$item/codes/utility-buttons/AppendUtilities.svelte";
-    import {beforeUpdate} from "svelte";
-
-    beforeUpdate(()=>{
-        if ($utilityButtonsComponent) {
-            new Utility({
-                target: $utilityButtonsComponent,
-                props: {
-                }
-            })
-        }
-    })
-
-    let htmlContent = `
-    <p>This <strong>content</strong> is written by
-    <a target="_blank" rel="noopener noreferrer" href="http://bishwas.net/">Bishwas</a> in 2023.
-    You can edit this content and see the changes in the editor.
-    </p>
-    <p>Do you have any questions? Feel free to ask in the <a href="https://github.com/friendofsvelte/tipex"
-    target="_blank" rel="noopener noreferrer">Github repository</a>.</p>
-    `;
+    import {Highlight} from "svelte-highlight";
+    import {typescript} from "svelte-highlight/languages";
+    import codes, {access} from "$item/codes";
 
 </script>
 
@@ -65,22 +44,26 @@
         them from the intricacies of underlying technologies, style management, and related complexities.
     </p>
 
-    <Tipex htmlContent={htmlContent}
+    <Tipex htmlContent={codes.htmlContent}
            style="margin-top: 1rem; margin-bottom: 0rem;"
-           class="h-[70vh] border border-neutral-200 dark:border-neutral-700 w-full shadow-xl"/>
+           class="h-[70vh] border border-neutral-200 dark:border-neutral-700 w-full shadow-xl">
+        <svelte:fragment slot="utilities">
+            <Utility/>
+        </svelte:fragment>
+    </Tipex>
 
     <h2 class="mt-8">Installation</h2>
     <p>
         Install the package from <a href="https://www.npmjs.com/package/@friendofsvelte/tipex"
                                     target="_blank" rel="noopener noreferrer">NPM</a>.
     </p>
-    <InstallTipex/>
+    <Highlight language={typescript} code={codes.install}/>
 
     <h2 class="mt-8">Usage</h2>
     <p>
         Import the component and use it in your component.
     </p>
-    <UseTipex/>
+    <Highlight language={typescript} code={codes.usage}/>
 
     <blockquote class="mt-2">
         <p>
@@ -99,7 +82,7 @@
     <p>
         You can access the editor instance via:
     </p>
-    <AccessEditor/>
+    <Highlight language={typescript} code={codes.access}/>
     <p>
         The editor instance is stored in a store. You can use it to access the editor instance
         from anywhere in your app.
@@ -121,14 +104,16 @@
         </p>
     </div>
     <h3 class="mt-8">Insert a set of buttons</h3>
-    <InsertUtilities/>
+    <Highlight language={typescript} code={codes.insertUtils}/>
+
 
     <h3 class="mt-8">Append new buttons between</h3>
     <p>
         To append new buttons you can use the <code>Utility.svelte</code> component, it has a <code>slot</code> for you
         to insert your buttons.
     </p>
-    <AppendUtilities/>
+    <Highlight language={typescript} code={codes.appendUtils}/>
+
 
     <h2 class="mt-8">Image Upload</h2>
     <p>

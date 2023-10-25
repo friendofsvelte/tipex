@@ -74,30 +74,13 @@ Utility buttons consist of `Copy`, `Link` and `Save` buttons. You can either app
 import UtilityButtons from "path-to/UtilityButtons.svelte";
 import {utilityButtonsComponent} from "@friendofsvelte/tipex";
 
-// Set the Utility component in utilityButtonsComponent
-if ($utilityButtonsComponent) {
-    new Utility({
-        target: $utilityButtonsComponent,
-        props: {
-        }
-    })
-}
-```
-
-### Append new buttons between
-
-To append new buttons you can use the `Utility.svelte` component, it has a `slot` for you to insert your buttons.
-
-```sveltehtml
-<script>
-    import Utility from "@friendofsvelte/tipex";
-    // in your svelte code
-</script>
-<Utility> // new component
-    // your appended utility buttons
-</Utility>
-
-// Insert this new component to to utilityButtonsComponent using utilityButtonsComponent.set()
+<Tipex htmlContent={htmlContent}
+       style="margin-top: 1rem; margin-bottom: 0rem;"
+       class="h-[70vh] border border-neutral-200 dark:border-neutral-700 w-full shadow-xl">
+    <svelte:fragment slot="utilities">
+        <Utility/>
+    </svelte:fragment>
+</Tipex>
 ```
 
 Image Upload

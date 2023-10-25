@@ -1,6 +1,6 @@
 {
 	"name": "@friendofsvelte/tipex",
-	"version": "0.0.1-meta-stable.2",
+	"version": "0.0.1-meta-stable.4",
 	"keywords": [
 		"svelte",
 		"text editor",
@@ -49,6 +49,7 @@
 		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
+		"svelte-highlight": "^7.4.1",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",

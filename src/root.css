@@ -8,11 +8,14 @@ a[href^="http"] {
 }
 
 pre {
-    @apply bg-neutral-100 dark:bg-neutral-800;
     @apply rounded-md;
-    @apply p-4;
     @apply overflow-x-auto;
     @apply whitespace-pre-wrap;
+    @apply border border-neutral-700 shadow;
+}
+
+pre > code.hljs {
+    @apply bg-neutral-100 dark:bg-neutral-800;
 }
 
 code {

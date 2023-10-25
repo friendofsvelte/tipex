@@ -85,7 +85,11 @@
 
 <div class="tipex-editor {className}" class:isEditorFocused {style} class:focusOnEdit>
     <div class="tipex-content-section" bind:this={tipexEditorElement}></div>
-    <Controls/>
+    <Controls>
+        <div class="flex gap-2">
+            <slot name="utilities"/>
+        </div>
+    </Controls>
 </div>
 
 <input type="hidden" name="htmlContent" value={$tipexEditor?.getHTML()}/>

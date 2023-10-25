@@ -56,8 +56,7 @@
                 </button>
 
             </div>
-            <div class="flex gap-2" bind:this={$utilityButtonsComponent}>
-            </div>
+            <slot/>
         </div>
     </div>
 {/if}

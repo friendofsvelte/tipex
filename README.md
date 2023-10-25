@@ -17,7 +17,6 @@ Import the component and use it in your component.
 ```sveltehtml
 <script>
 import {Tipex} from "@friendofsvelte/tipex";
-import "@friendofsvelte/tipex/styles/app.css";
 import "@friendofsvelte/tipex/styles/Tipex.css";
 import "@friendofsvelte/tipex/styles/ProseMirror.css";
 import "@friendofsvelte/tipex/styles/Controls.css";

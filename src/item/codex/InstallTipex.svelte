@@ -1,1 +1,0 @@
-<pre class="mt-2"><code><span class="text-blue-400">npm</span> install &quot;<span class="text-amber-400">@friendofsvelte/tipex</span>&quot;;</code></pre>

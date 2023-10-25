@@ -6,13 +6,11 @@
     import "$lib/tipex/styles/Tipex.css";
     import "$lib/tipex/styles/CodeBlock.css";
 
-    import UseTipex from "$item/codex/UseTipex.svelte";
     import PropsTable from "$item/PropsTable.svelte";
-    import AccessEditor from "$item/codex/AccessEditor.svelte";
     import Utility from "$lib/tipex/Utility.svelte";
     import {Highlight} from "svelte-highlight";
     import {typescript} from "svelte-highlight/languages";
-    import codes, {access} from "$item/codes";
+    import codes from "$item/codes";
 
 </script>
 

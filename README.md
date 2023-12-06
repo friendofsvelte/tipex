@@ -22,6 +22,7 @@ import "@friendofsvelte/tipex/styles/ProseMirror.css";
 import "@friendofsvelte/tipex/styles/Controls.css";
 import "@friendofsvelte/tipex/styles/EditLink.css";
 import "@friendofsvelte/tipex/styles/CodeBlock.css"; // for code block syntax highlighting
+import "@friendofsvelte/tipex/styles/app.css"; // if you don't have tailwindcss in your project, you should import this file
 
 let htmlContent = `
 <p>This <a target="_blank" rel="noopener noreferrer" href="">content</a> is written by

@@ -1,10 +1,10 @@
-pre code.hljs {
+.tipex-editor pre code.hljs {
     display: block;
     overflow-x: auto;
     padding: 1em
 }
 
-code.hljs {
+.tipex-editor code.hljs {
     padding: 3px 5px
 }
 
@@ -18,72 +18,72 @@ code.hljs {
   Outdated base version: https://github.com/primer/github-syntax-dark
   Current colors taken from GitHub's CSS
 */
-.hljs {
+.tipex-editor .hljs {
     color: #c9d1d9;
     background: #0d1117
 }
 
-.hljs-doctag, .hljs-keyword, .hljs-meta .hljs-keyword, .hljs-template-tag, .hljs-template-variable, .hljs-type, .hljs-variable.language_ {
+.tipex-editor .hljs-doctag, .tipex-editor .hljs-keyword, .tipex-editor .hljs-meta .tipex-editor .hljs-keyword, .tipex-editor .hljs-template-tag, .tipex-editor .hljs-template-variable, .tipex-editor .hljs-type, .tipex-editor .hljs-variable.language_ {
     color: #ff7b72
 }
 
-.hljs-title, .hljs-title.class_, .hljs-title.class_.inherited__, .hljs-title.function_ {
+.tipex-editor .hljs-title, .tipex-editor .hljs-title.class_, .tipex-editor .hljs-title.class_.inherited__, .tipex-editor .hljs-title.function_ {
     color: #d2a8ff
 }
 
-.hljs-attr, .hljs-attribute, .hljs-literal, .hljs-meta, .hljs-number, .hljs-operator, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id, .hljs-variable {
+.tipex-editor .hljs-attr, .tipex-editor .hljs-attribute, .tipex-editor .hljs-literal, .tipex-editor .hljs-meta, .tipex-editor .hljs-number, .tipex-editor .hljs-operator, .tipex-editor .hljs-selector-attr, .tipex-editor .hljs-selector-class, .tipex-editor .hljs-selector-id, .tipex-editor .hljs-variable {
     color: #79c0ff
 }
 
-.xml.javascript.hljs-literal {
+.xml.javascript.tipex-editor .hljs-literal {
     color: #943ffc
 }
 
-.hljs-meta .hljs-string, .hljs-regexp, .hljs-string {
+.tipex-editor .hljs-meta .tipex-editor .hljs-string, .tipex-editor .hljs-regexp, .tipex-editor .hljs-string {
     color: #ffe98f
 }
 
-.hljs-built_in, .hljs-symbol {
+.tipex-editor .hljs-built_in, .tipex-editor .hljs-symbol {
     color: #ffa657
 }
 
-.hljs-code, .hljs-comment, .hljs-formula {
+.tipex-editor .hljs-code, .tipex-editor .hljs-comment, .tipex-editor .hljs-formula {
     color: #8b949e
 }
 
-.hljs-name, .hljs-quote, .hljs-selector-pseudo, .hljs-selector-tag {
+.tipex-editor .hljs-name, .tipex-editor .hljs-quote, .tipex-editor .hljs-selector-pseudo, .tipex-editor .hljs-selector-tag {
     color: #7ee787
 }
 
-.hljs-subst {
+.tipex-editor .hljs-subst {
     color: #c9d1d9
 }
 
-.hljs-section {
+.tipex-editor .hljs-section {
     color: #1f6feb;
     font-weight: 700
 }
 
-.hljs-bullet {
+.tipex-editor .hljs-bullet {
     color: #f2cc60
 }
 
-.hljs-emphasis {
+.tipex-editor .hljs-emphasis {
     color: #c9d1d9;
     font-style: italic
 }
 
-.hljs-strong {
+.tipex-editor .hljs-strong {
     color: #c9d1d9;
     font-weight: 700
 }
 
-.hljs-addition {
+.tipex-editor .hljs-addition {
     color: #aff5b4;
     background-color: #033a16
 }
 
-.hljs-deletion {
+.tipex-editor .hljs-deletion {
     color: #ffdcd7;
     background-color: #67060c
 }

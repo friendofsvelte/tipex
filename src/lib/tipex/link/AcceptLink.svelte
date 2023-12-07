@@ -32,17 +32,17 @@
     });
 </script>
 
-<div class="link-hover-anchor" bind:this={editLinkElement}
+<div class="tipex-link-hover-anchor" bind:this={editLinkElement}
      transition:fade
      style="display: {hideAnchorControl ? 'none' : 'flex'}">
     <!-- Open in new window: modifiedHoverAnchorStatus.dom.href -->
-    <button type="button" class="link-hover-anchor-go-to link-hover" on:click={openLink}>
+    <button type="button" class="tipex-link-hover-anchor-go-to tipex-link-hover" on:click={openLink}>
         <Fa icon={faExternalLink}/>
     </button>
-    <button class="link-hover-anchor-accept link-hover" on:click={acceptLink}>
+    <button class="tipex-link-hover-anchor-accept tipex-link-hover" on:click={acceptLink}>
         <Fa icon={faCheck}/>
     </button>
-    <button class="link-hover-anchor-cancel link-hover"
+    <button class="tipex-link-hover-anchor-cancel tipex-link-hover"
             on:click={cancelLink}>
         <Fa icon={faTimes}/>
     </button>

@@ -1,5 +1,5 @@
 
-.link-hover-anchor {
+.tipex-link-hover-anchor {
     @apply rounded-full shadow;
     @apply text-gray-600 dark:text-gray-400;
     @apply text-xs p-0.5;
@@ -8,7 +8,7 @@
     @apply dark:bg-neutral-800 bg-neutral-100;
 }
 
-.link-hover {
+.tipex-link-hover {
     @apply flex flex-row items-center justify-center;
     @apply border dark:border-neutral-700 border-neutral-200;
     @apply rounded-full;
@@ -17,7 +17,7 @@
 
 }
 
-.link-edit-input-wrap {
+.tipex-link-edit-input-wrap {
     @apply w-full rounded-md py-0;
     @apply flex items-center divide-x dark:divide-gray-500/30 divide-gray-300;
     @apply bg-gray-200 dark:bg-gray-700 text-gray-950 dark:text-gray-200;

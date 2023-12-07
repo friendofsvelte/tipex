@@ -20,7 +20,7 @@
 {#if enableLinkEdit}
     <div class="backdrop-filter backdrop-blur-sm rounded-md ml-auto w-full">
         <div class="flex gap-2 h-full w-full">
-            <div class="link-edit-input-wrap">
+            <div class="tipex-link-edit-input-wrap">
                 <input
                         type="text"
                         class="bg-transparent focus:outline-0 pl-2 pr-1 w-full"

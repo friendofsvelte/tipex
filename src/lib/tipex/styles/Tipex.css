@@ -8,7 +8,7 @@
     @apply duration-200;
 }
 
-.tipex-editor .tipex-content-section {
+.tipex-editor-section {
     @apply px-0.5 py-0.5;
     @apply h-full;
 
@@ -17,4 +17,8 @@
 
 .tipex-editor.isEditorFocused.focusOnEdit {
     @apply outline-none ring-4 ring-blue-500 border-transparent;
+}
+
+.tipex-utilities {
+    @apply flex gap-2;
 }

@@ -84,9 +84,9 @@
 <AcceptLink bind:editLinkElement/>
 
 <div class="tipex-editor {className}" class:isEditorFocused {style} class:focusOnEdit>
-    <div class="tipex-content-section" bind:this={tipexEditorElement}></div>
+    <div class="tipex-editor-section" bind:this={tipexEditorElement}></div>
     <Controls>
-        <div class="flex gap-2">
+        <div class="tipex-utilities">
             <slot name="utilities"/>
         </div>
     </Controls>

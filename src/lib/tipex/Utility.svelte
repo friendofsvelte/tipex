@@ -1,6 +1,6 @@
 <script>
     import ApplyLink from "$lib/tipex/link/ApplyLink.svelte";
-    import {tipexEditor} from "$lib/tipex/editorStore";
+    import {tipexEditor} from "$lib/tipex/editor_store";
 
     let enableLinkEdit = false;
 </script>

@@ -1,5 +1,5 @@
 <script>
-    import {tipexEditor} from "$lib/tipex/editorStore";
+    import {tipexEditor} from "$lib/tipex/editor_store";
 
     export let enableLinkEdit = false;
     let linkInput = null;

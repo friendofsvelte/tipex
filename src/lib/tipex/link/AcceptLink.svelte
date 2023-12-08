@@ -4,7 +4,7 @@
     import {faCheck, faExternalLink, faTimes} from "@fortawesome/free-solid-svg-icons";
     import {Editor} from "@tiptap/core";
     import {onMount} from "svelte";
-    import {tipexEditor} from "$lib/tipex/editorStore.js";
+    import {tipexEditor} from "$lib/tipex/editor_store";
 
     function acceptLink() {
         if ($tipexEditor instanceof Editor) {

@@ -4,14 +4,13 @@
     @apply gap-0;
     @apply dark:bg-neutral-900 bg-neutral-50;
     @apply rounded-md;
-    @apply pt-2 py-0 mb-6 mt-7;
+    @apply pt-2 py-0;
     @apply duration-200;
 }
 
 .tipex-editor-section {
     @apply px-0.5 py-0.5;
     @apply h-full;
-
     @apply overflow-y-auto;
 }
 

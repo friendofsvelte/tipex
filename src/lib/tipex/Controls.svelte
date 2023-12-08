@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {tipexEditor} from "$lib/tipex/editorStore";
+    import {tipexEditor} from "$lib/tipex/editor_store";
 </script>
 
 

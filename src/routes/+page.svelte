@@ -44,7 +44,7 @@
 
     <Tipex htmlContent={codes.htmlContent}
            style="margin-top: 1rem; margin-bottom: 0rem;"
-           class="h-[70vh] border border-neutral-200 dark:border-neutral-700 w-full shadow-xl">
+           className="h-[70vh] border border-neutral-200 dark:border-neutral-700 w-full shadow-xl">
         <svelte:fragment slot="utilities">
             <Utility/>
         </svelte:fragment>

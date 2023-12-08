@@ -2,7 +2,7 @@
 .tipex-controller {
     @apply flex flex-col justify-between md:flex-row gap-2 sticky bottom-0 z-10 py-2 px-3;
     @apply rounded-b-md backdrop-filter backdrop-blur-sm;
-    @apply bg-neutral-300 dark:bg-gray-800/80;
+    @apply bg-neutral-200 dark:bg-gray-800/80;
 }
 
 .tipex-controller-wrapper {
@@ -19,7 +19,7 @@
 }
 
 .tipex-edit-button {
-    @apply bg-neutral-400 text-neutral-700;
+    @apply bg-neutral-100 text-neutral-700;
     @apply dark:bg-gray-800 dark:text-gray-200;
     @apply border dark:border-gray-700 border-neutral-400;
     @apply dark:hover:bg-gray-700 hover:bg-neutral-200/70;

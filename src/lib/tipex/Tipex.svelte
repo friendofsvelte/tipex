@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {onMount, onDestroy} from 'svelte';
+    import {onMount, onDestroy, SvelteComponent} from 'svelte';
     import "iconify-icon";
     import {Editor} from '@tiptap/core';
     import StarterKit from '@tiptap/starter-kit';
@@ -59,6 +59,10 @@
     export let htmlContent = '';
     export let className = '';
     export let style = '';
+    export let focusOnEdit = true;
+    export let controlElement = Controls;
+    export let headComponent: undefined | typeof SvelteComponent;
+    export let foolComponent: undefined | typeof SvelteComponent;
 </script>
 
 {#if 'floatingMenu' in extensions}
@@ -66,13 +70,21 @@
 {/if}
 
 <div class="tipex-editor {className}"
-     {style} class:isEditorFocused>
-    <div class="tipex-editor-section" bind:this={tipexEditorElement}></div>
-    <Controls>
-        <div class="tipex-utilities">
-            <slot name="utilities"/>
-        </div>
-    </Controls>
+     {style} class:isEditorFocused class:focusOnEdit>
+    <div class="tipex-editor-wrap">
+        {#if headComponent}
+            <svelte:component this={headComponent}/>
+        {/if}
+        <div class="tipex-editor-section" bind:this={tipexEditorElement}></div>
+        {#if controlElement}
+            <svelte:component this={controlElement}>
+                <div class="tipex-utilities">
+                    <slot name="utilities"/>
+                </div>
+            </svelte:component>
+        {/if}
+        {#if foolComponent}
+            <svelte:component this={foolComponent}/>
+        {/if}
+    </div>
 </div>
-
-<input type="hidden" name="htmlContent" value={$tipexEditor?.getHTML()}/>

@@ -1,12 +1,13 @@
 <script lang="ts">
-    import {onMount, onDestroy, SvelteComponent} from 'svelte';
+    import {onMount, onDestroy} from 'svelte';
+    import type {ComponentType} from 'svelte';
     import "iconify-icon";
     import {Editor} from '@tiptap/core';
     import StarterKit from '@tiptap/starter-kit';
     import {FloatingMenu} from "@tiptap/extension-floating-menu";
-    import {tipexEditor} from "$lib/tipex/editor_store";
     import Controls from "$lib/tipex/Controls.svelte";
     import AcceptLink from "$lib/tipex/link/AcceptLink.svelte";
+    import {tipexEditor} from "$lib/tipex/editor_store";
     import {defaultExtensions} from "$lib/tipex/default";
 
     let tipexEditorElement: HTMLDivElement;
@@ -59,8 +60,8 @@
     export let style = '';
     export let focusOnEdit = true;
     export let controlElement = Controls;
-    export let headComponent: undefined | null | SvelteComponent;
-    export let foolComponent: undefined | null | SvelteComponent;
+    export let headComponent: ComponentType | null = null;
+    export let foolComponent: ComponentType | null = null;
 
     let editorsParent: HTMLDivElement;
     export let isEditorFocused: boolean = false;
@@ -87,6 +88,8 @@
     <div class="tipex-editor-wrap">
         {#if headComponent}
             <svelte:component this={headComponent}/>
+        {:else}
+            <slot name="headComponent"/>
         {/if}
         <div class="tipex-editor-section" bind:this={tipexEditorElement}></div>
         {#if controlElement}
@@ -98,6 +101,8 @@
         {/if}
         {#if foolComponent}
             <svelte:component this={foolComponent}/>
+        {:else}
+            <slot name="foolComponent"/>
         {/if}
     </div>
 </div>

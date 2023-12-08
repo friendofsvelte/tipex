@@ -98,7 +98,7 @@
     @apply font-bold;
 }
 
-.tipex-editor-section .ProseMirror p.is-empty::before {
+.tipex-editor-section .ProseMirror .is-empty::before {
     content: attr(data-placeholder);
     float: left;
     height: 0;

@@ -14,7 +14,7 @@
     import {lowlight} from "lowlight";
 
     let tipexEditorElement: HTMLDivElement;
-    let appendExtension: Array<AnyExtension> = [];
+    export let appendExtension: Array<AnyExtension> = [];
 
     onMount(() => {
         $tipexEditor = new Editor({

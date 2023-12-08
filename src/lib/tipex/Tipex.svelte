@@ -54,15 +54,25 @@
         }
     });
 
-    $: isEditorFocused = !!($tipexEditor && 'focused' in $tipexEditor.view && $tipexEditor.view['focused']);
-
     export let htmlContent = '';
     export let className = '';
     export let style = '';
     export let focusOnEdit = true;
     export let controlElement = Controls;
-    export let headComponent: undefined | typeof SvelteComponent;
-    export let foolComponent: undefined | typeof SvelteComponent;
+    export let headComponent: undefined | null | SvelteComponent;
+    export let foolComponent: undefined | null | SvelteComponent;
+
+    let editorsParent: HTMLDivElement;
+    export let isEditorFocused: boolean = false;
+
+    onMount(async () => {
+        const onFocusChange = function () {
+            isEditorFocused = editorsParent.contains(document.activeElement);
+        }
+        onFocusChange();
+        document.addEventListener('focusin', onFocusChange);
+        document.addEventListener('focusout', onFocusChange);
+    });
 </script>
 
 {#if 'floatingMenu' in extensions}
@@ -70,7 +80,10 @@
 {/if}
 
 <div class="tipex-editor {className}"
-     {style} class:isEditorFocused class:focusOnEdit>
+     bind:this={editorsParent}
+     {style}
+     class:isEditorFocused
+     class:focusOnEdit>
     <div class="tipex-editor-wrap">
         {#if headComponent}
             <svelte:component this={headComponent}/>

@@ -10,7 +10,7 @@
 
 .tipex-editor-wrap {
     @apply flex flex-col;
-    @apply gap-0 h-full;
+    @apply gap-0 h-full w-full;
 }
 
 .tipex-editor-section {

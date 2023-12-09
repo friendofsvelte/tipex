@@ -5,10 +5,10 @@
     import {Editor} from '@tiptap/core';
     import StarterKit from '@tiptap/starter-kit';
     import {FloatingMenu} from "@tiptap/extension-floating-menu";
-    import Controls from "$lib/tipex/Controls.svelte";
+    import DefaultControls from "$lib/tipex/DefaultControls.svelte";
     import AcceptLink from "$lib/tipex/link/AcceptLink.svelte";
-    import {tipexEditor} from "$lib/tipex/editor_store";
-    import {defaultExtensions} from "$lib/tipex/default";
+    import {tipexEditor} from "./editor_store";
+    import {defaultExtensions} from "./default";
 
     let tipexEditorElement: HTMLDivElement;
     let editLinkElement: HTMLDivElement;
@@ -59,9 +59,9 @@
     export let className = '';
     export let style = '';
     export let focusOnEdit = true;
-    export let controlElement = Controls;
+    export let controlElement: ComponentType | null = null;
     export let headComponent: ComponentType | null = null;
-    export let foolComponent: ComponentType | null = null;
+    export let footComponent: ComponentType | null = null;
 
     let editorsParent: HTMLDivElement;
     export let isEditorFocused: boolean = false;
@@ -93,16 +93,18 @@
         {/if}
         <div class="tipex-editor-section" bind:this={tipexEditorElement}></div>
         {#if controlElement}
-            <svelte:component this={controlElement}>
+            <svelte:component this={controlElement}/>
+        {:else}
+            <DefaultControls>
                 <div class="tipex-utilities">
                     <slot name="utilities"/>
                 </div>
-            </svelte:component>
+            </DefaultControls>
         {/if}
-        {#if foolComponent}
-            <svelte:component this={foolComponent}/>
+        {#if footComponent}
+            <svelte:component this={footComponent}/>
         {:else}
-            <slot name="foolComponent"/>
+            <slot name="footComponent"/>
         {/if}
     </div>
 </div>

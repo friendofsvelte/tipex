@@ -49,7 +49,6 @@
 		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
-		"svelte-highlight": "^7.4.1",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
@@ -68,6 +67,7 @@
 		"publint": "^0.1.9",
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.3",
+		"svelte-highlight": "^7.4.1",
 		"tailwindcss": "^3.3.2",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",

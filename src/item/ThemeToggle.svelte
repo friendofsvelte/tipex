@@ -45,7 +45,7 @@
 </script>
 
 
-{#if isDarkMode !== undefined}
+{#if isDarkMode !== null}
     <button
             class="dark-mode-button group {className}"
             class:isDarkMode

@@ -6,27 +6,36 @@
 </script>
 
 <svelte:head>
-    <title>Tipex Editor | Customization</title>
+    <title>Customization | Tipex Editor</title>
+    <meta name="description"
+          content="Customize Tipex Editor, a highly customizable text editor for Svelte and SvelteKit.">
 </svelte:head>
 
 <a href="/" class="flex items-center gap-3 bg-neutral-50 dark:bg-neutral-800 px-3 py-1 rounded-lg shadow-sm w-fit">
     <iconify-icon icon="fa6-solid:house" class="text-sm"/>
     Back to Home
 </a>
-<h2 class="mt-8">In-built Utility Buttons</h2>
+
+<h1 class="mt-8">Customization</h1>
+<p>
+    As we have said, a software having customization is a software having soul. Tipex editor is highly customizable.
+    You can customize the editor to your heart's content.
+</p>
+
+<h2 class="mt-8" id="in-built-utility-buttons">In-built Utility Buttons</h2>
 
 <p>
     The in-built utility buttons consist of <code>Copy</code> and <code>Link</code> buttons.
 </p>
 
-<div class="flex flex-col justify-center">
+<div class="image-tab">
     <img src="https://github.com/friendofsvelte/tipex/assets/42182303/c6feb3c0-9ed8-4f9e-88d2-42b7895a72a8"
          alt="Svelte Text Editor: Tipex Editor with custom utility buttons"
-         class="w-full rounded-xl mt-2 shadow-xl"/>
+         class="w-full rounded-xl mt-2 shadow-xl border border-neutral-200 dark:border-neutral-700"/>
 
-    <p class="text-center text-sm text-neutral-600 dark:text-neutral-300">
+    <figcaption>
         Location of utility buttons in Text Editor
-    </p>
+    </figcaption>
 </div>
 <h3 class="mt-8">Insert a set of buttons</h3>
 <p>
@@ -42,7 +51,8 @@
 </p>
 <Highlight language={typescript} code={codes.appendUtils}/>
 <p>
-    Or, you can use <code>{'<svelte:fragment'}</code> to append your buttons. Make sure that <code>slot="utilities"</code>
+    Or, you can use <code>{'<svelte:fragment'}</code> to append your buttons. Make sure that
+    <code>slot="utilities"</code>
     is provided.
 </p>
 
@@ -61,21 +71,21 @@
 <h2 class="mt-8">Advanced Customization</h2>
 
 <p>
-    As we have said, a software having customization is a software having soul. Tipex editor is highly customizable.
-    You can customize the editor to your heart's content.
+    Tipex, being a highly customizable editor, allows you to customize the editor to your heart's content and
+    make it look like your own. Here's some ways you can customize the editor.
 </p>
 
-<div class="flex flex-col justify-center">
+<div class="image-tab">
     <img src="https://github.com/Bishwas-py/tipexed-editor/assets/42182303/b406527a-aaca-4a09-9e4f-09504ab95d73"
          alt="Svelte Text Editor: Advanced Customization of Tipex Editor"
-         class="w-full rounded-xl mt-2 shadow-xl"/>
+         class="w-full rounded-xl mt-2 shadow-xl border border-neutral-200 dark:border-neutral-800"/>
 
-    <p class="text-center text-sm text-neutral-600 dark:text-neutral-300">
-        Advanced Customization of Tipex Editor
-    </p>
+    <figcaption>
+        Advanced Customization of Tipex Editor, <a href="https://github.com/Bishwas-py/tipexed-editor" target="_blank">Source Code</a>
+    </figcaption>
 </div>
 
-<h3 class="mt-8">Customize the controls</h3>
+<h2 class="mt-8">Customize the controls</h2>
 
 <p>
     You can customize the controls of the editor by passing a <code>controls</code> prop to the editor.
@@ -83,3 +93,18 @@
 
 <HighlightSvelte code={advanceCodes.customizeControl}/>
 
+<h2 class="mt-8">Add custom header and footer</h2>
+
+<p>
+    You can add a header to the editor by passing a <code>headComponent</code> props to the Tipex editor. And, so
+    for the footer.
+</p>
+
+<HighlightSvelte code={advanceCodes.addHeadFootComponent}/>
+
+<p class="mt-7">
+    You can also add a header and footer with a slot. This is useful when you want to add a custom header and footer
+    without creating a new component.
+</p>
+
+<HighlightSvelte code={advanceCodes.addHeadFootComponentWithSlot}/>

@@ -2,6 +2,7 @@
     import '../app.postcss';
     import '../root.css';
     import "svelte-highlight/styles/lightfair.css";
+    import "iconify-icon";
     import {page} from "$app/stores";
     import Footer from "$item/Footer.svelte";
     import ThemeToggle from "$item/ThemeToggle.svelte";

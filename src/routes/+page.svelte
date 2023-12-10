@@ -16,6 +16,8 @@
 
 <svelte:head>
     <title>Tipex Editor - Svelte Text Editor | Friend Of Svelte</title>
+    <meta name="description"
+          content="Tipex editor, a rich text editor for Svelte, a beautiful and extremely customizable editor for Svelte.">
 </svelte:head>
 
 
@@ -104,18 +106,16 @@
 <div class="flex flex-col md:flex-row gap-2 md:gap-3 mb-2 mt-2">
     <img src="https://avatars.githubusercontent.com/u/143795012?s=200&v=4" alt="Friend Of Svelte Logo"
          class="w-12 h-12 rounded"/>
-    <div class="flex flex-col justify-center">
-        <p>
-            <a href="https://github.com/friendofsvelte" target="_blank" rel="noopener noreferrer">Friend Of
-                Svelte</a> is a
-            community driven project to help Svelte developers to find and develop awesome Svelte resources.
-        </p>
-    </div>
+    <p>
+        <a href="https://github.com/friendofsvelte" target="_blank" rel="noopener noreferrer">Friend Of
+            Svelte</a> is a
+        community driven project to help Svelte developers to find and develop awesome Svelte resources.
+    </p>
 </div>
 
 <p>
     If you like this project, you can be one of the friend by contributing to the project. Memberships are open
-    for great people like you!
+    for everyone.
 </p>
 
 <style lang="postcss">

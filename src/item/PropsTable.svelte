@@ -61,7 +61,7 @@
     <p class="text-gray-700"><strong>Note:</strong>
         The <code>headComponent</code> and <code>footComponent</code> props are
         components that are rendered inside the editor. There three components are prioritized while rendering
-        compared to their <code>slot</code> equivalent.
+        compared to their <code>slot</code> equivalent. [<a href="/customization#advanced-customization">Advanced Customization</a>]
 </blockquote>
 
 <p>

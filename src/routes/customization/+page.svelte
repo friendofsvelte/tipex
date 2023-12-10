@@ -68,7 +68,7 @@
     You can use utility customization for this. Apply the upper mentioned method to append your custom button.
 </p>
 
-<h2 class="mt-8">Advanced Customization</h2>
+<h2 class="mt-8" id="advanced-customization">Advanced Customization</h2>
 
 <p>
     Tipex, being a highly customizable editor, allows you to customize the editor to your heart's content and

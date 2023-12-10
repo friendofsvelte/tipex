@@ -1,11 +1,11 @@
-Tipex stands as an advanced rich text editor tailored for Svelte, meticulously engineered with the robust frameworks [Tiptap](https://tiptap.dev/) and [Prosemirror](https://prosemirror.net/). It empowers developers to effortlessly craft rich text editors, liberating them from the intricacies of underlying technologies, style management, and related complexities.
+Tipex stands as an advanced rich text editor tailored for Svelte, meticulously engineered with the robust frameworks [Tiptap](https://tiptap.dev/) and [Prosemirror](https://prosemirror.net/). It empowers developers to effortlessly craft rich text editors, liberating them from the intricacies of underlying technologies, style management, and related complexities.
 
 Installation
 ------------
 
-Install the package from [NPM](https://www.npmjs.com/package/@friendofsvelte/tipex).
+Install the package from [NPM](https://www.npmjs.com/package/@friendofsvelte/tipex).
 
-```shell
+```
 npm install "@friendofsvelte/tipex";
 ```
 
@@ -14,29 +14,18 @@ Usage
 
 Import the component and use it in your component.
 
-```sveltehtml
-<script>
-import {Tipex} from "@friendofsvelte/tipex";
-import "@friendofsvelte/tipex/styles/Tipex.css";
-import "@friendofsvelte/tipex/styles/ProseMirror.css";
-import "@friendofsvelte/tipex/styles/Controls.css";
-import "@friendofsvelte/tipex/styles/EditLink.css";
-import "@friendofsvelte/tipex/styles/CodeBlock.css"; // for code block syntax highlighting
-import "@friendofsvelte/tipex/styles/app.css"; // if you don't have tailwindcss in your project, you should import this file
-
-let htmlContent = `
-<p>This <a target="_blank" rel="noopener noreferrer" href="">content</a> is written by
-<a target="_blank" rel="noopener noreferrer" href="http://bishwas.net/">Bishwas</a> in 2023.
-</p>`;
+```
+<script lang="ts">
+    import {Tipex} from "@friendofsvelte/tipex";
+    export let htmlContent = `<p>This <a target="_blank" rel="noopener noreferrer" href="">content</a> is written by <a target="_blank" rel="noopener noreferrer" href="http://bishwas.net/">Bishwas</a> in 2023.</p>`;
 </script>
 
-<Tipex htmlContent="{htmlContent}"
-       style="margin-top: 1rem; margin-bottom: 0rem;"
-       class="h-[70vh] border border-neutral-200 dark:border-neutral-700 w-full"/>
-
+<Tipex htmlContent={htmlContent}
+    style="margin-top: 1rem; margin-bottom: 0;"
+    className="h-[70vh] border border-neutral-200"/>
 ```
 
-> The import for `@friendofsvelte/tipex/styles/ProseMirror.css` is used to style content written in the editor. You can use your own style or use the default one.
+> The import for `@friendofsvelte/tipex/styles/ProseMirror.css` is used to style content written in the editor. You can use your own style or use the default one. Or, remove any CSS you don't wanna use.
 
 Props
 -----
@@ -47,9 +36,15 @@ Tipex component accepts following props.
 | --- | --- | --- | --- |
 | htmlContent | string | '' | HTML content to be rendered in the editor. |
 | style | string | '' | Style to be applied to the editor. |
-| class | string | '' | Class to be applied to the editor. |
-| placeholder | string | '' | Placeholder to be shown in the editor. |
+| className | string | '' | Class to be applied to the editor. |
 | focusOnEdit | boolean | true | Focus on the editor when it is clicked to edit. |
+| controlElement | ComponentType | DefaultControls | If provided, gets rendered as a control element in the editor. |
+| headComponent | ComponentType | null | If provided, gets rendered as a head element in the editor. |
+| footComponent | ComponentType | null | If provided, gets rendered as a foot element in the editor. |
+
+> Note: The `headComponent` and `footComponent` props are components that are rendered inside the editor. There three components are prioritized while rendering compared to their `slot` equivalent. [[Advanced Customization](https://tipex.pages.dev/customization#advanced-customization)]
+
+For `controlElement`, it renders `DefaultControls.svelte` by default, where you can pass `utilities` named slot to render your own extra controls. If you want to render your own set of controls, you can pass your own component to the `controlElement` prop.
 
 Accessing Editor Instance
 -------------------------
@@ -62,44 +57,16 @@ import {tipexEditor} from '@friendofsvelte/tipex';
 
 The editor instance is stored in a store. You can use it to access the editor instance from anywhere in your app.
 
-Custom Utility Buttons
-----------------------
+Customizing Editor
+------------------
 
-Utility buttons consist of `Copy`, `Link` and `Save` buttons. You can either append new buttons between them, or insert a whole new set of `utility buttons`.
-
-![Svelte Text Editor: Tipex Editor with custom utility buttons](https://github.com/friendofsvelte/tipex/assets/42182303/c6feb3c0-9ed8-4f9e-88d2-42b7895a72a8)
-
-### Insert a set of buttons
-
-```javascript
-import UtilityButtons from "path-to/UtilityButtons.svelte";
-import {utilityButtonsComponent} from "@friendofsvelte/tipex";
-
-<Tipex htmlContent={htmlContent}
-       style="margin-top: 1rem; margin-bottom: 0rem;"
-       class="h-[70vh] border border-neutral-200 dark:border-neutral-700 w-full shadow-xl">
-    <svelte:fragment slot="utilities">
-        <Utility/>
-    </svelte:fragment>
-</Tipex>
-```
-
-Image Upload
-------------
-
-Tipex editor supports image upload. You can upload images by dragging and dropping them in the editor, or by copy pasting them from your clipboard, which is the most common way to upload images.
-
-### Custom Image Upload Tab
-
-You can add a custom tab to the image upload dialog by using the `utilityButtonsComponent` store. The store accepts a component that will be rendered in the image upload dialog.
-
-> If required do not forget to use `tipexEditor` store to access the editor instance.
+Tipex is built taking into consideration the need for customization. We believe that a software lacking customization is a software lacking soul. Tipex provides an extensive set of options to customize the editor to your heart's content. From functionality, style, to key bindings, you can customize almost everything. Visit the [customization page](https://tipex.pages.dev/customization) to learn more.
 
 About Friend Of Svelte
 ----------------------
 
 ![Friend Of Svelte Logo](https://avatars.githubusercontent.com/u/143795012?s=200&v=4)
 
-[Friend Of Svelte](https://github.com/friendofsvelte) is a community driven project to help Svelte developers to find and develop awesome Svelte resources.
+[Friend Of Svelte](https://github.com/friendofsvelte) is a community driven project to help Svelte developers to find and develop awesome Svelte resources.
 
-If you like this project, you can be one of the friend by contributing to the project. Memberships are open for great people like you!
+If you like this project, you can be one of the friend by contributing to the project. Memberships are open for everyone.

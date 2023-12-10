@@ -8,7 +8,7 @@ const config = {
 
 	plugins: [],
 
-	// darkMode: 'class' // uncomment while publishing
+	darkMode: 'class'
 };
 
 module.exports = config;

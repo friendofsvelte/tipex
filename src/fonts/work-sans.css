@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'work-sans';
+    font-style: normal;
+    font-weight: 900;
+    src: local('sans-serif'), url('./work-sans/WorkSans-Black.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: italic;
+    font-weight: 900;
+    src: local('sans-serif'), url('./work-sans/WorkSans-BlackItalic.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('sans-serif'), url('./work-sans/WorkSans-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: italic;
+    font-weight: 700;
+    src: local('sans-serif'), url('./work-sans/WorkSans-BoldItalic.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: normal;
+    font-weight: 800;
+    src: local('sans-serif'), url('./work-sans/WorkSans-ExtraBold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: italic;
+    font-weight: 800;
+    src: local('sans-serif'), url('./work-sans/WorkSans-ExtraBoldItalic.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: normal;
+    font-weight: 200;
+    src: local('sans-serif'), url('./work-sans/WorkSans-ExtraLight.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: italic;
+    font-weight: 200;
+    src: local('sans-serif'), url('./work-sans/WorkSans-ExtraLightItalic.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local('sans-serif'), url('./work-sans/WorkSans-Italic.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('sans-serif'), url('./work-sans/WorkSans-Light.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: italic;
+    font-weight: 300;
+    src: local('sans-serif'), url('./work-sans/WorkSans-LightItalic.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: normal;
+    font-weight: 500;
+    src: local('sans-serif'), url('./work-sans/WorkSans-Medium.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: italic;
+    font-weight: 500;
+    src: local('sans-serif'), url('./work-sans/WorkSans-MediumItalic.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('sans-serif'), url('./work-sans/WorkSans-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('sans-serif'), url('./work-sans/WorkSans-SemiBold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: italic;
+    font-weight: 600;
+    src: local('sans-serif'), url('./work-sans/WorkSans-SemiBoldItalic.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: normal;
+    font-weight: 100;
+    src: local('sans-serif'), url('./work-sans/WorkSans-Thin.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'work-sans';
+    font-style: italic;
+    font-weight: 100;
+    src: local('sans-serif'), url('./work-sans/WorkSans-ThinItalic.ttf') format('truetype');
+    font-display: swap;
+}

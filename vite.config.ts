@@ -5,5 +5,8 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
-	}
+	},
+	define: {
+		__VERSION__: JSON.stringify(process.env.npm_package_version),
+	},
 });

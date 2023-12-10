@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <div class="overflow-x-auto">
     <table class="table-auto w-full mt-3">
         <thead>
@@ -22,16 +25,10 @@
             <td>Style to be applied to the editor.</td>
         </tr>
         <tr>
-            <td>class</td>
+            <td>className</td>
             <td>string</td>
             <td>''</td>
             <td>Class to be applied to the editor.</td>
-        </tr>
-        <tr>
-            <td>placeholder</td>
-            <td>string</td>
-            <td>''</td>
-            <td>Placeholder to be shown in the editor.</td>
         </tr>
         <tr>
             <td>focusOnEdit</td>
@@ -39,32 +36,36 @@
             <td>true</td>
             <td>Focus on the editor when it is clicked to edit.</td>
         </tr>
-        </tbody>
+        <tr>
+            <td>controlElement</td>
+            <td>ComponentType</td>
+            <td>DefaultControls</td>
+            <td>If provided, gets rendered as a control element in the editor.</td>
+        </tr>
+        <tr>
+            <td>headComponent</td>
+            <td>ComponentType</td>
+            <td>null</td>
+            <td>If provided, gets rendered as a head element in the editor.</td>
+        </tr>
+        <tr>
+            <td>footComponent</td>
+            <td>ComponentType</td>
+            <td>null</td>
+            <td>If provided, gets rendered as a foot element in the editor.</td>
+        </tr>
     </table>
 </div>
-<style lang="postcss">
-    table {
-        @apply border-collapse;
-    }
 
-    th {
-        @apply px-4 py-2;
-        @apply text-left;
-        @apply border;
-        @apply border-neutral-200 dark:border-stone-900;
-        @apply bg-neutral-100 dark:bg-neutral-800;
-        @apply text-neutral-700 dark:text-neutral-200;
-    }
+<blockquote>
+    <p class="text-gray-700"><strong>Note:</strong>
+        The <code>headComponent</code> and <code>footComponent</code> props are
+        components that are rendered inside the editor. There three components are prioritized while rendering
+        compared to their <code>slot</code> equivalent.
+</blockquote>
 
-    td {
-        @apply px-4 py-2;
-        @apply border;
-        @apply border-neutral-300 dark:border-stone-900;
-        @apply text-neutral-700 dark:text-neutral-200;
-    }
-
-    tr {
-        @apply even:bg-neutral-100 even:dark:bg-neutral-800;
-        @apply odd:bg-neutral-200 odd:dark:bg-neutral-700;
-    }
-</style>
+<p>
+    For <code>controlElement</code>, it renders <code>DefaultControls.svelte</code> by default, where you can
+    pass <code>utilities</code> named slot to render your own extra controls. If you want to render your own
+    set of controls, you can pass your own component to the <code>controlElement</code> prop.
+</p>

@@ -4,7 +4,6 @@
     import '$lib/tipex/styles/EditLink.css';
     import '$lib/tipex/styles/ProseMirror.css';
     import "$lib/tipex/styles/Tipex.css";
-    import "$lib/tipex/styles/CodeBlock.css";
 
     import PropsTable from "$item/PropsTable.svelte";
     import Utility from "$lib/tipex/Utility.svelte";

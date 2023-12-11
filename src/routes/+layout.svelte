@@ -1,9 +1,9 @@
 <script>
     import '../app.postcss';
     import '../root.css';
-    import "svelte-highlight/styles/github.css";
     import "iconify-icon";
     import {page} from "$app/stores";
+    import "$lib/tipex/styles/CodeBlock.css";
     import Footer from "$item/Footer.svelte";
     import ThemeToggle from "$item/ThemeToggle.svelte";
 </script>

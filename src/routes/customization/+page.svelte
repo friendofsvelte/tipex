@@ -28,7 +28,7 @@
     The in-built utility buttons consist of <code>Copy</code> and <code>Link</code> buttons.
 </p>
 
-<div class="image-tab">
+<figure class="image-tab">
     <img src="https://github.com/friendofsvelte/tipex/assets/42182303/c6feb3c0-9ed8-4f9e-88d2-42b7895a72a8"
          alt="Svelte Text Editor: Tipex Editor with custom utility buttons"
          class="w-full rounded-xl mt-2 shadow-xl border border-neutral-200 dark:border-neutral-700"/>
@@ -36,7 +36,7 @@
     <figcaption>
         Location of utility buttons in Text Editor
     </figcaption>
-</div>
+</figure>
 <h3 class="mt-8">Insert a set of buttons</h3>
 <p>
     Here's a basic example of how you can insert in-built utility buttons.
@@ -75,7 +75,7 @@
     make it look like your own. Here's some ways you can customize the editor.
 </p>
 
-<div class="image-tab">
+<figure class="image-tab">
     <img src="https://github.com/Bishwas-py/tipexed-editor/assets/42182303/b406527a-aaca-4a09-9e4f-09504ab95d73"
          alt="Svelte Text Editor: Advanced Customization of Tipex Editor"
          class="w-full rounded-xl mt-2 shadow-xl border border-neutral-200 dark:border-neutral-800"/>
@@ -83,7 +83,7 @@
     <figcaption>
         Advanced Customization of Tipex Editor, <a href="https://github.com/Bishwas-py/tipexed-editor" target="_blank">Source Code</a>
     </figcaption>
-</div>
+</figure>
 
 <h2 class="mt-8">Customize the controls</h2>
 

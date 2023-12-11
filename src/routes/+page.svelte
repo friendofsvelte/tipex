@@ -71,7 +71,8 @@
 
 <h2 class="mt-8">Styling</h2>
 <p>
-    Tipex comes with a default style. You can use it by importing the following CSS file inside the <code>{'script'}</code> tag.
+    Tipex comes with a default style. You can use it by importing the following CSS file inside the
+    <code>{'script'}</code> tag.
 </p>
 <Highlight language={typescript} code={index.styling}/>
 

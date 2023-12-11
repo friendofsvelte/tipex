@@ -42,7 +42,7 @@ Tipex component accepts following props.
 | headComponent | ComponentType | null | If provided, gets rendered as a head element in the editor. |
 | footComponent | ComponentType | null | If provided, gets rendered as a foot element in the editor. |
 
-> Note: The `headComponent` and `footComponent` props are components that are rendered inside the editor. There three components are prioritized while rendering compared to their `slot` equivalent. [[Advanced Customization](https://tipex.pages.dev/customization#advanced-customization)]
+> Note: The `headComponent` and `footComponent` props are components that are rendered inside the editor. These three components are prioritized while rendering compared to their `slot` equivalent. [[Advanced Customization](https://tipex.pages.dev/customization#advanced-customization)]
 
 For `controlElement`, it renders `DefaultControls.svelte` by default, where you can pass `utilities` named slot to render your own extra controls. If you want to render your own set of controls, you can pass your own component to the `controlElement` prop.
 

@@ -1,7 +1,5 @@
 <script lang="ts">
     import {fade} from "svelte/transition";
-    import Fa from "svelte-fa";
-    import {faCheck, faExternalLink, faTimes} from "@fortawesome/free-solid-svg-icons";
     import {Editor} from "@tiptap/core";
     import {onMount} from "svelte";
     import {tipexEditor} from "$lib/tipex/editor_store";
@@ -37,13 +35,13 @@
      style="display: {hideAnchorControl ? 'none' : 'flex'}">
     <!-- Open in new window: modifiedHoverAnchorStatus.dom.href -->
     <button type="button" class="tipex-link-hover-anchor-go-to tipex-link-hover" on:click={openLink}>
-        <Fa icon={faExternalLink}/>
+        <iconify-icon icon="fa6-solid:external-link"/>
     </button>
     <button class="tipex-link-hover-anchor-accept tipex-link-hover" on:click={acceptLink}>
-        <Fa icon={faCheck}/>
+        <iconify-icon icon="fa6-solid:check"/>
     </button>
     <button class="tipex-link-hover-anchor-cancel tipex-link-hover"
             on:click={cancelLink}>
-        <Fa icon={faTimes}/>
+        <iconify-icon icon="fa6-solid:times"/>
     </button>
 </div>

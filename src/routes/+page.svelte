@@ -9,7 +9,7 @@
     import PropsTable from "$item/PropsTable.svelte";
     import Utility from "$lib/tipex/Utility.svelte";
     import {Highlight, HighlightSvelte} from "svelte-highlight";
-    import {shell} from "svelte-highlight/languages";
+    import {shell, typescript} from "svelte-highlight/languages";
     import index from "$item/codes";
     import ThemeToggle from "$item/ThemeToggle.svelte";
 </script>
@@ -68,6 +68,13 @@
     Import the component and use it in your component.
 </p>
 <HighlightSvelte code={index.usage}/>
+
+<h2 class="mt-8">Styling</h2>
+<p>
+    Tipex comes with a default style. You can use it by importing the following CSS file inside the <code>{'script'}</code> tag.
+</p>
+<Highlight language={typescript} code={index.styling}/>
+
 
 <blockquote class="mt-2">
     <p>

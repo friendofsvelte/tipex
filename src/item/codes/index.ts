@@ -28,6 +28,12 @@ export let htmlContent = `
     target="_blank" rel="noopener noreferrer">Github repository</a>.</p>
 `;
 
+export let styling = `import "@friendofsvelte/tipex/styles/Tipex.css";
+import "@friendofsvelte/tipex/styles/ProseMirror.css";
+import "@friendofsvelte/tipex/styles/Controls.css";
+import "@friendofsvelte/tipex/styles/EditLink.css";
+import "@friendofsvelte/tipex/styles/CodeBlock.css";`
+
 
 export let access = `import {tipexEditor} from '@friendofsvelte/tipex';`
 
@@ -37,6 +43,7 @@ const index = {
     usage,
     appendUtils,
     htmlContent,
-    access
+    access,
+    styling
 }
 export default index;

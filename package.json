@@ -80,6 +80,7 @@
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.4.2",
 		"@fortawesome/free-solid-svg-icons": "^6.4.2",
+		"@friendofsvelte/toggle": "^0.0.2",
 		"@sveltejs/adapter-cloudflare": "^2.3.3",
 		"@tiptap/core": "^2.1.7",
 		"@tiptap/extension-code-block": "^2.1.7",

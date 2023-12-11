@@ -26,8 +26,8 @@ export let htmlContent = `
     </p>
     <p>Do you have any questions? Feel free to ask in the <a href="https://github.com/friendofsvelte/tipex"
     target="_blank" rel="noopener noreferrer">Github repository</a>.</p>
-    <pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">tipex_editor</span>(<span class="hljs-params">action: </span><span class="hljs-params hljs-built_in">str</span><span class="hljs-params"> = </span><span class="hljs-params hljs-string">"edit-content"</span>):
-    <span class="hljs-keyword">return</span> action</code></pre>
+
+    <p>Try writing some code, list, or blockquote, and see how it looks in the editor.</p>    
 `;
 
 export let styling = `import "@friendofsvelte/tipex/styles/Tipex.css";

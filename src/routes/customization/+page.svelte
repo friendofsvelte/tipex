@@ -108,3 +108,13 @@
 </p>
 
 <HighlightSvelte code={advanceCodes.addHeadFootComponentWithSlot}/>
+
+<h2 class="mt-8">Tweaking extensions</h2>
+
+<p>
+    Tipex provides an <code>defaultExtensions</code> object which contains all the extensions that are used in the
+    editor. You can tweak the extensions, or add new extensions to the editor by passing a <code>extensions</code>
+    prop to the editor.
+</p>
+
+<HighlightSvelte code={advanceCodes.tweakingExtensions}/>

@@ -54,7 +54,7 @@ import "@friendofsvelte/tipex/styles/EditLink.css";
 import "@friendofsvelte/tipex/styles/CodeBlock.css";
 ```
 
-> The import for`@friendofsvelte/tipex/styles/ProseMirror.css`is used to style content written in the editor. You can
+> The import for `@friendofsvelte/tipex/styles/ProseMirror.css` is used to style content written in the editor. You can
 > use your own style or use the default one. Or, remove any CSS you don't wanna use.
 
 Props
@@ -76,9 +76,9 @@ Tipex component accepts following props.
 > components are prioritized while rendering compared to their`slot`
 > equivalent.  [[Advanced Customization](https://tipex.pages.dev/customization#advanced-customization)]
 
-For`controlElement`, it renders`DefaultControls.svelte`by default, where you can pass`utilities`named slot to render
+For `controlElement`, it renders `DefaultControls.svelte` by default, where you can pass `utilities` named slot to render
 your own extra controls. If you want to render your own set of controls, you can pass your own component to
-the`controlElement`prop.
+the `controlElement` prop.
 
 Accessing Editor Instance
 -------------------------
@@ -102,7 +102,7 @@ the [customization page](https://tipex.pages.dev/customization) to learn more.
 About Friend Of Svelte
 ----------------------
 
-! [Friend Of Svelte Logo](https://avatars.githubusercontent.com/u/143795012?s=200&v=4)
+![Friend Of Svelte Logo](https://avatars.githubusercontent.com/u/143795012?s=200&v=4)
 
 [Friend Of Svelte](https://github.com/friendofsvelte) is a community driven project to help Svelte developers to find
 and

@@ -14,13 +14,8 @@ pre {
     @apply rounded-md;
     @apply overflow-x-auto;
     @apply whitespace-pre-wrap;
-    @apply border border-neutral-700 shadow;
+    @apply border border-neutral-300 dark:border-neutral-800 shadow-sm;
 }
-
-pre > code.hljs {
-    @apply bg-neutral-100 dark:bg-neutral-800;
-}
-
 
 table {
     @apply border-collapse;
@@ -91,7 +86,7 @@ h1 {
 }
 
 p {
-    @apply text-lg mt-1 mb-2;
+    @apply text-base sm:text-lg mt-1 mb-2;
     @apply text-neutral-600 dark:text-neutral-300;
 }
 

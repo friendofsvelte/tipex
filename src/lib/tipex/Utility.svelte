@@ -8,7 +8,7 @@
 {#if !enableLinkEdit}
     <button
             type="button"
-            class="tipex-action-button w-12tipex-click-effect"
+            class="tipex-action-button tipex-click-effect"
             on:click={() => {
             navigator.clipboard.writeText($tipexEditor?.getHTML() || '');
             $tipexEditor?.chain().focus().run();
@@ -19,8 +19,10 @@
 {/if}
 
 <button
-        on:click={() => enableLinkEdit=!enableLinkEdit}
-        class="tipex-action-button w-12tipex-click-effect"
+        on:click={() => {
+            enableLinkEdit=!enableLinkEdit
+        }}
+        class="tipex-action-button tipex-click-effect"
         class:active={enableLinkEdit}
 >
     <iconify-icon icon="fa6-solid:link"/>

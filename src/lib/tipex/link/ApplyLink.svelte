@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
     import {tipexEditor} from "$lib/tipex/editor_store";
+    import {onMount} from "svelte";
+    import {browser} from "$app/environment";
 
     export let enableLinkEdit = false;
-    let linkInput = null;
+    let linkInput: HTMLInputElement;
 
     function applyLinkAndSave() {
         let isValidURL = linkInput.value.startsWith('http://')
@@ -11,26 +13,41 @@
             || linkInput.value.startsWith('tel:')
             || linkInput.value.startsWith('/');
         if (linkInput.value && isValidURL) {
-            $tipexEditor?.commands.setLink({ href: linkInput.value });
+            $tipexEditor?.commands.setLink({href: linkInput.value});
             enableLinkEdit = false;
         }
+    }
+
+    function pasteLink() {
+        navigator.clipboard.readText().then(text => {
+            if (text.startsWith('http://')
+                || text.startsWith('https://')
+                || text.startsWith('mailto:')
+                || text.startsWith('tel:')
+                || text.startsWith('/')) {
+                linkInput.value = text;
+            }
+        });
+        console.log("Pasted text: ", 'clipboardText')
+    }
+
+    $: if (browser && enableLinkEdit) {
+        pasteLink();
     }
 </script>
 
 {#if enableLinkEdit}
-    <div class="backdrop-filter backdrop-blur-sm rounded-md ml-auto w-full">
-        <div class="flex gap-2 h-full w-full">
+    <div class="tipex-link-edit-top">
+        <div class="tipex-link-edit-wrap">
             <div class="tipex-link-edit-input-wrap">
                 <input
                         type="text"
-                        class="bg-transparent focus:outline-0 pl-2 pr-1 w-full"
                         placeholder="Link"
                         bind:this={linkInput}
                         value={$tipexEditor?.getAttributes('link').href || ''}
                 />
                 <button
                         type="button"
-                        class="px-2 h-full flex items-center"
                         on:click={() => {
 								enableLinkEdit = false;
 							}}
@@ -41,7 +58,6 @@
 
             <!-- Save -->
             <button
-                    class="bg-gray-700 text-gray-200 rounded-md px-2 py-1"
                     type="button"
                     on:click={applyLinkAndSave}>
                 Save

@@ -20,5 +20,25 @@
 .tipex-link-edit-input-wrap {
     @apply w-full rounded-md py-0;
     @apply flex items-center divide-x dark:divide-gray-500/30 divide-gray-300;
-    @apply bg-gray-200 dark:bg-gray-700 text-gray-950 dark:text-gray-200;
+    @apply bg-gray-300 dark:bg-gray-700 text-gray-950 dark:text-gray-200;
+}
+
+.tipex-link-edit-input-wrap input {
+    @apply bg-transparent focus:outline-0 pl-2 pr-1 w-full;
+}
+
+.tipex-link-edit-input-wrap button {
+    @apply px-2 h-full flex items-center;
+}
+
+.tipex-link-edit-top {
+    @apply backdrop-filter backdrop-blur-sm rounded-md ml-auto w-full;
+}
+
+.tipex-link-edit-wrap {
+    @apply flex gap-2 h-full w-full;
+}
+
+.tipex-link-edit-wrap button {
+    @apply bg-neutral-700 text-neutral-200 rounded-md px-2 py-1;
 }

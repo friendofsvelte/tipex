@@ -35,13 +35,13 @@
      style="display: {hideAnchorControl ? 'none' : 'flex'}">
     <!-- Open in new window: modifiedHoverAnchorStatus.dom.href -->
     <button type="button" class="tipex-link-hover-anchor-go-to tipex-link-hover" on:click={openLink}>
-        <iconify-icon icon="fa6-solid:external-link"/>
+        <iconify-icon icon="fa6-solid:arrow-up-right-from-square"/>
     </button>
     <button class="tipex-link-hover-anchor-accept tipex-link-hover" on:click={acceptLink}>
         <iconify-icon icon="fa6-solid:check"/>
     </button>
     <button class="tipex-link-hover-anchor-cancel tipex-link-hover"
             on:click={cancelLink}>
-        <iconify-icon icon="fa6-solid:times"/>
+        <iconify-icon icon="fa6-solid:xmark"/>
     </button>
 </div>

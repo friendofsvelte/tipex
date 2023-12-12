@@ -7,4 +7,3 @@ export const handle = sequence(
     handleAppearance
 );
 
-

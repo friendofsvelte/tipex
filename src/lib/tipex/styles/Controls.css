@@ -38,5 +38,5 @@
     @apply flex items-center justify-center gap-2;
     @apply outline-1 outline dark:outline-gray-700 outline-neutral-400;
     @apply dark:text-gray-200 text-neutral-700;
-    @apply rounded-md px-2 py-1;
+    @apply rounded-md px-2 py-1 w-12;
 }

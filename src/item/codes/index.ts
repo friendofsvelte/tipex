@@ -39,7 +39,7 @@ import "@friendofsvelte/tipex/styles/CodeBlock.css";`
 
 export let access = `import {tipexEditor} from '@friendofsvelte/tipex';`
 
-const index = {
+const codes = {
     insertUtils,
     install,
     usage,
@@ -48,4 +48,4 @@ const index = {
     access,
     styling
 }
-export default index;
+export default codes;

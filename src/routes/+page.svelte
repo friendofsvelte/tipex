@@ -9,7 +9,7 @@
     import Utility from "$lib/tipex/Utility.svelte";
     import {Highlight, HighlightSvelte} from "svelte-highlight";
     import {shell, typescript} from "svelte-highlight/languages";
-    import index from "$item/codes";
+    import codes from "$item/codes";
     import ThemeToggle from "$item/ThemeToggle.svelte";
 </script>
 
@@ -48,7 +48,7 @@
     them from the intricacies of underlying technologies, style management, and related complexities.
 </p>
 
-<Tipex htmlContent={index.htmlContent}
+<Tipex htmlContent={codes.htmlContent}
        className="h-[70vh] border border-neutral-200 dark:border-neutral-700 shadow-xl mt-3">
     <svelte:fragment slot="utilities">
         <Utility/>
@@ -60,20 +60,20 @@
     Install the package from <a href="https://www.npmjs.com/package/@friendofsvelte/tipex"
                                 target="_blank" rel="noopener noreferrer">NPM</a>.
 </p>
-<Highlight language={shell} code={index.install}/>
+<Highlight language={shell} code={codes.install}/>
 
 <h2 class="mt-8">Usage</h2>
 <p>
     Import the component and use it in your component.
 </p>
-<HighlightSvelte code={index.usage}/>
+<HighlightSvelte code={codes.usage}/>
 
 <h2 class="mt-8">Styling</h2>
 <p>
     Tipex comes with a default style. You can use it by importing the following CSS file inside the
     <code>{'script'}</code> tag.
 </p>
-<Highlight language={typescript} code={index.styling}/>
+<Highlight language={typescript} code={codes.styling}/>
 
 
 <blockquote class="mt-2">
@@ -94,7 +94,7 @@
 <p>
     You can access the editor instance via:
 </p>
-<HighlightSvelte code={index.access}/>
+<HighlightSvelte code={codes.access}/>
 <p>
     The editor instance is stored in a store. You can use it to access the editor instance
     from anywhere in your app.

@@ -68,7 +68,7 @@
 
     onMount(async () => {
         const onFocusChange = function () {
-            isEditorFocused = editorsParent.contains(document.activeElement);
+            isEditorFocused = editorsParent && editorsParent.contains(document.activeElement);
         }
         onFocusChange();
         document.addEventListener('focusin', onFocusChange);

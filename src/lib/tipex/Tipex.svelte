@@ -13,6 +13,8 @@
     let tipexEditorElement: HTMLDivElement;
     let editLinkElement: HTMLDivElement;
     export let extensions = defaultExtensions;
+    export let onEditorCreate: (editor: Editor) => void;
+    export let onEditorDestroy: () => void;
 
     onMount(() => {
         if (editLinkElement && 'floatingMenu' in extensions) {
@@ -45,7 +47,11 @@
                 // force re-render so `editor.isActive` works as expected
                 $tipexEditor = $tipexEditor;
             },
-            autofocus: true
+            autofocus: true,
+            onCreate: ({editor}) => {
+                onEditorCreate && onEditorCreate(editor);
+            },
+            onDestroy: onEditorDestroy,
         });
     });
 

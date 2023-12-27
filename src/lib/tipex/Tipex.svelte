@@ -13,8 +13,12 @@
     let tipexEditorElement: HTMLDivElement;
     let editLinkElement: HTMLDivElement;
     export let extensions = defaultExtensions;
-    export let onEditorCreate: (editor: Editor) => void;
-    export let onEditorDestroy: () => void;
+    export let onEditorCreate: (editor: Editor) => void = () => {
+    };
+    export let onEditorDestroy: () => void = () => {
+    };
+    export let onEditorUpdate: () => void = () => {
+    };
 
     onMount(() => {
         if (editLinkElement && 'floatingMenu' in extensions) {
@@ -49,9 +53,10 @@
             },
             autofocus: true,
             onCreate: ({editor}) => {
-                onEditorCreate && onEditorCreate(editor);
+                onEditorCreate(editor);
             },
             onDestroy: onEditorDestroy,
+            onUpdate: onEditorUpdate
         });
     });
 

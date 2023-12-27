@@ -3,6 +3,7 @@
     import type {ComponentType} from 'svelte';
     import "iconify-icon";
     import {Editor} from '@tiptap/core';
+    import type {Transaction} from "@tiptap/pm/state";
     import StarterKit from '@tiptap/starter-kit';
     import {FloatingMenu} from "@tiptap/extension-floating-menu";
     import DefaultControls from "$lib/tipex/DefaultControls.svelte";
@@ -17,7 +18,7 @@
     };
     export let onEditorDestroy: () => void = () => {
     };
-    export let onEditorUpdate: () => void = () => {
+    export let onEditorUpdate: (event: { editor: Editor, transaction: Transaction }) => void = () => {
     };
 
     onMount(() => {

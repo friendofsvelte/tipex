@@ -1,15 +1,16 @@
 <script lang="ts">
-    import {onMount, onDestroy} from 'svelte';
+    import {onMount} from 'svelte';
     import type {ComponentType} from 'svelte';
     import "iconify-icon";
     import {Editor} from '@tiptap/core';
-    import type {Transaction} from "@tiptap/pm/state";
+    import type {Transaction} from "@tiptap/core";
     import StarterKit from '@tiptap/starter-kit';
     import {FloatingMenu} from "@tiptap/extension-floating-menu";
     import DefaultControls from "$lib/tipex/DefaultControls.svelte";
     import AcceptLink from "$lib/tipex/link/AcceptLink.svelte";
     import {tipexEditor} from "./editor_store";
     import {defaultExtensions} from "./default";
+    import type {Extensions} from "@tiptap/core/src/types.js";
 
     let tipexEditorElement: HTMLDivElement;
     let editLinkElement: HTMLDivElement;
@@ -45,7 +46,7 @@
             element: tipexEditorElement,
             extensions: [
                 StarterKit.configure(),
-                ...Object.values(extensions),
+                ...Object.values(extensions) as Extensions,
             ],
             content: htmlContent as string,
             onTransaction() {

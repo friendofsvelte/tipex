@@ -55,12 +55,6 @@
         });
     });
 
-    onDestroy(() => {
-        if ($tipexEditor) {
-            $tipexEditor.destroy();
-        }
-    });
-
     export let htmlContent = '';
     export let className = '';
     export let style = '';

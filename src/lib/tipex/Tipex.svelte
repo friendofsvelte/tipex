@@ -30,7 +30,9 @@
         $tipexEditor = new Editor({
             element: tipexEditorElement,
             extensions: [
-                StarterKit.configure(),
+                StarterKit.configure({
+                    codeBlock: false
+                }),
                 ...Object.values(extensions) as Extensions,
             ],
             content: htmlContent as string,

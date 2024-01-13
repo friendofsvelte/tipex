@@ -18,11 +18,11 @@
 
     function openLink() {
         if ($tipexEditor instanceof Editor) {
-            window.open($tipexEditor.getAttributes('link').href, 'popup', `width=600,height=900,location=0,top=0,left=0`);
+            window.open($tipexEditor.getAttributes('link').href, 'popup', `width=700,height=900,location=0,top=0,right=0`);
         }
     }
 
-    export let editLinkElement;
+    export let floatingMenuElement;
 
     let hideAnchorControl = true;
     onMount(() => {
@@ -30,17 +30,16 @@
     });
 </script>
 
-<div class="tipex-link-hover-anchor" bind:this={editLinkElement}
+<div class="tipex-floating-group" bind:this={floatingMenuElement}
      transition:fade
      style="display: {hideAnchorControl ? 'none' : 'flex'}">
-    <!-- Open in new window: modifiedHoverAnchorStatus.dom.href -->
-    <button type="button" class="tipex-link-hover-anchor-go-to tipex-link-hover" on:click={openLink}>
+    <button type="button" class="tipex-floating-button" on:click={openLink}>
         <iconify-icon icon="fa6-solid:arrow-up-right-from-square"/>
     </button>
-    <button class="tipex-link-hover-anchor-accept tipex-link-hover" on:click={acceptLink}>
+    <button type="button" class="tipex-floating-button" on:click={acceptLink}>
         <iconify-icon icon="fa6-solid:check"/>
     </button>
-    <button class="tipex-link-hover-anchor-cancel tipex-link-hover"
+    <button type="button" class="tipex-floating-button"
             on:click={cancelLink}>
         <iconify-icon icon="fa6-solid:xmark"/>
     </button>

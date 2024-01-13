@@ -1,20 +1,21 @@
 <script lang="ts">
     import {onMount} from 'svelte';
-    import type {ComponentType} from 'svelte';
     import "iconify-icon";
     import {Editor} from '@tiptap/core';
     import type {Transaction} from "@tiptap/core";
     import StarterKit from '@tiptap/starter-kit';
-    import {FloatingMenu} from "@tiptap/extension-floating-menu";
     import DefaultControls from "$lib/tipex/DefaultControls.svelte";
-    import AcceptLink from "$lib/tipex/link/AcceptLink.svelte";
     import {tipexEditor} from "./editor_store";
     import {defaultExtensions} from "./default";
     import type {Extensions} from "@tiptap/core/src/types.js";
+    import {prepareDefaultFloatingMenu} from "$lib/tipex/prepare.js";
+    import LinkFloatingMenu from "$lib/tipex/link/LinkFloatingMenu.svelte";
 
     let tipexEditorElement: HTMLDivElement;
-    let editLinkElement: HTMLDivElement;
+
     export let extensions = defaultExtensions;
+    export let floatingMenu: boolean = false;
+    export let floatingMenuElement: HTMLDivElement;
     export let onEditorCreate: (editor: Editor) => void = () => {
     };
     export let onEditorDestroy: () => void = () => {
@@ -23,25 +24,9 @@
     };
 
     onMount(() => {
-        if (editLinkElement && 'floatingMenu' in extensions) {
-            extensions['floatingMenu'] = FloatingMenu.configure({
-                pluginKey: 'floatingMenuLinkEdit',
-                element: editLinkElement,
-                shouldShow: ({editor}) => {
-                    return editor.isActive('link')
-                },
-                tippyOptions: {
-                    placement: 'top-start',
-                    zIndex: 0,
-                    popperOptions: {
-                        placement: 'top-start',
-                        strategy: 'fixed',
-                    },
-                    appendTo: () => document.body,
-                },
-            });
+        if (floatingMenu) {
+            extensions['floatingMenu'] = prepareDefaultFloatingMenu(floatingMenuElement);
         }
-
         $tipexEditor = new Editor({
             element: tipexEditorElement,
             extensions: [
@@ -66,25 +51,24 @@
     export let className = '';
     export let style = '';
     export let focusOnEdit = true;
-    export let controlElement: ComponentType | null = null;
-    export let headComponent: ComponentType | null = null;
-    export let footComponent: ComponentType | null = null;
 
     let editorsParent: HTMLDivElement;
     export let isEditorFocused: boolean = false;
 
     onMount(async () => {
-        const onFocusChange = function () {
+        const onFocusChange = (_ev) => {
             isEditorFocused = editorsParent && editorsParent.contains(document.activeElement);
         }
         onFocusChange();
         document.addEventListener('focusin', onFocusChange);
         document.addEventListener('focusout', onFocusChange);
     });
+
+    export let displayDefaultControls = true;
 </script>
 
-{#if 'floatingMenu' in extensions}
-    <AcceptLink bind:editLinkElement/>
+{#if floatingMenu}
+    <LinkFloatingMenu bind:floatingMenuElement/>
 {/if}
 
 <div class="tipex-editor {className}"
@@ -93,25 +77,20 @@
      class:isEditorFocused
      class:focusOnEdit>
     <div class="tipex-editor-wrap">
-        {#if headComponent}
-            <svelte:component this={headComponent}/>
-        {:else}
-            <slot name="headComponent"/>
-        {/if}
+        <slot name="headComponent"/>
         <div class="tipex-editor-section" bind:this={tipexEditorElement}></div>
-        {#if controlElement}
-            <svelte:component this={controlElement}/>
-        {:else}
+        {#if $$slots.controlElement}
+            <slot name="controlElement"/>
+        {:else if displayDefaultControls}
             <DefaultControls>
-                <div class="tipex-utilities">
-                    <slot name="utilities"/>
-                </div>
+                {#if $$slots.utilities}
+                    <div class="tipex-utilities">
+                        <slot name="utilities"/>
+                    </div>
+                {/if}
             </DefaultControls>
         {/if}
-        {#if footComponent}
-            <svelte:component this={footComponent}/>
-        {:else}
-            <slot name="footComponent"/>
-        {/if}
+        <slot name="footComponent"/>
     </div>
 </div>
+

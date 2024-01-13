@@ -1,44 +1,32 @@
 
-.tipex-link-hover-anchor {
-    @apply rounded-full shadow;
-    @apply text-gray-600 dark:text-gray-400;
-    @apply text-xs p-0.5;
-    @apply z-10;
-    @apply flex flex-row gap-2 items-center;
-    @apply dark:bg-neutral-800 bg-neutral-100;
+.tipex-floating-button {
+    @apply flex flex-row items-center justify-center
+    border dark:border-neutral-700/60 border-neutral-200/70
+    rounded-lg
+    hover:bg-neutral-200 dark:hover:bg-neutral-800
+    h-6 w-6;
 }
 
-.tipex-link-hover {
-    @apply flex flex-row items-center justify-center;
-    @apply border dark:border-neutral-700 border-neutral-200;
-    @apply rounded-full;
-    @apply hover:bg-neutral-200 dark:hover:bg-neutral-800;
-    @apply h-6 w-6;
-
+.tipex-floating-group {
+    @apply rounded-lg shadow
+    text-gray-600 dark:text-gray-400
+    text-xs py-0.5 px-1
+    z-10
+    flex flex-row gap-0.5 items-center
+    bg-neutral-100 dark:bg-neutral-800;
 }
 
-.tipex-link-edit-input-wrap {
-    @apply w-full rounded-md py-0;
-    @apply flex items-center divide-x dark:divide-gray-500/30 divide-gray-300;
-    @apply bg-gray-300 dark:bg-gray-700 text-gray-950 dark:text-gray-200;
-}
 
-.tipex-link-edit-input-wrap input {
-    @apply bg-transparent focus:outline-0 pl-2 pr-1 w-full;
-}
-
-.tipex-link-edit-input-wrap button {
-    @apply px-2 h-full flex items-center;
+.tipex-link-edit-input-group input {
+    @apply focus:outline-0 pl-2 pr-1 w-full text-gray-950 dark:text-gray-200 text-xs truncate
+    bg-gray-300 dark:bg-gray-700 dark:placeholder-gray-400 placeholder-gray-600
+    dark:focus:placeholder-gray-400 focus:placeholder-gray-600 rounded-md;
 }
 
 .tipex-link-edit-top {
-    @apply backdrop-filter backdrop-blur-sm rounded-md ml-auto w-full;
+    @apply flex rounded-md;
 }
 
-.tipex-link-edit-wrap {
-    @apply flex gap-2 h-full w-full;
-}
-
-.tipex-link-edit-wrap button {
-    @apply bg-neutral-700 text-neutral-200 rounded-md px-2 py-1;
+.tipex-link-edit-input-group {
+    @apply flex gap-2 h-full w-full max-w-xl;
 }

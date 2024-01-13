@@ -1,6 +1,5 @@
 <script lang="ts">
     import {tipexEditor} from "$lib/tipex/editor_store";
-    import {onMount} from "svelte";
     import {browser} from "$app/environment";
 
     export let enableLinkEdit = false;
@@ -28,7 +27,6 @@
                 linkInput.value = text;
             }
         });
-        console.log("Pasted text: ", 'clipboardText')
     }
 
     $: if (browser && enableLinkEdit) {
@@ -36,32 +34,23 @@
     }
 </script>
 
-{#if enableLinkEdit}
-    <div class="tipex-link-edit-top">
-        <div class="tipex-link-edit-wrap">
-            <div class="tipex-link-edit-input-wrap">
-                <input
-                        type="text"
-                        placeholder="Link"
-                        bind:this={linkInput}
-                        value={$tipexEditor?.getAttributes('link').href || ''}
-                />
-                <button
-                        type="button"
-                        on:click={() => {
-								enableLinkEdit = false;
-							}}
-                >
-                    <iconify-icon icon="fa6-solid:xmark"></iconify-icon>
-                </button>
-            </div>
+<button
+        on:click={() => {
+            enableLinkEdit=!enableLinkEdit
+        }}
+        class="tipex-edit-button tipex-button-extra tipex-button-rigid"
+        class:active={enableLinkEdit}
+>
+    <iconify-icon icon={enableLinkEdit ? 'fa6-solid:xmark' : 'fa6-solid:link'}/>
+</button>
 
-            <!-- Save -->
-            <button
-                    type="button"
-                    on:click={applyLinkAndSave}>
-                Save
-            </button>
-        </div>
+{#if enableLinkEdit}
+    <div class="tipex-link-edit-input-group">
+        <input type="text" placeholder="Your link here" bind:this={linkInput}
+               value={$tipexEditor?.getAttributes('link').href || ''}/>
+        <button class="tipex-edit-button tipex-button-extra tipex-button-free" type="button"
+                on:click={applyLinkAndSave}>
+            Save
+        </button>
     </div>
 {/if}

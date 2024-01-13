@@ -1,22 +1,21 @@
 
 .tipex-editor {
-    @apply flex flex-row;
-    @apply gap-0;
-    @apply dark:bg-neutral-900 bg-neutral-50;
-    @apply rounded-md;
-    @apply py-0;
-    @apply duration-200 overflow-y-hidden;
+    @apply flex flex-row
+    gap-0
+    dark:bg-neutral-900 bg-neutral-50
+    rounded-md
+    py-0
+    duration-200 overflow-y-hidden;
 }
 
 .tipex-editor-wrap {
-    @apply flex flex-col;
-    @apply gap-0 h-full w-full;
+    @apply flex flex-col gap-0 h-full w-full;
 }
 
 .tipex-editor-section {
-    @apply px-0.5 py-0.5;
-    @apply h-full;
-    @apply overflow-y-auto;
+    @apply px-0.5 py-0.5
+    h-full
+    overflow-y-auto;
 }
 
 .tipex-editor.isEditorFocused.focusOnEdit {
@@ -24,5 +23,5 @@
 }
 
 .tipex-utilities {
-    @apply flex gap-2;
+    @apply flex gap-2 ml-auto max-w-lg w-full justify-end;
 }

@@ -48,7 +48,9 @@
     them from the intricacies of underlying technologies, style management, and related complexities.
 </p>
 
+
 <Tipex htmlContent={codes.htmlContent}
+       floatingMenu
        className="h-[70vh] border border-neutral-200 dark:border-neutral-700 shadow-xl mt-3">
     <svelte:fragment slot="utilities">
         <Utility/>

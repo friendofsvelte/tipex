@@ -6,7 +6,6 @@
     import "$lib/tipex/styles/Tipex.css";
 
     import PropsTable from "$item/PropsTable.svelte";
-    import Utility from "$lib/tipex/Utility.svelte";
     import {Highlight, HighlightSvelte} from "svelte-highlight";
     import {shell, typescript} from "svelte-highlight/languages";
     import codes from "$item/codes";
@@ -50,6 +49,7 @@
 
 
 <Tipex htmlContent={codes.htmlContent}
+       displayDefaultControls
        floatingMenu
        className="h-[70vh] border border-neutral-200 dark:border-neutral-700 shadow-xl mt-3">
 </Tipex>

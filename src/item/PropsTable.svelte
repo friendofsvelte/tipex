@@ -70,7 +70,7 @@
         <tr>
             <td>displayDefaultControls</td>
             <td>boolean</td>
-            <td>true</td>
+            <td>false</td>
             <td>Determines if the default controls should be displayed.</td>
         </tr>
         <!-- Add additional props here as necessary -->

@@ -83,7 +83,7 @@
 }
 
 .tipex-editor-section .ProseMirror hr {
-    @apply border border-gray-300;
+    @apply border border-gray-300 dark:border-gray-600/30;
 }
 
 .tipex-editor-section .ProseMirror del {

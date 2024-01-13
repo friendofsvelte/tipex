@@ -2,7 +2,8 @@
     import {xml, typescript} from "svelte-highlight/languages";
     import {Highlight, HighlightSvelte} from "svelte-highlight";
     import advanceCodes from "$item/codes/advanceCodes";
-    import codes from "$item/codes";
+    import codes, {overrideControl} from "$item/codes";
+    import SlotPropsTable from "$item/SlotPropsTable.svelte";
 </script>
 
 <svelte:head>
@@ -43,19 +44,26 @@
 </p>
 <Highlight language={typescript} code={codes.insertUtils}/>
 
-
 <h3 class="mt-8">Append custom buttons between</h3>
 <p>
     To append new buttons you can use the <code>Utility.svelte</code> component, it has a <code>slot</code> for you
     to insert your buttons.
 </p>
 <Highlight language={typescript} code={codes.appendUtils}/>
+
+<SlotPropsTable/>
+
+<h3 id="override_new_custom_controls" class="mt-8">Override with new custom controls</h3>
+<p>
+    You can override the default controls with your own custom controls. Here's an example of how you can do it.
+</p>
+<Highlight language={typescript} code={codes.overrideControl}/>
+
 <p>
     Or, you can use <code>{'<svelte:fragment'}</code> to append your buttons. Make sure that
-    <code>slot="utilities"</code>
+    <code>slot="controlComponent"</code>
     is provided.
 </p>
-
 
 <h2 class="mt-8">Image Upload</h2>
 <p>
@@ -81,7 +89,8 @@
          class="w-full rounded-xl mt-2 shadow-xl border border-neutral-200 dark:border-neutral-800"/>
 
     <figcaption>
-        Advanced Customization of Tipex Editor, <a href="https://github.com/Bishwas-py/tipexed-editor" target="_blank">Source Code</a>
+        Advanced Customization of Tipex Editor, <a href="https://github.com/Bishwas-py/tipexed-editor" target="_blank">Source
+        Code</a>
     </figcaption>
 </figure>
 

@@ -1,5 +1,5 @@
 const customizeControlImplementation = `<Tipex htmlContent={htmlContent}
-   controlElement={CustomControl}
+   controlComponent={CustomControl}
    />`;
 
 const customizeControl = `<script lang="ts">

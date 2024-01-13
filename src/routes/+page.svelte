@@ -52,9 +52,6 @@
 <Tipex htmlContent={codes.htmlContent}
        floatingMenu
        className="h-[70vh] border border-neutral-200 dark:border-neutral-700 shadow-xl mt-3">
-    <svelte:fragment slot="utilities">
-        <Utility/>
-    </svelte:fragment>
 </Tipex>
 
 <h2 class="mt-8">Installation</h2>

@@ -2,7 +2,8 @@
 .tipex-controller {
     @apply flex flex-row justify-between md:flex-row gap-2 sticky bottom-0 z-10 py-2 px-3
     rounded-b-md backdrop-filter backdrop-blur-sm
-    bg-neutral-200 dark:bg-gray-800/80;
+    bg-neutral-200 dark:bg-gray-800/80
+    border-t border-neutral-300 dark:border-gray-700
 }
 
 .tipex-basic-controller-wrapper {

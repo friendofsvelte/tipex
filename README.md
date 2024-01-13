@@ -68,7 +68,7 @@ Tipex component accepts following props.
 | style          | string        | ''              | Style to be applied to the editor.                             |
 | className      | string        | ''              | Class to be applied to the editor.                             |
 | focusOnEdit    | boolean       | true            | Focus on the editor when it is clicked to edit.                |
-| controlElement | ComponentType | DefaultControls | If provided, gets rendered as a control element in the editor. |
+| controlComponent | ComponentType | DefaultControls | If provided, gets rendered as a control element in the editor. |
 | headComponent  | ComponentType | null            | If provided, gets rendered as a head element in the editor.    |
 | footComponent  | ComponentType | null            | If provided, gets rendered as a foot element in the editor.    |
 
@@ -76,9 +76,9 @@ Tipex component accepts following props.
 > components are prioritized while rendering compared to their`slot`
 > equivalent.  [[Advanced Customization](https://tipex.pages.dev/customization#advanced-customization)]
 
-For `controlElement`, it renders `DefaultControls.svelte` by default, where you can pass `utilities` named slot to render
+For `controlComponent`, it renders `DefaultControls.svelte` by default, where you can pass `utilities` named slot to render
 your own extra controls. If you want to render your own set of controls, you can pass your own component to
-the `controlElement` prop.
+the `controlComponent` prop.
 
 Accessing Editor Instance
 -------------------------

@@ -10,12 +10,13 @@
     import type {Extensions} from "@tiptap/core/src/types.js";
     import {prepareDefaultFloatingMenu} from "$lib/tipex/prepare.js";
     import LinkFloatingMenu from "$lib/tipex/link/LinkFloatingMenu.svelte";
+    import Utility from "$lib/tipex/Utility.svelte";
 
+    let floatingMenuElement: HTMLDivElement;
     let tipexEditorElement: HTMLDivElement;
 
     export let extensions = defaultExtensions;
     export let floatingMenu: boolean = false;
-    export let floatingMenuElement: HTMLDivElement;
     export let onEditorCreate: (editor: Editor) => void = () => {
     };
     export let onEditorDestroy: () => void = () => {
@@ -81,13 +82,17 @@
     <div class="tipex-editor-wrap">
         <slot name="headComponent"/>
         <div class="tipex-editor-section" bind:this={tipexEditorElement}></div>
-        {#if $$slots.controlElement}
-            <slot name="controlElement"/>
+        {#if $$slots.controlComponent}
+            <slot name="controlComponent"/>
         {:else if displayDefaultControls}
             <DefaultControls>
                 {#if $$slots.utilities}
                     <div class="tipex-utilities">
                         <slot name="utilities"/>
+                    </div>
+                {:else}
+                    <div class="tipex-utilities">
+                        <Utility/>
                     </div>
                 {/if}
             </DefaultControls>

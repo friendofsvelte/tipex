@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+    let function_string = '() => {}';
 </script>
 
 <div class="overflow-x-auto">
@@ -13,16 +14,40 @@
         </thead>
         <tbody>
         <tr>
+            <td>extensions</td>
+            <td>Extensions[]</td>
+            <td>defaultExtensions</td>
+            <td>Extensions to be used in the editor.</td>
+        </tr>
+        <tr>
+            <td>floatingMenu</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Determines if the default floating menu should be displayed.</td>
+        </tr>
+        <tr>
+            <td>onEditorCreate</td>
+            <td>function</td>
+            <td>{function_string}</td>
+            <td>Callback function when the editor is created.</td>
+        </tr>
+        <tr>
+            <td>onEditorDestroy</td>
+            <td>function</td>
+            <td>{function_string}</td>
+            <td>Callback function when the editor is destroyed.</td>
+        </tr>
+        <tr>
+            <td>onEditorUpdate</td>
+            <td>function</td>
+            <td>{function_string}</td>
+            <td>Callback function when the editor is updated.</td>
+        </tr>
+        <tr>
             <td>htmlContent</td>
             <td>string</td>
             <td>''</td>
-            <td>HTML content to be rendered in the editor.</td>
-        </tr>
-        <tr>
-            <td>style</td>
-            <td>string</td>
-            <td>''</td>
-            <td>Style to be applied to the editor.</td>
+            <td>Initial HTML content to be rendered in the editor.</td>
         </tr>
         <tr>
             <td>className</td>
@@ -31,41 +56,29 @@
             <td>Class to be applied to the editor.</td>
         </tr>
         <tr>
+            <td>style</td>
+            <td>string</td>
+            <td>''</td>
+            <td>Style to be applied to the editor.</td>
+        </tr>
+        <tr>
             <td>focusOnEdit</td>
             <td>boolean</td>
             <td>true</td>
-            <td>Focus on the editor when it is clicked to edit.</td>
+            <td>Determines whether to focus on the editor when it is clicked to edit; default blue outline.</td>
         </tr>
         <tr>
-            <td>controlElement</td>
-            <td>ComponentType</td>
-            <td>DefaultControls</td>
-            <td>If provided, gets rendered as a control element in the editor.</td>
+            <td>displayDefaultControls</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>Determines if the default controls should be displayed.</td>
         </tr>
-        <tr>
-            <td>headComponent</td>
-            <td>ComponentType</td>
-            <td>null</td>
-            <td>If provided, gets rendered as a head element in the editor.</td>
-        </tr>
-        <tr>
-            <td>footComponent</td>
-            <td>ComponentType</td>
-            <td>null</td>
-            <td>If provided, gets rendered as a foot element in the editor.</td>
-        </tr>
+        <!-- Add additional props here as necessary -->
+        </tbody>
     </table>
 </div>
 
 <blockquote>
     <p class="text-gray-700"><strong>Note:</strong>
-        The <code>headComponent</code> and <code>footComponent</code> props are
-        components that are rendered inside the editor. These three components are prioritized while rendering
-        compared to their <code>slot</code> equivalent. [<a href="/customization#advanced-customization">Advanced Customization</a>]
+        For better customization, please have a look at [<a href="/customization#slot-props">Slot Props</a>]
 </blockquote>
-
-<p>
-    For <code>controlElement</code>, it renders <code>DefaultControls.svelte</code> by default, where you can
-    pass <code>utilities</code> named slot to render your own extra controls. If you want to render your own
-    set of controls, you can pass your own component to the <code>controlElement</code> prop.
-</p>

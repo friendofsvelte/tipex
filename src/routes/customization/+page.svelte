@@ -84,7 +84,7 @@
 </p>
 
 <figure class="image-tab">
-    <img src="https://github.com/Bishwas-py/tipexed-editor/assets/42182303/b406527a-aaca-4a09-9e4f-09504ab95d73"
+    <img src="https://github.com/friendofsvelte/tipex/assets/42182303/9aa4814f-b360-473f-85af-ba147d7e6a56"
          alt="Svelte Text Editor: Advanced Customization of Tipex Editor"
          class="w-full rounded-xl mt-2 shadow-xl border border-neutral-200 dark:border-neutral-800"/>
 

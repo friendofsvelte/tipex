@@ -6,15 +6,15 @@ body {
 }
 
 a[href^="http"], a[href^="/"] {
-    @apply text-blue-500 hover:text-blue-600;
-    @apply dark:text-blue-400 dark:hover:text-blue-300;
+    @apply text-blue-500 hover:text-blue-600
+    dark:text-blue-400 dark:hover:text-blue-300;
 }
 
 pre {
-    @apply rounded-md;
-    @apply overflow-x-auto;
-    @apply whitespace-pre-wrap;
-    @apply border border-neutral-300 dark:border-neutral-800 shadow-sm;
+    @apply rounded-md
+    overflow-x-auto
+    whitespace-pre-wrap
+    border border-neutral-300 dark:border-neutral-800 shadow-sm;
 }
 
 table {
@@ -22,47 +22,47 @@ table {
 }
 
 th {
-    @apply px-4 py-2;
-    @apply text-left;
-    @apply border;
-    @apply border-neutral-200 dark:border-stone-900;
-    @apply bg-neutral-100 dark:bg-neutral-800;
-    @apply text-neutral-700 dark:text-neutral-200;
+    @apply px-4 py-2
+    text-left
+    border
+    border-neutral-200 dark:border-stone-900
+    bg-neutral-100 dark:bg-neutral-800
+    text-neutral-700 dark:text-neutral-200;
 }
 
 td {
-    @apply px-4 py-2;
-    @apply border;
-    @apply border-neutral-300 dark:border-stone-900;
-    @apply text-neutral-700 dark:text-neutral-200;
+    @apply px-4 py-2
+    border
+    border-neutral-300 dark:border-stone-900
+    text-neutral-700 dark:text-neutral-200;
 }
 
 tr {
-    @apply even:bg-neutral-100 even:dark:bg-neutral-800;
-    @apply odd:bg-neutral-200 odd:dark:bg-neutral-700;
+    @apply even:bg-neutral-100 even:dark:bg-neutral-800
+    odd:bg-neutral-200 odd:dark:bg-neutral-700;
 }
 
 
 blockquote {
-    @apply rounded border-l-4 border-neutral-200 dark:border-neutral-700;
-    @apply bg-neutral-100 dark:bg-neutral-800;
-    @apply text-neutral-700 dark:text-neutral-200;
-    @apply px-4 py-2;
-    @apply mt-3 ml-2;
-    @apply overflow-x-auto;
+    @apply rounded border-l-4 border-neutral-200 dark:border-neutral-700
+    bg-neutral-100 dark:bg-neutral-800
+    text-neutral-700 dark:text-neutral-200
+    px-4 py-2
+    mt-3 ml-2
+    overflow-x-auto;
 }
 
 
 code {
-    @apply bg-neutral-100 dark:bg-neutral-800;
-    @apply text-neutral-700 dark:text-neutral-200;
-    @apply px-1;
+    @apply bg-neutral-100 dark:bg-neutral-800
+    text-neutral-700 dark:text-neutral-200
+    px-1;
 }
 
 .head-section {
-    @apply flex flex-wrap flex-row gap-2 md:gap-3 mb-2 mt-2;
-    @apply -ml-1 border-b border-neutral-200 dark:border-neutral-700;
-    @apply pb-2;
+    @apply flex flex-wrap flex-row gap-2 md:gap-3 mb-2 mt-2
+    -ml-1 border-b border-neutral-200 dark:border-neutral-700
+    pb-2;
 }
 
 .head-section h1 {
@@ -70,24 +70,23 @@ code {
 }
 
 .icon-link-section {
-    @apply flex flex-row gap-2 md:gap-3 mb-2 mt-2;
-    @apply ml-auto;
+    @apply flex flex-row gap-2 md:gap-3 mb-2 mt-2
+    ml-auto;
 }
 
 .icon-link-section a {
-    @apply flex items-center justify-center;
-    @apply w-8 h-8 rounded-full;
-    @apply bg-neutral-100 dark:bg-neutral-800;
+    @apply flex items-center justify-center
+    bg-neutral-100 dark:bg-neutral-800 hover:scale-105 duration-100;
 }
 
 h1 {
-    @apply mb-3 text-3xl font-bold;
-    @apply text-neutral-700 dark:text-neutral-200;
+    @apply mb-3 text-3xl font-bold
+    text-neutral-700 dark:text-neutral-200;
 }
 
 p {
-    @apply text-base sm:text-lg mt-1 mb-2;
-    @apply text-neutral-600 dark:text-neutral-300;
+    @apply text-base sm:text-lg mt-1 mb-2
+    text-neutral-600 dark:text-neutral-300;
 }
 
 .image-tab {
@@ -99,11 +98,11 @@ figcaption {
 }
 
 h2 {
-    @apply text-2xl font-bold;
-    @apply text-neutral-700 dark:text-neutral-200;
+    @apply text-2xl font-bold
+    text-neutral-700 dark:text-neutral-200;
 }
 
 h3 {
-    @apply text-xl font-bold;
-    @apply text-neutral-700 dark:text-neutral-200;
+    @apply text-xl font-bold
+    text-neutral-700 dark:text-neutral-200;
 }

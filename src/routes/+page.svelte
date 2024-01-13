@@ -10,6 +10,7 @@
     import {shell, typescript} from "svelte-highlight/languages";
     import codes from "$item/codes";
     import ThemeToggle from "$item/ThemeToggle.svelte";
+    import {page} from "$app/stores";
 </script>
 
 <svelte:head>
@@ -26,14 +27,20 @@
         </span>
     </h1>
     <div class="icon-link-section">
-        <a href="https://www.npmjs.com/package/@friendofsvelte/tipex"
+        <a class="w-8 h-8 rounded-2xl"
+           href="https://www.npmjs.com/package/@friendofsvelte/tipex"
            target="_blank" rel="noopener noreferrer">
-            <iconify-icon icon="logos:npm-icon"></iconify-icon>
+            <iconify-icon icon="logos:npm-icon" class="w-4"/>
         </a>
-        <a href="https://github.com/friendofsvelte/tipex"
-           target="_blank" rel="noopener noreferrer">
+        <a
+            class="px-2 h-8 rounded-2xl gap-1"
+            href="https://github.com/friendofsvelte/tipex"
+            target="_blank" rel="noopener noreferrer">
             <iconify-icon icon="fa6-brands:github"
-                          class="text-gray-700 dark:text-gray-200"></iconify-icon>
+                          class="text-gray-700 dark:text-gray-200 w-4"/>
+            {#if $page.data.repo}
+                <span class="ml-1 text-gray-600 dark:text-gray-400">{$page.data.repo.stargazers_count}+</span>
+            {/if}
         </a>
         <ThemeToggle/>
     </div>

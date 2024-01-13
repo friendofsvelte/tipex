@@ -17,7 +17,7 @@ export const usage = `<script lang="ts">
     export let htmlContent = \`<p>The initial html content.</p>\`;
 </script>
 
-<Tipex htmlContent={codes.htmlContent}
+<Tipex {htmlContent}
     displayDefaultControls
     floatingMenu
     style="margin-top: 1rem; margin-bottom: 0;" 

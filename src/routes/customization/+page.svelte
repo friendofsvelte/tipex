@@ -1,8 +1,8 @@
 <script>
-    import {xml, typescript} from "svelte-highlight/languages";
+    import {typescript} from "svelte-highlight/languages";
     import {Highlight, HighlightSvelte} from "svelte-highlight";
     import advanceCodes from "$item/codes/advanceCodes";
-    import codes, {overrideControl} from "$item/codes";
+    import codes from "$item/codes";
     import SlotPropsTable from "$item/SlotPropsTable.svelte";
 </script>
 
@@ -53,7 +53,7 @@
 
 <SlotPropsTable/>
 
-<h3 id="override_new_custom_controls" class="mt-8">Override with new custom controls</h3>
+<h3 id="new_custom_controls" class="mt-8">Using new custom controls</h3>
 <p>
     You can override the default controls with your own custom controls. Here's an example of how you can do it.
 </p>
@@ -97,26 +97,14 @@
 <h2 class="mt-8">Customize the controls</h2>
 
 <p>
-    You can customize the controls of the editor by passing a <code>controls</code> prop to the editor.
-</p>
-
-<HighlightSvelte code={advanceCodes.customizeControl}/>
-
-<h2 class="mt-8">Add custom header and footer</h2>
-
-<p>
-    You can add a header to the editor by passing a <code>headComponent</code> props to the Tipex editor. And, so
-    for the footer.
+    You can customize the controls of the editor by passing a <code>controlComponent</code> slot.
 </p>
 
 <HighlightSvelte code={advanceCodes.addHeadFootComponent}/>
 
 <p class="mt-7">
-    You can also add a header and footer with a slot. This is useful when you want to add a custom header and footer
-    without creating a new component.
+    You can also add a header and footer with using a slot.
 </p>
-
-<HighlightSvelte code={advanceCodes.addHeadFootComponentWithSlot}/>
 
 <h2 class="mt-8">Tweaking extensions</h2>
 

@@ -1,8 +1,6 @@
 export const insertUtils = `import {Utility} from "@friendofsvelte/tipex";
 <Tipex htmlContent={htmlContent}>
-    <svelte:fragment slot="utilities">
-        <Utility/>
-    </svelte:fragment>
+    <Utility slot="utilities"/>
 </Tipex>`;
 
 export const appendUtils = `<Tipex htmlContent={htmlContent}>

@@ -20,14 +20,29 @@ export const usage = `<script lang="ts">
     className="h-[70vh] border border-neutral-200"/>`;
 
 export let htmlContent = `
-    <p>This <strong>content</strong> is written by
-    <a target="_blank" rel="noopener noreferrer" href="http://bishwas.net/">Bishwas</a> in 2023.
-    You can edit this content and see the changes in the editor.
-    </p>
-    <p>Do you have any questions? Feel free to ask in the <a href="https://github.com/friendofsvelte/tipex"
-    target="_blank" rel="noopener noreferrer">Github repository</a>.</p>
+<p>This <strong>content</strong> is written by <a target="_blank" rel="noopener noreferrer" href="http://bishwas.net/">Bishwas</a> in 2023. You can edit this content and see the changes in the editor.</p><p>Do you have any questions? Feel free to ask in the <a target="_blank" rel="noopener noreferrer" href="https://github.com/friendofsvelte/tipex">Github repository</a>.</p><p>Try writing some code, list, or blockquote, and see how it looks in the editor.</p><pre><code class="language-python">from typing import Literal
 
-    <p>Try writing some code, list, or blockquote, and see how it looks in the editor.</p>    
+class FellowDeveloper:
+    contri_to_opensource: str
+    gender: Literal['MALE', 'FEMALE']
+    experience: int
+    love_coding: bool
+    knows_regex: bool
+    age: int
+
+    def should_date(self) -&gt; bool:
+        return (self.knows_regex and self.age &lt; 21 and
+                self.contri_to_opensource and self.gender == 'FEMALE')
+
+    def get_reaction(self) -&gt; str:
+        if self.should_date():
+            return Responses.DATE_HER
+        return Responses.REJECT
+
+
+class Responses:
+    DATE_HER = "Woow! Are you free for a coffee and a code review date?"
+    REJECT = "Nice to meet you, fellow developer!"</code></pre><p>I hope you enjoyed.</p>
 `;
 
 export let styling = `import "@friendofsvelte/tipex/styles/Tipex.css";

@@ -1,14 +1,14 @@
 
 .tipex-editor-section .ProseMirror {
     @apply outline-none
-    px-2.5 py-1.5 h-full
+    px-2.5 pb-1.5 h-full
     text-gray-800 dark:text-gray-200;
 }
 
 .tipex-editor-section .ProseMirror pre {
     @apply bg-gray-200 text-blue-800 text-sm
     dark:bg-gray-800 dark:text-blue-300
-    p-2
+    px-4 py-7 mt-7 ml-2 mr-4
     overflow-x-hidden
     mb-3;
 }

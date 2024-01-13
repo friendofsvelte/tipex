@@ -38,7 +38,7 @@
             target="_blank" rel="noopener noreferrer">
             <iconify-icon icon="fa6-brands:github"
                           class="text-gray-700 dark:text-gray-200 w-4"/>
-            {#if $page.data.repo}
+            {#if $page.data.repo && 'stargazers_count' in $page.data.repo}
                 <span class="ml-1 text-gray-600 dark:text-gray-400">{$page.data.repo.stargazers_count}+</span>
             {/if}
         </a>

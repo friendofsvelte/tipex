@@ -2,13 +2,12 @@ import type {GithubRepo} from "$lib/interfaces.js";
 
 const API_URL = 'https://api.github.com/repos/';
 const REPO_URL = 'friendofsvelte/tipex';
-const FULL_URL = `${API_URL}${REPO_URL}`;
+const FULL_URL = API_URL + REPO_URL;
 
 import type {PageLoad} from './$types';
 
 export const load: PageLoad = async ({fetch}) => {
     let repo: GithubRepo | NonNullable<any>;
-    console.log("hey")
     try {
         const response = await fetch(FULL_URL);
         repo = await response.json();

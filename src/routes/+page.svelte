@@ -6,7 +6,6 @@
     import "$lib/tipex/styles/Tipex.css";
 
     import PropsTable from "$item/PropsTable.svelte";
-    import Utility from "$lib/tipex/Utility.svelte";
     import {Highlight, HighlightSvelte} from "svelte-highlight";
     import {shell, typescript} from "svelte-highlight/languages";
     import codes from "$item/codes";
@@ -23,8 +22,8 @@
 <div class="head-section">
     <h1>Tipex Editor
         <span class="text-sm text-neutral-600 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded">
-                {__VERSION__}
-            </span>
+            {__VERSION__}
+        </span>
     </h1>
     <div class="icon-link-section">
         <a href="https://www.npmjs.com/package/@friendofsvelte/tipex"
@@ -50,6 +49,7 @@
 
 
 <Tipex htmlContent={codes.htmlContent}
+       displayDefaultControls
        floatingMenu
        className="h-[70vh] border border-neutral-200 dark:border-neutral-700 shadow-xl mt-3">
 </Tipex>

@@ -17,6 +17,7 @@
 
     export let extensions = defaultExtensions;
     export let floatingMenu: boolean = false;
+    export let displayDefaultControls = false;
     export let onEditorCreate: (editor: Editor) => void = () => {
     };
     export let onEditorDestroy: () => void = () => {
@@ -59,15 +60,13 @@
     export let isEditorFocused: boolean = false;
 
     onMount(async () => {
-        const onFocusChange = (_ev) => {
+        const onFocusChange = () => {
             isEditorFocused = editorsParent && editorsParent.contains(document.activeElement);
         }
         onFocusChange();
         document.addEventListener('focusin', onFocusChange);
         document.addEventListener('focusout', onFocusChange);
     });
-
-    export let displayDefaultControls = true;
 </script>
 
 {#if floatingMenu}

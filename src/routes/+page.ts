@@ -1,10 +1,10 @@
+import type {PageLoad} from './$types';
 import type {GithubRepo} from "$lib/interfaces.js";
 
 const API_URL = 'https://api.github.com/repos/';
 const REPO_URL = 'friendofsvelte/tipex';
 const FULL_URL = API_URL + REPO_URL;
 
-import type {PageLoad} from './$types';
 
 export const load: PageLoad = async ({fetch}) => {
     let repo: GithubRepo | NonNullable<any>;

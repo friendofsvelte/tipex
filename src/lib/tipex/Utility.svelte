@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import EditLinkMenu from '$lib/tipex/link/EditLinkMenu.svelte';
-	import { tipex } from '$lib/tipex/editor.svelte.ts';
+	import { tipex } from '$lib/tipex/editor.svelte';
 
 	interface UtilityProps {
 		children?: Snippet;

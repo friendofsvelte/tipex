@@ -1,56 +1,63 @@
 <script lang="ts">
-    import {tipexEditor} from "$lib/tipex/editor_store";
-    import {browser} from "$app/environment";
+	import { tipex } from '$lib/tipex/editor.svelte';
 
-    export let enableLinkEdit = false;
-    let linkInput: HTMLInputElement;
+	interface EditLinkMenuProps {
+		enableLinkEdit?: boolean;
+	}
 
-    function applyLinkAndSave() {
-        let isValidURL = linkInput.value.startsWith('http://')
-            || linkInput.value.startsWith('https://')
-            || linkInput.value.startsWith('mailto:')
-            || linkInput.value.startsWith('tel:')
-            || linkInput.value.startsWith('/');
-        if (linkInput.value && isValidURL) {
-            $tipexEditor?.commands.setLink({href: linkInput.value});
-            enableLinkEdit = false;
-        }
-    }
+	let { enableLinkEdit = $bindable(false) }: EditLinkMenuProps = $props();
+	let linkInput: HTMLInputElement = $state();
 
-    function pasteLink() {
-        navigator.clipboard.readText().then(text => {
-            if (text.startsWith('http://')
-                || text.startsWith('https://')
-                || text.startsWith('mailto:')
-                || text.startsWith('tel:')
-                || text.startsWith('/')) {
-                linkInput.value = text;
-            }
-        });
-    }
+	function handleLinkAndSave() {
+		let isValidURL = linkInput.value.startsWith('http://')
+			|| linkInput.value.startsWith('https://')
+			|| linkInput.value.startsWith('mailto:')
+			|| linkInput.value.startsWith('tel:')
+			|| linkInput.value.startsWith('/');
+		if (linkInput.value && isValidURL) {
+			tipex.editor?.commands.setLink({ href: linkInput.value });
+			enableLinkEdit = false;
+		}
+	}
 
-    $: if (browser && enableLinkEdit) {
-        pasteLink();
-    }
+	function handleEditLinkToggle() {
+		enableLinkEdit = !enableLinkEdit;
+	}
+
+	function handlePasteLink() {
+		navigator.clipboard.readText().then(text => {
+			if (text.startsWith('http://')
+				|| text.startsWith('https://')
+				|| text.startsWith('mailto:')
+				|| text.startsWith('tel:')
+				|| text.startsWith('/')) {
+				linkInput.value = text;
+			}
+		});
+	}
+
+	$effect(() => {
+		if (enableLinkEdit) {
+			handlePasteLink();
+		}
+	});
 </script>
 
 <button
-        on:click={() => {
-            enableLinkEdit=!enableLinkEdit
-        }}
-        class="tipex-edit-button tipex-button-extra tipex-button-rigid"
-        class:active={enableLinkEdit}
+	onclick={handleEditLinkToggle}
+	class="tipex-edit-button tipex-button-extra tipex-button-rigid"
+	class:active={enableLinkEdit}
 >
-    <iconify-icon icon={enableLinkEdit ? 'fa6-solid:xmark' : 'fa6-solid:link'}/>
+	<iconify-icon icon={enableLinkEdit ? 'fa6-solid:xmark' : 'fa6-solid:link'}></iconify-icon>
 </button>
 
 {#if enableLinkEdit}
-    <div class="tipex-link-edit-input-group">
-        <input type="text" placeholder="Your link here" bind:this={linkInput}
-               value={$tipexEditor?.getAttributes('link').href || ''}/>
-        <button class="tipex-edit-button tipex-button-extra tipex-button-free" type="button"
-                on:click={applyLinkAndSave}>
-            Save
-        </button>
-    </div>
+	<div class="tipex-link-edit-input-group">
+		<input type="text" placeholder="Your link here" bind:this={linkInput}
+					 value={tipex.editor?.getAttributes('link').href || ''} />
+		<button class="tipex-edit-button tipex-button-extra tipex-button-free" type="button"
+						onclick={handleLinkAndSave}>
+			Save
+		</button>
+	</div>
 {/if}

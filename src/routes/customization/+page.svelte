@@ -13,7 +13,7 @@
 </svelte:head>
 
 <a href="/" class="flex items-center gap-3 bg-neutral-50 dark:bg-neutral-800 px-3 py-1 rounded-lg shadow-sm w-fit">
-    <iconify-icon icon="fa6-solid:house" class="text-sm"/>
+    <iconify-icon icon="fa6-solid:house" class="text-sm"></iconify-icon>
     Back to Home
 </a>
 

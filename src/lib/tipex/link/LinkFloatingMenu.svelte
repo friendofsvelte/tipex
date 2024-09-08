@@ -1,46 +1,52 @@
 <script lang="ts">
-    import {fade} from "svelte/transition";
-    import {Editor} from "@tiptap/core";
-    import {onMount} from "svelte";
-    import {tipexEditor} from "$lib/tipex/editor_store";
+	import { fade } from 'svelte/transition';
+	import { Editor } from '@tiptap/core';
+	import { onMount } from 'svelte';
+	import { tipex } from '$lib/tipex/editor.svelte.ts';
 
-    function acceptLink() {
-        if ($tipexEditor instanceof Editor) {
-            $tipexEditor.chain().focus($tipexEditor.state.selection.$anchor.pos - $tipexEditor.state.selection.$anchor.parentOffset).run();
-        }
-    }
+	function handleAcceptLink() {
+		if (tipex.editor instanceof Editor) {
+			tipex.editor.chain().focus(tipex.editor.state.selection.$anchor.pos - tipex.editor.state.selection.$anchor.parentOffset).run();
+		}
+	}
 
-    function cancelLink() {
-        if ($tipexEditor instanceof Editor) {
-            $tipexEditor.chain().focus().unsetLink().run();
-        }
-    }
+	function handleCancelLink() {
+		if (tipex.editor instanceof Editor) {
+			tipex.editor.chain().focus().unsetLink().run();
+		}
+	}
 
-    function openLink() {
-        if ($tipexEditor instanceof Editor) {
-            window.open($tipexEditor.getAttributes('link').href, 'popup', `width=700,height=900,location=0,top=0,right=0`);
-        }
-    }
+	function handleOpenLink() {
+		if (tipex.editor instanceof Editor) {
+			window.open(tipex.editor.getAttributes('link').href, 'popup', `width=700,height=900,location=0,top=0,right=0`);
+		}
+	}
 
-    export let floatingMenuElement;
+	interface LinkFloatingMenuProps {
+		floatingMenuRef: HTMLDivElement;
+	}
 
-    let hideAnchorControl = true;
-    onMount(() => {
-        hideAnchorControl = false;
-    });
+	let hideAnchorControl = $state(true);
+	let { floatingMenuRef = $bindable() }: LinkFloatingMenuProps = $props();
+
+	const computedStyleString = $derived(`display: ${hideAnchorControl ? 'none' : 'flex'}`);
+
+	onMount(() => {
+		hideAnchorControl = false;
+	});
 </script>
 
-<div class="tipex-floating-group" bind:this={floatingMenuElement}
-     transition:fade
-     style="display: {hideAnchorControl ? 'none' : 'flex'}">
-    <button type="button" class="tipex-floating-button" on:click={openLink}>
-        <iconify-icon icon="fa6-solid:arrow-up-right-from-square"/>
-    </button>
-    <button type="button" class="tipex-floating-button" on:click={acceptLink}>
-        <iconify-icon icon="fa6-solid:check"/>
-    </button>
-    <button type="button" class="tipex-floating-button"
-            on:click={cancelLink}>
-        <iconify-icon icon="fa6-solid:xmark"/>
-    </button>
+<div class="tipex-floating-group"
+		 bind:this={floatingMenuRef}
+		 style={computedStyleString}
+		 transition:fade>
+	<button type="button" class="tipex-floating-button" onclick={handleOpenLink}>
+		<iconify-icon icon="fa6-solid:arrow-up-right-from-square"></iconify-icon>
+	</button>
+	<button type="button" class="tipex-floating-button" onclick={handleAcceptLink}>
+		<iconify-icon icon="fa6-solid:check"></iconify-icon>
+	</button>
+	<button type="button" class="tipex-floating-button" onclick={handleCancelLink}>
+		<iconify-icon icon="fa6-solid:xmark"></iconify-icon>
+	</button>
 </div>

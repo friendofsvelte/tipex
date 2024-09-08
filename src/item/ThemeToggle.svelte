@@ -17,7 +17,7 @@
             class:isDarkMode={$isDarkMode}
             in:scale
             on:click={toggleDarkMode}>
-        <iconify-icon icon={$isDarkMode ? 'fa-solid:moon' : 'fa-solid:sun'} class="group-active:animate-spin"/>
+        <iconify-icon icon={$isDarkMode ? 'fa-solid:moon' : 'fa-solid:sun'} class="group-active:animate-spin"></iconify-icon>
     </button>
 {:else}
     <div class="h-7 w-7"/>

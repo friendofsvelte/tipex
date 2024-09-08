@@ -1,21 +1,27 @@
-<script>
-    import '../app.postcss';
-    import '../root.css';
-    import "iconify-icon";
-    import {page} from "$app/stores";
-    import "$lib/tipex/styles/CodeBlock.css";
-    import Footer from "$item/Footer.svelte";
-    import ThemeToggle from "$item/ThemeToggle.svelte";
+<script lang="ts">
+	import '../app.postcss';
+	import '../root.css';
+	import 'iconify-icon';
+	import { page } from '$app/stores';
+	import '$lib/tipex/styles/CodeBlock.css';
+	import Footer from '$item/Footer.svelte';
+	import ThemeToggle from '$item/ThemeToggle.svelte';
+
+	interface LayoutProps {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: LayoutProps = $props();
 </script>
 
 <div class="home-wrapper">
-    {#if $page.url.pathname !== '/'}
-        <ThemeToggle className="fixed top-5 right-7"/>
-    {/if}
-    <div class="max-w-4xl w-full">
-        <slot/>
-    </div>
-    <Footer/>
+	{#if $page.url.pathname !== '/'}
+		<ThemeToggle className="fixed top-5 right-7" />
+	{/if}
+	<div class="max-w-4xl w-full">
+		{@render children?.()}
+	</div>
+	<Footer />
 </div>
 
 <style lang="postcss">

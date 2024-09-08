@@ -79,7 +79,7 @@
     "postcss": "^8.4.38",
     "prettier-plugin-tailwindcss": "^0.6.4",
     "tailwindcss": "^3.4.4",
-    "@friendofsvelte/toggle": "^0.0.2-up-doc.0",
+    "@friendofsvelte/toggle": "^0.0.2-svelte.5",
     "@sveltejs/adapter-cloudflare": "^2.3.3"
   },
   "svelte": "./dist/index.js",
@@ -87,7 +87,7 @@
   "type": "module",
   "dependencies": {
     "@tiptap/core": "^2.1.13",
-    "@tiptap/fa-code-block": "^2.1.13",
+    "@tiptap/extension-code-block": "^2.1.13",
     "@tiptap/extension-code-block-lowlight": "^2.1.13",
     "@tiptap/extension-floating-menu": "^2.1.13",
     "@tiptap/extension-image": "^2.1.13",

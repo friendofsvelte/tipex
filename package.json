@@ -97,5 +97,13 @@
     "@tiptap/starter-kit": "^2.1.13",
     "iconify-icon": "^1.0.8",
     "lowlight": "^2.9.0"
+  },
+  "overrides": {
+    "eslint-plugin-svelte": {
+      "svelte": "5.0.0-next.178"
+    },
+    "@friendofsvelte/toggle": {
+      "svelte": "5.0.0-next.178"
+    }
   }
 }

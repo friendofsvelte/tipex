@@ -104,6 +104,9 @@
     },
     "@friendofsvelte/toggle": {
       "svelte": "5.0.0-next.178"
+    },
+    "@sveltejs/adapter-cloudflare": {
+      "svelte": "5.0.0-next.178"
     }
   }
 }

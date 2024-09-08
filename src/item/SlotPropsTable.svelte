@@ -1,9 +1,9 @@
-<h2 class="mt-6" id="slot-props">Component props</h2>
+<h2 class="mt-6" id="Snippet-props">Tipex Props</h2>
 <div class="overflow-x-auto">
 	<table class="table-auto w-full mt-3">
 		<thead>
 		<tr>
-			<th>Slot Name</th>
+			<th>Prop Name</th>
 			<th>Default</th>
 			<th>Condition</th>
 			<th>Description</th>
@@ -11,30 +11,30 @@
 		</thead>
 		<tbody>
 		<tr>
-			<td>headComponent</td>
+			<td>headComponent()</td>
 			<td>null</td>
 			<td>N/A</td>
-			<td>Slot for rendering a component at the head of the editor.</td>
+			<td>Snippet for rendering a component at the head of the editor.</td>
 		</tr>
 		<tr>
-			<td>controlComponent</td>
+			<td>controlComponent()</td>
 			<td>DefaultControls</td>
-			<td>if controlComponent()</td>
-			<td>Slot for customizing the control element of the editor. If not provided, DefaultControls are used.</td>
+			<td>if controlComponent</td>
+			<td>Snippet for customizing the control element of the editor. If not provided, DefaultControls are used.</td>
 		</tr>
 		<tr>
-			<td>utilities</td>
+			<td>utilities()</td>
 			<td>Utility</td>
-			<td>if $$slots.utilities within DefaultControls</td>
-			<td>Slot within the DefaultControls for adding extra utility controls. If not provided, default Utility is
+			<td>if utilities within DefaultControls</td>
+			<td>Snippet within the DefaultControls for adding extra utility controls. If not provided, default Utility is
 				used.
 			</td>
 		</tr>
 		<tr>
-			<td>footComponent</td>
+			<td>footComponent()</td>
 			<td>null</td>
 			<td>N/A</td>
-			<td>Slot for rendering a component at the foot of the editor.</td>
+			<td>Snippet for rendering a component at the foot of the editor.</td>
 		</tr>
 		</tbody>
 	</table>
@@ -42,8 +42,8 @@
 
 <blockquote>
 	<p class="text-gray-700"><strong>Note:</strong>
-		The <code>utilities</code> slot is only available if the <code>$$slots.controlComponent</code> slot is not
-		provided. The <code>$$slots.controlComponent</code> overrides the default controls, and makes the
+		The <code>utilities</code> Snippet is only available if the <code>controlComponent()</code> Snippet is not
+		provided. The <code>controlComponent()</code> overrides the default controls, and makes the
 		<code>utilities</code>
-		slot unavailable.
+		Snippet unavailable.
 </blockquote>

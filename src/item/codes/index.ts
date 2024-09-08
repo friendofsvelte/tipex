@@ -1,17 +1,23 @@
 export const insertUtils = `import {Utility} from "@friendofsvelte/tipex";
 <Tipex htmlContent={htmlContent}>
-    <Utility slot="utilities"/>
+  {#snippet utilities()}
+    <Utility/>
+  {/snippet}
 </Tipex>`;
 
 export const appendUtils = `<Tipex htmlContent={htmlContent}>
-    <div aria-label="Custom utility button" slot="utilities">...</div>
-</Tipex>`;
+ {#snippet utilities()}
+   <div aria-label="Custom utility button">...</div>
+ {/snippet}
+</Tipex>;`;
 
 export const overrideControl = `<Tipex htmlContent={htmlContent}>
-    <div aria-label="New Custom Control" slot="controlComponent">...</div>
+   {#snippet controlComponent()}
+	   <div aria-label="New Custom Control">...</div>
+	 {/snippet}
 </Tipex>`;
 
-export const install = `npm install "@friendofsvelte/tipex";`
+export const install = `npm install "@friendofsvelte/tipex";`;
 export const usage = `<script lang="ts">
     import {Tipex} from "@friendofsvelte/tipex";
     export let htmlContent = \`<p>The initial html content.</p>\`;
@@ -33,19 +39,18 @@ export let styling = `import "@friendofsvelte/tipex/styles/Tipex.css";
 import "@friendofsvelte/tipex/styles/ProseMirror.css";
 import "@friendofsvelte/tipex/styles/Controls.css";
 import "@friendofsvelte/tipex/styles/EditLink.css";
-import "@friendofsvelte/tipex/styles/CodeBlock.css";`
+import "@friendofsvelte/tipex/styles/CodeBlock.css";`;
 
-
-export let access = `import {tipexEditor} from '@friendofsvelte/tipex';`
+export let access = `import {tipexEditor} from '@friendofsvelte/tipex';`;
 
 const codes = {
-    insertUtils,
-    install,
-    usage,
-    appendUtils,
-    overrideControl,
-    htmlContent,
-    access,
-    styling
-}
+	insertUtils,
+	install,
+	usage,
+	appendUtils,
+	overrideControl,
+	htmlContent,
+	access,
+	styling
+};
 export default codes;

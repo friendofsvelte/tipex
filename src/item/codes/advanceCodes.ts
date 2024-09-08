@@ -10,27 +10,31 @@ const addHeadFootComponent = `<script lang="ts">
 </script>
 
 <Tipex htmlContent={htmlContent}>
-    <YourCustomHead slot="headComponent"/>
-    <CustomControl slot="controlComponent"/>
-    <YourCustomFooter slot="footerComponent"/>
-</Tipex>
-`;
-
+  {#snippet headComponent()}
+    <YourCustomHead/>
+  {/snippet}
+  {#snippet controlComponent()}
+    <CustomControl/>
+  {/snippet}
+  {#snippet footerComponent()}
+    <YourCustomFooter/>
+  {/snippet}
+</Tipex>`;
 
 const tweakingExtensions = `<script lang="ts">
     import {defaultExtensions, Tipex} from "@friendofsvelte/tipex";
-     let extension = {
+     let newExtensions = {
         ...defaultExtensions,
         heading: Heading.configure({
             levels: [2, 3, 4, 5, 6]
         })
     } // sample of tweaking extensions, so that only heading 2 to 6 are available
 </script>
-<Tipex extensions={extension} .../>
+<Tipex extensions={newExtensions} .../>
 `;
 
 export default {
-    customizeControlImplementation,
-    addHeadFootComponent,
-    tweakingExtensions
-}
+	customizeControlImplementation,
+	addHeadFootComponent,
+	tweakingExtensions
+};

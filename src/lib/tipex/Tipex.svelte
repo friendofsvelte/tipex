@@ -1,20 +1,18 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { tipex, defaultExtensions } from '$lib';
 	import 'iconify-icon';
+	import { onMount } from 'svelte';
 	import { Editor } from '@tiptap/core';
-	import type { Transaction } from '@tiptap/core';
 	import StarterKit from '@tiptap/starter-kit';
 	import DefaultControls from '$lib/tipex/DefaultControls.svelte';
-	import { tipex } from '$lib';
-	import { defaultExtensions } from '$lib';
-	import type { Extensions } from '@tiptap/core/src/types.js';
+	import type { Extensions } from '@tiptap/core';
+	import { Transaction } from '@tiptap/pm/state';
 	import { prepareDefaultFloatingMenu } from '$lib/tipex/prepare.js';
 	import LinkFloatingMenu from '$lib/tipex/link/LinkFloatingMenu.svelte';
 	import Utility from '$lib/tipex/Utility.svelte';
 
-	let floatingMenuRef: HTMLDivElement = $state();
-	let tipexEditorRef: HTMLDivElement = $state();
-
+	let floatingMenuRef: HTMLDivElement | undefined = $state();
+	let tipexEditorRef: HTMLDivElement | undefined = $state();
 
 	onMount(() => {
 		if (floatingMenu) {
@@ -43,7 +41,7 @@
 	});
 
 
-	let editorsParent: HTMLDivElement = $state();
+	let editorsParentRef: HTMLDivElement | undefined = $state();
 
 	interface TipexProps {
 		extensions?: any;
@@ -86,7 +84,7 @@
 
 	onMount(async () => {
 		const onFocusChange = () => {
-			isEditorFocused = editorsParent && editorsParent.contains(document.activeElement);
+			isEditorFocused = !!(editorsParentRef && editorsParentRef.contains(document.activeElement));
 		};
 		onFocusChange();
 		document.addEventListener('focusin', onFocusChange);
@@ -99,7 +97,7 @@
 {/if}
 
 <div class="tipex-editor {className}"
-		 bind:this={editorsParent}
+		 bind:this={editorsParentRef}
 		 {style}
 		 class:isEditorFocused
 		 class:focusOnEdit>

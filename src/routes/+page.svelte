@@ -22,9 +22,10 @@
 
 <div class="head-section">
 	<h1>Tipex Editor
-		<span class="text-sm text-neutral-600 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded">
-            {__VERSION__}
-        </span>
+		<span
+			class="text-sm text-neutral-600 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded">
+			{__VERSION__}
+		</span>
 	</h1>
 	<div class="icon-link-section">
 		<a class="w-8 h-8 rounded-2xl"

@@ -2,7 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import { Editor } from '@tiptap/core';
 	import { onMount } from 'svelte';
-	import { tipex } from '$lib/tipex/editor.svelte.ts';
+	import { tipex } from '$lib/tipex/editor.svelte';
 
 	function handleAcceptLink() {
 		if (tipex.editor instanceof Editor) {
@@ -23,7 +23,7 @@
 	}
 
 	interface LinkFloatingMenuProps {
-		floatingMenuRef: HTMLDivElement;
+		floatingMenuRef: HTMLDivElement | undefined;
 	}
 
 	let hideAnchorControl = $state(true);

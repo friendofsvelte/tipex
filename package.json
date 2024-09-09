@@ -97,6 +97,11 @@
     "iconify-icon": "^1.0.8",
     "lowlight": "^2.9.0"
   },
+  "optionalDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "typescript-eslint": "^8.0.0-alpha.20"
+  },
   "overrides": {
     "@sveltejs/package": {
       "svelte": "5.0.0-next.178"

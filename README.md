@@ -3,6 +3,8 @@ frameworks [Tiptap](https://tiptap.dev/) and [Prosemirror](https://prosemirror.n
 effortlessly craft rich text editors, liberating them from the intricacies of underlying technologies, style management,
 and related complexities.
 
+> Svelte5 and runes mode activated! ✨🔮
+
 Installation
 ------------
 

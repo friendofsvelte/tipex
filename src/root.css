@@ -70,7 +70,7 @@ code {
 }
 
 .icon-link-section {
-    @apply flex flex-row gap-2 md:gap-3 mb-2 mt-2
+    @apply flex flex-row flex-wrap sm:flex-nowrap gap-2 md:gap-3 mb-2 mt-2
     ml-auto;
 }
 

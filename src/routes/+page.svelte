@@ -38,10 +38,17 @@
 			href="https://github.com/friendofsvelte/tipex"
 			target="_blank" rel="noopener noreferrer">
 			<iconify-icon icon="fa6-brands:github"
-										class="text-gray-700 dark:text-gray-200 w-4" />
+										class="text-gray-700 dark:text-gray-200 w-4"></iconify-icon>
 			{#if $page.data.repo && 'stargazers_count' in $page.data.repo}
 				<span class="ml-1 text-gray-600 dark:text-gray-400">{$page.data.repo.stargazers_count}+</span>
 			{/if}
+		</a>
+		<!--		https://buymeacoffee.com/bishwasbh -->
+		<a class="h-8 px-3 flex items-center gap-2 shrink-0 rounded-2xl !text-yellow-600"
+			 href="https://www.buymeacoffee.com/bishwasbh"
+			 target="_blank" rel="noopener noreferrer">
+			<iconify-icon icon="simple-icons:buymeacoffee" class="w-4"></iconify-icon>
+			<span class="text-sm">Buy me a coffee</span>
 		</a>
 		<ThemeToggle />
 	</div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { tipex } from '$lib/tipex/editor.svelte.ts';
+	import { tipex } from './editor.svelte';
 
 	interface DefaultControlsProps {
 		children?: import('svelte').Snippet;

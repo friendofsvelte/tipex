@@ -1,6 +1,6 @@
 {
   "name": "@friendofsvelte/tipex",
-  "version": "0.0.2-svelte.5",
+  "version": "0.0.3-svelte.5",
   "keywords": [
     "svelte",
     "text editor",

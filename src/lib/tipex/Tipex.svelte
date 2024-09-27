@@ -2,9 +2,7 @@
 	import type { Snippet } from 'svelte';
 	import type { Transaction } from '@tiptap/pm/state';
 
-	export interface TipexEditor {
-		editor: InstanceType<typeof Editor> | null;
-	}
+	export type TipexEditor = InstanceType<typeof Editor> | undefined;
 
 	export type HasEditorSnippet = Snippet<[TipexEditor]>;
 
@@ -36,16 +34,13 @@
 	import StarterKit from '@tiptap/starter-kit';
 	import DefaultControls from '$lib/tipex/DefaultControls.svelte';
 	import type { Extensions } from '@tiptap/core';
-	import { prepareDefaultFloatingMenu } from '$lib/tipex/prepare.js';
+	import { getDefaultFloatingMenu } from '$lib/tipex/prepare.js';
 	import LinkFloatingMenu from '$lib/tipex/link/LinkFloatingMenu.svelte';
 	import Utility from '$lib/tipex/Utility.svelte';
 
 	let {
 		extensions = $bindable(defaultExtensions),
-		tipex = $bindable({
-			editor: null,
-			isLoading: false
-		}),
+		tipex = $bindable(),
 		floatingMenu = false,
 		displayDefaultControls = false,
 		onEditorCreate = () => {
@@ -65,15 +60,9 @@
 		footComponent
 	}: TipexProps = $props();
 
-	setContext('tipex', tipex);
-	onMount(async () => {
-		const onFocusChange = () => {
-			isEditorFocused = !!(editorsParentRef && editorsParentRef.contains(document.activeElement));
-		};
-		onFocusChange();
-		document.addEventListener('focusin', onFocusChange);
-		document.addEventListener('focusout', onFocusChange);
-	});
+	function onFocusChange() {
+		isEditorFocused = !!(editorsParentRef && editorsParentRef.contains(document.activeElement));
+	}
 
 	let floatingMenuRef: HTMLDivElement | undefined = $state();
 	let tipexEditorRef: HTMLDivElement | undefined = $state();
@@ -81,9 +70,9 @@
 
 	onMount(() => {
 		if (floatingMenu) {
-			extensions['floatingMenu'] = prepareDefaultFloatingMenu(floatingMenuRef);
+			extensions['floatingMenu'] = getDefaultFloatingMenu(floatingMenuRef);
 		}
-		tipex.editor = new Editor({
+		tipex = new Editor({
 			element: tipexEditorRef,
 			extensions: [
 				StarterKit.configure({
@@ -92,9 +81,10 @@
 				...Object.values(extensions) as Extensions
 			],
 			content: htmlContent as string,
-			onTransaction() {
-				// force re-render so `editor.isActive` works as expected
-				tipex.editor = tipex.editor;
+			onTransaction({ editor }) {
+				// force re-render so `tipex.isActive` works as expected
+				tipex = undefined;
+				tipex = editor;
 			},
 			autofocus: true,
 			onCreate: ({ editor }) => {
@@ -103,16 +93,18 @@
 			onDestroy: onEditorDestroy,
 			onUpdate: onEditorUpdate
 		});
+		setContext('tipex', tipex);
 	});
+
 </script>
 
+<svelte:document onfocusin={onFocusChange} onfocusout={onFocusChange} />
 {#if floatingMenu}
 	<LinkFloatingMenu bind:floatingMenuRef />
 {/if}
 
-<div class="tipex-editor {className}"
+<div class="tipex-editor {className}" {style}
 		 bind:this={editorsParentRef}
-		 {style}
 		 class:isEditorFocused
 		 class:focusOnEdit>
 	<div class="tipex-editor-wrap">
@@ -121,7 +113,7 @@
 		{#if controlComponent}
 			{@render controlComponent?.(tipex)}
 		{:else if displayDefaultControls}
-			<DefaultControls>
+			<DefaultControls {tipex}>
 				{#if utilities}
 					<div class="tipex-utilities">
 						{@render utilities?.(tipex)}

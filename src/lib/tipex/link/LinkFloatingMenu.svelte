@@ -1,35 +1,38 @@
+<script lang="ts" context="module">
+	import type { TipexEditor } from '../Tipex.svelte';
+
+	export interface LinkFloatingMenuProps {
+		floatingMenuRef: HTMLDivElement | undefined;
+		tipex: TipexEditor;
+	}
+</script>
+
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import { Editor } from '@tiptap/core';
-	import { getContext, onMount } from 'svelte';
-	import type { TipexEditor } from '../Tipex.svelte';
+	import { onMount } from 'svelte';
 
-	let tipex: TipexEditor = getContext('tipex');
+	let { floatingMenuRef = $bindable(), tipex }: LinkFloatingMenuProps = $props();
 
 	function handleAcceptLink() {
-		if (tipex.editor instanceof Editor) {
-			tipex.editor.chain().focus(tipex.editor.state.selection.$anchor.pos - tipex.editor.state.selection.$anchor.parentOffset).run();
+		if (tipex instanceof Editor) {
+			tipex.chain().focus(tipex.state.selection.$anchor.pos - tipex.state.selection.$anchor.parentOffset).run();
 		}
 	}
 
 	function handleCancelLink() {
-		if (tipex.editor instanceof Editor) {
-			tipex.editor.chain().focus().unsetLink().run();
+		if (tipex instanceof Editor) {
+			tipex.chain().focus().unsetLink().run();
 		}
 	}
 
 	function handleOpenLink() {
-		if (tipex.editor instanceof Editor) {
-			window.open(tipex.editor.getAttributes('link').href, 'popup', `width=700,height=900,location=0,top=0,right=0`);
+		if (tipex instanceof Editor) {
+			window.open(tipex.getAttributes('link').href, 'popup', `width=700,height=900,location=0,top=0,right=0`);
 		}
 	}
 
-	interface LinkFloatingMenuProps {
-		floatingMenuRef: HTMLDivElement | undefined;
-	}
-
 	let hideAnchorControl = $state(true);
-	let { floatingMenuRef = $bindable() }: LinkFloatingMenuProps = $props();
 
 	const computedStyleString = $derived(`display: ${hideAnchorControl ? 'none' : 'flex'}`);
 

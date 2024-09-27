@@ -5,7 +5,7 @@ import { CodeBlockLowlight } from '@tiptap/extension-code-block-lowlight';
 import { lowlight } from 'lowlight';
 import type { AnyExtension } from '@tiptap/core';
 
-export let defaultExtensions = {
+export const defaultExtensions = {
 	link: Link.configure({
 		openOnClick: false,
 		HTMLAttributes: {

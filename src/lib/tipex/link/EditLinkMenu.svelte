@@ -1,12 +1,17 @@
-<script lang="ts">
-	import { tipex } from '$lib/tipex/editor.svelte';
-
-	interface EditLinkMenuProps {
+<script lang="ts" context="module">
+	export interface EditLinkMenuProps {
 		enableLinkEdit?: boolean;
 	}
+</script>
+
+<script lang="ts">
+	import type { TipexEditor } from '../Tipex.svelte';
+	import { getContext } from 'svelte';
 
 	let { enableLinkEdit = $bindable(false) }: EditLinkMenuProps = $props();
-	let linkInput: HTMLInputElement = $state();
+
+	let tipex: TipexEditor = getContext('tipex');
+	let linkInput: HTMLInputElement | undefined = $state();
 
 	function handleLinkAndSave() {
 		let isValidURL = linkInput.value.startsWith('http://')

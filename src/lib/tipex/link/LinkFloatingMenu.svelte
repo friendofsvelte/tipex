@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import { Editor } from '@tiptap/core';
-	import { onMount } from 'svelte';
-	import { tipex } from '$lib/tipex/editor.svelte';
+	import { getContext, onMount } from 'svelte';
+	import type { TipexEditor } from '../Tipex.svelte';
+
+	let tipex: TipexEditor = getContext('tipex');
 
 	function handleAcceptLink() {
 		if (tipex.editor instanceof Editor) {

@@ -1,7 +1,9 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import { getContext, type Snippet } from 'svelte';
 	import EditLinkMenu from '$lib/tipex/link/EditLinkMenu.svelte';
-	import { tipex } from '$lib/tipex/editor.svelte';
+	import type { TipexEditor } from './Tipex.svelte';
+
+	let tipex: TipexEditor = getContext('tipex');
 
 	interface UtilityProps {
 		children?: Snippet;

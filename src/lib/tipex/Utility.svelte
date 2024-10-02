@@ -1,13 +1,15 @@
-<script lang="ts">
+<script lang="ts" context="module">
 	import { type Snippet } from 'svelte';
 	import EditLinkMenu from '$lib/tipex/link/EditLinkMenu.svelte';
 	import type { TipexEditor } from './Tipex.svelte';
 
-	interface UtilityProps {
+	export interface UtilityProps {
 		children?: Snippet;
 		tipex: TipexEditor;
 	}
+</script>
 
+<script lang="ts">
 	let { children, tipex }: UtilityProps = $props();
 
 	let enableLinkEdit = $state(false);

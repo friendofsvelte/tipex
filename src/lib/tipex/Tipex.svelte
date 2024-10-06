@@ -7,6 +7,7 @@
 	export type HasEditorSnippet = Snippet<[TipexEditor]>;
 
 	export interface TipexProps {
+		tipex?: TipexEditor;
 		extensions?: any;
 		floatingMenu?: boolean;
 		displayDefaultControls?: boolean;
@@ -22,7 +23,6 @@
 		controlComponent?: HasEditorSnippet;
 		utilities?: HasEditorSnippet;
 		footComponent?: HasEditorSnippet;
-		tipex: TipexEditor;
 	}
 </script>
 

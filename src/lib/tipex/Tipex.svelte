@@ -100,7 +100,7 @@
 
 <svelte:document onfocusin={onFocusChange} onfocusout={onFocusChange} />
 {#if floatingMenu}
-	<LinkFloatingMenu bind:floatingMenuRef />
+	<LinkFloatingMenu bind:floatingMenuRef {tipex} />
 {/if}
 
 <div class="tipex-editor {className}" {style}
@@ -120,7 +120,7 @@
 					</div>
 				{:else}
 					<div class="tipex-utilities">
-						<Utility />
+						<Utility {tipex} />
 					</div>
 				{/if}
 			</DefaultControls>

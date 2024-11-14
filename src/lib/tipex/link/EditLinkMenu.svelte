@@ -58,9 +58,9 @@
 	aria-label="Edit link"
 >
 	{#if enableLinkEdit}
-		<Fa6SolidXmark display class="h-4 w-4"/>
+		<Fa6SolidXmark display class="h-4 w-4" />
 	{:else}
-		<Fa6SolidLink display class="h-4 w-4"/>
+		<Fa6SolidLink display class="h-4 w-4" />
 	{/if}
 </button>
 

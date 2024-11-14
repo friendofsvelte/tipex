@@ -6,10 +6,22 @@
 
 	export type HasEditorSnippet = Snippet<[TipexEditor]>;
 
-	export interface TipexProps {
-		class?: string;
+	export interface WithControlsOn {
+		controls?: true;
+		controlComponent?: never;
+		utilities?: HasEditorSnippet;
+	}
+
+	export interface WithControlsOff {
+		controls?: false;
+		utilities?: never;
 		controlComponent?: HasEditorSnippet;
-		controls?: boolean;
+	}
+
+	export type WithControlsX = WithControlsOn | WithControlsOff;
+
+	export type TipexProps = {
+		class?: string;
 		/**
 		 * Context ID to be used for the editor.
 		 */
@@ -41,8 +53,7 @@
 		 * The editor instance.
 		 */
 		this?: TipexEditor;
-		utilities?: HasEditorSnippet;
-	}
+	} & WithControlsX;
 </script>
 
 <script lang="ts">
@@ -124,9 +135,7 @@
 	<div class="tipex-editor-wrap">
 		{@render head?.(tipex)}
 		<div class="tipex-editor-section" bind:this={tipexEditorRef}></div>
-		{#if controlComponent}
-			{@render controlComponent?.(tipex)}
-		{:else if controls}
+		{#if controls}
 			<!-- Default controls -->
 			<Controls {tipex}>
 				{#if utilities}
@@ -134,13 +143,15 @@
 						{@render utilities?.(tipex)}
 					</div>
 				{:else}
+					<!-- Default utilities -->
 					<div class="tipex-utilities">
 						<Utility {tipex} />
 					</div>
 				{/if}
 			</Controls>
+		{:else if controls}
+			{@render controlComponent?.(tipex)}
 		{/if}
 		{@render foot?.(tipex)}
 	</div>
 </div>
-

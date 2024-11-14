@@ -1,3 +1,7 @@
+<script>
+	import ParamSpan from '$item/ParamSpan.svelte';
+</script>
+
 <h2 class="mt-6" id="Snippet-props">Tipex Props</h2>
 <div class="overflow-x-auto">
 	<table class="table-auto w-full mt-3">
@@ -11,19 +15,19 @@
 		</thead>
 		<tbody>
 		<tr>
-			<td>head()</td>
+			<td>head<ParamSpan/></td>
 			<td>null</td>
 			<td>N/A</td>
 			<td>Snippet for rendering a component at the head of the editor.</td>
 		</tr>
 		<tr>
-			<td>controlComponent()</td>
+			<td>controlComponent<ParamSpan/></td>
 			<td>Controls</td>
 			<td>if controlComponent</td>
 			<td>Snippet for customizing the control element of the editor. If not provided, Controls are used.</td>
 		</tr>
 		<tr>
-			<td>utilities()</td>
+			<td>utilities<ParamSpan/></td>
 			<td>Utility</td>
 			<td>if utilities within Controls</td>
 			<td>Snippet within the Controls for adding extra utility controls. If not provided, default Utility is
@@ -31,7 +35,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td>foot()</td>
+			<td>foot<ParamSpan/></td>
 			<td>null</td>
 			<td>N/A</td>
 			<td>Snippet for rendering a component at the foot of the editor.</td>

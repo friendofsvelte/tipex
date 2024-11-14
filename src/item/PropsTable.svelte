@@ -50,7 +50,13 @@
 			<td>Initial HTML content to be rendered in the editor.</td>
 		</tr>
 		<tr>
-			<td>className</td>
+			<td>this</td>
+			<td>TipTap</td>
+			<td>N/A</td>
+			<td>Instance of the editor.</td>
+		</tr>
+		<tr>
+			<td>class</td>
 			<td>string</td>
 			<td>''</td>
 			<td>Class to be applied to the editor.</td>

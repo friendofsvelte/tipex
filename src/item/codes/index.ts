@@ -1,18 +1,18 @@
 export const insertUtils = `import {Utility} from "@friendofsvelte/tipex";
 <Tipex body={body}>
-  {#snippet utilities()}
-    <Utility/>
+  {#snippet utilities(tipex)}
+    <Utility {tipex}/>
   {/snippet}
 </Tipex>`;
 
 export const appendUtils = `<Tipex body={body}>
- {#snippet utilities()}
+ {#snippet utilities(tipex)}
    <div aria-label="Custom utility button">...</div>
  {/snippet}
 </Tipex>;`;
 
 export const overrideControl = `<Tipex body={body}>
-   {#snippet controlComponent()}
+   {#snippet controlComponent(tipex)}
 	   <div aria-label="New Custom Control">...</div>
 	 {/snippet}
 </Tipex>`;

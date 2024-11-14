@@ -15,39 +15,60 @@
 		</thead>
 		<tbody>
 		<tr>
-			<td>head<ParamSpan/></td>
-			<td>null</td>
-			<td>N/A</td>
-			<td>Snippet for rendering a component at the head of the editor.</td>
-		</tr>
-		<tr>
-			<td>controlComponent<ParamSpan/></td>
-			<td>Controls</td>
-			<td>if controlComponent</td>
-			<td>Snippet for customizing the control element of the editor. If not provided, Controls are used.</td>
-		</tr>
-		<tr>
-			<td>utilities<ParamSpan/></td>
-			<td>Utility</td>
-			<td>if utilities within Controls</td>
-			<td>Snippet within the Controls for adding extra utility controls. If not provided, default Utility is
-				used.
+			<td>
+				<ParamSpan name="head" />
+			</td>
+			<td>undefined</td>
+			<td>Optional</td>
+			<td>A slot that accepts a function receiving the TipexEditor instance, rendered above the main editor content
+				area
 			</td>
 		</tr>
 		<tr>
-			<td>foot<ParamSpan/></td>
-			<td>null</td>
-			<td>N/A</td>
-			<td>Snippet for rendering a component at the foot of the editor.</td>
+			<td>
+				<ParamSpan name="controlComponent" />
+			</td>
+			<td>undefined</td>
+			<td>Only used when controls=false</td>
+			<td>A custom control component that receives the editor instance. Cannot be used together with the utilities
+				prop
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<ParamSpan name="utilities" />
+			</td>
+			<td>Utility</td>
+			<td>Only used when controls=true</td>
+			<td>
+				Custom utility components rendered within the default Controls component. Cannot
+				be used together with controlComponent
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<ParamSpan name="foot" />
+			</td>
+			<td>undefined</td>
+			<td>Optional</td>
+			<td>
+				A slot that accepts a function receiving the TipexEditor instance,
+				rendered below the editor content and controls
+			</td>
 		</tr>
 		</tbody>
 	</table>
 </div>
-
 <blockquote>
 	<p class="text-gray-700"><strong>Note:</strong>
-		The <code>utilities</code> Snippet is only available if the <code>controlComponent()</code> Snippet is not
-		provided. The <code>controlComponent()</code> overrides the default controls, and makes the
-		<code>utilities</code>
-		Snippet unavailable.
+		These props are mutually exclusive based on the control mode:
+	</p>
+	<ul class="list-disc list-inside">
+		<li>When <code>controls=true</code>: Only <code>utilities</code> can be used</li>
+		<li>When <code>controls=false</code>: Only <code>controlComponent</code> can be used</li>
+	</ul>
+
+	<p class="text-gray-700">
+		This is enforced by the <code>WithControlsOn</code> and <code>WithControlsOff</code> type interfaces.
+	</p>
 </blockquote>

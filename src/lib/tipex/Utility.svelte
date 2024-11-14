@@ -24,11 +24,11 @@
 
 {#if !enableLinkEdit}
 	<button
-		type="button"
 		class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 		onclick={copy}
+		type="button"
 		aria-label="Copy HTML">
-		<Fa6SolidCopy display class="h-4 w-4"/>
+		<Fa6SolidCopy display class="h-4 w-4" />
 	</button>
 	{@render children?.()}
 {/if}

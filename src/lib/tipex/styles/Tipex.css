@@ -18,7 +18,7 @@
     overflow-y-auto;
 }
 
-.tipex-editor.isEditorFocused.focusOnEdit {
+.tipex-editor.focused.focusOnEdit {
     @apply outline-none ring-4 ring-blue-500 border-transparent;
 }
 

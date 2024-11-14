@@ -1,5 +1,6 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
 	import type { TipexEditor } from '../Tipex.svelte';
+
 	export interface EditLinkMenuProps {
 		enableLinkEdit?: boolean;
 		tipex: TipexEditor;
@@ -7,6 +8,9 @@
 </script>
 
 <script lang="ts">
+	import Fa6SolidXmark from '$lib/tipex/icons/Fa6SolidXmark.svelte';
+	import Fa6SolidLink from '$lib/tipex/icons/Fa6SolidLink.svelte';
+
 	let { enableLinkEdit = $bindable(false), tipex }: EditLinkMenuProps = $props();
 
 	let linkInputRef: HTMLInputElement | undefined = $state();
@@ -51,8 +55,13 @@
 	onclick={handleEditLinkToggle}
 	class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 	class:active={enableLinkEdit}
+	aria-label="Edit link"
 >
-	<iconify-icon icon={enableLinkEdit ? 'fa6-solid:xmark' : 'fa6-solid:link'}></iconify-icon>
+	{#if enableLinkEdit}
+		<Fa6SolidXmark display class="h-4 w-4"/>
+	{:else}
+		<Fa6SolidLink display class="h-4 w-4"/>
+	{/if}
 </button>
 
 {#if enableLinkEdit}

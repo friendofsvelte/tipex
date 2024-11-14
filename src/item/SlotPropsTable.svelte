@@ -11,27 +11,27 @@
 		</thead>
 		<tbody>
 		<tr>
-			<td>headComponent()</td>
+			<td>head()</td>
 			<td>null</td>
 			<td>N/A</td>
 			<td>Snippet for rendering a component at the head of the editor.</td>
 		</tr>
 		<tr>
 			<td>controlComponent()</td>
-			<td>DefaultControls</td>
+			<td>Controls</td>
 			<td>if controlComponent</td>
-			<td>Snippet for customizing the control element of the editor. If not provided, DefaultControls are used.</td>
+			<td>Snippet for customizing the control element of the editor. If not provided, Controls are used.</td>
 		</tr>
 		<tr>
 			<td>utilities()</td>
 			<td>Utility</td>
-			<td>if utilities within DefaultControls</td>
-			<td>Snippet within the DefaultControls for adding extra utility controls. If not provided, default Utility is
+			<td>if utilities within Controls</td>
+			<td>Snippet within the Controls for adding extra utility controls. If not provided, default Utility is
 				used.
 			</td>
 		</tr>
 		<tr>
-			<td>footComponent()</td>
+			<td>foot()</td>
 			<td>null</td>
 			<td>N/A</td>
 			<td>Snippet for rendering a component at the foot of the editor.</td>

@@ -1,8 +1,8 @@
 import { FloatingMenu } from '@tiptap/extension-floating-menu';
 
-export function getDefaultFloatingMenu(editLinkRef: HTMLElement | undefined) {
+export function getDefaultFloatingMenu(editLinkRef: HTMLElement) {
 	return FloatingMenu.configure({
-		pluginKey: 'floatingMenuLinkEdit',
+		pluginKey: 'floatingLinkEdit',
 		element: editLinkRef,
 		shouldShow: ({ editor }) => {
 			return editor.isActive('link');

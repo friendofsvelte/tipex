@@ -1,15 +1,23 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
 	import type { Snippet } from 'svelte';
 	import type { TipexEditor } from './Tipex.svelte';
 
-	export interface DefaultControlsProps {
+	/**
+	 * Defines the properties for the default Controls component.
+	 */
+	export interface ControlsProps {
 		children?: Snippet;
 		tipex: TipexEditor;
 	}
 </script>
 
 <script lang="ts">
-	let { children, tipex }: DefaultControlsProps = $props();
+	import Fa6SolidParagraph from '$lib/tipex/icons/Fa6SolidParagraph.svelte';
+	import Fa6SolidBold from '$lib/tipex/icons/Fa6SolidBold.svelte';
+	import Fa6SolidItalic from '$lib/tipex/icons/Fa6SolidItalic.svelte';
+	import Fa6SolidCode from '$lib/tipex/icons/Fa6SolidCode.svelte';
+
+	let { children, tipex }: ControlsProps = $props();
 </script>
 
 {#if tipex}
@@ -39,7 +47,7 @@
 				class:active={tipex?.isActive('paragraph')}
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 			>
-				<iconify-icon icon="fa6-solid:paragraph"></iconify-icon>
+				<Fa6SolidParagraph display class="h-4 w-4" />
 			</button>
 
 			<button
@@ -48,7 +56,7 @@
 				class:active={tipex?.isActive('bold')}
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 			>
-				<iconify-icon icon="fa6-solid:bold"></iconify-icon>
+				<Fa6SolidBold display class="h-4 w-4" />
 			</button>
 
 			<button
@@ -57,7 +65,7 @@
 				class:active={tipex?.isActive('italic')}
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 			>
-				<iconify-icon icon="fa6-solid:italic"></iconify-icon>
+				<Fa6SolidItalic display class="h-4 w-4" />
 			</button>
 
 			<button
@@ -66,7 +74,7 @@
 				class:active={tipex?.isActive('code')}
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 			>
-				<iconify-icon icon="fa6-solid:code"></iconify-icon>
+				<Fa6SolidCode display class="h-4 w-4" />
 			</button>
 
 		</div>

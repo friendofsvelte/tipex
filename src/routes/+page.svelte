@@ -63,10 +63,10 @@
 </p>
 
 
-<Tipex htmlContent={codes.htmlContent}
-			 displayDefaultControls
-			 floatingMenu
-			 className="h-[70vh] border border-neutral-200 dark:border-neutral-700 shadow-xl mt-3">
+<Tipex body={codes.body}
+			 controls
+			 floating
+			 class="h-[70vh] border border-neutral-200 dark:border-neutral-700 shadow-xl mt-3">
 </Tipex>
 
 <h2 class="mt-8">Installation</h2>

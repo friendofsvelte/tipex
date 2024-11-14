@@ -3,26 +3,24 @@ import { Image } from '@tiptap/extension-image';
 import { Placeholder } from '@tiptap/extension-placeholder';
 import { CodeBlockLowlight } from '@tiptap/extension-code-block-lowlight';
 import { lowlight } from 'lowlight';
-import type { AnyExtension } from '@tiptap/core';
 
-export const defaultExtensions = {
-	link: Link.configure({
+export const defaultExtensions = [
+	Link.configure({
 		openOnClick: false,
 		HTMLAttributes: {
 			target: '_blank',
 			rel: 'noopener noreferrer'
 		}
 	}),
-	image: Image.configure({
+	Image.configure({
 		allowBase64: true
 	}),
-	placeholder: Placeholder.configure({
+	Placeholder.configure({
 		showOnlyWhenEditable: false
 	}),
-	codeBlock: CodeBlockLowlight.configure({
+	CodeBlockLowlight.configure({
 		lowlight,
 		languageClassPrefix: 'language-',
 		defaultLanguage: 'plaintext'
-	}),
-	floatingMenu: null
-} as Record<string, AnyExtension | null>;
+	})
+];

@@ -6,6 +6,7 @@
 	import '$lib/tipex/styles/CodeBlock.css';
 	import Footer from '$item/Footer.svelte';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
+	import TrackAppearance from '@friendofsvelte/toggle';
 
 	interface LayoutProps {
 		children?: import('svelte').Snippet;
@@ -14,6 +15,7 @@
 	let { children }: LayoutProps = $props();
 </script>
 
+<TrackAppearance />
 <div class="home-wrapper">
 	{#if $page.url.pathname !== '/'}
 		<ThemeToggle className="fixed top-5 right-7" />

@@ -22,14 +22,12 @@ Import the component and use it in your component.
 ```sveltehtml
 <script lang="ts">
     import {Tipex} from "@friendofsvelte/tipex";
-    export let htmlContent = `<p>This <a target="_blank" rel="noopener noreferrer" href="">content</a> is written by <a target="_blank" rel="noopener noreferrer" href="http://bishwas.net/">Bishwas</a> in 2023.</p>`;
+    let body = `<p>This <a target="_blank" rel="noopener noreferrer" href="">content</a> is written by <a target="_blank" rel="noopener noreferrer" href="http://bishwas.net/">Bishwas</a> in 2023.</p>`;
 </script>
 
-<Tipex {htmlContent}
-    displayDefaultControls
-    floatingMenu
-    style="margin-top: 1rem; margin-bottom: 0;" 
-    className="h-[70vh] border border-neutral-200"/>
+<Tipex {body} controls floating
+    style="margin-top: 1rem; margin-bottom: 0;"
+			 class="h-[70vh] border border-neutral-200"/>
 ```
 
 Documentation

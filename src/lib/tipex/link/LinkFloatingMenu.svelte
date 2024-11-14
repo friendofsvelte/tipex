@@ -1,8 +1,8 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
 	import type { TipexEditor } from '../Tipex.svelte';
 
 	export interface LinkFloatingMenuProps {
-		floatingMenuRef: HTMLDivElement | undefined;
+		floatingRef: HTMLDivElement | undefined;
 		tipex: TipexEditor;
 	}
 </script>
@@ -11,8 +11,11 @@
 	import { fade } from 'svelte/transition';
 	import { Editor } from '@tiptap/core';
 	import { onMount } from 'svelte';
+	import Fa6SolidXmark from '../icons/Fa6SolidXmark.svelte';
+	import Fa6SolidCheck from '../icons/Fa6SolidCheck.svelte';
+	import Fa6SolidArrowUpRightFromSquare from '../icons/Fa6SolidArrowUpRightFromSquare.svelte';
 
-	let { floatingMenuRef = $bindable(), tipex }: LinkFloatingMenuProps = $props();
+	let { floatingRef = $bindable(), tipex }: LinkFloatingMenuProps = $props();
 
 	function handleAcceptLink() {
 		if (tipex instanceof Editor) {
@@ -42,16 +45,16 @@
 </script>
 
 <div class="tipex-floating-group"
-		 bind:this={floatingMenuRef}
+		 bind:this={floatingRef}
 		 style={computedStyleString}
 		 transition:fade>
-	<button type="button" class="tipex-floating-button" onclick={handleOpenLink}>
-		<iconify-icon icon="fa6-solid:arrow-up-right-from-square"></iconify-icon>
+	<button type="button" class="tipex-floating-button" onclick={handleOpenLink} aria-label="Open link in new tab">
+		<Fa6SolidArrowUpRightFromSquare display class="h-3 w-3"/>
 	</button>
-	<button type="button" class="tipex-floating-button" onclick={handleAcceptLink}>
-		<iconify-icon icon="fa6-solid:check"></iconify-icon>
+	<button type="button" class="tipex-floating-button" onclick={handleAcceptLink} aria-label="Accept link">
+		<Fa6SolidCheck display class="h-3 w-3"/>
 	</button>
-	<button type="button" class="tipex-floating-button" onclick={handleCancelLink}>
-		<iconify-icon icon="fa6-solid:xmark"></iconify-icon>
+	<button type="button" class="tipex-floating-button" onclick={handleCancelLink} aria-label="Cancel link">
+		<Fa6SolidXmark display class="h-3 w-3"/>
 	</button>
 </div>

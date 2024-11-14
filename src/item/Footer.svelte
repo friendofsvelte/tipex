@@ -1,11 +1,11 @@
 <footer>
-    <a href="https://github.com/friendofsvelte/tipex" target="_blank" rel="noopener noreferrer">
-        Maybe, Star us on Github?
-    </a>
+	<a href="https://github.com/friendofsvelte/tipex" target="_blank" rel="noopener noreferrer">
+		Maybe, Star us on Github?
+	</a>
 
-    <a href="https://bishwas.net" target="_blank" rel="noopener noreferrer">
-        About Auther
-    </a>
+	<a href="https://bishwas.net" target="_blank" rel="noopener noreferrer">
+		About Auther
+	</a>
 </footer>
 
 

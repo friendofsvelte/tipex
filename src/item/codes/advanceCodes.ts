@@ -1,4 +1,4 @@
-const customizeControlImplementation = `<Tipex htmlContent={htmlContent}
+const customizeControlImplementation = `<Tipex body={body}
    controlComponent={CustomControl}
    />`;
 
@@ -9,8 +9,8 @@ const addHeadFootComponent = `<script lang="ts">
  import CustomControl from "./CustomControl.svelte";
 </script>
 
-<Tipex htmlContent={htmlContent}>
-  {#snippet headComponent()}
+<Tipex body={body}>
+  {#snippet head()}
     <YourCustomHead/>
   {/snippet}
   {#snippet controlComponent()}

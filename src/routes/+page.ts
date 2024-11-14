@@ -1,4 +1,4 @@
-import type { PageLoad } from './$types';
+import type { PageLoad } from './$types.js';
 
 const API_URL = 'https://api.github.com/repos/';
 const REPO_URL = 'friendofsvelte/tipex';

@@ -8,8 +8,8 @@
 </script>
 
 <script lang="ts">
-	import Fa6SolidXmark from '$lib/tipex/icons/Fa6SolidXmark.svelte';
-	import Fa6SolidLink from '$lib/tipex/icons/Fa6SolidLink.svelte';
+	import Fa6SolidXmark from '../icons/Fa6SolidXmark.svelte';
+	import Fa6SolidLink from '../icons/Fa6SolidLink.svelte';
 
 	let { enableLinkEdit = $bindable(false), tipex }: EditLinkMenuProps = $props();
 

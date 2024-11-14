@@ -1,6 +1,6 @@
 <script lang="ts" module>
 	import { type Snippet } from 'svelte';
-	import EditLinkMenu from '$lib/tipex/link/EditLinkMenu.svelte';
+	import EditLinkMenu from '../tipex/link/EditLinkMenu.svelte';
 	import type { TipexEditor } from './Tipex.svelte';
 
 	export interface UtilityProps {
@@ -10,7 +10,7 @@
 </script>
 
 <script lang="ts">
-	import Fa6SolidCopy from '$lib/tipex/icons/Fa6SolidCopy.svelte';
+	import Fa6SolidCopy from './icons/Fa6SolidCopy.svelte';
 
 	let { children, tipex }: UtilityProps = $props();
 

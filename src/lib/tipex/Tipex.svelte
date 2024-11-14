@@ -47,15 +47,14 @@
 
 <script lang="ts">
 	import { defaultExtensions } from './default.js';
-	import 'iconify-icon';
 	import { onMount, setContext } from 'svelte';
 	import { Editor } from '@tiptap/core';
 	import StarterKit from '@tiptap/starter-kit';
-	import Controls from '$lib/tipex/Controls.svelte';
+	import Controls from '../tipex/Controls.svelte';
 	import type { Extensions } from '@tiptap/core';
-	import { getDefaultFloatingMenu } from '$lib/tipex/prepare.js';
-	import LinkFloatingMenu from '$lib/tipex/link/LinkFloatingMenu.svelte';
-	import Utility from '$lib/tipex/Utility.svelte';
+	import { getDefaultFloatingMenu } from '../tipex/prepare.js';
+	import LinkFloatingMenu from '../tipex/link/LinkFloatingMenu.svelte';
+	import Utility from '../tipex/Utility.svelte';
 
 	let {
 		extensions = $bindable(defaultExtensions),

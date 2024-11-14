@@ -12,10 +12,10 @@
 </script>
 
 <script lang="ts">
-	import Fa6SolidParagraph from '$lib/tipex/icons/Fa6SolidParagraph.svelte';
-	import Fa6SolidBold from '$lib/tipex/icons/Fa6SolidBold.svelte';
-	import Fa6SolidItalic from '$lib/tipex/icons/Fa6SolidItalic.svelte';
-	import Fa6SolidCode from '$lib/tipex/icons/Fa6SolidCode.svelte';
+	import Fa6SolidParagraph from './icons/Fa6SolidParagraph.svelte';
+	import Fa6SolidBold from './icons/Fa6SolidBold.svelte';
+	import Fa6SolidItalic from './icons/Fa6SolidItalic.svelte';
+	import Fa6SolidCode from './icons/Fa6SolidCode.svelte';
 
 	let { children, tipex }: ControlsProps = $props();
 </script>

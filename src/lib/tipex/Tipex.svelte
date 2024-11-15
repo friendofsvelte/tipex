@@ -129,9 +129,9 @@
 			element: tipexEditorRef,
 			extensions: [
 				StarterKit.configure({
-					codeBlock: false
+					codeBlock: false,
 				}),
-				...Object.values(extensions) as Extensions
+				...extensions
 			],
 			content: body as string,
 			onTransaction({ editor }) {

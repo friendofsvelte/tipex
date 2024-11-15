@@ -62,11 +62,10 @@
 
 
 .tipex-editor-section .ProseMirror ol {
-    @apply list-disc ml-7;
+    @apply list-decimal ml-7;
 }
 
 .tipex-editor-section .ProseMirror li {
-    @apply list-decimal;
 }
 
 .tipex-editor-section .ProseMirror li {

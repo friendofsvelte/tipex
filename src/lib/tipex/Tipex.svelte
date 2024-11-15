@@ -34,7 +34,7 @@
 		/**
 		 * Whether to focus on the editor when it is created.
 		 */
-		focusOnEdit?: boolean;
+		focal?: boolean;
 		/**
 		 * The editor's head section.
 		 */
@@ -81,13 +81,13 @@
 		body = '',
 		class: className = '',
 		style = '',
-		focusOnEdit = true,
+		focal = true,
 		focused = $bindable(false),
 		head,
 		controlComponent,
 		utilities,
 		foot,
-		ctxId
+		ctxId = `_tipex`
 	}: TipexProps = $props();
 
 	function onFocusChange() {
@@ -131,7 +131,7 @@
 	<LinkFloatingMenu bind:floatingRef {tipex} />
 {/if}
 
-<div class="tipex-editor {className}" {style} bind:this={editorsParentRef} class:focused class:focusOnEdit>
+<div class="tipex-editor {className}" {style} bind:this={editorsParentRef} class:focused class:focal>
 	<div class="tipex-editor-wrap">
 		{@render head?.(tipex)}
 		<div class="tipex-editor-section" bind:this={tipexEditorRef}></div>

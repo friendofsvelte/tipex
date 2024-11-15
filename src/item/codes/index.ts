@@ -9,7 +9,7 @@ export const appendUtils = `<Tipex body={body}>
  {#snippet utilities(tipex)}
    <div aria-label="Custom utility button">...</div>
  {/snippet}
-</Tipex>;`;
+</Tipex>`;
 
 export const overrideControl = `<Tipex body={body}>
    {#snippet controlComponent(tipex)}

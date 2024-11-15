@@ -23,7 +23,7 @@
 			<td>floating</td>
 			<td>boolean</td>
 			<td>false</td>
-			<td>Determines if the default floating menu should be displayed.</td>
+			<td>Determines display of default floating menu.</td>
 		</tr>
 		<tr>
 			<td>oncreate</td>
@@ -47,7 +47,7 @@
 			<td>body</td>
 			<td>string</td>
 			<td>''</td>
-			<td>Initial HTML content to be rendered in the editor.</td>
+			<td>HTML content to render.</td>
 		</tr>
 		<tr>
 			<td>this</td>
@@ -68,16 +68,22 @@
 			<td>Style to be applied to the editor.</td>
 		</tr>
 		<tr>
-			<td>focusOnEdit</td>
+			<td>focal</td>
 			<td>boolean</td>
 			<td>true</td>
-			<td>Determines whether to focus on the editor when it is clicked to edit; default blue outline.</td>
+			<td>Focus outline when editing (blue ring).</td>
 		</tr>
 		<tr>
 			<td>controls</td>
 			<td>boolean</td>
 			<td>false</td>
-			<td>Determines if the default controls should be displayed.</td>
+			<td>Display the default controls.</td>
+		</tr>
+		<tr>
+			<td>ctxId</td>
+			<td>{'${string}_tipex'}</td>
+			<td>_tipex</td>
+			<td>Sets context ID to get editor instance via getContext.</td>
 		</tr>
 		<!-- Add additional props here as necessary -->
 		</tbody>

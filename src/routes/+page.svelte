@@ -66,6 +66,7 @@
 <Tipex body={codes.body}
 			 controls
 			 floating
+			 focal
 			 class="h-[70vh] border border-neutral-200 dark:border-neutral-700 shadow-xl mt-3">
 </Tipex>
 

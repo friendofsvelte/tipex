@@ -4,7 +4,7 @@
 	</a>
 
 	<a href="https://bishwas.net" target="_blank" rel="noopener noreferrer">
-		About Auther
+		About Author
 	</a>
 </footer>
 

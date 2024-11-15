@@ -149,7 +149,7 @@
 					</div>
 				{/if}
 			</Controls>
-		{:else if controls}
+		{:else}
 			{@render controlComponent?.(tipex)}
 		{/if}
 		{@render foot?.(tipex)}

@@ -6,19 +6,42 @@
 
 	export type HasEditorSnippet = Snippet<[TipexEditor]>;
 
+	export interface Boolish {
+		focal?: boolean;
+		floating?: boolean;
+		'!focal'?: never;
+		'!floating'?: never;
+	}
+
+	export interface NonBoolish {
+		'!focal'?: false;
+		'!floating'?: false;
+		focal?: never;
+		floating?: never;
+	}
+
 	export interface WithControlsOn {
 		controls?: true;
+		'!controls'?: never;
 		controlComponent?: never;
 		utilities?: HasEditorSnippet;
 	}
 
 	export interface WithControlsOff {
 		controls?: false;
+		'!controls'?: never;
 		utilities?: never;
 		controlComponent?: HasEditorSnippet;
 	}
 
-	export type WithControlsX = WithControlsOn | WithControlsOff;
+	export interface WithControlsNot {
+		'!controls': false;
+		controls?: never;
+		utilities?: never;
+		controlComponent?: never;
+	}
+
+	export type WithControlsX = WithControlsOn | WithControlsOff | WithControlsNot;
 
 	export type TipexProps = {
 		class?: string;
@@ -28,14 +51,6 @@
 		ctxId?: `${string}_tipex`;
 		extensions?: AnyExtension[];
 		/**
-		 * Whether to show the default floating menu.
-		 */
-		floating?: boolean;
-		/**
-		 * Whether to focus on the editor when it is created.
-		 */
-		focal?: boolean;
-		/**
 		 * The editor's head section.
 		 */
 		foot?: HasEditorSnippet;
@@ -44,7 +59,6 @@
 		 */
 		head?: HasEditorSnippet;
 		body?: string;
-		focused?: boolean;
 		oncreate?: (props: EditorEvents['create']) => void;
 		ondestroy?: (props: EditorEvents['destroy']) => void;
 		onupdate?: (props: EditorEvents['update']) => void;
@@ -53,7 +67,11 @@
 		 * The editor instance.
 		 */
 		this?: TipexEditor;
-	} & WithControlsX;
+		/**
+		 * Whether the editor should is focused, bind.
+		 */
+		focused?: boolean;
+	} & WithControlsX & (Boolish | NonBoolish);
 </script>
 
 <script lang="ts">
@@ -87,8 +105,13 @@
 		controlComponent,
 		utilities,
 		foot,
-		ctxId = `_tipex`
+		ctxId = `_tipex`,
+		...restProps
 	}: TipexProps = $props();
+
+	focal = !restProps['!focal'] ?? focal;
+	floating = !restProps['!floating'] ?? floating;
+	controls = !restProps['!controls'] ?? controls;
 
 	function onFocusChange() {
 		focused = !!(editorsParentRef && editorsParentRef.contains(document.activeElement));

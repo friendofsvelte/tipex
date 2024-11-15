@@ -19,13 +19,15 @@ export const overrideControl = `<Tipex body={body}>
 
 export const install = `npm install "@friendofsvelte/tipex";`;
 export const usage = `<script lang="ts">
-    import {Tipex} from "@friendofsvelte/tipex";
+    import {Tipex} from '@friendofsvelte/tipex';
     let body = \`<p>The initial html content.</p>\`;
 </script>
 
-<Tipex {body} controls floating
+<!-- Shorthands to disable: !controls !floating !focal -->
+<Tipex {body} controls floating focal
     style="margin-top: 1rem; margin-bottom: 0;" 
-    class="h-[70vh] border border-neutral-200"/>`;
+    class="h-[70vh] border border-neutral-200"/>
+`;
 
 let body = `
 <p>This <strong>content</strong> was written by <a target="_blank" rel="noopener" href="http://bishwas.net/">Bishwas</a> in 2023. You can edit this content and see the changes in the editor.</p><p>Do you have any questions? Feel free to ask in the <a target="_blank" rel="noopener noreferrer" href="https://github.com/friendofsvelte/tipex">Github repository</a>.</p><p>Try writing some code, list, or blockquote, and see how it looks in the editor.</p>

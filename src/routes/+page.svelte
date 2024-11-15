@@ -83,6 +83,19 @@
 </p>
 <HighlightSvelte code={codes.usage} />
 
+<h3 class="mt-7">Quick short-hands</h3>
+<ul class="list-disc pl-5 text-black dark:text-white">
+	<li>
+		<code>!controls</code>: Disable the control buttons, or <code>controls={false}</code>.
+	</li>
+	<li>
+		<code>!floating</code>: Disable the floating toolbar, or <code>floating={false}</code>.
+	</li>
+	<li>
+		<code>!focal</code>: Disable the focal point, or <code>focal={false}</code>.
+	</li>
+</ul>
+
 <h2 class="mt-8">Styling</h2>
 <p>
 	Tipex comes with a default style. You can use it by importing the following CSS file inside the

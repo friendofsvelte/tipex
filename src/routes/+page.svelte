@@ -11,6 +11,9 @@
 	import codes from '$item/codes';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
 	import { page } from '$app/stores';
+	import type { Editor } from '@tiptap/core';
+
+	let editor: Editor | undefined = $state();
 </script>
 
 <svelte:head>
@@ -64,6 +67,7 @@
 
 
 <Tipex body={codes.body}
+			 bind:tipex={editor}
 			 controls
 			 floating
 			 focal

@@ -66,7 +66,7 @@
 		/**
 		 * The editor instance.
 		 */
-		this?: TipexEditor;
+		tipex?: TipexEditor;
 		/**
 		 * Whether the editor should is focused, bind.
 		 */
@@ -80,14 +80,13 @@
 	import { Editor } from '@tiptap/core';
 	import StarterKit from '@tiptap/starter-kit';
 	import Controls from '../tipex/Controls.svelte';
-	import type { Extensions } from '@tiptap/core';
 	import { getDefaultFloatingMenu } from '../tipex/prepare.js';
 	import LinkFloatingMenu from '../tipex/link/LinkFloatingMenu.svelte';
 	import Utility from '../tipex/Utility.svelte';
 
 	let {
 		extensions = $bindable(defaultExtensions),
-		this: tipex = $bindable(),
+		tipex = $bindable(),
 		floating = false,
 		controls = false,
 		oncreate = () => {
@@ -129,7 +128,7 @@
 			element: tipexEditorRef,
 			extensions: [
 				StarterKit.configure({
-					codeBlock: false,
+					codeBlock: false
 				}),
 				...extensions
 			],

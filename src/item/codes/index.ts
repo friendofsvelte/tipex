@@ -41,7 +41,7 @@ import "@friendofsvelte/tipex/styles/Controls.css";
 import "@friendofsvelte/tipex/styles/EditLink.css";
 import "@friendofsvelte/tipex/styles/CodeBlock.css";`;
 
-export let access = `<Tipex body={htmlCotent} bind:this={editor} />`;
+export let access = `<Tipex body={htmlCotent} bind:tipex={editor} />`;
 
 const codes = {
 	insertUtils,

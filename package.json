@@ -93,7 +93,7 @@
     "@tiptap/extension-placeholder": "^2.1.13",
     "@tiptap/pm": "^2.1.13",
     "@tiptap/starter-kit": "^2.1.13",
-    "iconify-icon": "^1.0.8",
+  "iconify-icon": "^1.0.8",
     "lowlight": "^2.9.0"
   },
   "overrides": {}

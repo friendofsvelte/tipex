@@ -14,6 +14,9 @@
 	import type { Editor } from '@tiptap/core';
 
 	let editor: Editor | undefined = $state();
+
+	const htmlContent = $derived(editor?.getHTML());
+	$inspect('htmlContent', htmlContent);
 </script>
 
 <svelte:head>

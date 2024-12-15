@@ -150,7 +150,7 @@ Create a completely custom control interface:
 </Tipex>
 ```
 
-## How to get html content from editor
+## How to get html content from editor?
 
 ```svelte
 <script lang="ts">

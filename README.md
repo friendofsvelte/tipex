@@ -1,6 +1,9 @@
 # Tipex
 
-Tipex stands as an advanced rich text editor tailored for Svelte, meticulously engineered with the robust frameworks [Tiptap](https://tiptap.dev/) and [Prosemirror](https://prosemirror.net/). It empowers developers to effortlessly craft rich text editors, liberating them from the intricacies of underlying technologies, style management, and related complexities.
+Tipex stands as an advanced rich text editor tailored for Svelte, meticulously engineered with the robust
+frameworks [Tiptap](https://tiptap.dev/) and [Prosemirror](https://prosemirror.net/). It empowers developers to
+effortlessly craft rich text editors, liberating them from the intricacies of underlying technologies, style management,
+and related complexities.
 
 > Svelte5 and runes mode activated! ✨🔮
 
@@ -69,13 +72,14 @@ import { Tipex } from "@friendofsvelte/tipex";
 import { TextAlign } from '@tiptap/extension-text-align';
 
 const extensions = [
-    TextAlign.configure({
-        types: ['heading', 'paragraph'],
-    }),
+	TextAlign.configure({
+		types: ['heading', 'paragraph'],
+	}),
 ];
 
 // Use in component
-<Tipex {extensions} />
+<Tipex { extensions }
+/>
 ```
 
 ### Floating Menu
@@ -146,6 +150,21 @@ Create a completely custom control interface:
 </Tipex>
 ```
 
+## How to get html content from editor
+
+```svelte
+<script lang="ts">
+    import {Tipex} from "@friendofsvelte/tipex";
+    
+    let body = "";
+    let editor: Editor | undefined = $state();
+
+	const htmlContent = $derived(editor?.getHTML()); // Get HTML content
+ </script>
+ 
+ <Tipex {body} bind:editor />
+ ```
+
 ## Documentation
 
 For comprehensive documentation, visit [tipex.pages.dev](https://tipex.pages.dev/).
@@ -154,7 +173,9 @@ For comprehensive documentation, visit [tipex.pages.dev](https://tipex.pages.dev
 
 ![Friend Of Svelte Logo](https://avatars.githubusercontent.com/u/143795012?s=200&v=4)
 
-[Friend Of Svelte](https://github.com/friendofsvelte) is a community-driven project to help Svelte developers find and develop awesome Svelte resources. Our mission is to create high-quality, maintainable, and accessible tools for the Svelte ecosystem.
+[Friend Of Svelte](https://github.com/friendofsvelte) is a community-driven project to help Svelte developers find and
+develop awesome Svelte resources. Our mission is to create high-quality, maintainable, and accessible tools for the
+Svelte ecosystem.
 
 ### Join the Community
 
@@ -163,7 +184,8 @@ For comprehensive documentation, visit [tipex.pages.dev](https://tipex.pages.dev
 - 📢 Share your ideas
 - 👥 Open memberships for everyone
 
-If you like this project, you can be one of the friends by contributing to the project. Memberships are open for everyone.
+If you like this project, you can be one of the friends by contributing to the project. Memberships are open for
+everyone.
 
 ## License
 

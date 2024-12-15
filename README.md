@@ -162,7 +162,7 @@ Create a completely custom control interface:
 	const htmlContent = $derived(editor?.getHTML()); // Get HTML content
  </script>
  
- <Tipex {body} bind:editor />
+ <Tipex {body} bind:tipex={editor} />
  ```
 
 ## Documentation

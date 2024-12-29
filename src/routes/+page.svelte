@@ -16,7 +16,7 @@
 	let editor: Editor | undefined = $state();
 
 	const htmlContent = $derived(editor?.getHTML());
-	$inspect('htmlContent', htmlContent);
+	// $inspect('htmlContent', htmlContent);
 </script>
 
 <svelte:head>
@@ -35,6 +35,7 @@
 	</h1>
 	<div class="icon-link-section">
 		<a class="w-8 h-8 rounded-2xl"
+			 aria-label="NPM Package"
 			 href="https://www.npmjs.com/package/@friendofsvelte/tipex"
 			 target="_blank" rel="noopener noreferrer">
 			<iconify-icon icon="logos:npm-icon" class="w-4"></iconify-icon>
@@ -71,7 +72,7 @@
 
 <Tipex body={codes.body}
 			 bind:tipex={editor}
-			 controls
+			 !controls
 			 floating
 			 focal
 			 class="h-[70vh] border border-neutral-200 dark:border-neutral-700 shadow-xl mt-3">

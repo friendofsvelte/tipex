@@ -14,8 +14,8 @@
 	}
 
 	export interface NonBoolish {
-		'!focal'?: false;
-		'!floating'?: false;
+		'!focal'?: true;
+		'!floating'?: true;
 		focal?: never;
 		floating?: never;
 	}
@@ -35,7 +35,7 @@
 	}
 
 	export interface WithControlsNot {
-		'!controls': false;
+		'!controls': true;
 		controls?: never;
 		utilities?: never;
 		controlComponent?: never;
@@ -108,9 +108,9 @@
 		...restProps
 	}: TipexProps = $props();
 
-	focal = !restProps['!focal'] ?? focal;
-	floating = !restProps['!floating'] ?? floating;
-	controls = !restProps['!controls'] ?? controls;
+	focal = restProps['!focal'] === undefined ? focal : !restProps['!focal'];
+	floating = restProps['!floating'] === undefined ? floating : !restProps['!floating'];
+	controls = restProps['!controls'] === undefined ? controls : !restProps['!controls'];
 
 	function onFocusChange() {
 		focused = !!(editorsParentRef && editorsParentRef.contains(document.activeElement));

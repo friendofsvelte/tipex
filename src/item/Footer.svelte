@@ -1,9 +1,9 @@
 <footer>
-	<a href="https://github.com/friendofsvelte/tipex" target="_blank" rel="noopener noreferrer">
+	<a href="https://github.com/friendofsvelte/tipex" target="_blank" rel="noopener">
 		Maybe, Star us on Github?
 	</a>
 
-	<a href="https://bishwas.net" target="_blank" rel="noopener noreferrer">
+	<a href="https://bishwas.net" target="_blank">
 		About Author
 	</a>
 </footer>

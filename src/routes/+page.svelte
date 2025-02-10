@@ -37,13 +37,13 @@
 		<a class="w-8 h-8 rounded-2xl"
 			 aria-label="NPM Package"
 			 href="https://www.npmjs.com/package/@friendofsvelte/tipex"
-			 target="_blank" rel="noopener noreferrer">
+			 target="_blank" rel="noopener">
 			<iconify-icon icon="logos:npm-icon" class="w-4"></iconify-icon>
 		</a>
 		<a
 			class="px-2 h-8 rounded-2xl gap-1"
 			href="https://github.com/friendofsvelte/tipex"
-			target="_blank" rel="noopener noreferrer">
+			target="_blank" rel="noopener">
 			<iconify-icon icon="fa6-brands:github"
 										class="text-gray-700 dark:text-gray-200 w-4"></iconify-icon>
 			{#if $page.data.repo && 'stargazers_count' in $page.data.repo}
@@ -53,9 +53,9 @@
 		<!--		https://buymeacoffee.com/bishwasbh -->
 		<a class="h-8 px-3 flex items-center gap-2 shrink-0 rounded-2xl !text-yellow-600"
 			 href="https://www.buymeacoffee.com/bishwasbh"
-			 target="_blank" rel="noopener noreferrer">
+			 target="_blank" rel="noopener">
 			<iconify-icon icon="simple-icons:buymeacoffee" class="w-4"></iconify-icon>
-			<span class="text-sm">Buy me a coffee</span>
+			<span class="text-sm">Wanna share?</span>
 		</a>
 		<ThemeToggle />
 	</div>
@@ -63,7 +63,7 @@
 
 <p>
 	Tipex stands as an advanced rich text editor tailored for Svelte, meticulously engineered with the robust
-	frameworks <a target="_blank" rel="noopener noreferrer" href="https://tiptap.dev/">Tiptap</a> and
+	frameworks <a target="_blank" rel="noopener" href="https://tiptap.dev/">Tiptap</a> and
 	<a target="_blank" rel="noopener noreferrer" href="https://prosemirror.net/">Prosemirror</a>. It
 	empowers developers to effortlessly craft rich text editors, liberating
 	them from the intricacies of underlying technologies, style management, and related complexities.
@@ -81,7 +81,7 @@
 <h2 class="mt-8">Installation</h2>
 <p>
 	Install the package from <a href="https://www.npmjs.com/package/@friendofsvelte/tipex"
-															target="_blank" rel="noopener noreferrer">NPM</a>.
+															target="_blank" rel="noopener">NPM</a>.
 </p>
 <Highlight language={shell} code={codes.install} />
 
@@ -150,7 +150,7 @@
 	<img src="https://avatars.githubusercontent.com/u/143795012?s=200&v=4" alt="Friend Of Svelte Logo"
 			 class="w-12 h-12 rounded" />
 	<p>
-		<a href="https://github.com/friendofsvelte" target="_blank" rel="noopener noreferrer">Friend Of
+		<a href="https://github.com/friendofsvelte" target="_blank" rel="noopener">Friend Of
 			Svelte</a> is a
 		community driven project to help Svelte developers to find and develop awesome Svelte resources.
 	</p>
@@ -160,6 +160,15 @@
 	If you like this project, you can be one of the friend by contributing to the project. Memberships are open
 	for everyone.
 </p>
+<blockquote class="mt-2">
+		<p>
+			Read about my quest on becoming a top notch, master
+			<a href="https://bishwas.net/svelte-developer"
+				 class="text-blue-600 hover:underline"
+				 target="_blank">Svelte developer</a>.
+		</p>
+</blockquote>
+
 
 <style lang="postcss">
 </style>

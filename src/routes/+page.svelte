@@ -145,6 +145,13 @@
 	<a href="/customization"> customization page</a> to learn more.
 </p>
 
+<h2 class="mt-8">Commands</h2>
+<p>
+	You can use the <code>editor.commands</code> API to interact with the editor. The API is
+	compatible with the <a href="https://tiptap.dev" target="_blank" rel="noopener noreferrer">TipTap</a>
+	commands. Visit the <a href="/commands">commands page</a> to learn more.
+</p>
+
 <h2 class="mt-4">About Friend Of Svelte</h2>
 <div class="flex flex-col md:flex-row gap-2 md:gap-3 mb-2 mt-2">
 	<img src="https://avatars.githubusercontent.com/u/143795012?s=200&v=4" alt="Friend Of Svelte Logo"

@@ -6,6 +6,15 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
+
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-0C1NNVZXM7"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-0C1NNVZXM7');
+		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div>%sveltekit.body%</div>

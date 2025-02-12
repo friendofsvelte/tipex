@@ -71,6 +71,10 @@
 		 * Whether the editor should is focused, bind.
 		 */
 		focused?: boolean;
+    /**
+     * Whether the editor should have autofocus on mount.
+     */
+    autofocus?: boolean;
 	} & WithControlsX & (Boolish | NonBoolish);
 </script>
 
@@ -100,6 +104,7 @@
 		style = '',
 		focal = true,
 		focused = $bindable(false),
+    autofocus = true,
 		head,
 		controlComponent,
 		utilities,
@@ -138,7 +143,7 @@
 				tipex = undefined;
 				tipex = editor;
 			},
-			autofocus: true,
+			autofocus: autofocus,
 			onCreate: oncreate,
 			onDestroy: ondestroy,
 			onUpdate: onupdate

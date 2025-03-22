@@ -1,8 +1,6 @@
-<script>
-	import { typescript } from 'svelte-highlight/languages';
-	import { Highlight, HighlightSvelte } from 'svelte-highlight';
-	import advanceCodes from '$item/codes/advanceCodes';
-	import codes from '$item/codes';
+<script lang="ts">
+	import advanceCodes from '$item/codes/advanceCodes.js';
+	import codes from '$item/codes/index.js';
 	import SlotPropsTable from '$item/SlotPropsTable.svelte';
 </script>
 
@@ -42,14 +40,14 @@
 <p>
 	Here's a basic example of how you can insert in-built utility buttons.
 </p>
-<Highlight language={typescript} code={codes.insertUtils} />
+<pre class="language-typescript"><code>{`${codes.insertUtils}`}</code></pre>
 
 <h3 class="mt-8">Append custom buttons between</h3>
 <p>
 	To append new buttons you can use the <code>Utility.svelte</code> component, it has a <code>slot</code> for you
 	to insert your buttons.
 </p>
-<Highlight language={typescript} code={codes.appendUtils} />
+<pre class="language-typescript"><code>{`${codes.appendUtils}`}</code></pre>
 
 <SlotPropsTable />
 
@@ -57,7 +55,7 @@
 <p>
 	You can override the default controls with your own custom controls. Here's an example of how you can do it.
 </p>
-<Highlight language={typescript} code={codes.overrideControl} />
+<pre class="language-typescript"><code>{`${codes.overrideControl}`}</code></pre>
 
 <p>
 	Or, you can use <code>{'{#snippet controlComponent}'}</code> to append your buttons.
@@ -98,7 +96,7 @@
 	You can customize the controls of the editor by passing a <code>controlComponent</code> slot.
 </p>
 
-<HighlightSvelte code={advanceCodes.addHeadFootComponent} />
+<pre class="language-svelte"><code>{`${advanceCodes.addHeadFootComponent}`}</code></pre>
 
 <p class="mt-7">
 	You can also add a header and footer with using a slot.
@@ -112,4 +110,4 @@
 	prop to the editor.
 </p>
 
-<HighlightSvelte code={advanceCodes.tweakingExtensions} />
+<pre class="language-svelte"><code>{`${advanceCodes.tweakingExtensions}`}</code></pre>

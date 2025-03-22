@@ -6,8 +6,7 @@
 	import '$lib/tipex/styles/Tipex.css';
 
 	import PropsTable from '$item/PropsTable.svelte';
-	import { Highlight, HighlightSvelte } from 'svelte-highlight';
-	import { shell, typescript } from 'svelte-highlight/languages';
+	// Removed svelte-highlight imports
 	import codes from '$item/codes';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
 	import { page } from '$app/stores';
@@ -83,13 +82,13 @@
 	Install the package from <a href="https://www.npmjs.com/package/@friendofsvelte/tipex"
 															target="_blank" rel="noopener">NPM</a>.
 </p>
-<Highlight language={shell} code={codes.install} />
+<pre class="language-shell"><code>{`${codes.install}`}</code></pre>
 
 <h2 class="mt-8">Usage</h2>
 <p>
 	Import the component and use it in your component.
 </p>
-<HighlightSvelte code={codes.usage} />
+<pre class="language-svelte"><code>{`${codes.usage}`}</code></pre>
 
 <h3 class="mt-7">Quick short-hands</h3>
 <ul class="list-disc pl-5 text-black dark:text-white">
@@ -109,7 +108,7 @@
 	Tipex comes with a default style. You can use it by importing the following CSS file inside the
 	<code>{'script'}</code> tag.
 </p>
-<Highlight language={typescript} code={codes.styling} />
+<pre class="language-typescript"><code>{`${codes.styling}`}</code></pre>
 
 
 <blockquote class="mt-2">
@@ -130,7 +129,7 @@
 <p>
 	You can access the editor instance via:
 </p>
-<HighlightSvelte code={codes.access} />
+<pre class="language-svelte"><code>{`${codes.access}`}</code></pre>
 <p>
 	The editor instance is stored in a store. You can use it to access the editor instance
 	from anywhere in your app.
@@ -168,14 +167,14 @@
 	for everyone.
 </p>
 <blockquote class="mt-2">
-		<p>
-			Read about my quest on becoming a top notch, master
-			<a href="https://bishwas.net/svelte-developer"
-				 class="text-blue-600 hover:underline"
-				 target="_blank">Svelte developer</a>.
-		</p>
+	<p>
+		Read about my quest on becoming a top notch, master
+		<a href="https://bishwas.net/svelte-developer"
+			 class="text-blue-600 hover:underline"
+			 target="_blank">Svelte developer</a>.
+	</p>
 </blockquote>
 
 
-<style lang="postcss">
+<style>
 </style>

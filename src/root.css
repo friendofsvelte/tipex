@@ -1,3 +1,5 @@
+@reference "./app.css";
+
 @import url('./fonts/work-sans.css');
 
 body {

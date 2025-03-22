@@ -1,8 +1,8 @@
 <script lang="ts">
-	import '../app.postcss';
+	import '../app.css';
 	import '../root.css';
 	import 'iconify-icon';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import '$lib/tipex/styles/CodeBlock.css';
 	import Footer from '$item/Footer.svelte';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
@@ -16,19 +16,12 @@
 </script>
 
 <TrackAppearance />
-<div class="home-wrapper">
-	{#if $page.url.pathname !== '/'}
-		<ThemeToggle className="fixed top-5 right-7" />
+<div class="flex flex-col items-center justify-center py-10 px-3">
+	{#if page.url.pathname !== '/'}
+		<ThemeToggle class="fixed top-5 right-7" />
 	{/if}
 	<div class="max-w-4xl w-full">
 		{@render children?.()}
 	</div>
 	<Footer />
 </div>
-
-<style lang="postcss">
-    .home-wrapper {
-        @apply flex flex-col items-center justify-center;
-        @apply py-10 px-3;
-    }
-</style>

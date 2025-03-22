@@ -1,3 +1,4 @@
+@reference "../../../app.css";
 
 .tipex-editor-section .ProseMirror {
     @apply outline-none

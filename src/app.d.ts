@@ -1,6 +1,7 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 declare global {
+	declare const __VERSION__: string;
 	namespace App {
 		// interface Error {}
 		// interface Locals {}

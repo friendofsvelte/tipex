@@ -14,7 +14,7 @@
 	let editor: Editor | undefined = $state();
 
 	const htmlContent = $derived(editor?.getHTML());
-	// $inspect('htmlContent', htmlContent);
+	$inspect('htmlContent', htmlContent);
 </script>
 
 <svelte:head>

@@ -1,11 +1,7 @@
-<script>
-	import { Highlight } from 'svelte-highlight';
-	import { typescript } from 'svelte-highlight/languages';
-</script>
-
 <svelte:head>
 	<title>Editor Commands | Tipex Editor</title>
-	<meta name="description" content="Comprehensive guide to using editor commands in Tipex, a highly customizable text editor for Svelte and SvelteKit.">
+	<meta name="description"
+				content="Comprehensive guide to using editor commands in Tipex, a highly customizable text editor for Svelte and SvelteKit.">
 </svelte:head>
 
 <a href="/" class="flex items-center gap-3 bg-neutral-50 dark:bg-neutral-800 px-3 py-1 rounded-lg shadow-sm w-fit">
@@ -16,13 +12,15 @@
 <h1 class="mt-8">Editor Commands</h1>
 
 <p>
-	Tipex is built on top of TipTap and provides full access to TipTap's powerful command API. This guide covers common editor commands and their usage.
+	Tipex is built on top of TipTap and provides full access to TipTap's powerful command API. This guide covers common
+	editor commands and their usage.
 </p>
 
 <h2 class="mt-8">Basic Content Management</h2>
 <p>Here are the fundamental commands for managing editor content:</p>
 
-<Highlight language={typescript} code={`// Set content
+<pre class="language-typescript"><code>{`
+// Set content
 editor.commands.setContent('<p>Hello World</p>')
 
 // Insert content at cursor position
@@ -32,12 +30,14 @@ editor.commands.insertContent('New content')
 editor.commands.clearContent()
 
 // Focus editor
-editor.commands.focus()`} />
+editor.commands.focus()
+`}</code></pre>
 
 <h2 class="mt-8">Text Formatting</h2>
 <p>Common text formatting commands:</p>
 
-<Highlight language={typescript} code={`// Toggle bold
+<pre class="language-typescript"><code>{`
+// Toggle bold
 editor.commands.toggleBold()
 
 // Toggle italic
@@ -47,12 +47,14 @@ editor.commands.toggleItalic()
 editor.commands.toggleCode()
 
 // Toggle heading
-editor.commands.toggleHeading({ level: 2 })`} />
+editor.commands.toggleHeading({ level: 2 })
+`}</code></pre>
 
 <h2 class="mt-8">Working with Lists</h2>
 <p>Commands for handling different types of lists:</p>
 
-<Highlight language={typescript} code={`// Toggle bullet list
+<pre class="language-typescript"><code>{`
+// Toggle bullet list
 editor.commands.toggleBulletList()
 
 // Toggle ordered list
@@ -69,12 +71,14 @@ editor.commands.toggleTaskList()
     class:active={tipex.isActive('bulletList')}
 >
     <iconify-icon icon="fa6-solid:list"></iconify-icon>
-</button>`} />
+</button>
+`}</code></pre>
 
 <h2 class="mt-8">Link Management</h2>
 <p>Commands for working with links:</p>
 
-<Highlight language={typescript} code={`// Set link
+<pre class="language-typescript"><code>{`
+// Set link
 editor.commands.setLink({ href: 'https://example.com' })
 
 // Unset link
@@ -88,14 +92,16 @@ function handleLinkUpdate(url) {
             .setLink({ href: url })
             .run()
     }
-}`} />
+}
+`}</code></pre>
 
 <h2 class="mt-8">Image Handling</h2>
 <p>
 	Tipex supports both base64 and URL-based images. Here's how to handle image uploads:
 </p>
 
-<Highlight language={typescript} code={`// For base64 images (e.g., pasted images)
+<pre class="language-typescript"><code>{`
+// For base64 images (e.g., pasted images)
 // These are automatically handled by Tipex's default configuration
 
 // For uploaded images
@@ -120,14 +126,16 @@ async function handleImageUpload(file) {
     } catch (error) {
         console.error('Upload failed:', error)
     }
-}`} />
+}
+`}</code></pre>
 
 <h2 class="mt-8">Advanced Usage</h2>
 <p>
 	You can chain multiple commands together for complex operations:
 </p>
 
-<Highlight language={typescript} code={`// Chain multiple commands
+<pre class="language-typescript"><code>{`
+// Chain multiple commands
 editor.chain()
     .focus()
     .toggleBold()
@@ -136,12 +144,131 @@ editor.chain()
 
 // Check if a command is active
 const isBold = editor.isActive('bold')
-const isHeading = editor.isActive('heading', { level: 2 })`} />
+const isHeading = editor.isActive('heading', { level: 2 })
+`}</code></pre>
 
 <blockquote class="mt-4">
 	<p class="text-gray-700">
-		<strong>Note:</strong> Tipex provides full access to TipTap's command API. For a complete reference of all available commands,
-		visit the <a href="https://tiptap.dev/api/commands" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+		<strong>Note:</strong> Tipex provides full access to TipTap's command API. For a complete reference of all available
+		commands,
+		visit the <a href="https://tiptap.dev/api/commands" target="_blank" rel="noopener noreferrer"
+								 class="text-blue-600 hover:underline">
 		TipTap Commands API Documentation</a>.
 	</p>
 </blockquote>
+
+<!-- +page(1).svelte (Customization) -->
+<script>
+	// Removed svelte-highlight imports
+	import advanceCodes from '$item/codes/advanceCodes';
+	import codes from '$item/codes';
+	import SlotPropsTable from '$item/SlotPropsTable.svelte';
+</script>
+
+<svelte:head>
+	<title>Customization | Tipex Editor</title>
+	<meta name="description"
+				content="Customize Tipex Editor, a highly customizable text editor for Svelte and SvelteKit.">
+</svelte:head>
+
+<a href="/" class="flex items-center gap-3 bg-neutral-50 dark:bg-neutral-800 px-3 py-1 rounded-lg shadow-sm w-fit">
+	<iconify-icon icon="fa6-solid:house" class="text-sm"></iconify-icon>
+	Back to Home
+</a>
+
+<h1 class="mt-8">Customization</h1>
+<p>
+	As we have said, a software having customization is a software having soul. Tipex editor is highly customizable.
+	You can customize the editor to your heart's content.
+</p>
+
+<h2 class="mt-8" id="in-built-utility-buttons">In-built Utility Buttons</h2>
+
+<p>
+	The in-built utility buttons consist of <code>Copy</code> and <code>Link</code> buttons.
+</p>
+
+<figure class="image-tab">
+	<img src="https://github.com/friendofsvelte/tipex/assets/42182303/c6feb3c0-9ed8-4f9e-88d2-42b7895a72a8"
+			 alt="Svelte Text Editor: Tipex Editor with custom utility buttons"
+			 class="w-full rounded-xl mt-2 shadow-xl border border-neutral-200 dark:border-neutral-700" />
+
+	<figcaption>
+		Location of utility buttons in Text Editor
+	</figcaption>
+</figure>
+<h3 class="mt-8">Insert a set of buttons</h3>
+<p>
+	Here's a basic example of how you can insert in-built utility buttons.
+</p>
+<pre class="language-typescript"><code>{`${codes.insertUtils}`}</code></pre>
+
+<h3 class="mt-8">Append custom buttons between</h3>
+<p>
+	To append new buttons you can use the <code>Utility.svelte</code> component, it has a <code>slot</code> for you
+	to insert your buttons.
+</p>
+<pre class="language-typescript"><code>{`${codes.appendUtils}`}</code></pre>
+
+<SlotPropsTable />
+
+<h3 id="new_custom_controls" class="mt-8">Using new custom controls</h3>
+<p>
+	You can override the default controls with your own custom controls. Here's an example of how you can do it.
+</p>
+<pre class="language-typescript"><code>{`${codes.overrideControl}`}</code></pre>
+
+<p>
+	Or, you can use <code>{'{#snippet controlComponent}'}</code> to append your buttons.
+</p>
+
+<h2 class="mt-8">Image Upload</h2>
+<p>
+	Tipex editor supports image upload. You can upload images by dragging and dropping them in the editor, or
+	by copy pasting them from your clipboard, which is the most common way to upload images.
+</p>
+
+<h3 class="mt-4 mb-1">Custom Image Upload Tab</h3>
+<p>
+	You can use utility customization for this. Apply the upper mentioned method to append your custom button.
+</p>
+
+<h2 class="mt-8" id="advanced-customization">Advanced Customization</h2>
+
+<p>
+	Tipex, being a highly customizable editor, allows you to customize the editor to your heart's content and
+	make it look like your own. Here's some ways you can customize the editor.
+</p>
+
+<figure class="image-tab">
+	<img src="https://github.com/friendofsvelte/tipex/assets/42182303/9aa4814f-b360-473f-85af-ba147d7e6a56"
+			 alt="Svelte Text Editor: Advanced Customization of Tipex Editor"
+			 class="w-full rounded-xl mt-2 shadow-xl border border-neutral-200 dark:border-neutral-800" />
+
+	<figcaption>
+		Advanced Customization of Tipex Editor, <a href="https://github.com/Bishwas-py/tipexed-editor" target="_blank">Source
+		Code</a>
+	</figcaption>
+</figure>
+
+<h2 class="mt-8">Customize the controls</h2>
+
+<p>
+	You can customize the controls of the editor by passing a <code>controlComponent</code> slot.
+</p>
+
+<pre class="language-svelte"><code>{`${advanceCodes.addHeadFootComponent}`}</code></pre>
+
+<p class="mt-7">
+	You can also add a header and footer with using a slot.
+</p>
+
+<h2 class="mt-8">Tweaking extensions</h2>
+
+<p>
+	Tipex provides an <code>defaultExtensions</code> object which contains all the extensions that are used in the
+	editor. You can tweak the extensions, or add new extensions to the editor by passing a <code>extensions</code>
+	prop to the editor.
+</p>
+
+<pre class="language-svelte"><code>{`${advanceCodes.tweakingExtensions}`}</code></pre>

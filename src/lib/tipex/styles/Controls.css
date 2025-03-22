@@ -1,3 +1,4 @@
+@reference "../../../app.css";
 
 .tipex-controller {
     @apply flex flex-row flex-wrap justify-between md:flex-row gap-2 sticky bottom-0 z-10 py-2 px-3

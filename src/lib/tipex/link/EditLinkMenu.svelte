@@ -1,19 +1,37 @@
 <script lang="ts" module>
-	import type { TipexEditor } from '../Tipex.svelte';
-
-	export interface EditLinkMenuProps {
-		enableLinkEdit?: boolean;
-		tipex: TipexEditor;
-	}
+	export { editLink, type EditLinkMenuProps } from './editLink.js';
 </script>
 
 <script lang="ts">
 	import Fa6SolidXmark from '../icons/Fa6SolidXmark.svelte';
 	import Fa6SolidLink from '../icons/Fa6SolidLink.svelte';
+	import { cn } from '$lib/helper/cls.js';
+	import { editLink } from './editLink.js';
+	import type { EditLinkMenuProps } from './editLink.js';
 
-	let { enableLinkEdit = $bindable(false), tipex }: EditLinkMenuProps = $props();
+	let {
+		enableLinkEdit = $bindable(false),
+		tipex,
+		class: className = '',
+		buttonClass = '',
+		inputGroupClass = '',
+		inputClass = '',
+		saveButtonClass = ''
+	}: EditLinkMenuProps = $props();
 
 	let linkInputRef: HTMLInputElement | undefined = $state();
+
+	// Get the slots from editLink with our configuration
+	const { button, inputGroup, input, saveButton } = $derived(
+		editLink({
+			active: enableLinkEdit
+		})
+	);
+
+	const buttonClasses = $derived(cn(button(), buttonClass));
+	const inputGroupClasses = $derived(cn(inputGroup(), inputGroupClass));
+	const inputClasses = $derived(cn(input(), inputClass));
+	const saveButtonClasses = $derived(cn(saveButton(), saveButtonClass));
 
 	function handleLinkAndSave() {
 		if (!linkInputRef) return;
@@ -53,23 +71,26 @@
 
 <button
 	onclick={handleEditLinkToggle}
-	class="tipex-edit-button tipex-button-extra tipex-button-rigid"
-	class:active={enableLinkEdit}
+	class={buttonClasses}
 	aria-label="Edit link"
 >
 	{#if enableLinkEdit}
-		<Fa6SolidXmark display class="h-4 w-4" />
+		<Fa6SolidXmark class="h-4 w-4" />
 	{:else}
-		<Fa6SolidLink display class="h-4 w-4" />
+		<Fa6SolidLink class="h-4 w-4" />
 	{/if}
 </button>
 
 {#if enableLinkEdit}
-	<div class="tipex-link-edit-input-group">
-		<input type="text" placeholder="Your link here" bind:this={linkInputRef}
-					 value={tipex?.getAttributes('link').href || ''} />
-		<button class="tipex-edit-button tipex-button-extra tipex-button-free" type="button"
-						onclick={handleLinkAndSave}>
+	<div class={inputGroupClasses}>
+		<input
+			type="text"
+			placeholder="Your link here"
+			bind:this={linkInputRef}
+			class={inputClasses}
+			value={tipex?.getAttributes('link').href || ''}
+		/>
+		<button class={saveButtonClasses} type="button" onclick={handleLinkAndSave}>
 			Save
 		</button>
 	</div>

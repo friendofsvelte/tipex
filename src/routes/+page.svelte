@@ -1,22 +1,20 @@
 <script lang="ts">
-	import Tipex from '$lib/tipex/Tipex.svelte';
-	import '$lib/tipex/styles/Controls.css';
-	import '$lib/tipex/styles/EditLink.css';
+	import Tipex from '$lib/tipex/tipex/Tipex.svelte';
 	import '$lib/tipex/styles/ProseMirror.css';
-	import '$lib/tipex/styles/Tipex.css';
 
 	import PropsTable from '$item/PropsTable.svelte';
-	import { Highlight, HighlightSvelte } from 'svelte-highlight';
-	import { shell, typescript } from 'svelte-highlight/languages';
-	import codes from '$item/codes';
+	import codes from '$item/codes/index.js';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import type { Editor } from '@tiptap/core';
+	import SimpleIconsBuymeacoffee from '../icons/SimpleIconsBuymeacoffee.svelte';
+	import Fa6BrandsGithub from '../icons/Fa6BrandsGithub.svelte';
+	import LogosNpmIcon from '../icons/LogosNpmIcon.svelte';
 
 	let editor: Editor | undefined = $state();
 
 	const htmlContent = $derived(editor?.getHTML());
-	// $inspect('htmlContent', htmlContent);
+	$inspect('htmlContent', htmlContent);
 </script>
 
 <svelte:head>
@@ -38,23 +36,21 @@
 			 aria-label="NPM Package"
 			 href="https://www.npmjs.com/package/@friendofsvelte/tipex"
 			 target="_blank" rel="noopener">
-			<iconify-icon icon="logos:npm-icon" class="w-4"></iconify-icon>
+			<LogosNpmIcon class="w-4" />
 		</a>
 		<a
 			class="px-2 h-8 rounded-2xl gap-1"
 			href="https://github.com/friendofsvelte/tipex"
 			target="_blank" rel="noopener">
-			<iconify-icon icon="fa6-brands:github"
-										class="text-gray-700 dark:text-gray-200 w-4"></iconify-icon>
-			{#if $page.data.repo && 'stargazers_count' in $page.data.repo}
-				<span class="ml-1 text-gray-600 dark:text-gray-400">{$page.data.repo.stargazers_count}+</span>
+			<Fa6BrandsGithub class="text-gray-700 dark:text-gray-200 w-4" />
+			{#if page.data.repo && 'stargazers_count' in page.data.repo}
+				<span class="ml-1 text-gray-600 dark:text-gray-400">{page.data.repo.stargazers_count}+</span>
 			{/if}
 		</a>
-		<!--		https://buymeacoffee.com/bishwasbh -->
 		<a class="h-8 px-3 flex items-center gap-2 shrink-0 rounded-2xl !text-yellow-600"
 			 href="https://www.buymeacoffee.com/bishwasbh"
 			 target="_blank" rel="noopener">
-			<iconify-icon icon="simple-icons:buymeacoffee" class="w-4"></iconify-icon>
+			<SimpleIconsBuymeacoffee class="w-4" />
 			<span class="text-sm">Wanna share?</span>
 		</a>
 		<ThemeToggle />
@@ -83,13 +79,13 @@
 	Install the package from <a href="https://www.npmjs.com/package/@friendofsvelte/tipex"
 															target="_blank" rel="noopener">NPM</a>.
 </p>
-<Highlight language={shell} code={codes.install} />
+<pre class="language-shell"><code>{`${codes.install}`}</code></pre>
 
 <h2 class="mt-8">Usage</h2>
 <p>
 	Import the component and use it in your component.
 </p>
-<HighlightSvelte code={codes.usage} />
+<pre class="language-svelte"><code>{`${codes.usage}`}</code></pre>
 
 <h3 class="mt-7">Quick short-hands</h3>
 <ul class="list-disc pl-5 text-black dark:text-white">
@@ -109,7 +105,7 @@
 	Tipex comes with a default style. You can use it by importing the following CSS file inside the
 	<code>{'script'}</code> tag.
 </p>
-<Highlight language={typescript} code={codes.styling} />
+<pre class="language-typescript"><code>{`${codes.styling}`}</code></pre>
 
 
 <blockquote class="mt-2">
@@ -130,7 +126,7 @@
 <p>
 	You can access the editor instance via:
 </p>
-<HighlightSvelte code={codes.access} />
+<pre class="language-svelte"><code>{`${codes.access}`}</code></pre>
 <p>
 	The editor instance is stored in a store. You can use it to access the editor instance
 	from anywhere in your app.
@@ -168,14 +164,14 @@
 	for everyone.
 </p>
 <blockquote class="mt-2">
-		<p>
-			Read about my quest on becoming a top notch, master
-			<a href="https://bishwas.net/svelte-developer"
-				 class="text-blue-600 hover:underline"
-				 target="_blank">Svelte developer</a>.
-		</p>
+	<p>
+		Read about my quest on becoming a top notch, master
+		<a href="https://bishwas.net/svelte-developer"
+			 class="text-blue-600 hover:underline"
+			 target="_blank">Svelte developer</a>.
+	</p>
 </blockquote>
 
 
-<style lang="postcss">
+<style>
 </style>

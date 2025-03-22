@@ -1,3 +1,4 @@
+@reference "../../../app.css";
 
 .tipex-floating-button {
     @apply flex flex-row items-center justify-center

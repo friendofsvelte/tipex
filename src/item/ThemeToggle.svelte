@@ -6,6 +6,7 @@
 
 
 <button
+	aria-label="Toggle dark mode"
 	class="dark-mode-button group" class:isDarkMode={appearance} in:scale
 	onclick={()=>appearance.dark=!appearance.dark}>
 	<iconify-icon icon={appearance.dark ? 'fa-solid:moon' : 'fa-solid:sun'}

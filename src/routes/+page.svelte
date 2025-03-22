@@ -1,16 +1,15 @@
 <script lang="ts">
-	import Tipex from '$lib/tipex/Tipex.svelte';
-	import '$lib/tipex/styles/Controls.css';
-	import '$lib/tipex/styles/EditLink.css';
+	import Tipex from '$lib/tipex/tipex/Tipex.svelte';
 	import '$lib/tipex/styles/ProseMirror.css';
-	import '$lib/tipex/styles/Tipex.css';
 
 	import PropsTable from '$item/PropsTable.svelte';
-	// Removed svelte-highlight imports
-	import codes from '$item/codes';
+	import codes from '$item/codes/index.js';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import type { Editor } from '@tiptap/core';
+	import SimpleIconsBuymeacoffee from '../icons/SimpleIconsBuymeacoffee.svelte';
+	import Fa6BrandsGithub from '../icons/Fa6BrandsGithub.svelte';
+	import LogosNpmIcon from '../icons/LogosNpmIcon.svelte';
 
 	let editor: Editor | undefined = $state();
 
@@ -37,23 +36,21 @@
 			 aria-label="NPM Package"
 			 href="https://www.npmjs.com/package/@friendofsvelte/tipex"
 			 target="_blank" rel="noopener">
-			<iconify-icon icon="logos:npm-icon" class="w-4"></iconify-icon>
+			<LogosNpmIcon class="w-4" />
 		</a>
 		<a
 			class="px-2 h-8 rounded-2xl gap-1"
 			href="https://github.com/friendofsvelte/tipex"
 			target="_blank" rel="noopener">
-			<iconify-icon icon="fa6-brands:github"
-										class="text-gray-700 dark:text-gray-200 w-4"></iconify-icon>
-			{#if $page.data.repo && 'stargazers_count' in $page.data.repo}
-				<span class="ml-1 text-gray-600 dark:text-gray-400">{$page.data.repo.stargazers_count}+</span>
+			<Fa6BrandsGithub class="text-gray-700 dark:text-gray-200 w-4" />
+			{#if page.data.repo && 'stargazers_count' in page.data.repo}
+				<span class="ml-1 text-gray-600 dark:text-gray-400">{page.data.repo.stargazers_count}+</span>
 			{/if}
 		</a>
-		<!--		https://buymeacoffee.com/bishwasbh -->
 		<a class="h-8 px-3 flex items-center gap-2 shrink-0 rounded-2xl !text-yellow-600"
 			 href="https://www.buymeacoffee.com/bishwasbh"
 			 target="_blank" rel="noopener">
-			<iconify-icon icon="simple-icons:buymeacoffee" class="w-4"></iconify-icon>
+			<SimpleIconsBuymeacoffee class="w-4" />
 			<span class="text-sm">Wanna share?</span>
 		</a>
 		<ThemeToggle />

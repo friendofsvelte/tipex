@@ -1,9 +1,6 @@
 {
   "name": "@friendofsvelte/tipex",
   "version": "0.0.8",
-  "engines": {
-    "node": ">=18.18.0"
-  },
   "keywords": [
     "svelte",
     "text editor",

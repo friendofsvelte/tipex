@@ -1,6 +1,6 @@
 {
   "name": "@friendofsvelte/tipex",
-  "version": "0.0.7-fix-1",
+  "version": "0.0.8-dev",
   "keywords": [
     "svelte",
     "text editor",
@@ -20,19 +20,25 @@
   },
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && npm run package",
-    "preview": "vite preview",
-    "package": "svelte-kit sync && svelte-package && publint",
-    "prepareTipexCss": "cp src/app.css ./dist/tipex/styles/app.css",
-    "packageTipex": "npm run package && npm run prepareTipexCss",
-    "prepublishOnly": "npm run packageTipex",
-    "test": "npm run test:integration && npm run test:unit",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "format": "prettier --plugin-search-dir . --write .",
-    "test:integration": "playwright test",
-    "test:unit": "vitest"
+		"build": "vite build && npm run prepack",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"prepack": "svelte-kit sync && svelte-package && publint",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint .",
+		"test:unit": "vitest",
+		"test": "npm run test:unit -- --run && npm run test:e2e",
+		"test:e2e": "playwright test",
+		"pub:minor": "git add . && git commit -m \"chore: prepare for publish minor\" && npm version minor && git push --follow-tags && npm publish",
+		"pub:patch": "git add . && git commit -m \"chore: prepare for publish patch\" && npm version patch && git push --follow-tags && npm publish",
+		"pub:prelish": "git add . && git commit -m \"chore: prepare for publish premajor\" && npm version premajor && git push --follow-tags && npm publish",
+		"pub:major": "git add . && git commit -m \"chore: prepare for publish major\" && npm version major && git push --follow-tags && npm publish",
+		"pub:preminor": "git add . && git commit -m \"chore: prepare for publish preminor\" && npm version preminor && git push --follow-tags && npm publish",
+		"pub:prepatch": "git add . && git commit -m \"chore: prepare for publish prepatch\" && npm version prepatch && git push --follow-tags && npm publish",
+		"pub:prerelease": "git add . && git commit -m \"chore: prepare for publish prerelease\" && npm version prerelease && git push --follow-tags && npm publish",
+		"pub:from-git": "git add . && git commit -m \"chore: prepare for publish from-git\" && npm version from-git && git push --follow-tags && npm publish"
   },
   "exports": {
     ".": {

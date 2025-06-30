@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>Tipex Editor - Advanced Rich Text Editor for Svelte | Friend Of Svelte</title>
+	<title>Tipex Editor - Svelte Text Editor | Friend Of Svelte</title>
 	<meta name="description"
 				content="Tipex - A powerful, customizable rich text editor for Svelte and SvelteKit. Built on TipTap and ProseMirror with beautiful theming, extensive customization options, and seamless integration.">
 </svelte:head>
@@ -72,7 +72,7 @@
 <ul class="list-disc pl-5 space-y-2 text-black dark:text-white">
 	<li><strong>Rich Text Editing:</strong> Full support for formatting, links, lists, images, and code blocks</li>
 	<li><strong>Highly Customizable:</strong> Extensive theming and component customization options</li>
-	<li><strong>Svelte Native:</strong> Built specifically for Svelte with reactive bindings and modern syntax</li>
+	<li><strong>Svelte Native:</strong> Built specifically for Svelte with reactive bindings and modern svelte 5 runes syntax</li>
 	<li><strong>Accessible:</strong> WCAG compliant with keyboard navigation and screen reader support</li>
 	<li><strong>Extensible:</strong> Plugin architecture allows for custom functionality</li>
 	<li><strong>TypeScript Ready:</strong> Full TypeScript support with comprehensive type definitions</li>

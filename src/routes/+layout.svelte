@@ -1,9 +1,9 @@
 <script lang="ts">
-	import '../app.postcss';
-	import '../root.css';
+	import '../app.css';
+	import '$lib/tipex/styles/index.css';
+
 	import 'iconify-icon';
 	import { page } from '$app/stores';
-	import '$lib/tipex/styles/CodeBlock.css';
 	import Footer from '$item/Footer.svelte';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
 	import TrackAppearance from '@friendofsvelte/toggle';
@@ -27,6 +27,7 @@
 </div>
 
 <style lang="postcss">
+    @reference "../app.css";
     .home-wrapper {
         @apply flex flex-col items-center justify-center;
         @apply py-10 px-3;

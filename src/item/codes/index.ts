@@ -23,8 +23,8 @@ export const usage = `<script lang="ts">
     let body = \`<p>The initial html content.</p>\`;
 </script>
 
-<!-- Shorthands to disable: !controls !floating !focal -->
-<Tipex {body} controls floating focal
+<!-- Shorthands to disable: !floating !focal -->
+<Tipex {body} floating focal
     style="margin-top: 1rem; margin-bottom: 0;" 
     class="h-[70vh] border border-neutral-200"/>
 `;
@@ -35,11 +35,7 @@ let body = `
 <p>I hope you enjoyed it 😊</p>
 `;
 
-export let styling = `import "@friendofsvelte/tipex/styles/Tipex.css";
-import "@friendofsvelte/tipex/styles/ProseMirror.css";
-import "@friendofsvelte/tipex/styles/Controls.css";
-import "@friendofsvelte/tipex/styles/EditLink.css";
-import "@friendofsvelte/tipex/styles/CodeBlock.css";`;
+export let styling = `import "@friendofsvelte/tipex/styles/index.css";`;
 
 export let access = `<Tipex body={htmlCotent} bind:tipex={editor} />`;
 

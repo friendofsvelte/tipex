@@ -1,4 +1,5 @@
 @import url('./fonts/work-sans.css');
+@import "tailwindcss";
 
 body {
     @apply bg-gradient-to-b from-gray-100 to-gray-200 dark:from-stone-900 dark:to-neutral-950 min-h-screen;
@@ -106,3 +107,5 @@ h3 {
     @apply text-xl font-bold
     text-neutral-700 dark:text-neutral-200;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));

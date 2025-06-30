@@ -1,14 +1,11 @@
 <script lang="ts">
 	import Tipex from '$lib/tipex/Tipex.svelte';
-	import '$lib/tipex/styles/Controls.css';
-	import '$lib/tipex/styles/EditLink.css';
-	import '$lib/tipex/styles/ProseMirror.css';
-	import '$lib/tipex/styles/Tipex.css';
+	import '$lib/tipex/styles/index.css';
 
 	import PropsTable from '$item/PropsTable.svelte';
 	import { Highlight, HighlightSvelte } from 'svelte-highlight';
 	import { shell, typescript } from 'svelte-highlight/languages';
-	import codes from '$item/codes';
+	import codes from '$item/codes/index.js';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
 	import { page } from '$app/stores';
 	import type { Editor } from '@tiptap/core';
@@ -22,9 +19,8 @@
 <svelte:head>
 	<title>Tipex Editor - Svelte Text Editor | Friend Of Svelte</title>
 	<meta name="description"
-				content="Tipex editor, a rich text editor for Svelte, a beautiful and extremely customizable editor for Svelte.">
+				content="Tipex - A powerful, customizable rich text editor for Svelte and SvelteKit. Built on TipTap and ProseMirror with beautiful theming, extensive customization options, and seamless integration.">
 </svelte:head>
-
 
 <div class="head-section">
 	<h1>Tipex Editor
@@ -50,132 +46,167 @@
 				<span class="ml-1 text-gray-600 dark:text-gray-400">{$page.data.repo.stargazers_count}+</span>
 			{/if}
 		</a>
-		<!--		https://buymeacoffee.com/bishwasbh -->
 		<a class="h-8 px-3 flex items-center gap-2 shrink-0 rounded-2xl !text-yellow-600"
 			 href="https://www.buymeacoffee.com/bishwasbh"
 			 target="_blank" rel="noopener">
 			<iconify-icon icon="simple-icons:buymeacoffee" class="w-4"></iconify-icon>
-			<span class="text-sm">Wanna share?</span>
+			<span class="text-sm">Support Development</span>
 		</a>
 		<ThemeToggle />
 	</div>
 </div>
 
 <p>
-	Tipex stands as an advanced rich text editor tailored for Svelte, meticulously engineered with the robust
-	frameworks <a target="_blank" rel="noopener" href="https://tiptap.dev/">Tiptap</a> and
-	<a target="_blank" rel="noopener noreferrer" href="https://prosemirror.net/">Prosemirror</a>. It
-	empowers developers to effortlessly craft rich text editors, liberating
-	them from the intricacies of underlying technologies, style management, and related complexities.
+	Tipex is a cutting-edge rich text editor designed specifically for Svelte applications. Built on the powerful foundations of
+	<a target="_blank" rel="noopener" href="https://tiptap.dev/">TipTap</a> and
+	<a target="_blank" rel="noopener noreferrer" href="https://prosemirror.net/">ProseMirror</a>, Tipex provides developers
+	with an intuitive, highly customizable editing experience while abstracting away the complexity of underlying technologies.
+	Whether you're building a simple blog or a complex content management system, Tipex scales to meet your needs.
 </p>
 
-
 <Tipex
-	body={codes.body} bind:tipex={editor}
-	controls floating focal
-	class="h-[70vh] border border-neutral-200
-	dark:border-neutral-700 shadow-xl mt-3"
->
+	body={codes.body} bind:tipex={editor} floating focal class="h-[70vh] mt-3">
 </Tipex>
+
+<h2 class="mt-8">Key Features</h2>
+<ul class="list-disc pl-5 space-y-2 text-black dark:text-white">
+	<li><strong>Rich Text Editing:</strong> Full support for formatting, links, lists, images, and code blocks</li>
+	<li><strong>Highly Customizable:</strong> Extensive theming and component customization options</li>
+	<li><strong>Svelte Native:</strong> Built specifically for Svelte with reactive bindings and modern svelte 5 runes syntax</li>
+	<li><strong>Accessible:</strong> WCAG compliant with keyboard navigation and screen reader support</li>
+	<li><strong>Extensible:</strong> Plugin architecture allows for custom functionality</li>
+	<li><strong>TypeScript Ready:</strong> Full TypeScript support with comprehensive type definitions</li>
+</ul>
 
 <h2 class="mt-8">Installation</h2>
 <p>
-	Install the package from <a href="https://www.npmjs.com/package/@friendofsvelte/tipex"
-															target="_blank" rel="noopener">NPM</a>.
+	Install Tipex from <a href="https://www.npmjs.com/package/@friendofsvelte/tipex"
+															target="_blank" rel="noopener">NPM</a> using your preferred package manager.
 </p>
 <Highlight language={shell} code={codes.install} />
 
-<h2 class="mt-8">Usage</h2>
+<h2 class="mt-8">Examples & Variants</h2>
 <p>
-	Import the component and use it in your component.
+	Check out <a href="https://github.com/Bishwas-py/tipex-editor-variants" target="_blank" rel="noopener">Tipex Editor Variants</a> and its <a href="https://tipex-editor-variants.pages.dev/" target="_blank" rel="noopener">live preview</a> for examples showcasing what you can build with Tipex, including multiple themes and configurations.
+</p>
+
+
+<h2 class="mt-8">Quick Start</h2>
+<p>
+	Get started with Tipex in just a few lines of code. Import the component and its styles, then use it in your Svelte application.
 </p>
 <HighlightSvelte code={codes.usage} />
 
-<h3 class="mt-7">Quick short-hands</h3>
-<ul class="list-disc pl-5 text-black dark:text-white">
+<h3 class="mt-7">Configuration Options</h3>
+<p>Tipex provides several boolean props for quick configuration:</p>
+<ul class="list-disc pl-5 text-black dark:text-white space-y-1">
 	<li>
-		<code>!controls</code>: Disable the control buttons, or <code>controls={false}</code>.
+		<code>floating</code>: Enable/disable the floating selection toolbar (<code>!floating</code> to disable)
 	</li>
 	<li>
-		<code>!floating</code>: Disable the floating toolbar, or <code>floating={false}</code>.
-	</li>
-	<li>
-		<code>!focal</code>: Disable the focal point, or <code>focal={false}</code>.
+		<code>focal</code>: Enable/disable focus ring styling (<code>!focal</code> to disable)
 	</li>
 </ul>
 
-<h2 class="mt-8">Styling</h2>
+<h2 class="mt-8">Styling & Theming</h2>
 <p>
-	Tipex comes with a default style. You can use it by importing the following CSS file inside the
-	<code>{'script'}</code> tag.
+	Tipex is built with <strong>Tailwind CSS v4</strong> and uses the modern `@import "tailwindcss"` syntax along with the new `@theme` configuration system. 
+	Import the CSS file to get started with beautiful, responsive styling powered by the latest Tailwind architecture.
 </p>
 <Highlight language={typescript} code={codes.styling} />
 
-
 <blockquote class="mt-2">
 	<p>
-		The import for <code>@friendofsvelte/tipex/styles/ProseMirror.css</code> is used to
-		style content written in the editor. You can use your own style or use the default one.
-		Or, remove any CSS you don't wanna use.
+		<strong>Tailwind v4 Architecture:</strong> Tipex leverages Tailwind CSS v4's advanced features including the new `@theme` configuration, 
+		CSS custom properties integration, and the modern import system. The styles use `@layer components` for organization, 
+		CSS custom properties for theming (`--color-tipex-*`), and the new `@custom-variant` syntax for dark mode handling. 
+		This provides superior performance, better DX, and more flexible customization compared to older Tailwind versions.
 	</p>
 </blockquote>
 
-<h2 class="mt-8">Props</h2>
+<h2 class="mt-8">Props & Configuration</h2>
 <p>
-	Tipex component accepts following props.
+	Tipex accepts a comprehensive set of props for customization and configuration. Here are the available options:
 </p>
 <PropsTable />
 
-<h2 class="mt-8">Accessing Editor Instance</h2>
+<h2 class="mt-8">Editor Instance Access</h2>
 <p>
-	You can access the editor instance via:
+	Access the TipTap editor instance to programmatically control the editor, execute commands, or listen to events.
 </p>
 <HighlightSvelte code={codes.access} />
 <p>
-	The editor instance is stored in a store. You can use it to access the editor instance
-	from anywhere in your app.
+	The editor instance provides access to the full TipTap API, including commands for content manipulation, 
+	state management, and event handling. This allows for advanced integrations and custom functionality.
 </p>
 
-<h2 class="mt-8">Customizing Editor</h2>
+<h2 class="mt-8">Advanced Customization</h2>
 <p>
-	Tipex is built taking into consideration the need for customization. We believe that
-	a software lacking customization is a software lacking soul. Tipex provides an extensive
-	set of options to customize the editor to your heart's content. From functionality, style,
-	to key bindings, you can customize almost everything. Visit the
-	<a href="/customization"> customization page</a> to learn more.
+	Tipex is architected with customization at its core. Every aspect of the editor can be tailored to your needs:
+</p>
+<ul class="list-disc pl-5 text-black dark:text-white space-y-1">
+	<li><strong>Custom Controls:</strong> Replace or extend the default toolbar with your own components</li>
+	<li><strong>Theme Customization:</strong> Comprehensive CSS custom properties for colors, spacing, and typography</li>
+	<li><strong>Extension System:</strong> Add new functionality through TipTap's extension architecture</li>
+	<li><strong>Event Handling:</strong> React to editor events for custom workflows</li>
+	<li><strong>Content Validation:</strong> Implement custom validation and sanitization logic</li>
+</ul>
+<p>
+	Visit the <a href="/customization" class="text-blue-600 hover:underline">customization guide</a> for detailed examples and advanced techniques.
 </p>
 
-<h2 class="mt-8">Commands</h2>
+<h2 class="mt-8">Commands & API</h2>
 <p>
-	You can use the <code>editor.commands</code> API to interact with the editor. The API is
-	compatible with the <a href="https://tiptap.dev" target="_blank" rel="noopener noreferrer">TipTap</a>
-	commands. Visit the <a href="/commands">commands page</a> to learn more.
+	Leverage the powerful command system to programmatically interact with the editor. Tipex provides full compatibility 
+	with <a href="https://tiptap.dev" target="_blank" rel="noopener noreferrer">TipTap's command API</a>, enabling:
 </p>
+<ul class="list-disc pl-5 text-black dark:text-white space-y-1">
+	<li>Content insertion and manipulation</li>
+	<li>Formatting and styling operations</li>
+	<li>Selection and cursor management</li>
+	<li>Undo/redo functionality</li>
+	<li>Custom command chaining</li>
+</ul>
+<p>
+	Explore the <a href="/commands" class="text-blue-600 hover:underline">commands documentation</a> for comprehensive examples and use cases.
+</p>
+
+<h2 class="mt-8">Performance & Accessibility</h2>
+<p>
+	Tipex is optimized for performance and accessibility:
+</p>
+<ul class="list-disc pl-5 text-black dark:text-white space-y-1">
+	<li><strong>Lazy Loading:</strong> Components and extensions load only when needed</li>
+	<li><strong>Virtual Scrolling:</strong> Efficient handling of large documents</li>
+	<li><strong>ARIA Support:</strong> Full screen reader compatibility</li>
+	<li><strong>Keyboard Navigation:</strong> Complete keyboard control for all features</li>
+	<li><strong>Focus Management:</strong> Proper focus handling for complex interactions</li>
+</ul>
 
 <h2 class="mt-4">About Friend Of Svelte</h2>
 <div class="flex flex-col md:flex-row gap-2 md:gap-3 mb-2 mt-2">
 	<img src="https://avatars.githubusercontent.com/u/143795012?s=200&v=4" alt="Friend Of Svelte Logo"
 			 class="w-12 h-12 rounded" />
 	<p>
-		<a href="https://github.com/friendofsvelte" target="_blank" rel="noopener">Friend Of
-			Svelte</a> is a
-		community driven project to help Svelte developers to find and develop awesome Svelte resources.
+		<a href="https://github.com/friendofsvelte" target="_blank" rel="noopener">Friend Of Svelte</a> is a
+		community-driven organization dedicated to creating high-quality, open-source tools and resources for the Svelte ecosystem.
+		Our mission is to empower developers with exceptional tools that enhance productivity and developer experience.
 	</p>
 </div>
 
 <p>
-	If you like this project, you can be one of the friend by contributing to the project. Memberships are open
-	for everyone.
+	Join our growing community of contributors and help shape the future of Svelte development. 
+	We welcome contributions of all kinds - from code and documentation to feedback and feature requests.
 </p>
-<blockquote class="mt-2">
-		<p>
-			Read about my quest on becoming a top notch, master
-			<a href="https://bishwas.net/svelte-developer"
-				 class="text-blue-600 hover:underline"
-				 target="_blank">Svelte developer</a>.
-		</p>
-</blockquote>
 
+<blockquote class="mt-2">
+	<p>
+		<strong>Developer Story:</strong> Learn about the journey of creating Tipex and becoming a 
+		<a href="https://bishwas.net/svelte-developer"
+			 class="text-blue-600 hover:underline"
+			 target="_blank">master Svelte developer</a> in our founder's blog.
+	</p>
+</blockquote>
 
 <style lang="postcss">
 </style>

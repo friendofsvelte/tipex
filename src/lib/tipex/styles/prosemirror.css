@@ -80,6 +80,7 @@
   .tipex-editor-section .ProseMirror .is-empty::before {
     content: attr(data-placeholder);
     float: left;
-    height: 0  pointer-events-none text-tipex-editor-placeholder dark:text-tipex-editor-placeholder-dark;
+    height: 0;
+    @apply pointer-events-none text-tipex-editor-placeholder dark:text-tipex-editor-placeholder-dark;
   }
 }

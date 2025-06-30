@@ -90,7 +90,7 @@
   }
   
   .tipex-editor.focused.focal {
-    @apply outline-none border-transparent;
+    @apply outline-none border-transparent ring-4 ring-tipex-primary dark:ring-tipex-primary-dark;
     box-shadow: var(--shadow-tipex-focus);
   }
   

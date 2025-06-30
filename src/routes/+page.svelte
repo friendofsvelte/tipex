@@ -5,7 +5,7 @@
 	import PropsTable from '$item/PropsTable.svelte';
 	import { Highlight, HighlightSvelte } from 'svelte-highlight';
 	import { shell, typescript } from 'svelte-highlight/languages';
-	import codes from '$item/codes';
+	import codes from '$item/codes/index.js';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
 	import { page } from '$app/stores';
 	import type { Editor } from '@tiptap/core';
@@ -84,6 +84,12 @@
 															target="_blank" rel="noopener">NPM</a> using your preferred package manager.
 </p>
 <Highlight language={shell} code={codes.install} />
+
+<h2 class="mt-8">Examples & Variants</h2>
+<p>
+	Check out <a href="https://github.com/Bishwas-py/tipex-editor-variants" target="_blank" rel="noopener">Tipex Editor Variants</a> and its <a href="https://tipex-editor-variants.pages.dev/" target="_blank" rel="noopener">live preview</a> for examples showcasing what you can build with Tipex, including multiple themes and configurations.
+</p>
+
 
 <h2 class="mt-8">Quick Start</h2>
 <p>

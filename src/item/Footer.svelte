@@ -10,6 +10,7 @@
 
 
 <style lang="postcss">
+    @reference "../app.css";
     footer {
         @apply flex flex-row items-center justify-between w-full max-w-3xl;
         @apply mt-10;

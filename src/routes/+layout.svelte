@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../app.postcss';
+	import '../app.css';
 	import '../root.css';
 	import 'iconify-icon';
 	import { page } from '$app/stores';
@@ -27,6 +27,7 @@
 </div>
 
 <style lang="postcss">
+    @reference "../app.css";
     .home-wrapper {
         @apply flex flex-col items-center justify-center;
         @apply py-10 px-3;

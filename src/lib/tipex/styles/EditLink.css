@@ -1,4 +1,4 @@
-
+@reference "../../../app.css";
 .tipex-floating-button {
     @apply flex flex-row items-center justify-center
     border dark:border-neutral-700/60 border-neutral-200/70

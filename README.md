@@ -27,7 +27,7 @@ Install the package from [NPM](https://www.npmjs.com/package/@friendofsvelte/tip
 npm install "@friendofsvelte/tipex"
 ```
 
-Check out [Tipex Editor Variants](https://github.com/Bishwas-py/tipex-editor-variants) for examples showcasing what you can build with the Tipex Svelte text editor, including multiple themes and configurations.
+Check out [Tipex Editor Variants](https://github.com/Bishwas-py/tipex-editor-variants) and its [live preview](https://tipex-editor-variants.pages.dev/) for examples showcasing what you can build with the Tipex Svelte text editor, including multiple themes and configurations.
 
 ## Basic Usage
 

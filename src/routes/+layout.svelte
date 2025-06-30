@@ -1,9 +1,9 @@
 <script lang="ts">
 	import '../app.css';
-	import '../root.css';
+	import '$lib/tipex/styles/index.css';
+
 	import 'iconify-icon';
 	import { page } from '$app/stores';
-	import '$lib/tipex/styles/CodeBlock.css';
 	import Footer from '$item/Footer.svelte';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
 	import TrackAppearance from '@friendofsvelte/toggle';

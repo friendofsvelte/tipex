@@ -1,0 +1,85 @@
+@layer components {
+  .tipex-editor-section .ProseMirror {
+    @apply outline-none px-tipex-lg pb-tipex-sm h-full text-tipex-editor-text dark:text-tipex-editor-text-dark;
+  }
+
+  .tipex-editor-section .ProseMirror pre {
+    @apply bg-tipex-code-bg text-tipex-code-text text-tipex-sm  dark:bg-tipex-code-bg-dark dark:text-tipex-code-text-dark  px-tipex-xl py-tipex-lg mt-tipex-lg ml-tipex-md mr-tipex-xl  overflow-x-hidden mb-tipex-lg rounded-tipex-md;
+  }
+
+  .tipex-editor-section .ProseMirror code {
+    @apply bg-tipex-code-bg text-tipex-code-text  dark:bg-tipex-code-bg-dark dark:text-tipex-code-text-dark  px-tipex-sm py-tipex-xs rounded-tipex-sm;
+  }
+
+  .tipex-editor-section .ProseMirror h1 {
+    @apply text-tipex-2xl font-black text-tipex-editor-text dark:text-tipex-editor-text-dark  my-tipex-lg;
+  }
+
+  .tipex-editor-section .ProseMirror h2 {
+    @apply text-tipex-xl font-bold my-tipex-md;
+  }
+
+  .tipex-editor-section .ProseMirror h3 {
+    @apply text-tipex-lg font-semibold my-tipex-sm;
+  }
+
+  .tipex-editor-section .ProseMirror img[src] {
+    @apply mb-tipex-md;
+  }
+
+  .tipex-editor-section .ProseMirror h4,
+  .tipex-editor-section .ProseMirror h5,
+  .tipex-editor-section .ProseMirror h6 {
+    @apply text-tipex-base font-medium mb-tipex-sm;
+  }
+
+  .tipex-editor-section .ProseMirror p {
+    @apply text-tipex-base mb-tipex-md;
+  }
+
+  .tipex-editor-section .ProseMirror a[href] {
+    @apply text-tipex-link hover:underline hover:text-tipex-link-hover  dark:text-tipex-link-dark dark:hover:text-tipex-link-hover-dark;
+  }
+
+  .tipex-editor-section .ProseMirror ul {
+    @apply list-disc ml-tipex-2xl;
+  }
+
+  .tipex-editor-section .ProseMirror ol {
+    @apply list-decimal ml-tipex-2xl;
+  }
+
+  .tipex-editor-section .ProseMirror li {
+    @apply mb-tipex-sm;
+  }
+
+  .tipex-editor-section .ProseMirror blockquote {
+    @apply border-l-4 border-tipex-editor-border dark:border-tipex-editor-border-dark  pl-tipex-md mb-tipex-md ml-tipex-md;
+  }
+
+  .tipex-editor-section .ProseMirror img {
+    @apply max-w-full;
+  }
+
+  .tipex-editor-section .ProseMirror hr {
+    @apply border border-tipex-editor-border dark:border-tipex-editor-border-dark;
+  }
+
+  .tipex-editor-section .ProseMirror del {
+    @apply line-through;
+  }
+
+  .tipex-editor-section .ProseMirror em {
+    @apply italic;
+  }
+
+  .tipex-editor-section .ProseMirror strong {
+    @apply font-bold;
+  }
+
+  .tipex-editor-section .ProseMirror .is-empty::before {
+    content: attr(data-placeholder);
+    float: left;
+    height: 0  pointer-events-none text-tipex-editor-placeholder dark:text-tipex-editor-placeholder-dark;
+  }
+}

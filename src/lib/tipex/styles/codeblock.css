@@ -1,11 +1,27 @@
-pre code.hljs {
+@layer components {
+  pre code.hljs {
     display: block;
     overflow-x: auto;
-    padding: 1em;
-}
+    padding: var(--spacing-tipex-md);
+    @apply rounded-tipex-md;
+  }
 
-code.hljs {
-    padding: 3px 5px;
+  code.hljs {
+    padding: var(--spacing-tipex-xs) var(--spacing-tipex-sm);
+    @apply rounded-tipex-sm;
+  }
+
+  /* Light theme - use tipex theme colors for base */
+  .hljs {
+    color: var(--color-tipex-editor-text);
+    background: var(--color-tipex-code-bg);
+  }
+
+  /* Dark theme - use tipex theme colors for base */
+  .dark .hljs {
+    color: var(--color-tipex-editor-text-dark);
+    background: var(--color-tipex-code-bg-dark);
+  }
 }
 
 /*!
@@ -18,11 +34,6 @@ code.hljs {
   Outdated base version: https://github.com/primer/github-syntax-light
   Current colors taken from GitHub's CSS
 */
-.hljs {
-    color: #24292e;
-    background: #ffffff;
-}
-
 .hljs-doctag,
 .hljs-keyword,
 .hljs-meta .hljs-keyword,
@@ -142,11 +153,6 @@ code.hljs {
 
   Colors taken from GitHub's CSS
 */
-.dark .hljs {
-    color: #adbac7;
-    background: #22272e;
-}
-
 .dark .hljs-doctag,
 .dark .hljs-keyword,
 .dark .hljs-meta .hljs-keyword,
@@ -205,7 +211,7 @@ code.hljs {
 .dark .hljs-selector-tag,
 .dark .hljs-selector-pseudo {
     /* prettylights-syntax-entity-tag */
-    color: #8ddb8c;
+    color: #57ab5a;
 }
 
 .dark .hljs-subst {
@@ -215,13 +221,13 @@ code.hljs {
 
 .dark .hljs-section {
     /* prettylights-syntax-markup-heading */
-    color: #316dca;
+    color: #6cb6ff;
     font-weight: bold;
 }
 
 .dark .hljs-bullet {
     /* prettylights-syntax-markup-list */
-    color: #eac55f;
+    color: #c69026;
 }
 
 .dark .hljs-emphasis {
@@ -238,14 +244,14 @@ code.hljs {
 
 .dark .hljs-addition {
     /* prettylights-syntax-markup-inserted */
-    color: #b4f1b4;
-    background-color: #1b4721;
+    color: #57ab5a;
+    background-color: #2ea04326;
 }
 
 .dark .hljs-deletion {
     /* prettylights-syntax-markup-deleted */
-    color: #ffd8d3;
-    background-color: #78191b;
+    color: #e5534b;
+    background-color: #da363333;
 }
 
 .dark .hljs-char.escape_,

@@ -35,11 +35,7 @@ let body = `
 <p>I hope you enjoyed it 😊</p>
 `;
 
-export let styling = `import "@friendofsvelte/tipex/styles/Tipex.css";
-import "@friendofsvelte/tipex/styles/ProseMirror.css";
-import "@friendofsvelte/tipex/styles/Controls.css";
-import "@friendofsvelte/tipex/styles/EditLink.css";
-import "@friendofsvelte/tipex/styles/CodeBlock.css";`;
+export let styling = `import "@friendofsvelte/tipex/styles/index.css";`;
 
 export let access = `<Tipex body={htmlCotent} bind:tipex={editor} />`;
 

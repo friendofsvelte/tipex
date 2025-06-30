@@ -1,9 +1,6 @@
 <script lang="ts">
 	import Tipex from '$lib/tipex/Tipex.svelte';
-	import '$lib/tipex/styles/Controls.css';
-	import '$lib/tipex/styles/EditLink.css';
-	import '$lib/tipex/styles/ProseMirror.css';
-	import '$lib/tipex/styles/Tipex.css';
+	import '$lib/tipex/styles/index.css';
 
 	import PropsTable from '$item/PropsTable.svelte';
 	import { Highlight, HighlightSvelte } from 'svelte-highlight';

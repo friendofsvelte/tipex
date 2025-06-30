@@ -10,7 +10,7 @@ and related complexities.
 ## Key Features
 
 - 🚀 **Svelte 5 Ready**: Built with Svelte 5's latest features including runes and snippets
-- 🎨 **Customizable Controls**: Flexible control system with both default and custom options
+- 🎨 **Automatic Control Detection**: Smart control system that automatically detects whether to show default or custom controls
 - 🔌 **Plugin Architecture**: Extensible through Tiptap extensions
 - 📱 **Responsive**: Works great on both desktop and mobile devices
 - 🎯 **Floating Menu**: Context-aware floating toolbar for enhanced editing experience
@@ -42,7 +42,6 @@ Import the component and use it in your component:
 
 <Tipex 
     {body} 
-    controls 
     floating
     style="margin-top: 1rem; margin-bottom: 0;"
     class="h-[70vh] border border-neutral-200"
@@ -51,19 +50,21 @@ Import the component and use it in your component:
 
 ## Core Concepts
 
-### Control Modes
+### Control System
 
-Tipex offers two control modes:
+Tipex features an intelligent control system that automatically detects which interface to display:
 
-1. **Default Controls** (`controls={true}`):
+1. **Default Controls** (automatic when no `controlComponent` is provided):
     - Pre-built formatting toolbar
-    - Customizable through the `utilities` prop
+    - Customizable through the `utilities` snippet
     - Perfect for quick implementation
 
-2. **Custom Controls** (`controls={false}`):
+2. **Custom Controls** (when `controlComponent` snippet is provided):
     - Full control over the editor interface
-    - Use `controlComponent` for custom implementations
+    - Complete customization freedom
     - Ideal for specialized use cases
+
+This automatic detection eliminates the need for boolean flags and provides a cleaner API.
 
 ### Extension System
 
@@ -127,7 +128,7 @@ Add custom controls while keeping the default toolbar:
     let body = "";
 </script>
 
-<Tipex {body} controls>
+<Tipex {body}>
     {#snippet utilities(editor)}
         <CustomFormatting {editor} />
     {/snippet}
@@ -145,7 +146,7 @@ Create a completely custom control interface:
     let body = "";
 </script>
 
-<Tipex {body} controls={false}>
+<Tipex {body}>
     {#snippet controlComponent(editor)}
         <MyCustomControls {editor} />
     {/snippet}

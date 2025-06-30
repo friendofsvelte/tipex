@@ -95,9 +95,6 @@
 <p>Tipex provides several boolean props for quick configuration:</p>
 <ul class="list-disc pl-5 text-black dark:text-white space-y-1">
 	<li>
-		<code>controls</code>: Enable/disable the toolbar controls (<code>!controls</code> to disable)
-	</li>
-	<li>
 		<code>floating</code>: Enable/disable the floating selection toolbar (<code>!floating</code> to disable)
 	</li>
 	<li>

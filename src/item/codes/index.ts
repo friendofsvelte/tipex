@@ -23,8 +23,8 @@ export const usage = `<script lang="ts">
     let body = \`<p>The initial html content.</p>\`;
 </script>
 
-<!-- Shorthands to disable: !controls !floating !focal -->
-<Tipex {body} Display the default controls.
+<!-- Shorthands to disable: !floating !focal -->
+<Tipex {body} floating focal
     style="margin-top: 1rem; margin-bottom: 0;" 
     class="h-[70vh] border border-neutral-200"/>
 `;

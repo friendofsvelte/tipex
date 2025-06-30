@@ -534,7 +534,7 @@
     
     onUpdate() {
       const text = this.editor.getText();
-      this.storage.wordCount = text.split(/\s+/).filter(word => word.length > 0).length;
+      this.storage.wordCount = text.split(/\\s+/).filter(word => word.length > 0).length;
       this.storage.characterCount = text.length;
     },
   });

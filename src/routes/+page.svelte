@@ -65,10 +65,7 @@
 </p>
 
 <Tipex
-	body={codes.body} bind:tipex={editor}
-	controls floating focal
-	class="h-[70vh] mt-3"
->
+	body={codes.body} bind:tipex={editor} floating focal class="h-[70vh] mt-3">
 </Tipex>
 
 <h2 class="mt-8">Key Features</h2>

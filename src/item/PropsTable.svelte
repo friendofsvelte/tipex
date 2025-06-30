@@ -59,25 +59,19 @@
 			<td>class</td>
 			<td>string</td>
 			<td>''</td>
-			<td>Class to be applied to the editor.</td>
+			<td>Additional CSS classes to apply to the editor container.</td>
 		</tr>
 		<tr>
 			<td>style</td>
 			<td>string</td>
 			<td>''</td>
-			<td>Style to be applied to the editor.</td>
+			<td>Inline styles to apply to the editor container.</td>
 		</tr>
 		<tr>
 			<td>focal</td>
 			<td>boolean</td>
 			<td>true</td>
 			<td>Focus outline when editing (blue ring).</td>
-		</tr>
-		<tr>
-			<td>controls</td>
-			<td>boolean</td>
-			<td>false</td>
-			<td>Display the default controls.</td>
 		</tr>
 		<tr>
 			<td>ctxId</td>

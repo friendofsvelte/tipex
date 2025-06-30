@@ -21,27 +21,15 @@
 	}
 
 	export interface WithControlsOn {
-		controls?: true;
-		'!controls'?: never;
-		controlComponent?: never;
 		utilities?: HasEditorSnippet;
 	}
 
 	export interface WithControlsOff {
-		controls?: false;
-		'!controls'?: never;
 		utilities?: never;
 		controlComponent?: HasEditorSnippet;
 	}
 
-	export interface WithControlsNot {
-		'!controls': true;
-		controls?: never;
-		utilities?: never;
-		controlComponent?: never;
-	}
-
-	export type WithControlsX = WithControlsOn | WithControlsOff | WithControlsNot;
+	export type WithControlsX = WithControlsOn | WithControlsOff;
 
 	export type TipexProps = {
 		class?: string;
@@ -75,7 +63,15 @@
      * Whether the editor should have autofocus on mount.
      */
     autofocus?: boolean;
-	} & WithControlsX & (Boolish | NonBoolish);
+		/**
+		 * Custom control component snippet. If provided, default controls will be hidden.
+		 */
+		controlComponent?: HasEditorSnippet;
+		/**
+		 * Custom utilities snippet for the default controls.
+		 */
+		utilities?: HasEditorSnippet;
+	} & (Boolish | NonBoolish);
 </script>
 
 <script lang="ts">
@@ -92,7 +88,6 @@
 		extensions = $bindable(defaultExtensions),
 		tipex = $bindable(),
 		floating = false,
-		controls = false,
 		oncreate = () => {
 		},
 		ondestroy = () => {
@@ -115,7 +110,6 @@
 
 	focal = restProps['!focal'] === undefined ? focal : !restProps['!focal'];
 	floating = restProps['!floating'] === undefined ? floating : !restProps['!floating'];
-	controls = restProps['!controls'] === undefined ? controls : !restProps['!controls'];
 
 	function onFocusChange() {
 		focused = !!(editorsParentRef && editorsParentRef.contains(document.activeElement));
@@ -162,7 +156,7 @@
 	<div class="tipex-editor-wrap">
 		{@render head?.(tipex)}
 		<div class="tipex-editor-section" bind:this={tipexEditorRef}></div>
-		{#if controls}
+		{#if !controlComponent}
 			<!-- Default controls -->
 			<Controls {tipex}>
 				{#if utilities}

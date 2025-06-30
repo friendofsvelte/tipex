@@ -25,25 +25,18 @@
 			</td>
 		</tr>
 		<tr>
+			<td>controlComponent</td>
 			<td>
-				<ParamSpan name="controlComponent" />
+				<code>Snippet&lt;[TipexEditor]&gt;</code>
 			</td>
-			<td>undefined</td>
-			<td>Only used when controls=false</td>
-			<td>A custom control component that receives the editor instance. Cannot be used together with the utilities
-				prop
-			</td>
+			<td>Only used when you want to replace default controls entirely</td>
 		</tr>
 		<tr>
+			<td>utilities</td>
 			<td>
-				<ParamSpan name="utilities" />
+				<code>Snippet&lt;[TipexEditor]&gt;</code>
 			</td>
-			<td>Utility</td>
-			<td>Only used when controls=true</td>
-			<td>
-				Custom utility components rendered within the default Controls component. Cannot
-				be used together with controlComponent
-			</td>
+			<td>Only used when you want to customize the default controls toolbar</td>
 		</tr>
 		<tr>
 			<td>
@@ -59,16 +52,16 @@
 		</tbody>
 	</table>
 </div>
-<blockquote>
-	<p class="text-gray-700"><strong>Note:</strong>
-		These props are mutually exclusive based on the control mode:
+<div class="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+	<h4 class="text-sm font-semibold text-blue-800 dark:text-blue-200 mb-2">Control System</h4>
+	<p class="text-sm text-blue-700 dark:text-blue-300 mb-2">
+		Tipex automatically detects which control system to use:
 	</p>
-	<ul class="list-disc list-inside">
-		<li>When <code>controls=true</code>: Only <code>utilities</code> can be used</li>
-		<li>When <code>controls=false</code>: Only <code>controlComponent</code> can be used</li>
+	<ul class="text-sm text-blue-700 dark:text-blue-300 space-y-1">
+		<li>When <code>controlComponent</code> is provided: Uses your custom control component</li>
+		<li>When <code>controlComponent</code> is not provided: Shows default controls with optional <code>utilities</code></li>
 	</ul>
-
-	<p class="text-gray-700">
-		This is enforced by the <code>WithControlsOn</code> and <code>WithControlsOff</code> type interfaces.
+	<p class="text-sm text-blue-600 dark:text-blue-400 mt-2">
+		This ensures a clean API where you don't need to manage boolean flags.
 	</p>
-</blockquote>
+</div>

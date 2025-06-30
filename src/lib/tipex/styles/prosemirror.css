@@ -3,6 +3,44 @@
     @apply outline-none px-tipex-lg pb-tipex-sm h-full text-tipex-editor-text dark:text-tipex-editor-text-dark;
   }
 
+  /* Custom scrollbar styling for the editor section */
+  .tipex-editor-section {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(209 213 219) transparent;
+  }
+
+  .tipex-editor-section::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .tipex-editor-section::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .tipex-editor-section::-webkit-scrollbar-thumb {
+    background-color: rgb(209 213 219);
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  .tipex-editor-section::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(156 163 175);
+  }
+
+  /* Dark mode scrollbar */
+  .dark .tipex-editor-section {
+    scrollbar-color: rgb(75 85 99) transparent;
+  }
+
+  .dark .tipex-editor-section::-webkit-scrollbar-thumb {
+    background-color: rgb(75 85 99);
+  }
+
+  .dark .tipex-editor-section::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(107 114 128);
+  }
+
   .tipex-editor-section .ProseMirror pre {
     @apply bg-tipex-code-bg text-tipex-code-text text-tipex-sm  dark:bg-tipex-code-bg-dark dark:text-tipex-code-text-dark  px-tipex-xl py-tipex-lg mt-tipex-lg ml-tipex-md mr-tipex-xl  overflow-x-hidden mb-tipex-lg rounded-tipex-md;
   }

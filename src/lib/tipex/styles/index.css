@@ -3,3 +3,6 @@
 @import "./prosemirror.css";
 @import "./editlink.css";
 @import "./codeblock.css";
+@import "./tipex.css";
+
+@custom-variant dark (&:where(.dark, .dark *));

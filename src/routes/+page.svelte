@@ -70,8 +70,7 @@
 <Tipex
 	body={codes.body} bind:tipex={editor}
 	controls floating focal
-	class="h-[70vh] border border-neutral-200
-	dark:border-neutral-700 shadow-xl mt-3"
+	class="h-[70vh] mt-3"
 >
 </Tipex>
 

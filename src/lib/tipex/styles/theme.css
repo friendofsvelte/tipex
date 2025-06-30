@@ -137,7 +137,7 @@
   }
   
   .tipex-utilities {
-    @apply flex gap-tipex-sm ml-auto max-w-lg w-full justify-end;
+    @apply flex gap-tipex-sm ml-auto max-w-lg justify-end;
   }
   
   /* Floating Menu */

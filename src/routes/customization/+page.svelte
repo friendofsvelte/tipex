@@ -299,7 +299,7 @@
 <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-4 mt-4 rounded-r-md">
 	<div class="flex">
 		<div class="flex-shrink-0">
-			<iconify-icon icon="fa6-solid:check-circle" class="text-green-500 w-5 h-5"></iconify-icon>
+			<iconify-icon icon="fa6-solid:circle-check" class="text-green-500 w-5 h-5"></iconify-icon>
 		</div>
 		<div class="ml-3">
 			<h4 class="text-sm font-medium text-green-800 dark:text-green-200">Tailwind v4 Required</h4>

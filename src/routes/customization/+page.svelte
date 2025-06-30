@@ -8,8 +8,10 @@
 
 <svelte:head>
 	<title>Customization Guide | Tipex Editor</title>
-	<meta name="description"
-				content="Complete customization guide for Tipex Editor. Learn how to customize themes, controls, extensions, and create your own unique editor experience for Svelte applications.">
+	<meta 
+		name="description"
+		content="Complete customization guide for Tipex Editor. Learn how to customize themes, controls, extensions, and create your own unique editor experience for Svelte applications."
+	/>
 </svelte:head>
 
 <a href="/" class="flex items-center gap-3 bg-neutral-50 dark:bg-neutral-800 px-3 py-1 rounded-lg shadow-sm w-fit">

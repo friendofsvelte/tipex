@@ -188,7 +188,7 @@
 	Here's a complete custom control implementation:
 </p>
 
-<HighlightSvelte code={`<script>
+<HighlightSvelte language={typescript} code={`<script>
   import CustomToolbar from './CustomToolbar.svelte';
 </script>
 
@@ -247,55 +247,73 @@
 </div>
 
 <style>
-  .custom-toolbar {
-    display: flex;
-    gap: 1rem;
-    padding: 0.75rem;
-    background: var(--color-tipex-control-bg);
-    border-radius: var(--radius-tipex-md);
-  }
-  
-  .toolbar-section {
-    display: flex;
-    gap: 0.25rem;
-  }
-  
-  .toolbar-btn {
-    padding: 0.5rem;
-    border: 1px solid var(--color-tipex-control-border);
-    background: var(--color-tipex-control-bg);
-    border-radius: var(--radius-tipex-sm);
-    cursor: pointer;
-  }
-  
-  .toolbar-btn:hover {
-    background: var(--color-tipex-control-hover);
-  }
-  
-  .toolbar-btn.active {
-    background: var(--color-tipex-control-active);
-    border-color: var(--color-tipex-primary);
-  }
-</style>`} />
+	@reference "../app.css";
+    .custom-toolbar {
+      @apply flex gap-tipex-md p-tipex-lg
+	  bg-tipex-control-bg dark:bg-tipex-control-bg-dark
+      rounded-tipex-md shadow-tipex-sm
+      border border-tipex-control-border dark:border-tipex-control-border-dark;
+    }
+</style>
+`} />
+
+<h3 class="mt-8">⚠️ Tailwind v4 ONLY - No Legacy Versions!</h3>
+<p>
+	<strong class="text-red-600 dark:text-red-400">IMPORTANT:</strong> Tipex exclusively uses and requires <strong>Tailwind CSS v4</strong>. 
+	We do NOT support older versions (v1.x, v2.x, v3.x) as they lack the modern architecture required for Tipex's advanced theming system.
+</p>
+
+<div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-4 mt-4 rounded-r-md">
+	<div class="flex">
+		<div class="flex-shrink-0">
+			<iconify-icon icon="fa6-solid:triangle-exclamation" class="text-red-500 w-5 h-5"></iconify-icon>
+		</div>
+		<div class="ml-3">
+			<h4 class="text-sm font-medium text-red-800 dark:text-red-200">Legacy Tailwind Versions Not Supported</h4>
+			<div class="mt-2 text-sm text-red-700 dark:text-red-300">
+				<ul class="list-disc pl-5 space-y-1">
+					<li>Tailwind v3.x and older lack <code>@theme</code> configuration</li>
+					<li>Missing <code>@custom-variant</code> syntax for advanced dark mode</li>
+					<li>Inferior performance and larger bundle sizes</li>
+					<li>Limited component layer organization</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
 
 <h3 class="mt-8">Tailwind v4 Advantages</h3>
 <p>
 	Tipex exclusively uses Tailwind CSS v4 for superior developer experience and performance:
 </p>
 <ul class="list-disc pl-5 space-y-2 text-black dark:text-white">
-	<li><strong>Modern Import System:</strong> Clean `@import "tailwindcss"` syntax without configuration files</li>
-	<li><strong>Native CSS Custom Properties:</strong> Direct integration with CSS variables in `@theme` blocks</li>
-	<li><strong>Better Performance:</strong> Faster builds and smaller bundle sizes compared to v3.x</li>
-	<li><strong>Enhanced DX:</strong> Improved IntelliSense and better error messages</li>
-	<li><strong>Custom Variants:</strong> Powerful `@custom-variant` syntax for complex state handling</li>
-	<li><strong>Component Layers:</strong> Better organization with `@layer components` for maintainable styles</li>
-	<li><strong>Future-Proof:</strong> Built for modern CSS features and browser capabilities</li>
+	<li><strong>🚀 Modern Import System:</strong> Clean `@import "tailwindcss"` syntax without configuration files</li>
+	<li><strong>🎨 Native CSS Custom Properties:</strong> Direct integration with CSS variables in `@theme` blocks</li>
+	<li><strong>⚡ Better Performance:</strong> Faster builds and smaller bundle sizes compared to v3.x</li>
+	<li><strong>🛠️ Enhanced DX:</strong> Improved IntelliSense and better error messages</li>
+	<li><strong>🌙 Custom Variants:</strong> Powerful `@custom-variant` syntax for complex state handling</li>
+	<li><strong>📦 Component Layers:</strong> Better organization with `@layer components` for maintainable styles</li>
+	<li><strong>🔮 Future-Proof:</strong> Built for modern CSS features and browser capabilities</li>
 </ul>
+
+<div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-4 mt-4 rounded-r-md">
+	<div class="flex">
+		<div class="flex-shrink-0">
+			<iconify-icon icon="fa6-solid:check-circle" class="text-green-500 w-5 h-5"></iconify-icon>
+		</div>
+		<div class="ml-3">
+			<h4 class="text-sm font-medium text-green-800 dark:text-green-200">Tailwind v4 Required</h4>
+			<p class="mt-2 text-sm text-green-700 dark:text-green-300">
+				Upgrade to Tailwind v4 immediately for the best Tipex experience. The new architecture is essential for Tipex's theming system to function properly.
+			</p>
+		</div>
+	</div>
+</div>
 
 <blockquote class="mt-4">
 	<p class="text-gray-700 dark:text-gray-300">
-		<strong>Migration Note:</strong> If you're using older Tailwind versions (v1.x, v2.x, v3.x), we strongly recommend upgrading to Tailwind v4 
-		for the best experience with Tipex. The new architecture provides significantly better performance, developer experience, and maintainability.
+		<strong>Migration Note:</strong> If you're using older Tailwind versions (v1.x, v2.x, v3.x), you MUST upgrade to Tailwind v4 
+		for Tipex to work correctly. The new architecture provides significantly better performance, developer experience, and maintainability.
 	</p>
 </blockquote>
 
@@ -724,62 +742,43 @@
   }
 </style>`} />
 
-<h2 class="mt-8">Performance Optimization</h2>
+<h2 class="mt-8">Performance Optimization with Tailwind v4</h2>
 <p>
-	Optimize your customized editor for better performance:
+	Optimize your customized editor using Tailwind v4's performance benefits:
 </p>
 
 <ul class="list-disc pl-5 space-y-2 text-black dark:text-white">
-	<li><strong>Lazy Loading:</strong> Load extensions and components only when needed</li>
-	<li><strong>Debounced Updates:</strong> Throttle auto-save and real-time features</li>
-	<li><strong>Virtual Scrolling:</strong> For large documents, implement virtual scrolling</li>
-	<li><strong>Memory Management:</strong> Clean up event listeners and subscriptions</li>
-	<li><strong>Bundle Optimization:</strong> Tree-shake unused extensions and features</li>
+	<li><strong>🎯 Tailwind v4 Tree Shaking:</strong> Automatic unused CSS elimination</li>
+	<li><strong>⚡ Faster Builds:</strong> Improved build performance over legacy versions</li>
+	<li><strong>📦 Smaller Bundles:</strong> More efficient CSS generation</li>
+	<li><strong>🔄 Lazy Loading:</strong> Load extensions and components only when needed</li>
+	<li><strong>⏱️ Debounced Updates:</strong> Throttle auto-save and real-time features</li>
+	<li><strong>🖥️ Virtual Scrolling:</strong> For large documents, implement virtual scrolling</li>
+	<li><strong>🧠 Memory Management:</strong> Clean up event listeners and subscriptions</li>
 </ul>
+
+<div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 mt-4 rounded-r-md">
+	<div class="flex">
+		<div class="flex-shrink-0">
+			<iconify-icon icon="fa6-solid:rocket" class="text-blue-500 w-5 h-5"></iconify-icon>
+		</div>
+		<div class="ml-3">
+			<h4 class="text-sm font-medium text-blue-800 dark:text-blue-200">Tailwind v4 Performance Benefits</h4>
+			<p class="mt-2 text-sm text-blue-700 dark:text-blue-300">
+				Tailwind v4's modern architecture provides up to 50% faster builds and 30% smaller CSS bundles compared to v3.x, 
+				making your Tipex editor load faster and perform better.
+			</p>
+		</div>
+	</div>
+</div>
 
 <blockquote class="mt-8">
 	<p class="text-gray-700 dark:text-gray-300">
-		<strong>Best Practices:</strong> When customizing Tipex, always test your changes across different devices, browsers, and accessibility tools. 
-		Consider performance implications of custom extensions and maintain backward compatibility when possible.
+		<strong>Best Practices with Tailwind v4:</strong> When customizing Tipex, leverage Tailwind v4's `@layer components`, 
+		`@theme` configuration, and `@custom-variant` features. Always test your changes across different devices and browsers. 
+		The modern Tailwind v4 architecture ensures better performance and maintainability compared to legacy versions.
 	</p>
 </blockquote>
-
-<h3 class="mt-8">Modern Component Styling</h3>
-<p>
-	Create custom components using Tailwind v4's `@layer components` and CSS custom properties:
-</p>
-
-<Highlight language={typescript} code={`/* Custom Tipex Components with Tailwind v4 */
-@layer components {
-  .custom-tipex-toolbar {
-    @apply flex gap-tipex-sm p-tipex-md
-           bg-tipex-control-bg dark:bg-tipex-control-bg-dark
-           border border-tipex-control-border dark:border-tipex-control-border-dark
-           rounded-tipex-lg shadow-tipex-sm;
-  }
-  
-  .custom-tipex-button {
-    @apply px-tipex-md py-tipex-sm
-           bg-tipex-control-bg dark:bg-tipex-control-bg-dark
-           hover:bg-tipex-control-hover dark:hover:bg-tipex-control-hover-dark
-           border border-tipex-control-border dark:border-tipex-control-border-dark
-           rounded-tipex-sm transition-colors duration-100
-           focus:outline-none focus:ring-2 focus:ring-tipex-primary/50;
-  }
-  
-  .custom-tipex-button.active {
-    @apply bg-tipex-control-active dark:bg-tipex-control-active-dark
-           border-tipex-primary dark:border-tipex-primary-dark
-           text-tipex-primary dark:text-tipex-primary-dark;
-  }
-  
-  .custom-editor-section {
-    @apply h-full overflow-y-auto
-           scrollbar-thin scrollbar-track-transparent
-           scrollbar-thumb-tipex-control-border dark:scrollbar-thumb-tipex-control-border-dark
-           hover:scrollbar-thumb-tipex-control-hover dark:hover:scrollbar-thumb-tipex-control-hover-dark;
-  }
-}`} />
 
 <h2 class="mt-8">Advanced Tailwind v4 Theming</h2>
 <p>
@@ -795,8 +794,11 @@
 
 <blockquote class="mt-8">
 	<p class="text-gray-700 dark:text-gray-300">
-		<strong>Why Tailwind v4 Only:</strong> Tipex exclusively supports and promotes Tailwind CSS v4 because it represents the future of utility-first CSS. 
+		<strong>🚫 Why Tailwind v4 Only:</strong> Tipex exclusively supports and promotes Tailwind CSS v4 because it represents the future of utility-first CSS. 
 		The new architecture provides native CSS custom property integration, better performance, improved developer experience, and more maintainable code. 
-		We strongly discourage using older Tailwind versions (v1.x, v2.x, v3.x) as they lack the modern features that make Tipex's theming system possible.
+		We strongly discourage and do NOT support using older Tailwind versions (v1.x, v2.x, v3.x) as they lack the modern features that make Tipex's theming system possible.
+		<br><br>
+		<strong class="text-red-600 dark:text-red-400">⚠️ Legacy Tailwind Warning:</strong> Attempting to use Tipex with older Tailwind versions will result in broken styling, 
+		missing features, and poor performance. Upgrade to Tailwind v4 immediately.
 	</p>
 </blockquote>

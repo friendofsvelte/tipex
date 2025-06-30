@@ -24,7 +24,7 @@ export const usage = `<script lang="ts">
 </script>
 
 <!-- Shorthands to disable: !controls !floating !focal -->
-<Tipex {body} controls floating focal
+<Tipex {body} Display the default controls.
     style="margin-top: 1rem; margin-bottom: 0;" 
     class="h-[70vh] border border-neutral-200"/>
 `;

@@ -93,7 +93,7 @@
 
 	/* Task List Styling */
 	.tipex-editor-section .ProseMirror ul[data-type='taskList'] {
-		@apply list-none ml-0 p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50/50 dark:bg-gray-800/50 backdrop-blur-sm;
+		@apply list-none ml-0 p-4 border border-neutral-200 dark:border-neutral-700 rounded-lg bg-neutral-50/50 dark:bg-neutral-800/50 backdrop-blur-sm;
 	}
 
 	.tipex-editor-section .ProseMirror ul[data-type='taskList'] li {
@@ -109,7 +109,7 @@
 	}
 
 	.tipex-editor-section .ProseMirror ul[data-type='taskList'] li[data-checked='true'] > div {
-		@apply line-through text-gray-500 dark:text-gray-400;
+		@apply line-through text-neutral-500 dark:text-neutral-400;
 	}
 
 	.tipex-editor-section .ProseMirror ul[data-type='taskList'] li > label input[type='checkbox'] {

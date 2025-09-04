@@ -60,7 +60,6 @@
     "@eslint/js": "^9.18.0",
     "@friendofsvelte/toggle": "0.0.2-svelte.5.docup",
     "@playwright/test": "^1.28.1",
-    "@sveltejs/adapter-cloudflare": "^4.7.4",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/package": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
@@ -88,6 +87,7 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
+    "@sveltejs/adapter-cloudflare": "^7.2.3",
     "@tiptap/core": "^2.1.13",
     "@tiptap/extension-code-block": "^2.1.13",
     "@tiptap/extension-code-block-lowlight": "^2.1.13",

@@ -30,14 +30,10 @@
 				<td>
 					<code>Snippet&lt;[TipexEditor]&gt;</code>
 				</td>
-				<td>Only used when you want to replace default controls entirely</td>
-			</tr>
-			<tr>
-				<td>utilities</td>
+				<td>Optional</td>
 				<td>
-					<code>Snippet&lt;[TipexEditor]&gt;</code>
+					A slot that accepts a function receiving the TipexEditor instance, used to completely replace the default controls
 				</td>
-				<td>Only used when you want to customize the default controls toolbar</td>
 			</tr>
 			<tr>
 				<td>
@@ -54,7 +50,7 @@
 	</table>
 </div>
 <div
-	class="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg"
+	class="mt-6 mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg"
 >
 	<h4 class="text-sm font-semibold text-blue-800 dark:text-blue-200 mb-2">Control System</h4>
 	<p class="text-sm text-blue-700 dark:text-blue-300 mb-2">
@@ -63,8 +59,7 @@
 	<ul class="text-sm text-blue-700 dark:text-blue-300 space-y-1">
 		<li>When <code>controlComponent</code> is provided: Uses your custom control component</li>
 		<li>
-			When <code>controlComponent</code> is not provided: Shows default controls with optional
-			<code>utilities</code>
+			When <code>controlComponent</code> is not provided: Shows default controls with built-in utilities
 		</li>
 	</ul>
 	<p class="text-sm text-blue-600 dark:text-blue-400 mt-2">

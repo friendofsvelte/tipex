@@ -46,31 +46,31 @@
 
 <Highlight language={typescript} code={customizationCodes.tailwindThemeConfig} />
 
-<h2 class="mt-8" id="in-built-utility-buttons">Built-in Utility Components</h2>
+<h2 class="mt-8" id="control-customization">Control Component Customization</h2>
 
 <p>
-	The built-in utility section includes essential tools like copy functionality and link management. 
-	You can easily integrate these or add your own custom utilities.
+	Tipex provides a single, flexible way to customize the editor controls through the `controlComponent` slot. 
+	You can either extend the default controls with custom utilities or completely replace them with your own implementation.
 </p>
 
 <figure class="image-tab">
 	<img src="https://github.com/friendofsvelte/tipex/assets/42182303/c6feb3c0-9ed8-4f9e-88d2-42b7895a72a8"
-			 alt="Tipex Editor utility buttons location and customization options"
+			 alt="Tipex Editor control customization options"
 			 class="w-full rounded-xl mt-2 shadow-xl border border-neutral-200 dark:border-neutral-700" />
 	<figcaption>
-		Utility buttons provide quick access to common editor functions
+		Control component provides complete flexibility for editor customization
 	</figcaption>
 </figure>
 
-<h3 class="mt-8">Adding Built-in Utilities</h3>
+<h3 class="mt-8">Using Default Controls with Built-in Utilities</h3>
 <p>
-	Include the default utility buttons (copy, link management) in your editor:
+	Include the default controls and utility buttons (copy, link management) in your editor:
 </p>
 <Highlight language={typescript} code={codes.insertUtils} />
 
-<h3 class="mt-8">Custom Utility Integration</h3>
+<h3 class="mt-8">Extending Default Controls with Custom Utilities</h3>
 <p>
-	Extend the utility area with your own custom buttons and functionality:
+	Add your own custom buttons alongside the built-in utilities:
 </p>
 <Highlight language={typescript} code={codes.appendUtils} />
 

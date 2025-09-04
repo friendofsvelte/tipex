@@ -1,9 +1,9 @@
 {
-  "insertUtils": "import {Utility} from \"@friendofsvelte/tipex\";\n<Tipex body={body}>\n  {#snippet utilities(tipex)}\n    <Utility {tipex}/>\n  {/snippet}\n</Tipex>",
+  "insertUtils": "import { Tipex, Controls, Utility } from \"@friendofsvelte/tipex\";\n\n<Tipex body={body}>\n  {#snippet controlComponent(tipex)}\n    <Controls {tipex}>\n      <div class=\"tipex-utilities\">\n        <Utility {tipex} />\n      </div>\n    </Controls>\n  {/snippet}\n</Tipex>",
   
-  "appendUtils": "<Tipex body={body}>\n {#snippet utilities(tipex)}\n   <div aria-label=\"Custom utility button\">...</div>\n {/snippet}\n</Tipex>",
+  "appendUtils": "<Tipex body={body}>\n  {#snippet controlComponent(tipex)}\n    <Controls {tipex}>\n      <div class=\"tipex-utilities\">\n        <Utility {tipex} />\n        <div aria-label=\"Custom utility button\">...</div>\n      </div>\n    </Controls>\n  {/snippet}\n</Tipex>",
   
-  "overrideControl": "<Tipex body={body}>\n   {#snippet controlComponent(tipex)}\n\t   <div aria-label=\"New Custom Control\">...</div>\n\t {/snippet}\n</Tipex>",
+  "overrideControl": "<Tipex body={body}>\n  {#snippet controlComponent(tipex)}\n    <div aria-label=\"New Custom Control\">...</div>\n  {/snippet}\n</Tipex>",
   
   "install": "npm install \"@friendofsvelte/tipex\";",
   

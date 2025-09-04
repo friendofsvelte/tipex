@@ -20,17 +20,6 @@
 		floating?: never;
 	}
 
-	export interface WithControlsOn {
-		utilities?: HasEditorSnippet;
-	}
-
-	export interface WithControlsOff {
-		utilities?: never;
-		controlComponent?: HasEditorSnippet;
-	}
-
-	export type WithControlsX = WithControlsOn | WithControlsOff;
-
 	export type TipexProps = {
 		class?: string;
 		/**
@@ -59,18 +48,14 @@
 		 * Whether the editor should is focused, bind.
 		 */
 		focused?: boolean;
-    /**
-     * Whether the editor should have autofocus on mount.
-     */
-    autofocus?: boolean;
+		/**
+		 * Whether the editor should have autofocus on mount.
+		 */
+		autofocus?: boolean;
 		/**
 		 * Custom control component snippet. If provided, default controls will be hidden.
 		 */
 		controlComponent?: HasEditorSnippet;
-		/**
-		 * Custom utilities snippet for the default controls.
-		 */
-		utilities?: HasEditorSnippet;
 	} & (Boolish | NonBoolish);
 </script>
 
@@ -88,21 +73,17 @@
 		extensions = $bindable(defaultExtensions),
 		tipex = $bindable(),
 		floating = false,
-		oncreate = () => {
-		},
-		ondestroy = () => {
-		},
-		onupdate = () => {
-		},
+		oncreate = () => {},
+		ondestroy = () => {},
+		onupdate = () => {},
 		body = '',
 		class: className = '',
 		style = '',
 		focal = true,
 		focused = $bindable(false),
-    autofocus = true,
+		autofocus = true,
 		head,
 		controlComponent,
-		utilities,
 		foot,
 		ctxId = `_tipex`,
 		...restProps
@@ -120,7 +101,7 @@
 	let editorsParentRef: HTMLDivElement | undefined = $state();
 
 	onMount(() => {
-		if (floating && !extensions.find(ext => ext.name === 'floatingMenu') && floatingRef) {
+		if (floating && !extensions.find((ext) => ext.name === 'floatingMenu') && floatingRef) {
 			extensions.push(getDefaultFloatingMenu(floatingRef));
 		}
 		tipex = new Editor({
@@ -152,26 +133,25 @@
 	<LinkFloatingMenu bind:floatingRef {tipex} />
 {/if}
 
-<div class="tipex-editor {className}" {style} bind:this={editorsParentRef} class:focused class:focal>
+<div
+	class="tipex-editor {className}"
+	{style}
+	bind:this={editorsParentRef}
+	class:focused
+	class:focal
+>
 	<div class="tipex-editor-wrap">
 		{@render head?.(tipex)}
 		<div class="tipex-editor-section" bind:this={tipexEditorRef}></div>
-		{#if !controlComponent}
+		{#if controlComponent}
+			{@render controlComponent(tipex)}
+		{:else}
 			<!-- Default controls -->
 			<Controls {tipex}>
-				{#if utilities}
-					<div class="tipex-utilities">
-						{@render utilities?.(tipex)}
-					</div>
-				{:else}
-					<!-- Default utilities -->
-					<div class="tipex-utilities">
-						<Utility {tipex} />
-					</div>
-				{/if}
+				<div class="tipex-utilities">
+					<Utility {tipex} />
+				</div>
 			</Controls>
-		{:else}
-			{@render controlComponent?.(tipex)}
 		{/if}
 		{@render foot?.(tipex)}
 	</div>

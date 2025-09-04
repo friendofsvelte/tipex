@@ -52,19 +52,20 @@ Import the component and use it in your component:
 
 ### Control System
 
-Tipex features an intelligent control system that automatically detects which interface to display:
+Tipex features a simple and flexible control system:
 
 1. **Default Controls** (automatic when no `controlComponent` is provided):
-    - Pre-built formatting toolbar
-    - Customizable through the `utilities` snippet
+    - Pre-built formatting toolbar with essential editing tools
+    - Built-in utility buttons (copy, link management)
     - Perfect for quick implementation
 
 2. **Custom Controls** (when `controlComponent` snippet is provided):
     - Full control over the editor interface
     - Complete customization freedom
+    - Can extend default controls or create entirely new interfaces
     - Ideal for specialized use cases
 
-This automatic detection eliminates the need for boolean flags and provides a cleaner API.
+This simple approach provides maximum flexibility while maintaining ease of use.
 
 ### Extension System
 
@@ -117,20 +118,25 @@ Add custom components above or below the editor using Svelte 5 snippets:
 </Tipex>
 ```
 
-### Custom Utilities
+### Extending Default Controls
 
-Add custom controls while keeping the default toolbar:
+Add custom utilities while keeping the default toolbar:
 
 ```svelte
 <script lang="ts">
-    import {Tipex} from "@friendofsvelte/tipex";
+    import { Tipex, Controls, Utility } from "@friendofsvelte/tipex";
     
     let body = "";
 </script>
 
 <Tipex {body}>
-    {#snippet utilities(editor)}
-        <CustomFormatting {editor} />
+    {#snippet controlComponent(editor)}
+        <Controls {editor}>
+            <div class="tipex-utilities">
+                <Utility {editor} />
+                <CustomButton {editor} />
+            </div>
+        </Controls>
     {/snippet}
 </Tipex>
 ```

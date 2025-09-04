@@ -1,8 +1,9 @@
 <script>
 	import { typescript } from 'svelte-highlight/languages';
 	import { Highlight, HighlightSvelte } from 'svelte-highlight';
-	import advanceCodes from '$item/codes/advanceCodes';
-	import codes from '$item/codes';
+	import advanceCodes from '$item/codes/advanceCodes.json' with { type: 'json' };
+	import codes from '$item/codes/index.js';
+	import customizationCodes from '$item/codes/customizationCodes.json' with { type: 'json' };
 	import SlotPropsTable from '$item/SlotPropsTable.svelte';
 </script>
 
@@ -43,76 +44,7 @@
 	You can override any aspect of the visual design using the new Tailwind v4 architecture:
 </p>
 
-<Highlight language={typescript} code={`/* Modern Tailwind v4 Theme Configuration */
-@import "tailwindcss";
-
-@theme {
-  /* Tipex Design System Override */
-  --color-tipex-*: initial;
-  
-  /* Custom Primary Colors */
-  --color-tipex-primary: #10b981; /* Custom green */
-  --color-tipex-primary-dark: #34d399;
-  
-  /* Editor Colors */
-  --color-tipex-editor-bg: #fafafa;
-  --color-tipex-editor-bg-dark: #0f172a;
-  --color-tipex-editor-text: #111827;
-  --color-tipex-editor-text-dark: #f9fafb;
-  
-  /* Control Colors */
-  --color-tipex-control-bg: #ffffff;
-  --color-tipex-control-bg-dark: #1f2937;
-  --color-tipex-control-hover: #f1f5f9;
-  --color-tipex-control-hover-dark: #374151;
-  --color-tipex-control-active: #dcfce7;
-  --color-tipex-control-active-dark: #1e3a8a;
-  
-  /* Typography Scale */
-  --text-tipex-base: 1.125rem;
-  --text-tipex-lg: 1.25rem;
-  --text-tipex-xl: 1.5rem;
-  
-  /* Spacing Scale */
-  --spacing-tipex-xs: 0.25rem;
-  --spacing-tipex-sm: 0.5rem;
-  --spacing-tipex-md: 1rem;
-  --spacing-tipex-lg: 1.5rem;
-  --spacing-tipex-xl: 2rem;
-  
-  /* Border Radius */
-  --radius-tipex-sm: 0.25rem;
-  --radius-tipex-md: 0.375rem;
-  --radius-tipex-lg: 0.5rem;
-  
-  /* Shadows */
-  --shadow-tipex-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-tipex-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-tipex-focus: 0 0 0 3px rgb(16 185 129 / 0.5);
-  --shadow-tipex-focus-dark: 0 0 0 3px rgb(52 211 153 / 0.5);
-}
-
-/* Custom Dark Mode Variant (Tailwind v4) */
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* Component Layer Customization */
-@layer components {
-  .tipex-editor {
-    @apply bg-tipex-editor-bg dark:bg-tipex-editor-bg-dark 
-           border-tipex-editor-border dark:border-tipex-editor-border-dark
-           rounded-tipex-md;
-  }
-  
-  .tipex-editor.focused.focal {
-    @apply shadow-tipex-focus dark:shadow-tipex-focus-dark
-           border-transparent outline-none;
-  }
-  
-  .custom-editor-theme {
-    @apply bg-gradient-to-br from-tipex-editor-bg to-tipex-control-bg
-           dark:from-tipex-editor-bg-dark dark:to-tipex-control-bg-dark;
-  }
-}`} />
+<Highlight language={typescript} code={customizationCodes.tailwindThemeConfig} />
 
 <h2 class="mt-8" id="in-built-utility-buttons">Built-in Utility Components</h2>
 
@@ -146,37 +78,7 @@
 	Here's a more comprehensive example with multiple custom utilities:
 </p>
 
-<HighlightSvelte code={`<Tipex body={body}>
-  {#snippet utilities(tipex)}
-    <!-- Built-in utilities -->
-    <Utility {tipex}/>
-    
-    <!-- Custom utilities -->
-    <button 
-      class="tipex-edit-button tipex-button-rigid"
-      onclick={() => exportToPDF(tipex.getHTML())}
-      aria-label="Export to PDF"
-    >
-      <iconify-icon icon="fa6-solid:file-pdf"></iconify-icon>
-    </button>
-    
-    <button 
-      class="tipex-edit-button tipex-button-rigid"
-      onclick={() => insertTemplate(tipex)}
-      aria-label="Insert template"
-    >
-      <iconify-icon icon="fa6-solid:file-contract"></iconify-icon>
-    </button>
-    
-    <button 
-      class="tipex-edit-button tipex-button-rigid"
-      onclick={() => toggleFullscreen()}
-      aria-label="Toggle fullscreen"
-    >
-      <iconify-icon icon="fa6-solid:expand"></iconify-icon>
-    </button>
-  {/snippet}
-</Tipex>`} />
+<HighlightSvelte code={customizationCodes.customUtilities} />
 
 <SlotPropsTable />
 
@@ -190,74 +92,7 @@
 	Here's a complete custom control implementation:
 </p>
 
-<HighlightSvelte language={typescript} code={`<script>
-  import CustomToolbar from './CustomToolbar.svelte';
-</script>
-
-<Tipex body={body}>
-  {#snippet controlComponent(tipex)}
-    <CustomToolbar {tipex} />
-  {/snippet}
-</Tipex>
-
-<!-- CustomToolbar.svelte -->
-<script>
-  export let tipex;
-  
-  let isActive = $derived((name, attrs = {}) => tipex?.isActive(name, attrs) ?? false);
-  let canExecute = $derived((command) => tipex?.can()[command]() ?? false);
-</script>
-
-<div class="custom-toolbar">
-  <div class="toolbar-section">
-    <button 
-      class="toolbar-btn"
-      class:active={isActive('bold')}
-      disabled={!canExecute('toggleBold')}
-      onclick={() => tipex.chain().focus().toggleBold().run()}
-    >
-      <strong>B</strong>
-    </button>
-    
-    <button 
-      class="toolbar-btn"
-      class:active={isActive('italic')}
-      onclick={() => tipex.chain().focus().toggleItalic().run()}
-    >
-      <em>I</em>
-    </button>
-  </div>
-  
-  <div class="toolbar-section">
-    <select 
-      value={isActive('heading', {level: 1}) ? '1' : 
-             isActive('heading', {level: 2}) ? '2' : 'p'}
-      onchange={(e) => {
-        const level = e.target.value;
-        if (level === 'p') {
-          tipex.chain().focus().setParagraph().run();
-        } else {
-          tipex.chain().focus().toggleHeading({level: parseInt(level)}).run();
-        }
-      }}
-    >
-      <option value="p">Paragraph</option>
-      <option value="1">Heading 1</option>
-      <option value="2">Heading 2</option>
-    </select>
-  </div>
-</div>
-
-<style>
-	@reference "../app.css";
-    .custom-toolbar {
-      @apply flex gap-tipex-md p-tipex-lg
-	  bg-tipex-control-bg dark:bg-tipex-control-bg-dark
-      rounded-tipex-md shadow-tipex-sm
-      border border-tipex-control-border dark:border-tipex-control-border-dark;
-    }
-</style>
-`} />
+<HighlightSvelte code={customizationCodes.customToolbar} />
 
 <h3 class="mt-8">⚠️ Tailwind v4 ONLY - No Legacy Versions!</h3>
 <p>
@@ -330,119 +165,14 @@
 	Here's a practical example with a custom header featuring document statistics:
 </p>
 
-<HighlightSvelte code={`<script>
-  import { Tipex } from "@friendofsvelte/tipex";
-  import DocumentStats from "./DocumentStats.svelte";
-  import CustomControl from "./CustomControl.svelte";
-  import SaveIndicator from "./SaveIndicator.svelte";
-  
-  let editor = $state();
-  let lastSaved = $state(null);
-  
-  // Auto-save functionality using runes
-  $effect(() => {
-    if (editor) {
-      const debounce = setTimeout(() => {
-        saveDocument(editor.getHTML());
-        lastSaved = new Date();
-      }, 1000);
-      
-      return () => clearTimeout(debounce);
-    }
-  });
-</script>
-
-<Tipex bind:tipex={editor} body={body}>
-  {#snippet head(tipex)}
-    <div class="editor-header">
-      <DocumentStats {tipex} />
-      <SaveIndicator {lastSaved} />
-    </div>
-  {/snippet}
-  
-  {#snippet controlComponent(tipex)}
-    <CustomControl {tipex} />
-  {/snippet}
-  
-  {#snippet foot(tipex)}
-    <div class="editor-footer">
-      <span class="status">Ready</span>
-      <span class="word-count">{getWordCount(tipex)} words</span>
-    </div>
-  {/snippet}
-</Tipex>`} />
+<HighlightSvelte code={customizationCodes.layoutCustomization} />
 
 <h2 class="mt-8">Image Upload Customization</h2>
 <p>
 	Tipex provides flexible image handling. You can customize the upload process, validation, and storage:
 </p>
 
-<HighlightSvelte code={`<script>
-  import { Tipex } from "@friendofsvelte/tipex";
-  
-  async function handleImageUpload(file) {
-    // Custom validation
-    const maxSize = 5 * 1024 * 1024; // 5MB
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
-    
-    if (!allowedTypes.includes(file.type)) {
-      throw new Error('Unsupported file type');
-    }
-    
-    if (file.size > maxSize) {
-      throw new Error('File too large');
-    }
-    
-    // Upload to your service (Cloudinary, AWS S3, etc.)
-    const formData = new FormData();
-    formData.append('image', file);
-    
-    const response = await fetch('/api/upload', {
-      method: 'POST',
-      body: formData
-    });
-    
-    if (!response.ok) throw new Error('Upload failed');
-    
-    const { url, publicId } = await response.json();
-    
-    return {
-      src: url,
-      alt: file.name,
-      'data-public-id': publicId // For later deletion
-    };
-  }
-  
-  let editor;
-</script>
-
-<Tipex bind:tipex={editor} body={body}>
-  {#snippet utilities(tipex)}
-    <button 
-      class="tipex-edit-button tipex-button-rigid"
-      onclick={() => {
-        const input = document.createElement('input');
-        input.type = 'file';
-        input.accept = 'image/*';
-        input.onchange = async (e) => {
-          const file = e.target.files[0];
-          if (file) {
-            try {
-              const imageData = await handleImageUpload(file);
-              tipex.commands.setImage(imageData);
-            } catch (error) {
-              alert('Upload failed: ' + error.message);
-            }
-          }
-        };
-        input.click();
-      }}
-      aria-label="Upload image"
-    >
-      <iconify-icon icon="fa6-solid:image"></iconify-icon>
-    </button>
-  {/snippet}
-</Tipex>`} />
+<HighlightSvelte code={customizationCodes.imageUploadCustomization} />
 
 <h2 class="mt-8" id="advanced-customization">Extension System</h2>
 
@@ -475,274 +205,21 @@
 	Build your own extensions for specialized functionality:
 </p>
 
-<HighlightSvelte code={`<script>
-  import { Extension } from '@tiptap/core';
-  import { defaultExtensions, Tipex } from "@friendofsvelte/tipex";
-  
-  // Custom extension for highlighting text
-  const Highlight = Extension.create({
-    name: 'highlight',
-    
-    addOptions() {
-      return {
-        multicolor: true,
-        HTMLAttributes: {},
-      };
-    },
-    
-    addGlobalAttributes() {
-      return [
-        {
-          types: ['textStyle'],
-          attributes: {
-            backgroundColor: {
-              default: null,
-              parseHTML: element => element.style.backgroundColor,
-              renderHTML: attributes => {
-                if (!attributes.backgroundColor) return {};
-                return { style: \`background-color: \${attributes.backgroundColor}\` };
-              },
-            },
-          },
-        },
-      ];
-    },
-    
-    addCommands() {
-      return {
-        setHighlight: (attributes) => ({ commands }) => {
-          return commands.setMark('textStyle', attributes);
-        },
-        toggleHighlight: (attributes) => ({ commands }) => {
-          return commands.toggleMark('textStyle', attributes);
-        },
-        unsetHighlight: () => ({ commands }) => {
-          return commands.unsetMark('textStyle');
-        },
-      };
-    },
-  });
-  
-  // Custom extension for word count
-  const WordCount = Extension.create({
-    name: 'wordCount',
-    
-    addStorage() {
-      return {
-        wordCount: 0,
-        characterCount: 0,
-      };
-    },
-    
-    onUpdate() {
-      const text = this.editor.getText();
-      this.storage.wordCount = text.split(/\\s+/).filter(word => word.length > 0).length;
-      this.storage.characterCount = text.length;
-    },
-  });
-  
-  const customExtensions = [
-    ...defaultExtensions,
-    Highlight,
-    WordCount,
-    // Add more custom extensions
-  ];
-</script>
-
-<Tipex extensions={customExtensions} body={body}>
-  {#snippet controlComponent(tipex)}
-    <div class="custom-controls">
-      <!-- Highlight controls -->
-      <button 
-        onclick={() => tipex.commands.setHighlight({ backgroundColor: '#ffeb3b' })}
-        class="tipex-edit-button"
-      >
-        <iconify-icon icon="fa6-solid:highlighter"></iconify-icon>
-      </button>
-      
-      <!-- Word count display -->
-      <span class="word-count">
-        Words: {tipex.storage.wordCount?.wordCount || 0}
-      </span>
-    </div>
-  {/snippet}
-</Tipex>`} />
+<HighlightSvelte code={customizationCodes.customExtensions} />
 
 <h2 class="mt-8">Event-Driven Customization</h2>
 <p>
 	React to editor events for dynamic behavior and integrations:
 </p>
 
-<HighlightSvelte code={`<script>
-  import { Tipex } from "@friendofsvelte/tipex";
-  
-  let editor = $state();
-  let isTyping = $state(false);
-  let typingTimer;
-  
-  function handleEditorReady(tipex) {
-    // Auto-save setup
-    tipex.on('update', ({ editor }) => {
-      clearTimeout(typingTimer);
-      isTyping = true;
-      
-      typingTimer = setTimeout(() => {
-        isTyping = false;
-        saveContent(editor.getHTML());
-      }, 1000);
-    });
-    
-    // Custom keyboard shortcuts
-    tipex.on('keydown', (event) => {
-      // Ctrl+S for save
-      if (event.ctrlKey && event.key === 's') {
-        event.preventDefault();
-        saveContent(tipex.getHTML());
-      }
-      
-      // Ctrl+Shift+L for link
-      if (event.ctrlKey && event.shiftKey && event.key === 'L') {
-        event.preventDefault();
-        const url = prompt('Enter URL:');
-        if (url) {
-          tipex.commands.setLink({ href: url });
-        }
-      }
-    });
-    
-    // Selection change handling
-    tipex.on('selectionUpdate', ({ editor }) => {
-      updateFloatingMenu(editor);
-    });
-    
-    // Focus/blur handling
-    tipex.on('focus', () => {
-      document.body.classList.add('editor-focused');
-    });
-    
-    tipex.on('blur', () => {
-      document.body.classList.remove('editor-focused');
-    });
-  }
-  
-  async function saveContent(html) {
-    try {
-      await fetch('/api/save', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: html })
-      });
-    } catch (error) {
-      console.error('Save failed:', error);
-    }
-  }
-</script>
-
-<Tipex 
-  bind:tipex={editor}
-  body={body}
-  onready={handleEditorReady}
->
-  {#snippet head()}
-    <div class="editor-status">
-      {#if isTyping}
-        <span class="status typing">Typing...</span>
-      {:else}
-        <span class="status saved">Saved</span>
-      {/if}
-    </div>
-  {/snippet}
-</Tipex>`} />
+<HighlightSvelte code={customizationCodes.eventDrivenCustomization} />
 
 <h2 class="mt-8">Accessibility Customization</h2>
 <p>
 	Enhance accessibility with custom ARIA labels, keyboard navigation, and screen reader support:
 </p>
 
-<HighlightSvelte code={`<script>
-  function enhanceAccessibility(tipex) {
-    // Add custom ARIA labels
-    const editorElement = tipex.view.dom;
-    editorElement.setAttribute('aria-label', 'Rich text editor');
-    editorElement.setAttribute('role', 'textbox');
-    editorElement.setAttribute('aria-multiline', 'true');
-    
-    // Custom keyboard shortcuts for accessibility
-    tipex.on('keydown', (event) => {
-      // Alt+1-6 for headings
-      if (event.altKey && event.key >= '1' && event.key <= '6') {
-        event.preventDefault();
-        const level = parseInt(event.key);
-        tipex.commands.toggleHeading({ level });
-        
-        // Announce to screen readers
-        announceToScreenReader(\`Heading level \${level} applied\`);
-      }
-      
-      // Alt+L for list
-      if (event.altKey && event.key === 'l') {
-        event.preventDefault();
-        tipex.commands.toggleBulletList();
-        announceToScreenReader('Bullet list toggled');
-      }
-    });
-  }
-  
-  function announceToScreenReader(message) {
-    const announcement = document.createElement('div');
-    announcement.setAttribute('aria-live', 'polite');
-    announcement.setAttribute('aria-atomic', 'true');
-    announcement.className = 'sr-only';
-    announcement.textContent = message;
-    
-    document.body.appendChild(announcement);
-    setTimeout(() => document.body.removeChild(announcement), 1000);
-  }
-</script>
-
-<Tipex 
-  body={body}
-  onready={enhanceAccessibility}
-  aria-label="Document editor"
->
-  {#snippet controlComponent(tipex)}
-    <div class="accessible-controls" role="toolbar" aria-label="Formatting options">
-      <button 
-        class="tipex-edit-button"
-        class:active={tipex.isActive('bold')}
-        onclick={() => tipex.commands.toggleBold()}
-        aria-label="Toggle bold formatting"
-        aria-pressed={tipex.isActive('bold')}
-      >
-        <strong>B</strong>
-      </button>
-      
-      <button 
-        class="tipex-edit-button"
-        class:active={tipex.isActive('italic')}
-        onclick={() => tipex.commands.toggleItalic()}
-        aria-label="Toggle italic formatting"
-        aria-pressed={tipex.isActive('italic')}
-      >
-        <em>I</em>
-      </button>
-    </div>
-  {/snippet}
-</Tipex>
-
-<style>
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-</style>`} />
+<HighlightSvelte code={customizationCodes.accessibilityCustomization} />
 
 <h2 class="mt-8">Performance Optimization with Tailwind v4</h2>
 <p>

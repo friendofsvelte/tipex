@@ -7,7 +7,7 @@
 	import { shell, typescript } from 'svelte-highlight/languages';
 	import codes from '$item/codes/index.js';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import type { Editor } from '@tiptap/core';
 
 	let editor: Editor | undefined = $state();
@@ -42,8 +42,8 @@
 			target="_blank" rel="noopener">
 			<iconify-icon icon="fa6-brands:github"
 										class="text-gray-700 dark:text-gray-200 w-4"></iconify-icon>
-			{#if $page.data.repo && 'stargazers_count' in $page.data.repo}
-				<span class="ml-1 text-gray-600 dark:text-gray-400">{$page.data.repo.stargazers_count}+</span>
+			{#if page.data.repo && 'stargazers_count' in page.data.repo}
+				<span class="ml-1 text-gray-600 dark:text-gray-400">{page.data.repo.stargazers_count}+</span>
 			{/if}
 		</a>
 		<a class="h-8 px-3 flex items-center gap-2 shrink-0 rounded-2xl !text-yellow-600"
@@ -65,7 +65,7 @@
 </p>
 
 <Tipex
-	body={codes.body} bind:tipex={editor} floating focal class="h-[70vh] mt-3">
+	bind:tipex={editor}>
 </Tipex>
 
 <h2 class="mt-8">Key Features</h2>

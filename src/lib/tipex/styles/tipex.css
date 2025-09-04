@@ -40,10 +40,6 @@
 	min-width: var(--size-tipex-9);
 }
 
-.tipex-button-free {
-	min-width: var(--size-tipex-9);
-}
-
 .tipex-button-extra {
 	/* Additional button styling can go here */
 }

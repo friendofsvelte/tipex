@@ -15,5 +15,3 @@
   
   "access": "<Tipex body={htmlCotent} bind:tipex={editor} />"
 }
-
-

@@ -51,6 +51,7 @@
 
 <button
 	onclick={handleEditLinkToggle}
+	class:active={tipex?.isActive('link')}
 	class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 	aria-label="Edit link"
 >

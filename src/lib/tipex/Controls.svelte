@@ -16,7 +16,6 @@
 
 	let { children, tipex }: ControlsProps = $props();
 	
-	let enableLinkEdit = $state(false);
 	let copySuccess = $state(false);
 
 	async function copy() {
@@ -249,35 +248,34 @@
 		</div>
 		
 		<!-- Utility Actions -->
-		{#if !enableLinkEdit}
-			<div class="tipex-utilities">
-				<button
-					class="tipex-edit-button tipex-button-extra tipex-button-rigid"
-					class:active={copySuccess}
-					onclick={copy}
-					type="button"
-					aria-label={copySuccess ? "Copied!" : "Copy HTML"}>
-					{#if copySuccess}
-						<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
-							<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
-								<path d="M8.5.5h-3a1 1 0 0 0-1 1V2a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-.5a1 1 0 0 0-1-1"/>
-								<path d="M9.75 1.5h1.5a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8.5a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1h1.5"/>
-								<path d="m5 9l1.5 1l3-4"/>
-							</g>
-						</svg>
-					{:else}
-						<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
-							<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
-								<path d="M8.5.5h-3a1 1 0 0 0-1 1V2a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-.5a1 1 0 0 0-1-1"/>
-								<path d="M9.75 1.5h1.5a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8.5a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1h1.5"/>
-							</g>
-						</svg>
-					{/if}
-				</button>
-				{@render children?.()}
-			</div>
-		{/if}
-		
-		<EditLinkMenu bind:enableLinkEdit {tipex} />
+		<div class="tipex-utilities">
+			<button
+				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
+				class:active={copySuccess}
+				onclick={copy}
+				type="button"
+				aria-label={copySuccess ? "Copied!" : "Copy HTML"}>
+				{#if copySuccess}
+					<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+						<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+							<path d="M8.5.5h-3a1 1 0 0 0-1 1V2a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-.5a1 1 0 0 0-1-1"/>
+							<path d="M9.75 1.5h1.5a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8.5a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1h1.5"/>
+							<path d="m5 9l1.5 1l3-4"/>
+						</g>
+					</svg>
+				{:else}
+					<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+						<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+							<path d="M8.5.5h-3a1 1 0 0 0-1 1V2a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-.5a1 1 0 0 0-1-1"/>
+							<path d="M9.75 1.5h1.5a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8.5a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1h1.5"/>
+						</g>
+					</svg>
+				{/if}
+			</button>
+			
+			<EditLinkMenu {tipex} />
+			
+			{@render children?.()}
+		</div>
 	</div>
 {/if}

@@ -91,69 +91,7 @@
   @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-gray-300 bg-gray-900 text-gray-50 shadow hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 h-9 px-4 py-2;
 }
 
-/* Link edit input group */
-.tipex-link-edit-input-group {
-  @apply absolute bottom-full right-0 mb-2 flex gap-2 items-center p-3 min-w-80 z-50;
-  background: linear-gradient(135deg, 
-    rgb(255 255 255 / 0.95) 0%, 
-    rgb(248 250 252 / 0.9) 100%);
-  border: 1px solid rgb(226 232 240 / 0.8);
-  border-radius: 12px;
-  box-shadow: 
-    0 10px 25px -5px rgb(0 0 0 / 0.1),
-    0 4px 6px -2px rgb(0 0 0 / 0.05),
-    inset 0 1px 0 rgb(255 255 255 / 0.4);
-  backdrop-filter: blur(12px);
-  animation: tipex-link-tooltip-in 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.dark .tipex-link-edit-input-group {
-  background: linear-gradient(135deg, 
-    rgb(31 41 55 / 0.95) 0%, 
-    rgb(17 24 39 / 0.9) 100%);
-  border: 1px solid rgb(71 85 105 / 0.8);
-  box-shadow: 
-    0 10px 25px -5px rgb(0 0 0 / 0.3),
-    0 4px 6px -2px rgb(0 0 0 / 0.2),
-    inset 0 1px 0 rgb(255 255 255 / 0.1);
-}
-
-/* Tooltip arrow */
-.tipex-link-edit-input-group::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  right: 16px;
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 8px solid rgb(248 250 252 / 0.9);
-}
-
-.dark .tipex-link-edit-input-group::after {
-  border-top-color: rgb(31 41 55 / 0.95);
-}
-
-.tipex-link-edit-input-group input {
-  @apply flex-1 h-9 px-3 text-sm bg-white/50 dark:bg-gray-800/50 border border-gray-200/60 dark:border-gray-600/60 rounded-md outline-none placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-blue-400 dark:focus:border-blue-500 focus:bg-white dark:focus:bg-gray-800 transition-all duration-200;
-}
-
-.tipex-link-edit-input-group .save-button {
-  @apply h-9 px-4 text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500/50;
-}
-
-.tipex-link-edit-input-group .close-button {
-  @apply h-9 w-9 flex items-center justify-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-gray-700/50 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500/50;
-}
-
-@keyframes tipex-link-tooltip-in {
-  from {
-    opacity: 0;
-    transform: translateY(4px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+/* Utilities Section */
+.tipex-utilities {
+  @apply flex gap-0.5 items-center ml-auto;
 }

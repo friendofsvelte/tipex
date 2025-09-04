@@ -17,10 +17,19 @@
 	let { children, tipex }: ControlsProps = $props();
 	
 	let enableLinkEdit = $state(false);
+	let copySuccess = $state(false);
 
-	function copy() {
-		navigator.clipboard.writeText(tipex?.getHTML() || '');
-		tipex?.chain().focus().run();
+	async function copy() {
+		try {
+			await navigator.clipboard.writeText(tipex?.getHTML() || '');
+			copySuccess = true;
+			setTimeout(() => {
+				copySuccess = false;
+			}, 2000);
+			tipex?.chain().focus().run();
+		} catch (error) {
+			console.error('Failed to copy:', error);
+		}
 	}
 </script>
 
@@ -244,13 +253,26 @@
 			<div class="tipex-utilities">
 				<button
 					class="tipex-edit-button tipex-button-extra tipex-button-rigid"
+					class:active={copySuccess}
 					onclick={copy}
 					type="button"
-					aria-label="Copy HTML">
-					<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
-						<path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
-						<path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-					</svg>
+					aria-label={copySuccess ? "Copied!" : "Copy HTML"}>
+					{#if copySuccess}
+						<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+							<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+								<path d="M8.5.5h-3a1 1 0 0 0-1 1V2a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-.5a1 1 0 0 0-1-1"/>
+								<path d="M9.75 1.5h1.5a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8.5a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1h1.5"/>
+								<path d="m5 9l1.5 1l3-4"/>
+							</g>
+						</svg>
+					{:else}
+						<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+							<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+								<path d="M8.5.5h-3a1 1 0 0 0-1 1V2a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-.5a1 1 0 0 0-1-1"/>
+								<path d="M9.75 1.5h1.5a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8.5a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1h1.5"/>
+							</g>
+						</svg>
+					{/if}
 				</button>
 				{@render children?.()}
 			</div>

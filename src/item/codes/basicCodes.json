@@ -1,7 +1,7 @@
 {
-  "insertUtils": "import { Tipex, Controls, Utility } from \"@friendofsvelte/tipex\";\n\n<Tipex body={body}>\n  {#snippet controlComponent(tipex)}\n    <Controls {tipex}>\n      <div class=\"tipex-utilities\">\n        <Utility {tipex} />\n      </div>\n    </Controls>\n  {/snippet}\n</Tipex>",
+  "insertUtils": "import { Tipex, Controls } from \"@friendofsvelte/tipex\";\n\n<Tipex body={body}>\n  {#snippet controlComponent(tipex)}\n    <Controls {tipex}>\n      <!-- Additional utility buttons can be added here -->\n      <button class=\"tipex-edit-button tipex-button-rigid\" aria-label=\"Custom action\">\n        <svg class=\"h-4 w-4\" fill=\"currentColor\" viewBox=\"0 0 16 16\">\n          <path d=\"M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z\"/>\n        </svg>\n      </button>\n    </Controls>\n  {/snippet}\n</Tipex>",
   
-  "appendUtils": "<Tipex body={body}>\n  {#snippet controlComponent(tipex)}\n    <Controls {tipex}>\n      <div class=\"tipex-utilities\">\n        <Utility {tipex} />\n        <div aria-label=\"Custom utility button\">...</div>\n      </div>\n    </Controls>\n  {/snippet}\n</Tipex>",
+  "appendUtils": "<Tipex body={body}>\n  {#snippet controlComponent(tipex)}\n    <Controls {tipex}>\n      <!-- Built-in utilities (copy, link) are included in Controls -->\n      <!-- Add custom utilities here -->\n      <button class=\"tipex-edit-button tipex-button-rigid\" aria-label=\"Export PDF\">\n        <svg class=\"h-4 w-4\" fill=\"currentColor\" viewBox=\"0 0 16 16\">\n          <path d=\"M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z\"/>\n        </svg>\n      </button>\n    </Controls>\n  {/snippet}\n</Tipex>",
   
   "overrideControl": "<Tipex body={body}>\n  {#snippet controlComponent(tipex)}\n    <div aria-label=\"New Custom Control\">...</div>\n  {/snippet}\n</Tipex>",
   
@@ -9,7 +9,7 @@
   
   "usage": "<script lang=\"ts\">\n    import {Tipex} from '@friendofsvelte/tipex';\n    let body = `<p>The initial html content.</p>`;\n</script>\n\n<!-- Shorthands to disable: !floating !focal -->\n<Tipex {body} floating focal\n    style=\"margin-top: 1rem; margin-bottom: 0;\" \n    class=\"h-[70vh] border border-neutral-200\"/>",
   
-  "body": "<p>This <strong>content</strong> was written by <a target=\"_blank\" rel=\"noopener\" href=\"http://bishwas.net/\">Bishwas</a> in 2023. You can edit this content and see the changes in the editor.</p><p>Do you have any questions? Feel free to ask in the <a target=\"_blank\" rel=\"noopener\" href=\"https://github.com/friendofsvelte/tipex\">Github repository</a>.</p><p>Try writing some code, list, or blockquote, and see how it looks in the editor.</p>\n<hr/>\n<p>I hope you enjoyed it 😊</p>",
+  "body": "<h1>Welcome to Tipex</h1><p>This <strong>enhanced</strong> editor now includes <em>comprehensive</em> formatting options with <u>underline</u> support and <s>strikethrough</s> text. You can also use <code>inline code</code> formatting.</p><h2>Lists and Structure</h2><ul><li>Bullet lists work great</li><li>With multiple items</li><li>And nested content</li></ul><ol><li>Numbered lists too</li><li>With proper ordering</li><li>And clear hierarchy</li></ol><blockquote><p>Blockquotes help emphasize important content and make your text more engaging.</p></blockquote><p>Try all the new formatting buttons in the enhanced toolbar! The editor now includes undo/redo, multiple heading levels, and much more.</p><hr><p>Happy editing! 🎉</p>",
   
   "styling": "import \"@friendofsvelte/tipex/styles/index.css\";",
   

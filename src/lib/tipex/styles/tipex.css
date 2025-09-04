@@ -18,12 +18,12 @@
 
 /* Control Components */
 .tipex-controller {
-  @apply flex flex-row flex-wrap justify-between md:flex-row gap-2 sticky bottom-0 py-2 px-3 rounded-b-lg bg-gray-50/80 dark:bg-gray-900/80 border-t border-gray-200 dark:border-gray-800 backdrop-blur-sm;
+  @apply flex flex-row flex-wrap md:flex-row gap-2 sticky bottom-0 py-2 px-3 rounded-b-lg bg-gray-50/80 dark:bg-gray-900/80 border-t border-gray-200 dark:border-gray-800 backdrop-blur-sm;
   z-index: var(--z-tipex-controls);
 }
 
 .tipex-basic-controller-wrapper {
-  @apply flex gap-1 flex-wrap;
+  @apply flex gap-0.5 flex-wrap items-center;
 }
 
 .tipex-edit-button {
@@ -44,6 +44,15 @@
 
 .tipex-edit-button.active {
   @apply bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-50;
+}
+
+/* Copy success state - more specific selector */
+.tipex-utilities .tipex-edit-button.active {
+  @apply bg-green-50 border-green-200 text-green-600 dark:bg-green-900/20 dark:border-green-700 dark:text-green-400;
+}
+
+.tipex-utilities .tipex-edit-button.active svg {
+  @apply text-green-600 dark:text-green-400;
 }
 
 .tipex-edit-button:disabled {
@@ -80,4 +89,17 @@
 
 .tipex-link-button {
   @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-gray-300 bg-gray-900 text-gray-50 shadow hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 h-9 px-4 py-2;
+}
+
+/* Link edit input group */
+.tipex-link-edit-input-group {
+  @apply flex gap-2 items-center p-2 bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-lg shadow-sm;
+}
+
+.tipex-link-edit-input-group input {
+  @apply flex-1 h-8 px-2 text-sm bg-transparent border-0 outline-none placeholder:text-gray-500 dark:placeholder:text-gray-400;
+}
+
+.tipex-link-edit-input-group button {
+  @apply h-8 px-3 text-xs;
 }

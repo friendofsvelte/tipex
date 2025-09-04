@@ -1,9 +1,11 @@
 .tipex-editor {
-  @apply flex flex-row gap-0 rounded-tipex-md py-0 duration-200 overflow-y-hidden bg-tipex-editor-bg dark:bg-tipex-editor-bg-dark border border-tipex-editor-border dark:border-tipex-editor-border-dark;
+  @apply flex flex-row gap-0 rounded-lg py-0 duration-200 overflow-y-hidden bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .tipex-editor.focused.focal {
-  @apply outline-none border-transparent shadow-tipex-focus dark:shadow-tipex-focus-dark;
+  @apply outline-none border-gray-300 dark:border-gray-700;
+  box-shadow: 0 0 0 2px rgb(59 130 246 / 0.2);
 }
 
 .tipex-editor-wrap {
@@ -16,49 +18,70 @@
 
 /* Control Components */
 .tipex-controller {
-  @apply flex flex-row flex-wrap justify-between md:flex-row gap-tipex-sm sticky bottom-0 py-tipex-md px-tipex-lg rounded-b-tipex-md backdrop-filter backdrop-blur-sm bg-tipex-control-bg/80 dark:bg-tipex-control-bg-dark/80 border-t border-tipex-control-border dark:border-tipex-control-border-dark;
+  @apply flex flex-row flex-wrap justify-between md:flex-row gap-2 sticky bottom-0 py-2 px-3 rounded-b-lg bg-gray-50/80 dark:bg-gray-900/80 border-t border-gray-200 dark:border-gray-800 backdrop-blur-sm;
   z-index: var(--z-tipex-controls);
 }
 
 .tipex-basic-controller-wrapper {
-  @apply flex gap-tipex-sm flex-wrap;
+  @apply flex gap-1 flex-wrap;
 }
 
 .tipex-edit-button {
-  @apply bg-tipex-control-bg text-tipex-control-text dark:bg-tipex-control-bg-dark dark:text-tipex-control-text-dark border border-tipex-control-border dark:border-tipex-control-border-dark hover:bg-tipex-control-hover dark:hover:bg-tipex-control-hover-dark rounded-tipex-sm flex justify-center items-center duration-100 cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-tipex-primary/50;
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-gray-300 h-9 px-3 bg-transparent hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-50 text-gray-700 dark:text-gray-400;
 }
 
 .tipex-button-rigid {
-  @apply px-tipex-md py-tipex-sm h-9 min-w-9;
+  @apply min-w-9;
 }
 
 .tipex-button-free {
-  @apply px-tipex-md py-tipex-sm h-9 min-w-9;
+  @apply min-w-9;
 }
 
 .tipex-button-extra {
-  @apply hover:scale-105 active:scale-90 focus:scale-105 active:border-tipex-primary dark:active:border-tipex-primary-dark;
+  /* Additional button styling can go here */
 }
 
 .tipex-edit-button.active {
-  @apply bg-tipex-control-active border-tipex-primary text-tipex-primary dark:bg-tipex-control-active-dark dark:border-tipex-primary-dark dark:text-tipex-primary-dark;
+  @apply bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-50;
+}
+
+.tipex-edit-button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.tipex-edit-button:disabled:hover {
+  @apply bg-transparent text-gray-700 dark:text-gray-400;
+  transform: none;
 }
 
 .tipex-utilities {
-  @apply flex gap-tipex-sm ml-auto max-w-lg justify-end;
+  @apply flex gap-1 ml-auto max-w-lg justify-end;
 }
 
 /* Floating Menu */
 .tipex-floating-menu {
-  @apply bg-tipex-control-bg dark:bg-tipex-control-bg-dark border border-tipex-control-border dark:border-tipex-control-border-dark rounded-tipex-md shadow-tipex-md p-tipex-sm gap-tipex-xs;
+  @apply rounded-lg p-2 gap-1 bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 shadow-md;
   z-index: var(--z-tipex-floating);
+  animation: tipex-float-in 0.15s ease-out;
+}
+
+@keyframes tipex-float-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Link Components */
 .tipex-link-input {
-  @apply bg-tipex-control-bg dark:bg-tipex-control-bg-dark border border-tipex-control-border dark:border-tipex-control-border-dark text-tipex-control-text dark:text-tipex-control-text-dark px-tipex-md py-tipex-sm rounded-tipex-sm focus:outline-none focus:ring-2 focus:ring-tipex-primary/50 focus:border-tipex-primary dark:focus:border-tipex-primary-dark;
+  @apply flex h-9 w-full rounded-md border border-gray-200 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-800 dark:placeholder:text-gray-400 dark:focus-visible:ring-gray-300;
 }
 
 .tipex-link-button {
-  @apply bg-tipex-primary hover:bg-tipex-primary/90 text-white dark:bg-tipex-primary-dark dark:hover:bg-tipex-primary-dark/90 px-tipex-md py-tipex-sm rounded-tipex-sm focus:outline-none focus:ring-2 focus:ring-tipex-primary/50 transition-colors duration-100;
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-gray-300 bg-gray-900 text-gray-50 shadow hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 h-9 px-4 py-2;
 }

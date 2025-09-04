@@ -2,7 +2,7 @@
 	import { typescript } from 'svelte-highlight/languages';
 	import { Highlight, HighlightSvelte } from 'svelte-highlight';
 	import advanceCodes from '$item/codes/advanceCodes.json' with { type: 'json' };
-	import codes from '$item/codes/index.js';
+	import codes from '$item/codes/basicCodes.json' with { type: 'json' };
 	import customizationCodes from '$item/codes/customizationCodes.json' with { type: 'json' };
 	import SlotPropsTable from '$item/SlotPropsTable.svelte';
 </script>

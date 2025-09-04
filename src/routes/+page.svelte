@@ -5,7 +5,7 @@
 	import PropsTable from '$item/PropsTable.svelte';
 	import { Highlight, HighlightSvelte } from 'svelte-highlight';
 	import { shell, typescript } from 'svelte-highlight/languages';
-	import codes from '$item/codes/index.js';
+	import codes from '$item/codes/basicCodes.json' with { type: 'json' };
 	import ThemeToggle from '$item/ThemeToggle.svelte';
 	import { page } from '$app/state';
 	import type { Editor } from '@tiptap/core';

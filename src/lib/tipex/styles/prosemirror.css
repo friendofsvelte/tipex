@@ -91,6 +91,31 @@
     @apply mb-tipex-sm;
   }
 
+  /* Task List Styling */
+  .tipex-editor-section .ProseMirror ul[data-type="taskList"] {
+    @apply list-none ml-0 p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50/50 dark:bg-gray-800/50 backdrop-blur-sm;
+  }
+
+  .tipex-editor-section .ProseMirror ul[data-type="taskList"] li {
+    @apply flex items-center gap-3 mb-tipex-sm;
+  }
+
+  .tipex-editor-section .ProseMirror ul[data-type="taskList"] li:last-child {
+    @apply mb-0;
+  }
+
+  .tipex-editor-section .ProseMirror ul[data-type="taskList"] li > label {
+    @apply flex items-center justify-center w-5 h-5 cursor-pointer transition-colors duration-200;
+  }
+
+  .tipex-editor-section .ProseMirror ul[data-type="taskList"] li > label input[type="checkbox"] {
+    @apply w-3 h-3 accent-blue-600 dark:accent-blue-400;
+  }
+
+  .tipex-editor-section .ProseMirror ul[data-type="taskList"] li > div {
+    @apply flex-1;
+  }
+
   .tipex-editor-section .ProseMirror blockquote {
     @apply border-l-4 border-tipex-editor-border dark:border-tipex-editor-border-dark  pl-tipex-md mb-tipex-md ml-tipex-md;
   }

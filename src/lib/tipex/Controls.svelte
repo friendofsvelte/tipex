@@ -65,8 +65,8 @@
 				aria-label="Paragraph/Normal text"
 				type="button"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
-					<path d="M10.5 15a.5.5 0 0 1-.5-.5V2.707L8.354 4.353a.5.5 0 1 1-.708-.708l2.5-2.5a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1-.708.708L11 2.707V14.5a.5.5 0 0 1-.5.5zm-9-15a.5.5 0 0 1 .5.5v11.793l1.646-1.646a.5.5 0 0 1 .708.708l-2.5 2.5a.5.5 0 0 1-.708 0l-2.5-2.5a.5.5 0 0 1 .708-.708L0 12.293V.5A.5.5 0 0 1 1.5 0z"/>
+				<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+					<path d="M19 5h-3m-5 0h5m-5 0v10m0-10h-1c-1.667 0-5 1-5 5s3.333 5 5 5h1m0 4v-4m5 4V5"/>
 				</svg>
 			</button>
 

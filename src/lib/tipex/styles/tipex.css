@@ -55,10 +55,6 @@
   transform: none;
 }
 
-.tipex-utilities {
-  @apply flex gap-1 ml-auto max-w-lg justify-end;
-}
-
 /* Floating Menu */
 .tipex-floating-menu {
   @apply rounded-lg p-2 gap-1 bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 shadow-md;

@@ -2,6 +2,7 @@ import { Link } from '@tiptap/extension-link';
 import { Image } from '@tiptap/extension-image';
 import { Placeholder } from '@tiptap/extension-placeholder';
 import { CodeBlockLowlight } from '@tiptap/extension-code-block-lowlight';
+import { Underline } from '@tiptap/extension-underline';
 import { lowlight } from 'lowlight';
 
 export const defaultExtensions = [
@@ -22,5 +23,6 @@ export const defaultExtensions = [
 		lowlight,
 		languageClassPrefix: 'language-',
 		defaultLanguage: 'plaintext'
-	})
+	}),
+	Underline
 ];

@@ -67,7 +67,6 @@
 	import Controls from '../tipex/Controls.svelte';
 	import { getDefaultFloatingMenu } from '../tipex/prepare.js';
 	import LinkFloatingMenu from '../tipex/link/LinkFloatingMenu.svelte';
-	import Utility from '../tipex/Utility.svelte';
 
 	let {
 		extensions = $bindable(defaultExtensions),
@@ -147,11 +146,7 @@
 			{@render controlComponent(tipex)}
 		{:else}
 			<!-- Default controls -->
-			<Controls {tipex}>
-				<div class="tipex-utilities">
-					<Utility {tipex} />
-				</div>
-			</Controls>
+			<Controls {tipex} />
 		{/if}
 		{@render foot?.(tipex)}
 	</div>

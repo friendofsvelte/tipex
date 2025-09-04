@@ -3,7 +3,7 @@
 	import '$lib/tipex/styles/index.css';
 
 	import 'iconify-icon';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import Footer from '$item/Footer.svelte';
 	import ThemeToggle from '$item/ThemeToggle.svelte';
 	import TrackAppearance from '@friendofsvelte/toggle';
@@ -17,7 +17,7 @@
 
 <TrackAppearance />
 <div class="home-wrapper">
-	{#if $page.url.pathname !== '/'}
+	{#if page.url.pathname !== '/'}
 		<ThemeToggle className="fixed top-5 right-7" />
 	{/if}
 	<div class="max-w-4xl w-full">

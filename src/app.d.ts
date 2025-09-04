@@ -8,6 +8,8 @@ declare global {
 		// interface Platform {}
 	}
 
+	const __VERSION__: string;
+
 	export interface GithubRepo {
 		id: number;
 		node_id: string;

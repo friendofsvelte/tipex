@@ -71,6 +71,16 @@
   animation: tipex-float-in 0.15s ease-out;
 }
 
+.tipex-floating-group {
+  @apply flex items-center gap-1 p-2 rounded-lg bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 shadow-lg;
+  z-index: var(--z-tipex-floating);
+  animation: tipex-float-in 0.15s ease-out;
+}
+
+.tipex-floating-button {
+  @apply inline-flex items-center justify-center w-8 h-8 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50;
+}
+
 @keyframes tipex-float-in {
   from {
     opacity: 0;
@@ -80,15 +90,6 @@
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-}
-
-/* Link Components */
-.tipex-link-input {
-  @apply flex h-9 w-full rounded-md border border-gray-200 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-800 dark:placeholder:text-gray-400 dark:focus-visible:ring-gray-300;
-}
-
-.tipex-link-button {
-  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-gray-300 bg-gray-900 text-gray-50 shadow hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 h-9 px-4 py-2;
 }
 
 /* Utilities Section */

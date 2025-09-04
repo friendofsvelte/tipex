@@ -49,12 +49,12 @@
 		 style={computedStyleString}
 		 transition:fade>
 	<button type="button" class="tipex-floating-button" onclick={handleOpenLink} aria-label="Open link in new tab">
-		<Fa6SolidArrowUpRightFromSquare display class="h-3 w-3"/>
+		<Fa6SolidArrowUpRightFromSquare class="h-3 w-3"/>
 	</button>
 	<button type="button" class="tipex-floating-button" onclick={handleAcceptLink} aria-label="Accept link">
-		<Fa6SolidCheck display class="h-3 w-3"/>
+		<Fa6SolidCheck class="h-3 w-3"/>
 	</button>
 	<button type="button" class="tipex-floating-button" onclick={handleCancelLink} aria-label="Cancel link">
-		<Fa6SolidXmark display class="h-3 w-3"/>
+		<Fa6SolidXmark class="h-3 w-3"/>
 	</button>
 </div>

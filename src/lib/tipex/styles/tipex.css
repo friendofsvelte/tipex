@@ -59,11 +59,11 @@
 }
 
 /* Link button active state - more visible */
-.tipex-utilities .tipex-edit-button[aria-label="Edit link"].active {
+.tipex-utilities .tipex-edit-button[aria-label='Edit link'].active {
 	@apply bg-blue-100/90 text-blue-700 dark:bg-blue-900/80 dark:text-blue-300 border border-blue-200 dark:border-blue-700;
 }
 
-.tipex-utilities .tipex-edit-button[aria-label="Edit link"].active svg {
+.tipex-utilities .tipex-edit-button[aria-label='Edit link'].active svg {
 	@apply text-blue-700 dark:text-blue-300;
 }
 

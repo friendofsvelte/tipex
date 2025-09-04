@@ -3,6 +3,8 @@ import { Image } from '@tiptap/extension-image';
 import { Placeholder } from '@tiptap/extension-placeholder';
 import { CodeBlockLowlight } from '@tiptap/extension-code-block-lowlight';
 import { Underline } from '@tiptap/extension-underline';
+import { TaskList } from '@tiptap/extension-task-list';
+import { TaskItem } from '@tiptap/extension-task-item';
 import { lowlight } from 'lowlight';
 
 export const defaultExtensions = [
@@ -24,5 +26,9 @@ export const defaultExtensions = [
 		languageClassPrefix: 'language-',
 		defaultLanguage: 'plaintext'
 	}),
-	Underline
+	Underline,
+	TaskList,
+	TaskItem.configure({
+		nested: true,
+	})
 ];

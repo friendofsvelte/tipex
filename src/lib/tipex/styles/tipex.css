@@ -1,11 +1,12 @@
 .tipex-editor {
-  @apply flex flex-row gap-0 rounded-lg py-0 duration-200 overflow-y-hidden bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800;
+  @apply flex flex-row gap-0 rounded-lg py-0 duration-200 overflow-y-hidden bg-neutral-50/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-700/80;
   transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  backdrop-filter: blur(12px);
 }
 
 .tipex-editor.focused.focal {
-  @apply outline-none border-gray-300 dark:border-gray-700;
-  box-shadow: 0 0 0 2px rgb(59 130 246 / 0.2);
+  @apply outline-none border-blue-300/60 dark:border-blue-600/60;
+  box-shadow: 0 0 0 2px rgb(59 130 246 / 0.08);
 }
 
 .tipex-editor-wrap {
@@ -18,7 +19,7 @@
 
 /* Control Components */
 .tipex-controller {
-  @apply flex flex-row flex-wrap md:flex-row gap-2 sticky bottom-0 py-2 px-3 rounded-b-lg bg-gray-50/80 dark:bg-gray-900/80 border-t border-gray-200 dark:border-gray-800 backdrop-blur-sm relative;
+  @apply flex flex-row flex-wrap md:flex-row gap-2 sticky bottom-0 py-2 px-3 rounded-b-lg bg-neutral-100/70 dark:bg-neutral-800/70 border-t border-neutral-200/80 dark:border-neutral-700/80 backdrop-blur-md relative;
   z-index: var(--z-tipex-controls);
 }
 
@@ -27,7 +28,7 @@
 }
 
 .tipex-edit-button {
-  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-gray-300 h-9 px-3 bg-transparent hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-50 text-gray-700 dark:text-gray-400;
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-blue-400 h-9 px-3 bg-transparent hover:bg-neutral-200/80 hover:text-neutral-800 dark:hover:bg-neutral-700/80 dark:hover:text-neutral-200 text-neutral-600 dark:text-neutral-400;
 }
 
 .tipex-button-rigid {
@@ -43,16 +44,16 @@
 }
 
 .tipex-edit-button.active {
-  @apply bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-50;
+  @apply bg-stone-200/90 text-stone-800 dark:bg-stone-700/90 dark:text-stone-200;
 }
 
 /* Copy success state - more specific selector */
 .tipex-utilities .tipex-edit-button.active {
-  @apply bg-green-50 border-green-200 text-green-600 dark:bg-green-900/20 dark:border-green-700 dark:text-green-400;
+  @apply bg-emerald-50/80 text-emerald-600 dark:bg-emerald-900/60 dark:text-emerald-400;
 }
 
 .tipex-utilities .tipex-edit-button.active svg {
-  @apply text-green-600 dark:text-green-400;
+  @apply text-emerald-600 dark:text-emerald-400;
 }
 
 .tipex-edit-button:disabled {
@@ -60,25 +61,27 @@
 }
 
 .tipex-edit-button:disabled:hover {
-  @apply bg-transparent text-gray-700 dark:text-gray-400;
+  @apply bg-transparent text-neutral-600 dark:text-neutral-400;
   transform: none;
 }
 
 /* Floating Menu */
 .tipex-floating-menu {
-  @apply rounded-lg p-2 gap-1 bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 shadow-md;
+  @apply rounded-lg p-2 gap-1 bg-white/95 dark:bg-neutral-900/95 border border-neutral-200/90 dark:border-neutral-700/90 shadow-lg;
   z-index: var(--z-tipex-floating);
   animation: tipex-float-in 0.15s ease-out;
+  backdrop-filter: blur(8px);
 }
 
 .tipex-floating-group {
-  @apply flex items-center gap-1 p-2 rounded-lg bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 shadow-lg;
+  @apply flex items-center gap-1 p-2 rounded-lg bg-white/95 dark:bg-neutral-900/95 border border-neutral-200/90 dark:border-neutral-700/90 shadow-lg;
   z-index: var(--z-tipex-floating);
   animation: tipex-float-in 0.15s ease-out;
+  backdrop-filter: blur(8px);
 }
 
 .tipex-floating-button {
-  @apply inline-flex items-center justify-center w-8 h-8 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50;
+  @apply inline-flex items-center justify-center w-8 h-8 rounded-md text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100/80 dark:hover:bg-neutral-700/80 hover:text-neutral-800 dark:hover:text-neutral-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50;
 }
 
 @keyframes tipex-float-in {
@@ -95,4 +98,12 @@
 /* Utilities Section */
 .tipex-utilities {
   @apply flex gap-0.5 items-center ml-auto;
+}
+
+.tipex-utilities .tipex-edit-button {
+  @apply opacity-75 hover:opacity-100 transition-opacity duration-200;
+}
+
+.tipex-utilities .tipex-edit-button:hover {
+  @apply bg-neutral-200/80 dark:bg-neutral-700/80;
 }

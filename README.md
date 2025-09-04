@@ -35,16 +35,16 @@ Import the component and use it in your component:
 
 ```svelte
 <script lang="ts">
-    import {Tipex} from "@friendofsvelte/tipex";
-    
-    let body = `<p>This <a target="_blank" rel="noopener noreferrer" href="">content</a> is written by <a target="_blank" rel="noopener noreferrer" href="http://bishwas.net/">Bishwas</a> in 2023.</p>`;
+	import { Tipex } from '@friendofsvelte/tipex';
+
+	let body = `<p>This <a target="_blank" rel="noopener noreferrer" href="">content</a> is written by <a target="_blank" rel="noopener noreferrer" href="http://bishwas.net/">Bishwas</a> in 2023.</p>`;
 </script>
 
-<Tipex 
-    {body} 
-    floating
-    style="margin-top: 1rem; margin-bottom: 0;"
-    class="h-[70vh] border border-neutral-200"
+<Tipex
+	{body}
+	floating
+	style="margin-top: 1rem; margin-bottom: 0;"
+	class="h-[70vh] border border-neutral-200"
 />
 ```
 
@@ -55,15 +55,15 @@ Import the component and use it in your component:
 Tipex features a simple and flexible control system:
 
 1. **Default Controls** (automatic when no `controlComponent` is provided):
-    - Pre-built formatting toolbar with essential editing tools
-    - Built-in utility buttons (copy, link management)
-    - Perfect for quick implementation
+   - Pre-built formatting toolbar with essential editing tools
+   - Built-in utility buttons (copy, link management)
+   - Perfect for quick implementation
 
 2. **Custom Controls** (when `controlComponent` snippet is provided):
-    - Full control over the editor interface
-    - Complete customization freedom
-    - Can extend default controls or create entirely new interfaces
-    - Ideal for specialized use cases
+   - Full control over the editor interface
+   - Complete customization freedom
+   - Can extend default controls or create entirely new interfaces
+   - Ideal for specialized use cases
 
 This simple approach provides maximum flexibility while maintaining ease of use.
 
@@ -102,19 +102,19 @@ Add custom components above or below the editor using Svelte 5 snippets:
 
 ```svelte
 <script lang="ts">
-    import {Tipex} from "@friendofsvelte/tipex";
-    
-    let body = "";
+	import { Tipex } from '@friendofsvelte/tipex';
+
+	let body = '';
 </script>
 
 <Tipex {body}>
-    {#snippet head(editor)}
-        <CustomHeader {editor} />
-    {/snippet}
-    
-    {#snippet foot(editor)}
-        <CustomFooter {editor} />
-    {/snippet}
+	{#snippet head(editor)}
+		<CustomHeader {editor} />
+	{/snippet}
+
+	{#snippet foot(editor)}
+		<CustomFooter {editor} />
+	{/snippet}
 </Tipex>
 ```
 
@@ -124,20 +124,20 @@ Add custom utilities while keeping the default toolbar:
 
 ```svelte
 <script lang="ts">
-    import { Tipex, Controls, Utility } from "@friendofsvelte/tipex";
-    
-    let body = "";
+	import { Tipex, Controls, Utility } from '@friendofsvelte/tipex';
+
+	let body = '';
 </script>
 
 <Tipex {body}>
-    {#snippet controlComponent(editor)}
-        <Controls {editor}>
-            <div class="tipex-utilities">
-                <Utility {editor} />
-                <CustomButton {editor} />
-            </div>
-        </Controls>
-    {/snippet}
+	{#snippet controlComponent(editor)}
+		<Controls {editor}>
+			<div class="tipex-utilities">
+				<Utility {editor} />
+				<CustomButton {editor} />
+			</div>
+		</Controls>
+	{/snippet}
 </Tipex>
 ```
 
@@ -147,15 +147,15 @@ Create a completely custom control interface:
 
 ```svelte
 <script lang="ts">
-    import {Tipex} from "@friendofsvelte/tipex";
-    
-    let body = "";
+	import { Tipex } from '@friendofsvelte/tipex';
+
+	let body = '';
 </script>
 
 <Tipex {body}>
-    {#snippet controlComponent(editor)}
-        <MyCustomControls {editor} />
-    {/snippet}
+	{#snippet controlComponent(editor)}
+		<MyCustomControls {editor} />
+	{/snippet}
 </Tipex>
 ```
 
@@ -163,16 +163,16 @@ Create a completely custom control interface:
 
 ```svelte
 <script lang="ts">
-    import {Tipex} from "@friendofsvelte/tipex";
-    
-    let body = "";
-    let editor: Editor | undefined = $state();
+	import { Tipex } from '@friendofsvelte/tipex';
+
+	let body = '';
+	let editor: Editor | undefined = $state();
 
 	const htmlContent = $derived(editor?.getHTML()); // Get HTML content
- </script>
- 
- <Tipex {body} bind:tipex={editor} />
- ```
+</script>
+
+<Tipex {body} bind:tipex={editor} />
+```
 
 ## Documentation
 

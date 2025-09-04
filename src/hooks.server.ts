@@ -1,8 +1,4 @@
-import {sequence} from "@sveltejs/kit/hooks";
-import {handleAppearance} from "@friendofsvelte/toggle";
+import { sequence } from '@sveltejs/kit/hooks';
+import { handleAppearance } from '@friendofsvelte/toggle';
 
-
-export const handle = sequence(
-    handleAppearance
-);
-
+export const handle = sequence(handleAppearance);

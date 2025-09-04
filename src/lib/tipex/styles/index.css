@@ -1,7 +1,7 @@
 /* Tipex Editor Styles */
-@import "./theme.css";
-@import "./prosemirror.css";
-@import "./codeblock.css";
-@import "./tipex.css";
+@import './theme.css';
+@import './prosemirror.css';
+@import './codeblock.css';
+@import './tipex.css';
 
 @custom-variant dark (&:where(.dark, .dark *));

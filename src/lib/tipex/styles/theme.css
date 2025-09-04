@@ -1,84 +1,84 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  /* Tipex Design System */
-  --color-tipex-*: initial;
-  
-  /* Base Colors */
-  --color-tipex-primary: #3b82f6;
-  --color-tipex-primary-dark: #60a5fa;
-  --color-tipex-secondary: #6b7280;
-  --color-tipex-secondary-dark: #9ca3af;
-  
-  /* Editor Colors */
-  --color-tipex-editor-bg: #f9fafb;
-  --color-tipex-editor-bg-dark: #111827;
-  --color-tipex-editor-border: #e5e7eb;
-  --color-tipex-editor-border-dark: #374151;
-  --color-tipex-editor-text: #111827;
-  --color-tipex-editor-text-dark: #f9fafb;
-  --color-tipex-editor-placeholder: #6b7280;
-  --color-tipex-editor-placeholder-dark: #9ca3af;
-  
-  /* Control Colors */
-  --color-tipex-control-bg: #ffffff;
-  --color-tipex-control-bg-dark: #1f2937;
-  --color-tipex-control-hover: #f3f4f6;
-  --color-tipex-control-hover-dark: #374151;
-  --color-tipex-control-active: #dbeafe;
-  --color-tipex-control-active-dark: #1e3a8a;
-  --color-tipex-control-border: #d1d5db;
-  --color-tipex-control-border-dark: #4b5563;
-  --color-tipex-control-text: #374151;
-  --color-tipex-control-text-dark: #f9fafb;
-  
-  /* Code Colors */
-  --color-tipex-code-bg: #f1f5f9;
-  --color-tipex-code-bg-dark: #1e293b;
-  --color-tipex-code-text: #1e40af;
-  --color-tipex-code-text-dark: #60a5fa;
-  
-  /* Link Colors */
-  --color-tipex-link: #3b82f6;
-  --color-tipex-link-dark: #60a5fa;
-  --color-tipex-link-hover: #2563eb;
-  --color-tipex-link-hover-dark: #3b82f6;
-  
-  /* Spacing Scale */
-  --spacing-tipex-xs: 0.25rem;
-  --spacing-tipex-sm: 0.5rem;
-  --spacing-tipex-md: 1rem;
-  --spacing-tipex-lg: 1.5rem;
-  --spacing-tipex-xl: 2rem;
-  --spacing-tipex-2xl: 2.5rem;
-  
-  /* Border Radius */
-  --radius-tipex-sm: 0.25rem;
-  --radius-tipex-md: 0.375rem;
-  --radius-tipex-lg: 0.5rem;
-  
-  /* Shadows */
-  --shadow-tipex-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-tipex-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-tipex-focus: 0 0 0 3px rgb(59 130 246 / 0.5);
-  --shadow-tipex-focus-dark: 0 0 0 3px rgb(96 165 250 / 0.5);
-  
-  /* Typography */
-  --font-size-tipex-xs: 0.75rem;
-  --font-size-tipex-sm: 0.875rem;
-  --font-size-tipex-base: 1rem;
-  --font-size-tipex-lg: 1.125rem;
-  --font-size-tipex-xl: 1.25rem;
-  --font-size-tipex-2xl: 1.5rem;
+	/* Tipex Design System */
+	--color-tipex-*: initial;
 
-  --text-tipex-xs: 0.875rem;
-  --text-tipex-sm: 1rem;
-  --text-tipex-base: 1.125rem;
-  --text-tipex-lg: 1.25rem;
-  --text-tipex-xl: 1.5rem;
-  --text-tipex-2xl: 1.5rem;
-  
-  /* Z-Index */
-  --z-tipex-floating: 50;
-  --z-tipex-controls: 10;
+	/* Base Colors */
+	--color-tipex-primary: #3b82f6;
+	--color-tipex-primary-dark: #60a5fa;
+	--color-tipex-secondary: #6b7280;
+	--color-tipex-secondary-dark: #9ca3af;
+
+	/* Editor Colors */
+	--color-tipex-editor-bg: #f9fafb;
+	--color-tipex-editor-bg-dark: #111827;
+	--color-tipex-editor-border: #e5e7eb;
+	--color-tipex-editor-border-dark: #374151;
+	--color-tipex-editor-text: #111827;
+	--color-tipex-editor-text-dark: #f9fafb;
+	--color-tipex-editor-placeholder: #6b7280;
+	--color-tipex-editor-placeholder-dark: #9ca3af;
+
+	/* Control Colors */
+	--color-tipex-control-bg: #ffffff;
+	--color-tipex-control-bg-dark: #1f2937;
+	--color-tipex-control-hover: #f3f4f6;
+	--color-tipex-control-hover-dark: #374151;
+	--color-tipex-control-active: #dbeafe;
+	--color-tipex-control-active-dark: #1e3a8a;
+	--color-tipex-control-border: #d1d5db;
+	--color-tipex-control-border-dark: #4b5563;
+	--color-tipex-control-text: #374151;
+	--color-tipex-control-text-dark: #f9fafb;
+
+	/* Code Colors */
+	--color-tipex-code-bg: #f1f5f9;
+	--color-tipex-code-bg-dark: #1e293b;
+	--color-tipex-code-text: #1e40af;
+	--color-tipex-code-text-dark: #60a5fa;
+
+	/* Link Colors */
+	--color-tipex-link: #3b82f6;
+	--color-tipex-link-dark: #60a5fa;
+	--color-tipex-link-hover: #2563eb;
+	--color-tipex-link-hover-dark: #3b82f6;
+
+	/* Spacing Scale */
+	--spacing-tipex-xs: 0.25rem;
+	--spacing-tipex-sm: 0.5rem;
+	--spacing-tipex-md: 1rem;
+	--spacing-tipex-lg: 1.5rem;
+	--spacing-tipex-xl: 2rem;
+	--spacing-tipex-2xl: 2.5rem;
+
+	/* Border Radius */
+	--radius-tipex-sm: 0.25rem;
+	--radius-tipex-md: 0.375rem;
+	--radius-tipex-lg: 0.5rem;
+
+	/* Shadows */
+	--shadow-tipex-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	--shadow-tipex-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+	--shadow-tipex-focus: 0 0 0 3px rgb(59 130 246 / 0.5);
+	--shadow-tipex-focus-dark: 0 0 0 3px rgb(96 165 250 / 0.5);
+
+	/* Typography */
+	--font-size-tipex-xs: 0.75rem;
+	--font-size-tipex-sm: 0.875rem;
+	--font-size-tipex-base: 1rem;
+	--font-size-tipex-lg: 1.125rem;
+	--font-size-tipex-xl: 1.25rem;
+	--font-size-tipex-2xl: 1.5rem;
+
+	--text-tipex-xs: 0.875rem;
+	--text-tipex-sm: 1rem;
+	--text-tipex-base: 1.125rem;
+	--text-tipex-lg: 1.25rem;
+	--text-tipex-xl: 1.5rem;
+	--text-tipex-2xl: 1.5rem;
+
+	/* Z-Index */
+	--z-tipex-floating: 50;
+	--z-tipex-controls: 10;
 }

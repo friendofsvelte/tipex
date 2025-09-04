@@ -29,6 +29,6 @@ export const defaultExtensions = [
 	Underline,
 	TaskList,
 	TaskItem.configure({
-		nested: true,
+		nested: true
 	})
 ];

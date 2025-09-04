@@ -27,9 +27,9 @@
 </div>
 
 <style lang="postcss">
-    @reference "../app.css";
-    .home-wrapper {
-        @apply flex flex-col items-center justify-center;
-        @apply py-10 px-3;
-    }
+	@reference "../app.css";
+	.home-wrapper {
+		@apply flex flex-col items-center justify-center;
+		@apply py-10 px-3;
+	}
 </style>

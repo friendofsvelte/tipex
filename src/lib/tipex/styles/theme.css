@@ -2,47 +2,43 @@
 
 @theme {
 	/* Tipex Design System */
-	--color-tipex-*: initial;
+	--color-tipex-50: oklch(0.985 0 0);
+	--color-tipex-100: oklch(0.97 0 0);
+	--color-tipex-200: oklch(0.922 0 0);
+	--color-tipex-300: oklch(0.87 0 0);
+	--color-tipex-400: oklch(0.708 0 0);
+	--color-tipex-500: oklch(0.556 0 0);
+	--color-tipex-600: oklch(0.439 0 0);
+	--color-tipex-700: oklch(0.371 0 0);
+	--color-tipex-800: oklch(0.269 0 0);
+	--color-tipex-900: oklch(0.205 0 0);
+	--color-tipex-950: oklch(0.145 0 0);
 
-	/* Base Colors */
-	--color-tipex-primary: #3b82f6;
-	--color-tipex-primary-dark: #60a5fa;
-	--color-tipex-secondary: #6b7280;
-	--color-tipex-secondary-dark: #9ca3af;
+	/* Tipex Success Colors (Emerald) */
+	--color-tipex-success-50: oklch(0.971 0.014 143.198);
+	--color-tipex-success-100: oklch(0.948 0.028 142.258);
+	--color-tipex-success-200: oklch(0.899 0.061 143.231);
+	--color-tipex-success-300: oklch(0.823 0.12 146.018);
+	--color-tipex-success-400: oklch(0.718 0.202 149.761);
+	--color-tipex-success-500: oklch(0.656 0.241 154.308);
+	--color-tipex-success-600: oklch(0.592 0.249 154.584);
+	--color-tipex-success-700: oklch(0.525 0.223 153.958);
+	--color-tipex-success-800: oklch(0.459 0.187 153.815);
+	--color-tipex-success-900: oklch(0.408 0.153 152.432);
+	--color-tipex-success-950: oklch(0.284 0.109 153.907);
 
-	/* Editor Colors */
-	--color-tipex-editor-bg: #f9fafb;
-	--color-tipex-editor-bg-dark: #111827;
-	--color-tipex-editor-border: #e5e7eb;
-	--color-tipex-editor-border-dark: #374151;
-	--color-tipex-editor-text: #111827;
-	--color-tipex-editor-text-dark: #f9fafb;
-	--color-tipex-editor-placeholder: #6b7280;
-	--color-tipex-editor-placeholder-dark: #9ca3af;
-
-	/* Control Colors */
-	--color-tipex-control-bg: #ffffff;
-	--color-tipex-control-bg-dark: #1f2937;
-	--color-tipex-control-hover: #f3f4f6;
-	--color-tipex-control-hover-dark: #374151;
-	--color-tipex-control-active: #dbeafe;
-	--color-tipex-control-active-dark: #1e3a8a;
-	--color-tipex-control-border: #d1d5db;
-	--color-tipex-control-border-dark: #4b5563;
-	--color-tipex-control-text: #374151;
-	--color-tipex-control-text-dark: #f9fafb;
-
-	/* Code Colors */
-	--color-tipex-code-bg: #f1f5f9;
-	--color-tipex-code-bg-dark: #1e293b;
-	--color-tipex-code-text: #1e40af;
-	--color-tipex-code-text-dark: #60a5fa;
-
-	/* Link Colors */
-	--color-tipex-link: #3b82f6;
-	--color-tipex-link-dark: #60a5fa;
-	--color-tipex-link-hover: #2563eb;
-	--color-tipex-link-hover-dark: #3b82f6;
+	/* Tipex Primary Colors (Blue) */
+	--color-tipex-primary-50: oklch(0.984 0.003 247.858);
+	--color-tipex-primary-100: oklch(0.968 0.007 247.896);
+	--color-tipex-primary-200: oklch(0.929 0.013 255.508);
+	--color-tipex-primary-300: oklch(0.869 0.022 252.894);
+	--color-tipex-primary-400: oklch(0.704 0.04 256.788);
+	--color-tipex-primary-500: oklch(0.554 0.046 257.417);
+	--color-tipex-primary-600: oklch(0.446 0.043 257.281);
+	--color-tipex-primary-700: oklch(0.372 0.044 257.287);
+	--color-tipex-primary-800: oklch(0.279 0.041 260.031);
+	--color-tipex-primary-900: oklch(0.208 0.042 265.755);
+	--color-tipex-primary-950: oklch(0.129 0.042 264.695);
 
 	/* Spacing Scale */
 	--spacing-tipex-xs: 0.25rem;
@@ -52,30 +48,30 @@
 	--spacing-tipex-xl: 2rem;
 	--spacing-tipex-2xl: 2.5rem;
 
+	/* Sizing Scale */
+	--size-tipex-1: 0.25rem;
+	--size-tipex-2: 0.5rem;
+	--size-tipex-3: 0.75rem;
+	--size-tipex-4: 1rem;
+	--size-tipex-5: 1.25rem;
+	--size-tipex-6: 1.5rem;
+	--size-tipex-7: 1.75rem;
+	--size-tipex-8: 2rem;
+	--size-tipex-9: 2.25rem;
+	--size-tipex-10: 2.5rem;
+	--size-tipex-11: 2.75rem;
+	--size-tipex-12: 3rem;
+
 	/* Border Radius */
 	--radius-tipex-sm: 0.25rem;
 	--radius-tipex-md: 0.375rem;
-	--radius-tipex-lg: 0.5rem;
-
-	/* Shadows */
-	--shadow-tipex-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-	--shadow-tipex-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-	--shadow-tipex-focus: 0 0 0 3px rgb(59 130 246 / 0.5);
-	--shadow-tipex-focus-dark: 0 0 0 3px rgb(96 165 250 / 0.5);
 
 	/* Typography */
-	--font-size-tipex-xs: 0.75rem;
-	--font-size-tipex-sm: 0.875rem;
-	--font-size-tipex-base: 1rem;
-	--font-size-tipex-lg: 1.125rem;
-	--font-size-tipex-xl: 1.25rem;
-	--font-size-tipex-2xl: 1.5rem;
-
-	--text-tipex-xs: 0.875rem;
-	--text-tipex-sm: 1rem;
-	--text-tipex-base: 1.125rem;
-	--text-tipex-lg: 1.25rem;
-	--text-tipex-xl: 1.5rem;
+	--text-tipex-xs: 0.75rem;
+	--text-tipex-sm: 0.875rem;
+	--text-tipex-base: 1rem;
+	--text-tipex-lg: 1.125rem;
+	--text-tipex-xl: 1.25rem;
 	--text-tipex-2xl: 1.5rem;
 
 	/* Z-Index */

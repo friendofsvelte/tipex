@@ -1,16 +1,16 @@
 @layer components {
 	.tipex-editor-section .ProseMirror {
-		@apply outline-none px-tipex-lg pb-tipex-sm h-full text-tipex-editor-text dark:text-tipex-editor-text-dark;
+		@apply outline-none px-tipex-lg pb-tipex-sm h-full text-tipex-900 dark:text-tipex-100;
 	}
 
 	/* Custom scrollbar styling for the editor section */
 	.tipex-editor-section {
 		scrollbar-width: thin;
-		scrollbar-color: rgb(209 213 219) transparent;
+		scrollbar-color: rgb(var(--color-tipex-300)) transparent;
 	}
 
 	.tipex-editor-section::-webkit-scrollbar {
-		width: 8px;
+		width: var(--size-tipex-2);
 	}
 
 	.tipex-editor-section::-webkit-scrollbar-track {
@@ -18,39 +18,39 @@
 	}
 
 	.tipex-editor-section::-webkit-scrollbar-thumb {
-		background-color: rgb(209 213 219);
-		border-radius: 4px;
+		background-color: rgb(var(--color-tipex-300));
+		border-radius: var(--radius-tipex-sm);
 		border: 2px solid transparent;
 		background-clip: content-box;
 	}
 
 	.tipex-editor-section::-webkit-scrollbar-thumb:hover {
-		background-color: rgb(156 163 175);
+		background-color: rgb(var(--color-tipex-400));
 	}
 
 	/* Dark mode scrollbar */
 	.dark .tipex-editor-section {
-		scrollbar-color: rgb(75 85 99) transparent;
+		scrollbar-color: rgb(var(--color-tipex-600)) transparent;
 	}
 
 	.dark .tipex-editor-section::-webkit-scrollbar-thumb {
-		background-color: rgb(75 85 99);
+		background-color: rgb(var(--color-tipex-600));
 	}
 
 	.dark .tipex-editor-section::-webkit-scrollbar-thumb:hover {
-		background-color: rgb(107 114 128);
+		background-color: rgb(var(--color-tipex-500));
 	}
 
 	.tipex-editor-section .ProseMirror pre {
-		@apply bg-tipex-code-bg text-tipex-code-text text-tipex-sm  dark:bg-tipex-code-bg-dark dark:text-tipex-code-text-dark  px-tipex-xl py-tipex-lg mt-tipex-lg ml-tipex-md mr-tipex-xl  overflow-x-hidden mb-tipex-lg rounded-tipex-md;
+		@apply bg-tipex-100 text-tipex-600 text-tipex-sm dark:bg-tipex-800 dark:text-tipex-400 px-tipex-xl py-tipex-lg mt-tipex-lg ml-tipex-md mr-tipex-xl overflow-x-hidden mb-tipex-lg rounded-tipex-md;
 	}
 
 	.tipex-editor-section .ProseMirror code {
-		@apply bg-tipex-code-bg text-tipex-code-text  dark:bg-tipex-code-bg-dark dark:text-tipex-code-text-dark  px-tipex-sm py-tipex-xs rounded-tipex-sm;
+		@apply bg-tipex-100 text-tipex-600 dark:bg-tipex-800 dark:text-tipex-400 px-tipex-sm py-tipex-xs rounded-tipex-sm;
 	}
 
 	.tipex-editor-section .ProseMirror h1 {
-		@apply text-tipex-2xl font-black text-tipex-editor-text dark:text-tipex-editor-text-dark  my-tipex-lg;
+		@apply text-tipex-2xl font-black text-tipex-900 dark:text-tipex-100 my-tipex-lg;
 	}
 
 	.tipex-editor-section .ProseMirror h2 {
@@ -76,7 +76,7 @@
 	}
 
 	.tipex-editor-section .ProseMirror a[href] {
-		@apply text-tipex-link hover:underline hover:text-tipex-link-hover  dark:text-tipex-link-dark dark:hover:text-tipex-link-hover-dark;
+		@apply text-tipex-600 hover:underline hover:text-tipex-700 dark:text-tipex-400 dark:hover:text-tipex-300;
 	}
 
 	.tipex-editor-section .ProseMirror ul {
@@ -93,7 +93,7 @@
 
 	/* Task List Styling */
 	.tipex-editor-section .ProseMirror ul[data-type='taskList'] {
-		@apply list-none ml-0 p-4 border border-neutral-200 dark:border-neutral-700 rounded-lg bg-neutral-50/50 dark:bg-neutral-800/50 backdrop-blur-sm;
+		@apply list-none ml-0 p-4 border border-tipex-200 dark:border-tipex-700 rounded-lg bg-tipex-50/50 dark:bg-tipex-800/50 backdrop-blur-sm;
 	}
 
 	.tipex-editor-section .ProseMirror ul[data-type='taskList'] li {
@@ -105,15 +105,19 @@
 	}
 
 	.tipex-editor-section .ProseMirror ul[data-type='taskList'] li > label {
-		@apply flex items-center justify-center w-5 h-5 cursor-pointer transition-colors duration-200;
+		@apply flex items-center justify-center cursor-pointer transition-colors duration-200;
+		width: var(--size-tipex-5);
+		height: var(--size-tipex-5);
 	}
 
 	.tipex-editor-section .ProseMirror ul[data-type='taskList'] li[data-checked='true'] > div {
-		@apply line-through text-neutral-500 dark:text-neutral-400;
+		@apply line-through text-tipex-400 dark:text-tipex-500;
 	}
 
 	.tipex-editor-section .ProseMirror ul[data-type='taskList'] li > label input[type='checkbox'] {
-		@apply w-3 h-3 accent-blue-600 dark:accent-blue-400;
+		@apply accent-tipex-600 dark:accent-tipex-400;
+		width: var(--size-tipex-3);
+		height: var(--size-tipex-3);
 	}
 
 	.tipex-editor-section .ProseMirror ul[data-type='taskList'] li > div {
@@ -121,7 +125,7 @@
 	}
 
 	.tipex-editor-section .ProseMirror blockquote {
-		@apply border-l-4 border-tipex-editor-border dark:border-tipex-editor-border-dark  pl-tipex-md mb-tipex-md ml-tipex-md;
+		@apply border-l-4 border-tipex-200 dark:border-tipex-700 pl-tipex-md mb-tipex-md ml-tipex-md;
 	}
 
 	.tipex-editor-section .ProseMirror img {
@@ -129,7 +133,7 @@
 	}
 
 	.tipex-editor-section .ProseMirror hr {
-		@apply border border-tipex-editor-border dark:border-tipex-editor-border-dark;
+		@apply border border-tipex-200 dark:border-tipex-700;
 	}
 
 	.tipex-editor-section .ProseMirror del {
@@ -148,6 +152,6 @@
 		content: attr(data-placeholder);
 		float: left;
 		height: 0;
-		@apply pointer-events-none text-tipex-editor-placeholder dark:text-tipex-editor-placeholder-dark;
+		@apply pointer-events-none text-tipex-400 dark:text-tipex-500;
 	}
 }

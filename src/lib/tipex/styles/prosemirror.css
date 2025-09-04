@@ -108,6 +108,10 @@
     @apply flex items-center justify-center w-5 h-5 cursor-pointer transition-colors duration-200;
   }
 
+  .tipex-editor-section .ProseMirror ul[data-type="taskList"] li[data-checked="true"] > div {
+    @apply line-through text-gray-500 dark:text-gray-400;
+  }
+
   .tipex-editor-section .ProseMirror ul[data-type="taskList"] li > label input[type="checkbox"] {
     @apply w-3 h-3 accent-blue-600 dark:accent-blue-400;
   }

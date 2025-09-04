@@ -14,31 +14,31 @@
 	--color-tipex-900: oklch(0.205 0 0);
 	--color-tipex-950: oklch(0.145 0 0);
 
-	/* Tipex Success Colors (Emerald) */
-	--color-tipex-success-50: oklch(0.971 0.014 143.198);
-	--color-tipex-success-100: oklch(0.948 0.028 142.258);
-	--color-tipex-success-200: oklch(0.899 0.061 143.231);
-	--color-tipex-success-300: oklch(0.823 0.12 146.018);
-	--color-tipex-success-400: oklch(0.718 0.202 149.761);
-	--color-tipex-success-500: oklch(0.656 0.241 154.308);
-	--color-tipex-success-600: oklch(0.592 0.249 154.584);
-	--color-tipex-success-700: oklch(0.525 0.223 153.958);
-	--color-tipex-success-800: oklch(0.459 0.187 153.815);
-	--color-tipex-success-900: oklch(0.408 0.153 152.432);
-	--color-tipex-success-950: oklch(0.284 0.109 153.907);
+	/* Tipex Success Colors (Green) */
+	--color-tipex-success-50: oklch(0.984 0.007 142.425);
+	--color-tipex-success-100: oklch(0.971 0.014 142.425);
+	--color-tipex-success-200: oklch(0.929 0.042 142.425);
+	--color-tipex-success-300: oklch(0.87 0.085 142.425);
+	--color-tipex-success-400: oklch(0.769 0.156 142.425);
+	--color-tipex-success-500: oklch(0.647 0.208 142.425);
+	--color-tipex-success-600: oklch(0.548 0.208 142.425);
+	--color-tipex-success-700: oklch(0.463 0.181 142.425);
+	--color-tipex-success-800: oklch(0.385 0.146 142.425);
+	--color-tipex-success-900: oklch(0.324 0.118 142.425);
+	--color-tipex-success-950: oklch(0.208 0.076 142.425);
 
-	/* Tipex Primary Colors (Blue) */
-	--color-tipex-primary-50: oklch(0.984 0.003 247.858);
-	--color-tipex-primary-100: oklch(0.968 0.007 247.896);
-	--color-tipex-primary-200: oklch(0.929 0.013 255.508);
-	--color-tipex-primary-300: oklch(0.869 0.022 252.894);
-	--color-tipex-primary-400: oklch(0.704 0.04 256.788);
-	--color-tipex-primary-500: oklch(0.554 0.046 257.417);
-	--color-tipex-primary-600: oklch(0.446 0.043 257.281);
-	--color-tipex-primary-700: oklch(0.372 0.044 257.287);
-	--color-tipex-primary-800: oklch(0.279 0.041 260.031);
-	--color-tipex-primary-900: oklch(0.208 0.042 265.755);
-	--color-tipex-primary-950: oklch(0.129 0.042 264.695);
+	/* Tipex Primary Colors (Indigo) */
+	--color-tipex-primary-50: oklch(0.985 0.003 272.314);
+	--color-tipex-primary-100: oklch(0.971 0.007 272.314);
+	--color-tipex-primary-200: oklch(0.929 0.021 272.314);
+	--color-tipex-primary-300: oklch(0.87 0.042 272.314);
+	--color-tipex-primary-400: oklch(0.769 0.076 272.314);
+	--color-tipex-primary-500: oklch(0.647 0.097 272.314);
+	--color-tipex-primary-600: oklch(0.548 0.097 272.314);
+	--color-tipex-primary-700: oklch(0.463 0.083 272.314);
+	--color-tipex-primary-800: oklch(0.385 0.069 272.314);
+	--color-tipex-primary-900: oklch(0.324 0.056 272.314);
+	--color-tipex-primary-950: oklch(0.208 0.042 272.314);
 
 	/* Spacing Scale */
 	--spacing-tipex-xs: 0.25rem;

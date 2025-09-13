@@ -56,6 +56,7 @@
 	class:active={tipex?.isActive('link')}
 	class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 	aria-label="Edit link"
+	title="Edit link"
 >
 	<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 		<path

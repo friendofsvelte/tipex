@@ -20,7 +20,7 @@
 
 	async function copy() {
 		try {
-			await navigator.clipboard.writeText(tipex?.getHTML() || '');
+			await navigator.clipboard.writeText(tipex?.getText() || '');
 			copySuccess = true;
 			setTimeout(() => {
 				copySuccess = false;
@@ -42,6 +42,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Heading 1"
 				type="button"
+				title="Heading 1"
 			>
 				<span class="font-semibold text-xs">H1</span>
 			</button>
@@ -52,6 +53,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Heading 2"
 				type="button"
+				title="Heading 2"
 			>
 				<span class="font-semibold text-xs">H2</span>
 			</button>
@@ -62,6 +64,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Heading 3"
 				type="button"
+				title="Heading 3"
 			>
 				<span class="font-semibold text-xs">H3</span>
 			</button>
@@ -72,6 +75,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Paragraph/Normal text"
 				type="button"
+				title="Paragraph/Normal text"
 			>
 				<svg
 					class="h-4 w-4"
@@ -95,6 +99,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Bold"
 				type="button"
+				title="Bold (⌘+B)"
 			>
 				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
 					<path
@@ -109,6 +114,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Italic"
 				type="button"
+				title="Italic (⌘+I)"
 			>
 				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
 					<path
@@ -123,6 +129,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Underline"
 				type="button"
+				title="Underline (⌘+U)"
 			>
 				<span class="font-semibold text-xs underline">U</span>
 			</button>
@@ -133,6 +140,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Strikethrough"
 				type="button"
+				title="Strikethrough"
 			>
 				<span class="font-semibold text-xs line-through">S</span>
 			</button>
@@ -143,6 +151,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Inline Code"
 				type="button"
+				title="Inline Code"
 			>
 				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
 					<path
@@ -160,6 +169,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Bullet List"
 				type="button"
+				title="Bullet List"
 			>
 				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
 					<path
@@ -174,6 +184,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Numbered List"
 				type="button"
+				title="Numbered List"
 			>
 				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
 					<path
@@ -191,6 +202,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Task List"
 				type="button"
+				title="Task List"
 			>
 				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
 					<path
@@ -211,6 +223,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Quote"
 				type="button"
+				title="Quote"
 			>
 				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
 					<path
@@ -225,6 +238,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Code Block"
 				type="button"
+				title="Code Block"
 			>
 				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
 					<path
@@ -238,6 +252,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Horizontal Rule"
 				type="button"
+				title="Horizontal Rule"
 			>
 				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
 					<path
@@ -255,6 +270,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Undo"
 				type="button"
+				title="Undo"
 			>
 				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
 					<path
@@ -273,6 +289,7 @@
 				class="tipex-edit-button tipex-button-extra tipex-button-rigid"
 				aria-label="Redo"
 				type="button"
+				title="Redo"
 			>
 				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
 					<path
@@ -293,7 +310,8 @@
 				class:active={copySuccess}
 				onclick={copy}
 				type="button"
-				aria-label={copySuccess ? 'Copied!' : 'Copy HTML'}
+				aria-label={copySuccess ? 'Copied!' : 'Copy Text'}
+				title={copySuccess ? 'Copied!' : 'Copy Text'}
 			>
 				{#if copySuccess}
 					<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">

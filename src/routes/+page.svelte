@@ -63,7 +63,7 @@
 			rel="noopener"
 		>
 			<iconify-icon icon="simple-icons:buymeacoffee" class="w-4"></iconify-icon>
-			<span class="text-sm">Support Development</span>
+			<span class="text-sm" title="Support Friend Of Svelte">Support FoS</span>
 		</a>
 		<ThemeToggle />
 	</div>

@@ -80,6 +80,11 @@ Tipex features a simple and flexible control system:
    - Can extend default controls or create entirely new interfaces
    - Ideal for specialized use cases
 
+3. **No Controls** (when `controlComponent={null}` is explicitly set):
+   - Completely hides all control elements
+   - Provides a clean, minimal editor interface
+   - Perfect for read-only or embedded scenarios
+
 This simple approach provides maximum flexibility while maintaining ease of use.
 
 ### Extension System
@@ -230,6 +235,21 @@ Create a completely custom control interface:
 </Tipex>
 ```
 
+### No Controls (Minimal Editor)
+
+Hide all controls for a clean, minimal editor interface:
+
+```svelte
+<script lang="ts">
+	import { Tipex } from '@friendofsvelte/tipex';
+
+	let body = '';
+</script>
+
+<!-- Editor with no controls - perfect for embedded or read-only scenarios -->
+<Tipex {body} controlComponent={null} />
+```
+
 ## Props & Configuration
 
 Based on the actual `TipexProps` interface, here are all available properties:
@@ -248,7 +268,7 @@ Based on the actual `TipexProps` interface, here are all available properties:
 | `ctxId` | `string` | `'_tipex'` | Context ID for the editor instance |
 | `head` | `Snippet<[TipexEditor]>` | `undefined` | Content rendered above the editor |
 | `foot` | `Snippet<[TipexEditor]>` | `undefined` | Content rendered below the editor |
-| `controlComponent` | `Snippet<[TipexEditor]>` | `undefined` | Custom control component (replaces default controls) |
+| `controlComponent` | `Snippet<[TipexEditor]> \| null` | `undefined` | Custom control component (replaces default controls). Set to `null` to hide all controls. |
 | `oncreate` | `(props: EditorEvents['create']) => void` | `() => {}` | Callback when editor is created |
 | `ondestroy` | `(props: EditorEvents['destroy']) => void` | `() => {}` | Callback when editor is destroyed |
 | `onupdate` | `(props: EditorEvents['update']) => void` | `() => {}` | Callback when editor content updates |

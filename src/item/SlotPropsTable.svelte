@@ -28,11 +28,11 @@
 			<tr>
 				<td>controlComponent</td>
 				<td>
-					<code>Snippet&lt;[TipexEditor]&gt;</code>
+					<code>Snippet&lt;[TipexEditor]&gt; | null</code>
 				</td>
 				<td>Optional</td>
 				<td>
-					A slot that accepts a function receiving the TipexEditor instance, used to completely replace the default controls
+					A slot that accepts a function receiving the TipexEditor instance, used to completely replace the default controls. Set to <code>null</code> to hide all controls completely.
 				</td>
 			</tr>
 			<tr>
@@ -60,6 +60,9 @@
 		<li>When <code>controlComponent</code> is provided: Uses your custom control component</li>
 		<li>
 			When <code>controlComponent</code> is not provided: Shows default controls with built-in utilities
+		</li>
+		<li>
+			When <code>controlComponent={null}</code>: Hides all controls completely (no toolbar)
 		</li>
 	</ul>
 	<p class="text-sm text-blue-600 dark:text-blue-400 mt-2">

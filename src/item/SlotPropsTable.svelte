@@ -62,7 +62,7 @@
 			When <code>controlComponent</code> is not provided: Shows default controls with built-in utilities
 		</li>
 		<li>
-			When <code>controlComponent={null}</code>: Hides all controls completely (no toolbar)
+			When <code>controlComponent={'{null}'}</code>: Hides all controls completely (no toolbar)
 		</li>
 	</ul>
 	<p class="text-sm text-blue-600 dark:text-blue-400 mt-2">

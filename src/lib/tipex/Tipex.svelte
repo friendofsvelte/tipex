@@ -55,7 +55,7 @@
 		/**
 		 * Custom control component snippet. If provided, default controls will be hidden.
 		 */
-		controlComponent?: HasEditorSnippet;
+		controlComponent?: HasEditorSnippet | null;
 	} & (Boolish | NonBoolish);
 </script>
 
@@ -144,7 +144,7 @@
 		<div class="tipex-editor-section" bind:this={tipexEditorRef}></div>
 		{#if controlComponent}
 			{@render controlComponent(tipex)}
-		{:else}
+		{:else if controlComponent !== null}
 			<!-- Default controls -->
 			<Controls {tipex} />
 		{/if}

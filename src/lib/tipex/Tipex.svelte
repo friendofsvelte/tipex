@@ -99,6 +99,9 @@
 	let tipexEditorRef: HTMLDivElement | undefined = $state();
 	let editorsParentRef: HTMLDivElement | undefined = $state();
 
+	// set context immediately during initialization (required for Svelte async mode)
+	setContext(ctxId, tipex);
+
 	onMount(() => {
 		if (floating && !extensions.find((ext) => ext.name === 'floatingMenu') && floatingRef) {
 			extensions.push(getDefaultFloatingMenu(floatingRef));
@@ -122,7 +125,6 @@
 			onDestroy: ondestroy,
 			onUpdate: onupdate
 		});
-		setContext(ctxId, tipex);
 	});
 </script>
 

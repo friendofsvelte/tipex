@@ -61,7 +61,7 @@
 
 <script lang="ts">
 	import { defaultExtensions } from './default.js';
-	import { onMount, setContext } from 'svelte';
+	import { onMount, setContext, untrack } from 'svelte';
 	import { Editor } from '@tiptap/core';
 	import StarterKit from '@tiptap/starter-kit';
 	import Controls from '../tipex/Controls.svelte';
@@ -71,14 +71,14 @@
 	let {
 		extensions = $bindable(defaultExtensions),
 		tipex = $bindable(),
-		floating = false,
+		floating: floatingProp = false,
 		oncreate = () => {},
 		ondestroy = () => {},
 		onupdate = () => {},
 		body = '',
 		class: className = '',
 		style = '',
-		focal = true,
+		focal: focalProp = true,
 		focused = $bindable(false),
 		autofocus = true,
 		head,
@@ -88,8 +88,8 @@
 		...restProps
 	}: TipexProps = $props();
 
-	focal = restProps['!focal'] === undefined ? focal : !restProps['!focal'];
-	floating = restProps['!floating'] === undefined ? floating : !restProps['!floating'];
+	const focal = $derived(restProps['!focal'] === undefined ? focalProp : !restProps['!focal']);
+	const floating = $derived(restProps['!floating'] === undefined ? floatingProp : !restProps['!floating']);
 
 	function onFocusChange() {
 		focused = !!(editorsParentRef && editorsParentRef.contains(document.activeElement));
@@ -100,7 +100,7 @@
 	let editorsParentRef: HTMLDivElement | undefined = $state();
 
 	// set context immediately during initialization (required for Svelte async mode)
-	setContext(ctxId, tipex);
+	setContext(untrack(() => ctxId), tipex);
 
 	onMount(() => {
 		if (floating && !extensions.find((ext) => ext.name === 'floatingMenu') && floatingRef) {

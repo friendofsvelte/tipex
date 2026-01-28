@@ -152,6 +152,11 @@
 		content: attr(data-placeholder);
 		float: left;
 		height: 0;
-		@apply pointer-events-none text-tipex-400 dark:text-tipex-500;
+		pointer-events: none;
+		color: rgb(var(--color-tipex-400));
+	}
+
+	.dark .tipex-editor-section .ProseMirror .is-empty::before {
+		color: rgb(var(--color-tipex-500));
 	}
 }

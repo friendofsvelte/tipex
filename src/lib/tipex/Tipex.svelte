@@ -85,11 +85,12 @@
 		controlComponent,
 		foot,
 		ctxId = `_tipex`,
-		...restProps
+		'!focal': notFocal,
+		'!floating': notFloating
 	}: TipexProps = $props();
 
-	const focal = $derived(restProps['!focal'] === undefined ? focalProp : !restProps['!focal']);
-	const floating = $derived(restProps['!floating'] === undefined ? floatingProp : !restProps['!floating']);
+	const focal = $derived(notFocal === undefined ? focalProp : !notFocal);
+	const floating = $derived(notFloating === undefined ? floatingProp : !notFloating);
 
 	function onFocusChange() {
 		focused = !!(editorsParentRef && editorsParentRef.contains(document.activeElement));

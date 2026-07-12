@@ -100,7 +100,10 @@
 	let editorsParentRef: HTMLDivElement | undefined = $state();
 
 	// set context immediately during initialization (required for Svelte async mode)
-	setContext(untrack(() => ctxId), tipex);
+	setContext(
+		untrack(() => ctxId),
+		tipex
+	);
 
 	onMount(() => {
 		if (floating && !extensions.find((ext) => ext.name === 'floatingMenu') && floatingRef) {

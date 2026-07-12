@@ -102,11 +102,11 @@ Tipex leverages Tiptap's extension system for enhanced functionality. The `exten
 		...defaultExtensions,
 		TextAlign.configure({
 			types: ['heading', 'paragraph'],
-			alignments: ['left', 'center', 'right', 'justify'],
+			alignments: ['left', 'center', 'right', 'justify']
 		}),
 		Highlight.configure({
-			multicolor: true,
-		}),
+			multicolor: true
+		})
 	];
 
 	let body = '';
@@ -130,8 +130,10 @@ The floating menu provides context-aware formatting options that appear when tex
 Tipex includes smart focus detection with visual feedback:
 
 ```svelte
-<Tipex focal /> <!-- Default: shows focus ring -->
-<Tipex !focal /> <!-- Disables focus ring -->
+<Tipex focal />
+<!-- Default: shows focus ring -->
+<Tipex !focal />
+<!-- Disables focus ring -->
 ```
 
 ## Modern Theming with Tailwind CSS v4
@@ -142,13 +144,13 @@ Tipex is built with **Tailwind CSS v4** and uses modern OKLCH colors for better 
 @import '@friendofsvelte/tipex/styles/index.css';
 
 @theme {
-  /* Override Tipex colors */
-  --color-tipex-primary-500: oklch(0.65 0.11 285); /* Custom purple */
-  --color-tipex-success-500: oklch(0.647 0.208 142.425); /* Custom green */
-  
-  /* Custom spacing */
-  --spacing-tipex-md: 1.25rem;
-  --spacing-tipex-lg: 2rem;
+	/* Override Tipex colors */
+	--color-tipex-primary-500: oklch(0.65 0.11 285); /* Custom purple */
+	--color-tipex-success-500: oklch(0.647 0.208 142.425); /* Custom green */
+
+	/* Custom spacing */
+	--spacing-tipex-md: 1.25rem;
+	--spacing-tipex-lg: 2rem;
 }
 ```
 
@@ -229,9 +231,7 @@ Create a completely custom control interface:
 			<button onclick={() => tipex.commands.toggleItalic()}>
 				<em>I</em>
 			</button>
-			<button onclick={() => tipex.commands.toggleTaskList()}>
-				✅ Tasks
-			</button>
+			<button onclick={() => tipex.commands.toggleTaskList()}> ✅ Tasks </button>
 		</div>
 	{/snippet}
 </Tipex>
@@ -302,24 +302,24 @@ With this extension, typing `a`, pressing `Enter`, then typing `b` produces `<p>
 
 Based on the actual `TipexProps` interface, here are all available properties:
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `body` | `string` | `''` | Initial HTML content for the editor |
-| `tipex` | `TipexEditor` (bindable) | `undefined` | The editor instance - bind to access editor methods |
-| `extensions` | `AnyExtension[]` (bindable) | `defaultExtensions` | Array of Tiptap extensions to use |
-| `floating` | `boolean` | `false` | Enable floating menu on text selection |
-| `focal` | `boolean` | `true` | Enable focus ring styling |
-| `focused` | `boolean` (bindable) | `false` | Whether the editor is currently focused |
-| `autofocus` | `boolean` | `true` | Auto-focus the editor on mount |
-| `class` | `string` | `''` | Additional CSS classes for the editor container |
-| `style` | `string` | `''` | Inline styles for the editor container |
-| `ctxId` | `string` | `'_tipex'` | Context ID for the editor instance |
-| `head` | `Snippet<[TipexEditor]>` | `undefined` | Content rendered above the editor |
-| `foot` | `Snippet<[TipexEditor]>` | `undefined` | Content rendered below the editor |
-| `controlComponent` | `Snippet<[TipexEditor]> \| null` | `undefined` | Custom control component (replaces default controls). Set to `null` to hide all controls. |
-| `oncreate` | `(props: EditorEvents['create']) => void` | `() => {}` | Callback when editor is created |
-| `ondestroy` | `(props: EditorEvents['destroy']) => void` | `() => {}` | Callback when editor is destroyed |
-| `onupdate` | `(props: EditorEvents['update']) => void` | `() => {}` | Callback when editor content updates |
+| Prop               | Type                                       | Default             | Description                                                                               |
+| ------------------ | ------------------------------------------ | ------------------- | ----------------------------------------------------------------------------------------- |
+| `body`             | `string`                                   | `''`                | Initial HTML content for the editor                                                       |
+| `tipex`            | `TipexEditor` (bindable)                   | `undefined`         | The editor instance - bind to access editor methods                                       |
+| `extensions`       | `AnyExtension[]` (bindable)                | `defaultExtensions` | Array of Tiptap extensions to use                                                         |
+| `floating`         | `boolean`                                  | `false`             | Enable floating menu on text selection                                                    |
+| `focal`            | `boolean`                                  | `true`              | Enable focus ring styling                                                                 |
+| `focused`          | `boolean` (bindable)                       | `false`             | Whether the editor is currently focused                                                   |
+| `autofocus`        | `boolean`                                  | `true`              | Auto-focus the editor on mount                                                            |
+| `class`            | `string`                                   | `''`                | Additional CSS classes for the editor container                                           |
+| `style`            | `string`                                   | `''`                | Inline styles for the editor container                                                    |
+| `ctxId`            | `string`                                   | `'_tipex'`          | Context ID for the editor instance                                                        |
+| `head`             | `Snippet<[TipexEditor]>`                   | `undefined`         | Content rendered above the editor                                                         |
+| `foot`             | `Snippet<[TipexEditor]>`                   | `undefined`         | Content rendered below the editor                                                         |
+| `controlComponent` | `Snippet<[TipexEditor]> \| null`           | `undefined`         | Custom control component (replaces default controls). Set to `null` to hide all controls. |
+| `oncreate`         | `(props: EditorEvents['create']) => void`  | `() => {}`          | Callback when editor is created                                                           |
+| `ondestroy`        | `(props: EditorEvents['destroy']) => void` | `() => {}`          | Callback when editor is destroyed                                                         |
+| `onupdate`         | `(props: EditorEvents['update']) => void`  | `() => {}`          | Callback when editor content updates                                                      |
 
 ### Boolean Props with Negation
 
@@ -343,13 +343,16 @@ Access the editor instance and its content using Svelte 5 runes:
 
 	// Reactive HTML content
 	const htmlContent = $derived(editor?.getHTML() ?? '');
-	
+
 	// Reactive text content (no HTML tags)
 	const textContent = $derived(editor?.getText() ?? '');
-	
+
 	// Reactive word count
 	const wordCount = $derived(
-		editor?.getText().split(/\s+/).filter(word => word.length > 0).length ?? 0
+		editor
+			?.getText()
+			.split(/\s+/)
+			.filter((word) => word.length > 0).length ?? 0
 	);
 </script>
 

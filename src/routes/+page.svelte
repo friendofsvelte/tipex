@@ -199,8 +199,7 @@
 <p>
 	Visit the <a href={resolve('/customization')} class="text-blue-600 hover:underline"
 		>customization guide</a
-	> for
-	detailed examples and advanced techniques.
+	> for detailed examples and advanced techniques.
 </p>
 
 <h2 class="mt-8">Commands & API</h2>
@@ -220,8 +219,7 @@
 <p>
 	Explore the <a href={resolve('/commands')} class="text-blue-600 hover:underline"
 		>commands documentation</a
-	> for
-	comprehensive examples and use cases.
+	> for comprehensive examples and use cases.
 </p>
 
 <h2 class="mt-8">Performance & Accessibility</h2>

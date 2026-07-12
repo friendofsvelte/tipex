@@ -32,7 +32,8 @@
 				</td>
 				<td>Optional</td>
 				<td>
-					A slot that accepts a function receiving the TipexEditor instance, used to completely replace the default controls. Set to <code>null</code> to hide all controls completely.
+					A slot that accepts a function receiving the TipexEditor instance, used to completely
+					replace the default controls. Set to <code>null</code> to hide all controls completely.
 				</td>
 			</tr>
 			<tr>

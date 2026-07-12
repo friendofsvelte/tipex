@@ -44,6 +44,47 @@
 	/* Additional button styling can go here */
 }
 
+/* Icon, label and divider primitives.
+   Plain CSS (no @apply) so the shipped stylesheet sizes the controls
+   without requiring a Tailwind build in the consumer app. */
+.tipex-icon {
+	width: var(--size-tipex-4, 1rem);
+	height: var(--size-tipex-4, 1rem);
+	flex-shrink: 0;
+}
+
+.tipex-icon-sm {
+	width: var(--size-tipex-3, 0.75rem);
+	height: var(--size-tipex-3, 0.75rem);
+	flex-shrink: 0;
+}
+
+.tipex-button-label {
+	font-weight: 600;
+	font-size: var(--text-tipex-xs, 0.75rem);
+	line-height: 1rem;
+}
+
+.tipex-underline {
+	text-decoration-line: underline;
+}
+
+.tipex-strikethrough {
+	text-decoration-line: line-through;
+}
+
+.tipex-divider {
+	width: 1px;
+	height: var(--size-tipex-6, 1.5rem);
+	margin-inline: var(--spacing-tipex-xs, 0.25rem);
+	flex-shrink: 0;
+	background-color: var(--color-tipex-200, oklch(0.922 0 0));
+}
+
+.dark .tipex-divider {
+	background-color: var(--color-tipex-700, oklch(0.371 0 0));
+}
+
 .tipex-edit-button.active {
 	@apply bg-tipex-200/90 text-tipex-800 dark:bg-tipex-700/90 dark:text-tipex-200;
 }

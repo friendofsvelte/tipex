@@ -58,7 +58,7 @@
 	aria-label="Edit link"
 	title="Edit link"
 >
-	<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+	<svg class="tipex-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 		<path
 			fill="none"
 			stroke="currentColor"

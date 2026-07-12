@@ -63,7 +63,7 @@
 		onclick={handleOpenLink}
 		aria-label="Open link in new tab"
 	>
-		<Fa6SolidArrowUpRightFromSquare class="h-3 w-3" />
+		<Fa6SolidArrowUpRightFromSquare class="tipex-icon-sm" />
 	</button>
 	<button
 		type="button"
@@ -71,7 +71,7 @@
 		onclick={handleAcceptLink}
 		aria-label="Accept link"
 	>
-		<Fa6SolidCheck class="h-3 w-3" />
+		<Fa6SolidCheck class="tipex-icon-sm" />
 	</button>
 	<button
 		type="button"
@@ -79,6 +79,6 @@
 		onclick={handleCancelLink}
 		aria-label="Cancel link"
 	>
-		<Fa6SolidXmark class="h-3 w-3" />
+		<Fa6SolidXmark class="tipex-icon-sm" />
 	</button>
 </div>

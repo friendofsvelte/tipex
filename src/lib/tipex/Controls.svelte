@@ -44,7 +44,7 @@
 				type="button"
 				title="Heading 1"
 			>
-				<span class="font-semibold text-xs">H1</span>
+				<span class="tipex-button-label">H1</span>
 			</button>
 
 			<button
@@ -55,7 +55,7 @@
 				type="button"
 				title="Heading 2"
 			>
-				<span class="font-semibold text-xs">H2</span>
+				<span class="tipex-button-label">H2</span>
 			</button>
 
 			<button
@@ -66,7 +66,7 @@
 				type="button"
 				title="Heading 3"
 			>
-				<span class="font-semibold text-xs">H3</span>
+				<span class="tipex-button-label">H3</span>
 			</button>
 
 			<button
@@ -78,7 +78,7 @@
 				title="Paragraph/Normal text"
 			>
 				<svg
-					class="h-4 w-4"
+					class="tipex-icon"
 					fill="none"
 					stroke="currentColor"
 					stroke-width="2"
@@ -90,7 +90,7 @@
 				</svg>
 			</button>
 
-			<div class="w-px h-6 bg-gray-200 dark:bg-gray-700 mx-1"></div>
+			<div class="tipex-divider"></div>
 
 			<!-- Text Formatting Group -->
 			<button
@@ -101,7 +101,7 @@
 				type="button"
 				title="Bold (⌘+B)"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
+				<svg class="tipex-icon" fill="currentColor" viewBox="0 0 16 16">
 					<path
 						d="M8.21 13c2.106 0 3.412-1.087 3.412-2.823 0-1.306-.984-2.283-2.324-2.386v-.055a2.176 2.176 0 0 0 1.852-2.14c0-1.51-1.162-2.46-3.014-2.46H3.843V13H8.21zM5.908 4.674h1.696c.963 0 1.517.451 1.517 1.244 0 .834-.629 1.32-1.73 1.32H5.908V4.673zm0 6.788V8.598h1.73c1.217 0 1.88.492 1.88 1.415 0 .943-.643 1.449-1.832 1.449H5.907z"
 					/>
@@ -116,7 +116,7 @@
 				type="button"
 				title="Italic (⌘+I)"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
+				<svg class="tipex-icon" fill="currentColor" viewBox="0 0 16 16">
 					<path
 						d="M7.991 11.674 9.53 4.455c.123-.595.246-.71 1.347-.807l.11-.52H7.211l-.11.52c1.06.096 1.128.212 1.005.807L6.57 11.674c-.123.595-.246.71-1.346.806l-.11.52h3.774l.11-.52c-1.06-.095-1.129-.211-1.006-.806z"
 					/>
@@ -131,7 +131,7 @@
 				type="button"
 				title="Underline (⌘+U)"
 			>
-				<span class="font-semibold text-xs underline">U</span>
+				<span class="tipex-button-label tipex-underline">U</span>
 			</button>
 
 			<button
@@ -142,7 +142,7 @@
 				type="button"
 				title="Strikethrough"
 			>
-				<span class="font-semibold text-xs line-through">S</span>
+				<span class="tipex-button-label tipex-strikethrough">S</span>
 			</button>
 
 			<button
@@ -153,14 +153,14 @@
 				type="button"
 				title="Inline Code"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
+				<svg class="tipex-icon" fill="currentColor" viewBox="0 0 16 16">
 					<path
 						d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"
 					/>
 				</svg>
 			</button>
 
-			<div class="w-px h-6 bg-gray-200 dark:bg-gray-700 mx-1"></div>
+			<div class="tipex-divider"></div>
 
 			<!-- Lists Group -->
 			<button
@@ -171,7 +171,7 @@
 				type="button"
 				title="Bullet List"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
+				<svg class="tipex-icon" fill="currentColor" viewBox="0 0 16 16">
 					<path
 						d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
 					/>
@@ -186,7 +186,7 @@
 				type="button"
 				title="Numbered List"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
+				<svg class="tipex-icon" fill="currentColor" viewBox="0 0 16 16">
 					<path
 						d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"
 					/>
@@ -204,7 +204,7 @@
 				type="button"
 				title="Task List"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
+				<svg class="tipex-icon" fill="currentColor" viewBox="0 0 16 16">
 					<path
 						d="M0 3.5A.5.5 0 0 1 .5 3h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM0 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 0 8zm0 4.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"
 					/>
@@ -214,7 +214,7 @@
 				</svg>
 			</button>
 
-			<div class="w-px h-6 bg-gray-200 dark:bg-gray-700 mx-1"></div>
+			<div class="tipex-divider"></div>
 
 			<!-- Block Elements Group -->
 			<button
@@ -225,7 +225,7 @@
 				type="button"
 				title="Quote"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
+				<svg class="tipex-icon" fill="currentColor" viewBox="0 0 16 16">
 					<path
 						d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
 					/>
@@ -240,7 +240,7 @@
 				type="button"
 				title="Code Block"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
+				<svg class="tipex-icon" fill="currentColor" viewBox="0 0 16 16">
 					<path
 						d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"
 					/>
@@ -254,14 +254,14 @@
 				type="button"
 				title="Horizontal Rule"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
+				<svg class="tipex-icon" fill="currentColor" viewBox="0 0 16 16">
 					<path
 						d="M12 3H4a1 1 0 0 0-1 1v2.5H2V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2.5h-1V4a1 1 0 0 0-1-1zM2 9.5h12a.5.5 0 0 1 0 1H2a.5.5 0 0 1 0-1zm10 2.5H4a1 1 0 0 1-1-1V9.5H2V11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9.5h-1V11a1 1 0 0 1-1 1z"
 					/>
 				</svg>
 			</button>
 
-			<div class="w-px h-6 bg-gray-200 dark:bg-gray-700 mx-1"></div>
+			<div class="tipex-divider"></div>
 
 			<!-- Actions Group -->
 			<button
@@ -272,7 +272,7 @@
 				type="button"
 				title="Undo"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
+				<svg class="tipex-icon" fill="currentColor" viewBox="0 0 16 16">
 					<path
 						fill-rule="evenodd"
 						d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"
@@ -291,7 +291,7 @@
 				type="button"
 				title="Redo"
 			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
+				<svg class="tipex-icon" fill="currentColor" viewBox="0 0 16 16">
 					<path
 						fill-rule="evenodd"
 						d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
@@ -314,7 +314,7 @@
 				title={copySuccess ? 'Copied!' : 'Copy Text'}
 			>
 				{#if copySuccess}
-					<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+					<svg class="tipex-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
 						<g
 							fill="none"
 							stroke="currentColor"
@@ -330,7 +330,7 @@
 						</g>
 					</svg>
 				{:else}
-					<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+					<svg class="tipex-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
 						<g
 							fill="none"
 							stroke="currentColor"

@@ -250,6 +250,52 @@ Hide all controls for a clean, minimal editor interface:
 <Tipex {body} controlComponent={null} />
 ```
 
+### Enter Key Behavior (Single vs Double Line Spacing)
+
+Pressing `Enter` starts a new paragraph (`<p>`), while `Shift+Enter` inserts a hard break (`<br>`) within the current paragraph. This is standard ProseMirror/Tiptap behavior and matches how most rich text editors work.
+
+New paragraphs can look "double spaced" because Tipex's default styles give each paragraph a bottom margin: the rule `.tipex-editor-section .ProseMirror p` applies `margin-bottom: var(--spacing-tipex-md)` (1rem by default). Depending on what you want, there are two ways to change this:
+
+**Option A: Keep paragraphs, remove the visual gap (CSS)**
+
+Override the paragraph margin in your own stylesheet:
+
+```css
+@import '@friendofsvelte/tipex/styles/index.css';
+
+.tipex-editor .ProseMirror p {
+	margin-bottom: 0;
+}
+```
+
+This keeps the default `Enter` = new paragraph semantics (better for structured content) and only removes the spacing between paragraphs.
+
+**Option B: Make `Enter` insert a hard break instead of a new paragraph**
+
+Add a small extension that remaps `Enter` to a hard break:
+
+```svelte
+<script lang="ts">
+	import { Tipex, defaultExtensions } from '@friendofsvelte/tipex';
+	import { Extension } from '@tiptap/core';
+
+	const HardBreakOnEnter = Extension.create({
+		name: 'hardBreakOnEnter',
+		addKeyboardShortcuts() {
+			return {
+				Enter: () => this.editor.commands.setHardBreak()
+			};
+		}
+	});
+
+	let body = '';
+</script>
+
+<Tipex {body} extensions={[...defaultExtensions, HardBreakOnEnter]} />
+```
+
+With this extension, typing `a`, pressing `Enter`, then typing `b` produces `<p>a<br>b</p>` instead of two paragraphs. Note that this changes the document structure: all content stays in a single paragraph, so prefer Option A if you still want semantic paragraphs.
+
 ## Props & Configuration
 
 Based on the actual `TipexProps` interface, here are all available properties:

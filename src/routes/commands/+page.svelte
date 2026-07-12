@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths';
 	import { Highlight } from 'svelte-highlight';
 	import { typescript } from 'svelte-highlight/languages';
 	import commandsCodes from '$item/codes/commandsCodes.json' with { type: 'json' };
@@ -13,7 +14,7 @@
 </svelte:head>
 
 <a
-	href="/"
+	href={resolve('/')}
 	class="flex items-center gap-3 bg-neutral-50 dark:bg-neutral-800 px-3 py-1 rounded-lg shadow-sm w-fit"
 >
 	<iconify-icon icon="fa6-solid:house" class="text-sm"></iconify-icon>

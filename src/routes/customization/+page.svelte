@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths';
 	import { typescript } from 'svelte-highlight/languages';
 	import { Highlight, HighlightSvelte } from 'svelte-highlight';
 	import advanceCodes from '$item/codes/advanceCodes.json' with { type: 'json' };
@@ -16,7 +17,7 @@
 </svelte:head>
 
 <a
-	href="/"
+	href={resolve('/')}
 	class="flex items-center gap-3 bg-neutral-50 dark:bg-neutral-800 px-3 py-1 rounded-lg shadow-sm w-fit"
 >
 	<iconify-icon icon="fa6-solid:house" class="text-sm"></iconify-icon>

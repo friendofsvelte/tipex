@@ -19,7 +19,7 @@
 			if (clipboardText && isValidURL(clipboardText.trim())) {
 				defaultValue = clipboardText.trim();
 			}
-		} catch (error) {
+		} catch {
 			// Clipboard access failed, use current href
 			console.log('Clipboard access not available');
 		}

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	let function_string = '() => {}';
 </script>
 
@@ -87,7 +89,7 @@
 <blockquote>
 	<p class="text-gray-700">
 		<strong>Note:</strong>
-		For better customization, please have a look at [<a href="/customization#slot-props"
+		For better customization, please have a look at [<a href="{resolve('/customization')}#slot-props"
 			>Slot Props</a
 		>]
 	</p>

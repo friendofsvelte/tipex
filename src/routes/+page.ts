@@ -5,7 +5,7 @@ const REPO_URL = 'friendofsvelte/tipex';
 const FULL_URL = API_URL + REPO_URL;
 
 export const load: PageLoad = async ({ fetch }) => {
-	let repo: GithubRepo | NonNullable<any>;
+	let repo: GithubRepo | Record<string, never>;
 	try {
 		const response = await fetch(FULL_URL);
 		repo = await response.json();

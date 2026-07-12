@@ -76,11 +76,11 @@ declare global {
 		has_pages: boolean;
 		has_discussions: boolean;
 		forks_count: number;
-		mirror_url: any;
+		mirror_url: string | null;
 		archived: boolean;
 		disabled: boolean;
 		open_issues_count: number;
-		license: any;
+		license: Record<string, unknown> | null;
 		allow_forking: boolean;
 		is_template: boolean;
 		web_commit_signoff_required: boolean;
@@ -90,7 +90,7 @@ declare global {
 		open_issues: number;
 		watchers: number;
 		default_branch: string;
-		temp_clone_token: any;
+		temp_clone_token: string | null;
 		custom_properties: CustomProperties;
 		organization: Organization;
 		network_count: number;
@@ -118,7 +118,7 @@ declare global {
 		site_admin: boolean;
 	}
 
-	export interface CustomProperties {}
+	export type CustomProperties = Record<string, unknown>;
 
 	export interface Organization {
 		login: string;

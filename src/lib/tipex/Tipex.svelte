@@ -63,7 +63,6 @@
 	import { defaultExtensions } from './default.js';
 	import { onMount, setContext, untrack } from 'svelte';
 	import { Editor } from '@tiptap/core';
-	import StarterKit from '@tiptap/starter-kit';
 	import Controls from '../tipex/Controls.svelte';
 	import { getDefaultFloatingMenu } from '../tipex/prepare.js';
 	import LinkFloatingMenu from '../tipex/link/LinkFloatingMenu.svelte';
@@ -108,12 +107,7 @@
 		}
 		tipex = new Editor({
 			element: tipexEditorRef,
-			extensions: [
-				StarterKit.configure({
-					codeBlock: false
-				}),
-				...extensions
-			],
+			extensions,
 			content: body as string,
 			onTransaction({ editor }) {
 				// force re-render so `tipex.isActive` works as expected

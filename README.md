@@ -89,7 +89,7 @@ This simple approach provides maximum flexibility while maintaining ease of use.
 
 ### Extension System
 
-Tipex leverages Tiptap's extension system for enhanced functionality. It comes with sensible defaults but you can extend or override them:
+Tipex leverages Tiptap's extension system for enhanced functionality. The `extensions` prop fully replaces the default extensions (including StarterKit). To extend the defaults, spread `defaultExtensions` and add your own:
 
 ```svelte
 <script lang="ts">
@@ -114,6 +114,8 @@ Tipex leverages Tiptap's extension system for enhanced functionality. It comes w
 
 <Tipex {body} extensions={customExtensions} />
 ```
+
+If you pass a fully custom `extensions` array, none of the defaults are kept — supply everything the editor needs (document, paragraph and text nodes, e.g. via your own `StarterKit`).
 
 ### Floating Menu
 

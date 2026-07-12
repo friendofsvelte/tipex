@@ -1,3 +1,4 @@
+import StarterKit from '@tiptap/starter-kit';
 import { Link } from '@tiptap/extension-link';
 import { Image } from '@tiptap/extension-image';
 import { Placeholder } from '@tiptap/extension-placeholder';
@@ -8,6 +9,10 @@ import { TaskItem } from '@tiptap/extension-task-item';
 import { lowlight } from 'lowlight';
 
 export const defaultExtensions = [
+	// codeBlock is disabled because CodeBlockLowlight below replaces it
+	StarterKit.configure({
+		codeBlock: false
+	}),
 	Link.configure({
 		openOnClick: false,
 		HTMLAttributes: {

@@ -7,14 +7,10 @@ export function getDefaultFloatingMenu(editLinkRef: HTMLElement) {
 		shouldShow: ({ editor }) => {
 			return editor.isActive('link');
 		},
-		tippyOptions: {
+		options: {
 			placement: 'top-start',
-			zIndex: 0,
-			popperOptions: {
-				placement: 'top-start',
-				strategy: 'fixed'
-			},
-			appendTo: () => document.body
-		}
+			strategy: 'fixed'
+		},
+		appendTo: () => document.body
 	});
 }

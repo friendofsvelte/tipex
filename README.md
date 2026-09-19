@@ -29,6 +29,12 @@ Install the package from [NPM](https://www.npmjs.com/package/@friendofsvelte/tip
 npm install "@friendofsvelte/tipex"
 ```
 
+Tiptap v3 is a peer dependency. npm 7+ and pnpm install it automatically; otherwise install it alongside:
+
+```bash
+npm install @tiptap/core @tiptap/pm @tiptap/starter-kit @tiptap/extensions @tiptap/extension-list @tiptap/extension-image @tiptap/extension-code-block @tiptap/extension-code-block-lowlight @tiptap/extension-floating-menu
+```
+
 Check out [Tipex Editor Variants](https://github.com/Bishwas-py/tipex-editor-variants) and its [live preview](https://tipex-editor-variants.pages.dev/) for examples showcasing what you can build with the Tipex Svelte text editor, including multiple themes and configurations.
 
 ## Basic Usage

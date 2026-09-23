@@ -10,7 +10,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import { Editor } from '@tiptap/core';
-	import { onMount } from 'svelte';
 	import Fa6SolidXmark from '../icons/Fa6SolidXmark.svelte';
 	import Fa6SolidCheck from '../icons/Fa6SolidCheck.svelte';
 	import Fa6SolidArrowUpRightFromSquare from '../icons/Fa6SolidArrowUpRightFromSquare.svelte';
@@ -41,20 +40,12 @@
 			);
 		}
 	}
-
-	let hideAnchorControl = $state(true);
-
-	const computedStyleString = $derived(`display: ${hideAnchorControl ? 'none' : 'flex'}`);
-
-	onMount(() => {
-		hideAnchorControl = false;
-	});
 </script>
 
 <div
 	class="tipex-floating-group"
 	bind:this={floatingRef}
-	style={computedStyleString}
+	style="visibility: hidden; opacity: 0"
 	transition:fade
 >
 	<button

@@ -8,7 +8,7 @@
 </script>
 
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	import { Editor } from '@tiptap/core';
 	import Fa6SolidXmark from '../icons/Fa6SolidXmark.svelte';
 	import Fa6SolidCheck from '../icons/Fa6SolidCheck.svelte';
@@ -31,6 +31,10 @@
 		}
 	}
 
+	onMount(() => {
+		if (floatingRef) document.body.appendChild(floatingRef);
+	});
+
 	function handleOpenLink() {
 		if (tipex instanceof Editor) {
 			window.open(
@@ -45,8 +49,7 @@
 <div
 	class="tipex-floating-group"
 	bind:this={floatingRef}
-	style="visibility: hidden; opacity: 0"
-	transition:fade
+	style="position: fixed; top: 0; left: 0; visibility: hidden; opacity: 0"
 >
 	<button
 		type="button"
